@@ -60,7 +60,7 @@ int *constructST(int arr[],int n)
     //Your code here
     int sz = 2;
     for(sz = 2; sz <= n; sz*=2);
-    --sz;
+    sz = sz*2-1;
     int* segtree = new int[sz];
     construct(arr, 0, n-1, segtree, 0);
     return segtree;
