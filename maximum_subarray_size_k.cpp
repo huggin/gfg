@@ -15,20 +15,26 @@ class Solution
     vector <int> max_of_subarrays(int *arr, int n, int k)
     {
         // your code here
-        vector<int> ans(n - k + 1);
-        multiset<int> s;
+        deque<int> Q;
         for(int i = 0; i < k; ++i) {
-            s.insert(arr[i]);
+            while (!Q.empty() && arr[Q.back()] < arr[i]) {
+                Q.pop_back();
+            }
+            Q.push_back(i);
         }
-        for(int i=k; i<n; ++i) {
-            
-            ans[i-k] = *s.rbegin();
-            auto it = s.find(arr[i-k]);
-            s.erase(it);
-            s.insert(arr[i]);
+        vector<int> ans;
+        ans.push_back(arr[Q.front()]);
+
+        for(int i = k; i < n; ++i) {
+            while (Q.front() == i-k) {
+                Q.pop_front();
+            }
+            if (!Q.empty() && arr[Q.back()] < arr[i]) {
+                Q.pop_back();
+            }
+            Q.push_back(i);
+            ans.push_back(arr[Q.front()]);
         }
-    
-        ans[n-k] = *s.rbegin();
         return ans;
     }
 };
@@ -58,6 +64,4 @@ int main() {
 	
 	return 0;
 }
-// } Driver Code Ends        
-
-
+// } Driver Code Ends
