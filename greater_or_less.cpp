@@ -25,13 +25,10 @@ public:
     vector<int> greaterLesser(vector<int>A, int N){
         // code here 
         int bit[N+1] = {0};
-        map<int, int> m;
+        vector<int> B(A);
+        sort(B.begin(), B.end());
         for(int i = 0; i < N; ++i) {
-            m[A[i]] = i;
-        }
-        int rank = 1;
-        for(auto& it : m) {
-            A[it.second] = rank++;
+            A[i] = lower_bound(B.begin(), B.end(), A[i]) - B.begin() + 1;
         }
         
         vector<int> left(N), right(N);
