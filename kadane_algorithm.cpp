@@ -12,16 +12,12 @@ class Solution{
     long long maxSubarraySum(int arr[], int n){
         
         // Your code here
-        long long ans = 0;
+        long long ans = *max_element(arr, arr+n);
         long long pre = 0;
         for(int i = 0; i < n; ++i) {
-            ans = max(ans, (long long)arr[i]);
-            if (pre + arr[i] < 0) {
-                pre = 0;
-            } else {
-                pre += arr[i];
-            }
-            ans = max(ans, pre);
+            if (pre + arr[i] > 0) pre += arr[i];
+            else pre = 0;
+            if (pre > 0) ans = max(ans, pre);
         }
         return ans;
     }
