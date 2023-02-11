@@ -4,39 +4,30 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution{
-    int mem[1001][1001];
-    string s1, s2;
 public:
     
     int longestCommonSubstr (string S1, string S2, int n, int m)
     {
         // your code here
-        memset(mem, -1, sizeof(mem));
-        s1 = S1;
-        s2 = S2;
-        return dp(n-1, m-1);
-    }
-    
-    int dp(int i, int j) {
-        if (i < 0 || j < 0) {
-            return 0;
+        int ans = 0;
+        vector<vector<int>> dp(n, vector<int>(m));
+        for(int i = 0; i < n; ++i) {
+            if (S1[i] == S2[0]) dp[i][0] = 1;
+            ans = max(ans, dp[i][0]);
         }
-        if (mem[i][j] != -1) {
-            return mem[i][j];
+
+        for(int j = 0; j < m; ++j) {
+            if (S1[0] == S2[j]) dp[0][j] = 1;
+            ans = max(ans, dp[0][j]);
         }
-        int& ans = mem[i][j];
-        ans = max(dp(i-1, j), dp(i, j-1));
-        if (s1[i] == s2[j]) {
-            int t = 0;
-            for(int ii=i, jj=j; ii>=0 && jj>=0; ii--, jj--) {
-                if (s1[ii] == s2[jj]) {
-                    ++t;
-                } else {
-                    break;
-                }
+        
+        for(int i = 1; i < n; ++i) {
+            for(int j = 1; j < m; ++j) {
+                if (S1[i] != S2[j]) dp[i][j] = 0;
+                else dp[i][j] = dp[i-1][j-1] + 1;
+                ans = max(ans, dp[i][j]);
             }
-            ans = max(t, ans);
-        } 
+        }
         return ans;
     }
 };
