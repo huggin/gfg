@@ -10,7 +10,7 @@ class Solution {
     if (n == 1) return 1;
     if (n == 0) return 1;
     if (dp[n] != -1) return dp[n];
-    long long& ans = dp[n];
+    long long &ans = dp[n];
     ans = (solve(n - 1) + solve(n - 2) * (n - 1)) % M;
     return ans;
   }
