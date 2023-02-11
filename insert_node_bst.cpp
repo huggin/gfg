@@ -5,138 +5,133 @@ using namespace std;
 
 // Tree Node
 struct Node {
-    int data;
-    Node* left;
-    Node* right;
+  int data;
+  Node* left;
+  Node* right;
 
-    Node(int val) {
-        data = val;
-        left = right = NULL;
-    }
+  Node(int val) {
+    data = val;
+    left = right = NULL;
+  }
 };
 
 Node* insert(Node* node, int data);
 
 // Function to Build Tree
 Node* buildTree(string str) {
-    // Corner Case
-    if (str.length() == 0 || str[0] == 'N') return NULL;
+  // Corner Case
+  if (str.length() == 0 || str[0] == 'N') return NULL;
 
-    // Creating vector of strings from input
-    // string after spliting by space
-    vector<string> ip;
+  // Creating vector of strings from input
+  // string after spliting by space
+  vector<string> ip;
 
-    istringstream iss(str);
-    for (string str; iss >> str;) ip.push_back(str);
+  istringstream iss(str);
+  for (string str; iss >> str;) ip.push_back(str);
 
-    // Create the root of the tree
-    Node* root = new Node(stoi(ip[0]));
+  // Create the root of the tree
+  Node* root = new Node(stoi(ip[0]));
 
-    // Push the root to the queue
-    queue<Node*> queue;
-    queue.push(root);
+  // Push the root to the queue
+  queue<Node*> queue;
+  queue.push(root);
 
-    // Starting from the second element
-    int i = 1;
-    while (!queue.empty() && i < ip.size()) {
+  // Starting from the second element
+  int i = 1;
+  while (!queue.empty() && i < ip.size()) {
+    // Get and remove the front of the queue
+    Node* currNode = queue.front();
+    queue.pop();
 
-        // Get and remove the front of the queue
-        Node* currNode = queue.front();
-        queue.pop();
+    // Get the current node's value from the string
+    string currVal = ip[i];
 
-        // Get the current node's value from the string
-        string currVal = ip[i];
+    // If the left child is not null
+    if (currVal != "N") {
+      // Create the left child for the current node
+      currNode->left = new Node(stoi(currVal));
 
-        // If the left child is not null
-        if (currVal != "N") {
-
-            // Create the left child for the current node
-            currNode->left = new Node(stoi(currVal));
-
-            // Push it to the queue
-            queue.push(currNode->left);
-        }
-
-        // For the right child
-        i++;
-        if (i >= ip.size()) break;
-        currVal = ip[i];
-
-        // If the right child is not null
-        if (currVal != "N") {
-
-            // Create the right child for the current node
-            currNode->right = new Node(stoi(currVal));
-
-            // Push it to the queue
-            queue.push(currNode->right);
-        }
-        i++;
+      // Push it to the queue
+      queue.push(currNode->left);
     }
 
-    return root;
+    // For the right child
+    i++;
+    if (i >= ip.size()) break;
+    currVal = ip[i];
+
+    // If the right child is not null
+    if (currVal != "N") {
+      // Create the right child for the current node
+      currNode->right = new Node(stoi(currVal));
+
+      // Push it to the queue
+      queue.push(currNode->right);
+    }
+    i++;
+  }
+
+  return root;
 }
 
 void inorder(Node* root, vector<int>& v) {
-    if (root == NULL) return;
+  if (root == NULL) return;
 
-    inorder(root->left, v);
-    v.push_back(root->data);
-    inorder(root->right, v);
+  inorder(root->left, v);
+  v.push_back(root->data);
+  inorder(root->right, v);
 }
 
 int main() {
+  int t;
+  string tc;
+  getline(cin, tc);
+  t = stoi(tc);
+  while (t--) {
+    string s;
+    getline(cin, s);
+    Node* root = buildTree(s);
 
-    int t;
-    string tc;
-    getline(cin, tc);
-    t = stoi(tc);
-    while (t--) {
-        string s;
-        getline(cin, s);
-        Node* root = buildTree(s);
+    getline(cin, s);
+    int k = stoi(s);
+    // getline(cin, s);
 
-        getline(cin, s);
-        int k = stoi(s);
-        // getline(cin, s);
+    insert(root, k);
+    vector<int> v;
+    inorder(root, v);
+    for (int i = 0; i < v.size(); i++) cout << v[i] << " ";
+    cout << endl;
 
-        insert(root, k);
-        vector<int> v;
-        inorder(root, v);
-        for (int i = 0; i < v.size(); i++) cout << v[i] << " ";
-        cout << endl;
-
-        // cout<<"~"<<endl;
-    }
-    return 0;
+    // cout<<"~"<<endl;
+  }
+  return 0;
 }
 
 // } Driver Code Ends
 
-
 // Function to insert a node in a BST.
 Node* insert(Node* root, int Key) {
-    // Your code here
-    if (!root) {
-        Node * ans = new Node(Key);
-        return ans;
-    }
-    Node *prev = NULL;
-    Node *p = root;
-    while(p) {
-        if (p->data == Key) return root;
-        if (p->data < Key) {
-            prev = p;
-            p = p->right;
-        } else {
-            prev = p;
-            p = p->left;
-        }
-    }
-    if (prev->data > Key) {
-        prev->left = new Node(Key);
+  // Your code here
+  if (!root) {
+    Node* ans = new Node(Key);
+    return ans;
+  }
+  Node* prev = NULL;
+  Node* p = root;
+  while (p) {
+    if (p->data == Key) return root;
+    if (p->data < Key) {
+      prev = p;
+      p = p->right;
     } else {
-        prev->right = new Node(Key);
+      prev = p;
+      p = p->left;
     }
-    return root;
+  }
+  if (prev->data > Key) {
+    prev->left = new Node(Key);
+  } else {
+    prev->right = new Node(Key);
+  }
+  return root;
 }

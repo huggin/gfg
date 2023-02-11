@@ -1,102 +1,87 @@
 //{ Driver Code Starts
-//Initial Template for C++
+// Initial Template for C++
 
 #include <bits/stdc++.h>
 using namespace std;
 
-struct Node
-{
-    int data;
-    struct Node *left;
-    struct Node *right;
+struct Node {
+  int data;
+  struct Node *left;
+  struct Node *right;
 
-    Node(int x)
-    {
-        data = x;
-        left = NULL;
-        right = NULL;
-    }
+  Node(int x) {
+    data = x;
+    left = NULL;
+    right = NULL;
+  }
 };
 
-void printInorder(Node *node)
-{
-    if (node == NULL)
-    {
-        return;
-    }
-    printInorder(node->left);
-    cout << node->data << " ";
-    printInorder(node->right);
+void printInorder(Node *node) {
+  if (node == NULL) {
+    return;
+  }
+  printInorder(node->left);
+  cout << node->data << " ";
+  printInorder(node->right);
 }
-Node *buildTree(string str)
-{
-    // Corner Case
-    if (str.length() == 0 || str[0] == 'N')
-        return NULL;
+Node *buildTree(string str) {
+  // Corner Case
+  if (str.length() == 0 || str[0] == 'N') return NULL;
 
-    // Creating vector of strings from input
-    // string after spliting by space
-    vector<string> ip;
+  // Creating vector of strings from input
+  // string after spliting by space
+  vector<string> ip;
 
-    istringstream iss(str);
-    for (string str; iss >> str;)
-        ip.push_back(str);
+  istringstream iss(str);
+  for (string str; iss >> str;) ip.push_back(str);
 
-    // Create the root of the tree
-    Node *root = new Node(stoi(ip[0]));
+  // Create the root of the tree
+  Node *root = new Node(stoi(ip[0]));
 
-    // Push the root to the queue
-    queue<Node *> queue;
-    queue.push(root);
+  // Push the root to the queue
+  queue<Node *> queue;
+  queue.push(root);
 
-    // Starting from the second element
-    int i = 1;
-    while (!queue.empty() && i < ip.size())
-    {
+  // Starting from the second element
+  int i = 1;
+  while (!queue.empty() && i < ip.size()) {
+    // Get and remove the front of the queue
+    Node *currNode = queue.front();
+    queue.pop();
 
-        // Get and remove the front of the queue
-        Node *currNode = queue.front();
-        queue.pop();
+    // Get the current node's value from the string
+    string currVal = ip[i];
 
-        // Get the current node's value from the string
-        string currVal = ip[i];
+    // If the left child is not null
+    if (currVal != "N") {
+      // Create the left child for the current Node
+      currNode->left = new Node(stoi(currVal));
 
-        // If the left child is not null
-        if (currVal != "N")
-        {
-
-            // Create the left child for the current Node
-            currNode->left = new Node(stoi(currVal));
-
-            // Push it to the queue
-            queue.push(currNode->left);
-        }
-
-        // For the right child
-        i++;
-        if (i >= ip.size())
-            break;
-        currVal = ip[i];
-
-        // If the right child is not null
-        if (currVal != "N")
-        {
-
-            // Create the right child for the current node
-            currNode->right = new Node(stoi(currVal));
-
-            // Push it to the queue
-            queue.push(currNode->right);
-        }
-        i++;
+      // Push it to the queue
+      queue.push(currNode->left);
     }
 
-    return root;
-}
+    // For the right child
+    i++;
+    if (i >= ip.size()) break;
+    currVal = ip[i];
 
+    // If the right child is not null
+    if (currVal != "N") {
+      // Create the right child for the current node
+      currNode->right = new Node(stoi(currVal));
+
+      // Push it to the queue
+      queue.push(currNode->right);
+    }
+    i++;
+  }
+
+  return root;
+}
 
 // } Driver Code Ends
-//User function Template for C++
+// User function Template for C++
 
 /*
 structure of the node of the binary tree is as
@@ -114,48 +99,43 @@ struct Node
     }
 };
 */
-class Solution
-{
-    pair<int, int> go(Node* p) {
-        if (!p) return make_pair(0, 0);
-        auto a = go(p->left);
-        auto b = go(p->right);
-        if (a.first < b.first) {
-            return make_pair(b.first + 1, b.second + p->data);
-        }
-        if (a.first > b.first) {
-            return make_pair(a.first + 1, a.second + p->data);
-        }
-        return make_pair(a.first + 1, p->data + max(a.second, b.second));
+class Solution {
+  pair<int, int> go(Node *p) {
+    if (!p) return make_pair(0, 0);
+    auto a = go(p->left);
+    auto b = go(p->right);
+    if (a.first < b.first) {
+      return make_pair(b.first + 1, b.second + p->data);
     }
-public:
-    
-    int sumOfLongRootToLeafPath(Node *root)
-    {
-        //code here
-        if (!root) return 0;
-        auto a = go(root);
-        return a.second;
+    if (a.first > b.first) {
+      return make_pair(a.first + 1, a.second + p->data);
     }
+    return make_pair(a.first + 1, p->data + max(a.second, b.second));
+  }
+
+ public:
+  int sumOfLongRootToLeafPath(Node *root) {
+    // code here
+    if (!root) return 0;
+    auto a = go(root);
+    return a.second;
+  }
 };
 
 //{ Driver Code Starts.
 
-int main()
-{
-
-    int t;
-    scanf("%d", &t);
-    cin.ignore();
-    while (t--)
-    {
-        string treeString;
-        getline(cin, treeString);
-        Node *root = buildTree(treeString);
-        Solution obj;
-        int res = obj.sumOfLongRootToLeafPath(root);
-        cout << res << "\n";
-    }
-    return 0;
+int main() {
+  int t;
+  scanf("%d", &t);
+  cin.ignore();
+  while (t--) {
+    string treeString;
+    getline(cin, treeString);
+    Node *root = buildTree(treeString);
+    Solution obj;
+    int res = obj.sumOfLongRootToLeafPath(root);
+    cout << res << "\n";
+  }
+  return 0;
 }
 // } Driver Code Ends

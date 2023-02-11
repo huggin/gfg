@@ -14,28 +14,28 @@ using namespace std;
 
 // trie node
 struct TrieNode {
-    struct TrieNode *children[ALPHABET_SIZE];
+  struct TrieNode *children[ALPHABET_SIZE];
 
-    // isLeaf is true if the node represents
-    // end of a word
-    bool isLeaf;
+  // isLeaf is true if the node represents
+  // end of a word
+  bool isLeaf;
 };
 
 // Returns new trie node (initialized to NULLs)
 struct TrieNode *getNode(void) {
-    struct TrieNode *pNode = NULL;
+  struct TrieNode *pNode = NULL;
 
-    pNode = (struct TrieNode *) malloc(sizeof(struct TrieNode));
+  pNode = (struct TrieNode *)malloc(sizeof(struct TrieNode));
 
-    if (pNode) {
-        int i;
+  if (pNode) {
+    int i;
 
-        pNode->isLeaf = false;
+    pNode->isLeaf = false;
 
-        for (i = 0; i < ALPHABET_SIZE; i++) pNode->children[i] = NULL;
-    }
+    for (i = 0; i < ALPHABET_SIZE; i++) pNode->children[i] = NULL;
+  }
 
-    return pNode;
+  return pNode;
 }
 
 void insert(struct TrieNode *, string);
@@ -44,41 +44,40 @@ bool search(struct TrieNode *, string);
 
 // Driver
 int main() {
-    // freopen("input.txt", "r", stdin);
-    // freopen("output.txt", "w", stdout);
-    int t;
-    cin >> t;
-    while (t--) {
-        // Input keys (use only 'a' through 'z' and lower case)
-        int n;
-        cin >> n;
-        string keys[n];
+  // freopen("input.txt", "r", stdin);
+  // freopen("output.txt", "w", stdout);
+  int t;
+  cin >> t;
+  while (t--) {
+    // Input keys (use only 'a' through 'z' and lower case)
+    int n;
+    cin >> n;
+    string keys[n];
 
-        for (int i = 0; i < n; i++) {
-            cin >> keys[i];
-        }
-
-        struct TrieNode *root = getNode();
-        // Construct trie
-        for (int i = 0; i < n; i++) insert(root, keys[i]);
-
-        string abc;
-
-        cin >> abc;
-        // Search for different keys
-
-        if (search(root, abc))
-            cout << "1\n";
-        else
-            cout << "0\n";
-        // char ex;
-        // cin >> ex;
-        // cout << ex << "\n";
+    for (int i = 0; i < n; i++) {
+      cin >> keys[i];
     }
-    return 0;
+
+    struct TrieNode *root = getNode();
+    // Construct trie
+    for (int i = 0; i < n; i++) insert(root, keys[i]);
+
+    string abc;
+
+    cin >> abc;
+    // Search for different keys
+
+    if (search(root, abc))
+      cout << "1\n";
+    else
+      cout << "0\n";
+    // char ex;
+    // cin >> ex;
+    // cout << ex << "\n";
+  }
+  return 0;
 }
 // } Driver Code Ends
-
 
 // User function template for C++
 
@@ -93,36 +92,34 @@ struct TrieNode {
 };
 */
 
-//Function to insert string into TRIE.
-void insert(struct TrieNode *root, string key)
-{
-    // code here
-    TrieNode * p = root;
-    for(int i = 0; i < key.size(); ++i) {
-        if (p->children[key[i] - 'a'] == NULL) {
-            TrieNode *q = getNode();
-            p->children[key[i] - 'a'] = q;
-            p = q;
-        } else {
-            p = p->children[key[i] - 'a'];
-        }
+// Function to insert string into TRIE.
+void insert(struct TrieNode *root, string key) {
+  // code here
+  TrieNode *p = root;
+  for (int i = 0; i < key.size(); ++i) {
+    if (p->children[key[i] - 'a'] == NULL) {
+      TrieNode *q = getNode();
+      p->children[key[i] - 'a'] = q;
+      p = q;
+    } else {
+      p = p->children[key[i] - 'a'];
     }
-    p->isLeaf = true;
+  }
+  p->isLeaf = true;
 }
 
-//Function to use TRIE data structure and search the given string.
-bool search(struct TrieNode *root, string key) 
-{
-    // code here
-    TrieNode * p = root;
-    for(int i = 0; i < key.size(); ++i) {
-        if (p->children[key[i] - 'a'] == NULL) {
-            TrieNode *q = getNode();
-            p->children[key[i] - 'a'] = q;
-            p = q;
-        } else {
-            p = p->children[key[i] - 'a'];
-        }
+// Function to use TRIE data structure and search the given string.
+bool search(struct TrieNode *root, string key) {
+  // code here
+  TrieNode *p = root;
+  for (int i = 0; i < key.size(); ++i) {
+    if (p->children[key[i] - 'a'] == NULL) {
+      TrieNode *q = getNode();
+      p->children[key[i] - 'a'] = q;
+      p = q;
+    } else {
+      p = p->children[key[i] - 'a'];
     }
-    return p->isLeaf;
+  }
+  return p->isLeaf;
 }
