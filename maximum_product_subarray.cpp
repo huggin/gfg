@@ -7,39 +7,17 @@ using namespace std;
 //User function template for C++
 class Solution{
 public:
-    long long dp[501], dp2[501];
 	// Function to find maximum product subarray
 	long long maxProduct(vector<int> arr, int n) {
 	    // code here
-	    long long ans = LONG_LONG_MIN;
-	    
-	    vector<int> a{0};
-	    copy(arr.begin(), arr.end(), back_inserter(a));
-	    for(int i = 1; i <= n; ++i) {
-	        if (a[i-1] != 0) {
-	            if (a[i] < 0) {
-	                dp[i] =  dp2[i-1] * a[i];
-	                dp2[i] = min((long long)a[i], dp[i-1] * a[i]);
-	            } else if (a[i] > 0) {
-	                dp[i] =  max((long long)a[i], dp[i-1] * a[i]);
-	                dp2[i] = dp2[i-1] * a[i];
-	            } else {
-	                dp[i] = dp2[i] = 0;
-	            }
-	            ans = max(ans, dp[i]);
-	        } else {
-	            if (a[i] > 0) {
-	                dp[i] = a[i];
-	                dp2[i] = 0;
-	            } else if (a[i] < 0) {
-	                dp2[i] = a[i];
-	                dp[i] = 0;
-	            } else {
-	                dp[i] = 0;
-	                dp2[i] = 0;
-	            } 
-	            ans = max(ans, (long long)a[i]);
-	        }
+	    long long ans = LLONG_MIN;
+	    long long mi = 1, ma = 1;
+	    for(int i = 0; i < n; ++i) {
+	        if (arr[i] <= 0) swap(mi, ma);
+	        mi = min((long long)arr[i], mi*arr[i]);
+	        ma = max((long long)arr[i], ma*arr[i]);
+	        
+	        ans = max(ans, ma);
 	    }
 	    
 	    return ans;
