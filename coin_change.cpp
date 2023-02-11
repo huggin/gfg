@@ -9,7 +9,6 @@ class Solution {
 
         // code here.
         long long dp[sum+1] = {0};
-        sort(coins, coins+N);
         dp[0] = 1;
         for(int j = 0; j < N; ++j) {
             for(int i = 0; i <= sum; ++i) {
