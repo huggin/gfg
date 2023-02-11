@@ -16,7 +16,7 @@ class Solution {
     if (mem[w][k] != -1) {
       return mem[w][k];
     }
-    int &ans = mem[w][k];
+    int& ans = mem[w][k];
     ans = dp(w, wt, val, k + 1);
     if (w >= wt[k]) {
       ans = max(ans, dp(w - wt[k], wt, val, k + 1) + val[k]);
