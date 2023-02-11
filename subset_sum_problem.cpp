@@ -8,34 +8,31 @@ using namespace std;
 // User function template for C++
 
 class Solution {
-  vector<vector<int>> mem;
+  vector<vector<int>> dp;
   int n;
-  int* a;
-  int dp(int k, int s) {
+  vector<int> a;
+
+  int solve(const vector<int>& a, int k, int s) {
     if (s == 0) {
       return 1;
     }
     if (k == n) {
       return 0;
     }
-    if (mem[k][s] != -1) {
-      return mem[k][s];
+    if (dp[k][s] != -1) {
+      return dp[k][s];
     }
-    int& ans = mem[k][s];
-    ans = dp(k + 1, s) || (a[k] <= s) && dp(k + 1, s - a[k]);
+    int& ans = dp[k][s];
+    ans = solve(a, k + 1, s) || (a[k] <= s) && solve(a, k + 1, s - a[k]);
     return ans;
   }
 
  public:
-  bool isSubsetSum(int N, int arr[], int sum) {
+  bool isSubsetSum(const vector<int>& arr, int sum) {
     // code here
-    n = N;
-    a = arr;
-    mem.resize(N);
-    for (int i = 0; i < N; ++i) {
-      mem[i].assign(sum + 1, -1);
-    }
-    return dp(0, sum);
+    n = arr.size();
+    dp.assign(n, vector<int>(sum + 1, -1));
+    return solve(arr, 0, sum);
   }
 };
 
