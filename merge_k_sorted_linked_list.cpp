@@ -4,27 +4,23 @@
 using namespace std;
 
 // A Linked List node
-struct Node
-{
-	int data;
-	Node* next;
-	
-	Node(int x){
-	    data = x;
-	    next = NULL;
-	}
-	
+struct Node {
+  int data;
+  Node *next;
+
+  Node(int x) {
+    data = x;
+    next = NULL;
+  }
 };
 
 /* Function to print nodes in a given linked list */
-void printList(Node* node)
-{
-	while (node != NULL)
-	{
-		printf("%d ", node->data);
-		node = node->next;
-	}
-	cout<<endl;
+void printList(Node *node) {
+  while (node != NULL) {
+    printf("%d ", node->data);
+    node = node->next;
+  }
+  cout << endl;
 }
 
 // } Driver Code Ends
@@ -32,91 +28,82 @@ void printList(Node* node)
 
 struct Node
 {
-	int data;
-	Node* next;
-	
-	Node(int x){
-	    data = x;
-	    next = NULL;
-	}
-	
-};
-*/ 
+        int data;
+        Node* next;
 
-class Solution{
-  public:
-    //Function to merge K sorted linked list.
-    Node * mergeKLists(Node *arr[], int K)
-    {
-        priority_queue <
-            pair<int, Node*>, 
-            vector<pair<int, Node*>>,
-            greater<pair<int, Node*>>> Q;
-        
-        for(int i = 0; i < K; ++i) {
-            if (arr[i]) {
-                Q.emplace(arr[i]->data, arr[i]);
-            }
+        Node(int x){
+            data = x;
+            next = NULL;
         }
-        Node *ans = NULL, *prev=NULL;
-        while(!Q.empty()) {
-            auto c = Q.top();
-            Q.pop();
-            Node* node = new Node(c.first);
-            if (ans == NULL) {
-                ans = node;
-            } else {
-                prev->next = node;
-            }
-            prev = node;
-            if (c.second->next) {
-                Q.emplace(c.second->next->data, c.second->next);
-            }
-        }
-        if (prev) prev->next = NULL;
-        return ans;
+
+};
+*/
+
+class Solution {
+ public:
+  // Function to merge K sorted linked list.
+  Node *mergeKLists(Node *arr[], int K) {
+    priority_queue<pair<int, Node *>, vector<pair<int, Node *>>,
+                   greater<pair<int, Node *>>>
+        Q;
+
+    for (int i = 0; i < K; ++i) {
+      if (arr[i]) {
+        Q.emplace(arr[i]->data, arr[i]);
+      }
     }
+    Node *ans = NULL, *prev = NULL;
+    while (!Q.empty()) {
+      auto c = Q.top();
+      Q.pop();
+      Node *node = new Node(c.first);
+      if (ans == NULL) {
+        ans = node;
+      } else {
+        prev->next = node;
+      }
+      prev = node;
+      if (c.second->next) {
+        Q.emplace(c.second->next->data, c.second->next);
+      }
+    }
+    if (prev) prev->next = NULL;
+    return ans;
+  }
 };
-
-
 
 //{ Driver Code Starts.
 // Driver program to test above functions
-int main()
-{
-   int t;
-   cin>>t;
-   while(t--)
-   {
-	   int N;
-	   cin>>N;
-       struct Node *arr[N];
-       for(int j=0;j<N;j++)
-        {
-           int n;
-           cin>>n;
+int main() {
+  int t;
+  cin >> t;
+  while (t--) {
+    int N;
+    cin >> N;
+    struct Node *arr[N];
+    for (int j = 0; j < N; j++) {
+      int n;
+      cin >> n;
 
-           int x;
-           cin>>x;
-           arr[j]=new Node(x);
-           Node *curr = arr[j];
-           n--;
+      int x;
+      cin >> x;
+      arr[j] = new Node(x);
+      Node *curr = arr[j];
+      n--;
 
-           for(int i=0;i<n;i++)
-           {
-               cin>>x;
-               Node *temp = new Node(x);
-               curr->next =temp;
-               curr=temp;
-           }
-   		}
-   		Solution obj;
-   		Node *res = obj.mergeKLists(arr,N);
-		printList(res);
+      for (int i = 0; i < n; i++) {
+        cin >> x;
+        Node *temp = new Node(x);
+        curr->next = temp;
+        curr = temp;
+      }
+    }
+    Solution obj;
+    Node *res = obj.mergeKLists(arr, N);
+    printList(res);
+  }
 
-   }
-
-	return 0;
+  return 0;
 }
 
 // } Driver Code Ends

@@ -6,78 +6,71 @@ using namespace std;
 
 // Tree Node
 struct Node {
-    int data;
-    Node *left;
-    Node *right;
+  int data;
+  Node* left;
+  Node* right;
 
-    Node(int val) {
-        data = val;
-        left = right = NULL;
-    }
+  Node(int val) {
+    data = val;
+    left = right = NULL;
+  }
 };
 
 // Function to Build Tree
-Node* buildTree(string str)
-{
-   // Corner Case
-   if(str.length() == 0 || str[0] == 'N')
-       return NULL;
+Node* buildTree(string str) {
+  // Corner Case
+  if (str.length() == 0 || str[0] == 'N') return NULL;
 
-   // Creating vector of strings from input
-   // string after spliting by space
-   vector<string> ip;
+  // Creating vector of strings from input
+  // string after spliting by space
+  vector<string> ip;
 
-   istringstream iss(str);
-   for(string str; iss >> str; )
-       ip.push_back(str);
+  istringstream iss(str);
+  for (string str; iss >> str;) ip.push_back(str);
 
-   // Create the root of the tree
-   Node* root = new Node(stoi(ip[0]));
+  // Create the root of the tree
+  Node* root = new Node(stoi(ip[0]));
 
-   // Push the root to the queue
-   queue<Node*> queue;
-   queue.push(root);
+  // Push the root to the queue
+  queue<Node*> queue;
+  queue.push(root);
 
-   // Starting from the second element
-   int i = 1;
-   while(!queue.empty() && i < ip.size()) {
+  // Starting from the second element
+  int i = 1;
+  while (!queue.empty() && i < ip.size()) {
+    // Get and remove the front of the queue
+    Node* currNode = queue.front();
+    queue.pop();
 
-       // Get and remove the front of the queue
-       Node* currNode = queue.front();
-       queue.pop();
+    // Get the current node's value from the string
+    string currVal = ip[i];
 
-       // Get the current node's value from the string
-       string currVal = ip[i];
+    // If the left child is not null
+    if (currVal != "N") {
+      // Create the left child for the current node
+      currNode->left = new Node(stoi(currVal));
 
-       // If the left child is not null
-       if(currVal != "N") {
+      // Push it to the queue
+      queue.push(currNode->left);
+    }
 
-           // Create the left child for the current node
-           currNode->left = new Node(stoi(currVal));
+    // For the right child
+    i++;
+    if (i >= ip.size()) break;
+    currVal = ip[i];
 
-           // Push it to the queue
-           queue.push(currNode->left);
-       }
+    // If the right child is not null
+    if (currVal != "N") {
+      // Create the right child for the current node
+      currNode->right = new Node(stoi(currVal));
 
-       // For the right child
-       i++;
-       if(i >= ip.size())
-           break;
-       currVal = ip[i];
+      // Push it to the queue
+      queue.push(currNode->right);
+    }
+    i++;
+  }
 
-       // If the right child is not null
-       if(currVal != "N") {
-
-           // Create the right child for the current node
-           currNode->right = new Node(stoi(currVal));
-
-           // Push it to the queue
-           queue.push(currNode->right);
-       }
-       i++;
-   }
-
-   return root;
+  return root;
 }
 
 // } Driver Code Ends
@@ -95,71 +88,69 @@ struct Node {
 };
 */
 
-class Solution{
-    bool found;
-    int t;
-    Node *r;
-    
-    bool find(Node* root, Node* curr, int k) {
-        while(root) {
-            if (root == curr) {
-                return find(root->left, curr, k) || find(root->right, curr, k);
-            } else if (root->data < k) {
-                root = root->right;
-            } else if (root->data > k) {
-                root = root->left;
-            } else {
-                return true;
-            }
-        }
-        return false;
+class Solution {
+  bool found;
+  int t;
+  Node* r;
+
+  bool find(Node* root, Node* curr, int k) {
+    while (root) {
+      if (root == curr) {
+        return find(root->left, curr, k) || find(root->right, curr, k);
+      } else if (root->data < k) {
+        root = root->right;
+      } else if (root->data > k) {
+        root = root->left;
+      } else {
+        return true;
+      }
     }
-    
-    int preOrder(Node *p) {
-        if (found) return 0;
-        if (!p) return 0;
-        found = find(r, p, t-p->data);
-        if (!found) {
-            preOrder(p->left);
-            preOrder(p->right);
-        }
+    return false;
+  }
+
+  int preOrder(Node* p) {
+    if (found) return 0;
+    if (!p) return 0;
+    found = find(r, p, t - p->data);
+    if (!found) {
+      preOrder(p->left);
+      preOrder(p->right);
     }
-  public:
-    // root : the root Node of the given BST
-    // target : the target sum
-    int isPairPresent(struct Node *root, int target)
-    {
-    //add code here.
-        if (!root) return 0;
-        found = false;
-        t = target;
-        r = root;
-        preOrder(root);
-        return found;
-    }
+  }
+
+ public:
+  // root : the root Node of the given BST
+  // target : the target sum
+  int isPairPresent(struct Node* root, int target) {
+    // add code here.
+    if (!root) return 0;
+    found = false;
+    t = target;
+    r = root;
+    preOrder(root);
+    return found;
+  }
 };
 
 //{ Driver Code Starts.
 int main() {
-    
-   int t;
-   string tc;
-   getline(cin, tc);
-   t=stoi(tc);
-   while(t--)
-   {
-        string s; 
-       getline(cin, s);
-       Node* root = buildTree(s);
+  int t;
+  string tc;
+  getline(cin, tc);
+  t = stoi(tc);
+  while (t--) {
+    string s;
+    getline(cin, s);
+    Node* root = buildTree(s);
 
-       getline(cin, s);
-       int k = stoi(s);
-        //getline(cin, s);
-       Solution obj;    
-       cout << obj.isPairPresent(root, k) << endl;
-       //cout<<"~"<<endl;
-   }
-   return 0;
+    getline(cin, s);
+    int k = stoi(s);
+    // getline(cin, s);
+    Solution obj;
+    cout << obj.isPairPresent(root, k) << endl;
+    // cout<<"~"<<endl;
+  }
+  return 0;
 }
 
 // } Driver Code Ends

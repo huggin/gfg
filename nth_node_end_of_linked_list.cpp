@@ -2,7 +2,8 @@
 // C program to find n'th Node in linked list
 #include <stdio.h>
 #include <stdlib.h>
-#include<iostream>
+
+#include <iostream>
 using namespace std;
 
 /* Link list Node */
@@ -15,40 +16,34 @@ struct Node {
   }
 };
 
-
 /* Function to get the nth node from the last of a linked list*/
-int getNthFromLast(struct Node* head, int n);
-
-
+int getNthFromLast(struct Node *head, int n);
 
 /* Driver program to test above function*/
-int main()
-{
-  int T,i,n,l,k;
+int main() {
+  int T, i, n, l, k;
 
-    cin>>T;
+  cin >> T;
 
-    while(T--){
-    struct Node *head = NULL,  *tail = NULL;
+  while (T--) {
+    struct Node *head = NULL, *tail = NULL;
 
-        cin>>n>>k;
-        int firstdata;
-        cin>>firstdata;
-        head = new Node(firstdata);
-        tail = head;
-        for(i=1;i<n;i++)
-        {
-            cin>>l;
-            tail->next = new Node(l);
-            tail = tail->next;
-        }
-
-    cout<<getNthFromLast(head, k)<<endl;
+    cin >> n >> k;
+    int firstdata;
+    cin >> firstdata;
+    head = new Node(firstdata);
+    tail = head;
+    for (i = 1; i < n; i++) {
+      cin >> l;
+      tail->next = new Node(l);
+      tail = tail->next;
     }
-    return 0;
+
+    cout << getNthFromLast(head, k) << endl;
+  }
+  return 0;
 }
 // } Driver Code Ends
-
 
 /* struct Node {
   int data;
@@ -60,24 +55,21 @@ int main()
 };
 */
 
-//Function to find the data of nth node from the end of a linked list.
-int getNthFromLast(Node *head, int n)
-{
-       // Your code here
-    Node * c = head;
-    int count = 0;
-    while(c) {
-        ++count;
-        c = c->next;
-    }
-    if (count < n) return -1;
-    
-    count -= n;
-    while(count > 0) {
-        --count;
-        head = head->next;
-    }
-    return head->data;
+// Function to find the data of nth node from the end of a linked list.
+int getNthFromLast(Node *head, int n) {
+  // Your code here
+  Node *c = head;
+  int count = 0;
+  while (c) {
+    ++count;
+    c = c->next;
+  }
+  if (count < n) return -1;
+
+  count -= n;
+  while (count > 0) {
+    --count;
+    head = head->next;
+  }
+  return head->data;
 }
-
-

@@ -11,49 +11,43 @@ struct Node {
   }
 };
 
-
-void print(Node *root)
-{
-    Node *temp = root;
-    while(temp!=NULL)
-    {
-    cout<<temp->data<<" ";
-    temp=temp->next;
-    }
+void print(Node *root) {
+  Node *temp = root;
+  while (temp != NULL) {
+    cout << temp->data << " ";
+    temp = temp->next;
+  }
 }
-Node* removeDuplicates(Node *root);
+Node *removeDuplicates(Node *root);
 int main() {
-	// your code goes here
-	int T;
-	cin>>T;
+  // your code goes here
+  int T;
+  cin >> T;
 
-	while(T--)
-	{
-		int K;
-		cin>>K;
-		Node *head = NULL;
-        Node *temp = head;
+  while (T--) {
+    int K;
+    cin >> K;
+    Node *head = NULL;
+    Node *temp = head;
 
-		for(int i=0;i<K;i++){
-		int data;
-		cin>>data;
-			if(head==NULL)
-			head=temp=new Node(data);
-			else
-			{
-				temp->next = new Node(data);
-				temp=temp->next;
-			}
-		}
-		
-		Node *result  = removeDuplicates(head);
-		print(result);
-		cout<<endl;
-	}
-	return 0;
+    for (int i = 0; i < K; i++) {
+      int data;
+      cin >> data;
+      if (head == NULL)
+        head = temp = new Node(data);
+      else {
+        temp->next = new Node(data);
+        temp = temp->next;
+      }
+    }
+
+    Node *result = removeDuplicates(head);
+    print(result);
+    cout << endl;
+  }
+  return 0;
 }
 // } Driver Code Ends
-
 
 /*
 struct Node {
@@ -65,21 +59,20 @@ struct Node {
   }
 };*/
 
-//Function to remove duplicates from sorted linked list.
-Node *removeDuplicates(Node *head)
-{
- // your code goes here
-    Node* prev = NULL;
-    Node* p = head;
-    while(p) {
-        if (prev && prev->data == p->data) {
-            delete p;
-            prev->next = p->next;
-            p = prev->next;
-        } else {
-            prev = p;
-            p = p->next;
-        }
+// Function to remove duplicates from sorted linked list.
+Node *removeDuplicates(Node *head) {
+  // your code goes here
+  Node *prev = NULL;
+  Node *p = head;
+  while (p) {
+    if (prev && prev->data == p->data) {
+      delete p;
+      prev->next = p->next;
+      p = prev->next;
+    } else {
+      prev = p;
+      p = p->next;
     }
-    return head;
+  }
+  return head;
 }
