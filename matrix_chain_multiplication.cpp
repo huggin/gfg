@@ -8,30 +8,23 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
-  int dp[101][101];
-  int n;
-  int* a;
-
-  int solve(int i, int j) {
-    if (i > j) return 0;
-    if (i == j) return dp[i][j] = a[i] * a[i - 1] * a[i + 1];
-    if (dp[i][j] != -1) return dp[i][j];
-    int& ans = dp[i][j];
-    ans = INT_MAX;
-    for (int k = i; k <= j; ++k) {
-      ans = min(ans,
-                a[i - 1] * a[k] * a[j + 1] + solve(i, k - 1) + solve(k + 1, j));
-    }
-    return ans;
-  }
-
  public:
   int matrixMultiplication(int N, int arr[]) {
     // code here
-    n = N;
-    memset(dp, -1, sizeof(dp));
-    a = arr;
-    return solve(1, N - 2);
+    vector<vector<int>> dp(N, vector<int>(N));
+    for (int i = 0; i < N - 2; ++i) {
+      dp[i][i + 2] = arr[i] * arr[i + 1] * arr[i + 2];
+    }
+    for (int k = 3; k < N; ++k) {
+      for (int i = 0; i < N - k; ++i) {
+        dp[i][i + k] = INT_MAX;
+        for (int j = i + 1; j < i + k; ++j) {
+          dp[i][i + k] = min(dp[i][i + k], dp[i][j] + dp[j][i + k] +
+                                               arr[i] * arr[i + k] * arr[j]);
+        }
+      }
+    }
+    return dp[0][N - 1];
   }
 };
 
