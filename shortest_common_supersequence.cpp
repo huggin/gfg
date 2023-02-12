@@ -13,7 +13,6 @@ class Solution {
   string x, y;
 
   int solve(int i, int j) {
-    if (i == M && j == N) return 0;
     if (i == M) return N - j;
     if (j == N) return M - i;
     if (dp[i][j] != -1) return dp[i][j];
@@ -22,7 +21,6 @@ class Solution {
     } else {
       dp[i][j] = solve(i + 1, j + 1) + 1;
     }
-    // cout << i << ' '<< j << ' ' << dp[i][j] << endl;
     return dp[i][j];
   }
 
