@@ -1,5 +1,11 @@
+//{ Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+
+// } Driver Code Ends
+
 class Solution {
-  int mod = 1000000007;
+  int mod = 1e9 + 7;
   vector<vector<long long>> multiple(vector<vector<long long>>& a,
                                      vector<vector<long long>>& b) {
     vector<vector<long long>> ans(2, vector<long long>(2));
@@ -33,3 +39,18 @@ class Solution {
     return (ans[0][0] + ans[0][1]) % mod;
   }
 };
+
+//{ Driver Code Starts.
+int main() {
+  int tc;
+  cin >> tc;
+  while (tc--) {
+    long long int n;
+    cin >> n;
+    Solution obj;
+    int ans = obj.FindNthTerm(n);
+    cout << ans << "\n";
+  }
+  return 0;
+}
+// } Driver Code Ends
