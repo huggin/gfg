@@ -1,6 +1,6 @@
-i  //{ Driver Code Starts
+//{ Driver Code Starts
 #include <bits/stdc++.h>
-    using namespace std;
+using namespace std;
 
 // } Driver Code Ends
 
