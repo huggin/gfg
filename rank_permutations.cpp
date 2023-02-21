@@ -1,55 +1,50 @@
 //{ Driver Code Starts
+// Initial Template for C++
+
 #include <bits/stdc++.h>
 using namespace std;
 
 // } Driver Code Ends
-// User function template for C++
+// User function Template for C++
 
-class Solution {
- public:
-  long long findRank(string str) {
-    // code here
-    long long ans = 0;
-    int n = str.size();
-    vector<long long> dp(str.size());
-    dp[0] = 1;
-    for (int i = 1; i < n; ++i) {
-      dp[i] = dp[i - 1] * i;
-    }
-    string s = str;
-    list<char> S;
-    for (auto c : str) {
-      S.push_back(c);
-    }
-    S.sort();
-
-    for (int i = 0; i < n; ++i) {
-      int count = 0;
-      list<char>::iterator it;
-      for (it = S.begin(); it != S.end(); ++it) {
-        if (*it == s[i]) {
-          break;
-        } else {
-          ++count;
+class Solution{
+public:
+    int rank(string S){
+        // code here
+        const int M = 1000003;
+        set<int> s;
+        int n = S.size();
+        for(int i = 0; i < n; ++i) {
+            if (s.find(S[i]) != s.end()) return 0;
+            s.insert(S[i]);
         }
-      }
-      ans += (count)*dp[n - 1 - i];
-      S.erase(it);
+        vector<long long> fact(n+1, 1);
+        for(int i = 1; i <= n; ++i)
+            fact[i] = fact[i-1] * i;
+        
+        long long ans = 1;
+        for(int i = 0; i < n; ++i) {
+            auto it = s.find(S[i]);
+            int d = distance(s.begin(), it);
+            ans += d * fact[n-1-i];
+            s.erase(it);
+        }
+        return ans % M;
     }
-    return ans + 1;
-  }
 };
 
 //{ Driver Code Starts.
-int main() {
-  int T;
-  cin >> T;
-  while (T--) {
-    string s;
-    cin >> s;
-    Solution obj;
-    long long ans = obj.findRank(s);
-    cout << ans << endl;
-  }
+
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        string S;
+        cin>>S;
+        
+        Solution ob;
+        cout<<ob.rank(S)<<endl;
+    }
+    return 0;
 }
 // } Driver Code Ends
