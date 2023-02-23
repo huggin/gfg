@@ -12,7 +12,7 @@ class Solution {
     for (int i = 2; i < n; ++i) {
       if (v[i]) {
         prime.push_back(i);
-        for (int j = i + i; j <= n; j += i) v[j] = 0;
+        for (int j = i * i; j <= n; j += i) v[j] = 0;
       }
     }
   }

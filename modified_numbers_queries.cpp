@@ -14,7 +14,7 @@ class Solution {
     for (int i = 2; i <= n; ++i) {
       if (ok[i]) {
         prime.push_back(i);
-        for (int j = i + i; j <= n; j += i) ok[j] = 0;
+        for (int j = i * i; j <= n; j += i) ok[j] = 0;
       }
     }
   }

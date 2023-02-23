@@ -13,7 +13,7 @@ class Solution {
     for (int i = 2; i <= N; ++i) {
       if (dp[i] == 1) {
         ans.push_back(i);
-        for (int j = i + i; j <= N; j += i) {
+        for (int j = i * i; j <= N; j += i) {
           dp[j] = 0;
         }
       }
