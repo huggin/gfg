@@ -13,7 +13,7 @@ class Solution {
     for (int i = 2; i < k + 1; ++i) {
       if (num[i] == 1) {
         prime.push_back(i);
-        for (int j = 2 * i; j < k + 1; j += i) {
+        for (int j = i * i; j < k + 1; j += i) {
           num[j] = 0;
         }
       }
