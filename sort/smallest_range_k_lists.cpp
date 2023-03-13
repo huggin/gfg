@@ -11,8 +11,7 @@ class Solution {
   pair<int, int> findSmallestRange(int KSortedArray[][N], int n, int k) {
     // code here
     priority_queue<pair<int, int>, vector<pair<int, int>>,
-                   greater<pair<int, int>>>
-        Q;
+                   greater<pair<int, int>>> Q;
     int ma = INT_MIN, mi = INT_MAX;
     for (int i = 0; i < k; ++i) {
       Q.emplace(KSortedArray[i][0], i);
