@@ -10,7 +10,7 @@ using namespace std;
 
 class Solution {
  public:
-  vector<vector<string>> Anagrams(vector<string>& string_list) {
+  vector<vector<string>> Anagrams(vector<string>& s) {
     // code here
     vector<vector<string>> ans;
     map<string, int> m;
