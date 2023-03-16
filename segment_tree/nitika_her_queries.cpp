@@ -22,7 +22,7 @@ class Solution {
     return st[i];
   }
 
-  int construct(int a[], int N) {
+  void construct(int a[], int N) {
     int sz = 2;
     for (; sz <= N; sz *= 2)
       ;

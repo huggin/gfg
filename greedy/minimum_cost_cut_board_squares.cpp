@@ -1,8 +1,8 @@
-i  //{ Driver Code Starts
+//{ Driver Code Starts
 /* Driver program to test above function */
 
 #include <bits/stdc++.h>
-    using namespace std;
+using namespace std;
 
 // } Driver Code Ends
 // User function Template for C++
