@@ -24,7 +24,8 @@ int main() {
 bool is_k_palin(string s, int k) {
   // Your code here
   int n = s.size();
-  int dp[n][n] = {0};
+  int dp[n][n];
+  memset(dp, 0, sizeof(dp));
   for (int i = 0; i < n; ++i) {
     dp[i][i] = 0;
   }

@@ -6,11 +6,12 @@ using namespace std;
 // } Driver Code Ends
 // User function template for C++
 class Solution {
- public:
+public:
   int isDivisible(string s) {
     // complete the function here
     int ans = 0;
-    for (int i = s.size() - 1; i >= 0; --i) ans = (ans * 2 + s[i] - '0') % 3;
+    for (int i = s.size() - 1; i >= 0; --i)
+      ans = (ans * 2 + s[i] - '0') % 3;
     return ans == 0;
   }
 };
