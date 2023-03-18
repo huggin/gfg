@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int maxBalls(int N, int M, vector<int> a, vector<int> b) {
     // code here
     int ans[2] = {0, 0};
@@ -24,8 +24,10 @@ class Solution {
         ans[1] += b[j++];
       else {
         int c = a[i], ii = 0, jj = 0;
-        while (i < N && a[i] == c) ii++, i++;
-        while (j < M && b[j] == c) jj++, j++;
+        while (i < N && a[i] == c)
+          ii++, i++;
+        while (j < M && b[j] == c)
+          jj++, j++;
         int t0 = max(ans[0] + ii * c, ans[1] + (jj + ii - 1) * c);
         int t1 = max(ans[1] + jj * c, ans[0] + (ii + jj - 1) * c);
         if (ii > 1 && jj > 1) {
@@ -49,8 +51,10 @@ int main() {
     int N, M;
     cin >> N >> M;
     vector<int> a(N), b(M);
-    for (int i = 0; i < N; i++) cin >> a[i];
-    for (int i = 0; i < M; i++) cin >> b[i];
+    for (int i = 0; i < N; i++)
+      cin >> a[i];
+    for (int i = 0; i < M; i++)
+      cin >> b[i];
 
     Solution ob;
     cout << ob.maxBalls(N, M, a, b) << "\n";
