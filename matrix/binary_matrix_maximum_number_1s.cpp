@@ -9,7 +9,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   vector<int> findMaxRow(vector<vector<int>> mat, int N) {
     // code here
     int i = 0, j = N - 1;
@@ -37,7 +37,8 @@ int main() {
     cin >> n;
     vector<vector<int>> arr(n, vector<int>(n));
     for (int i = 0; i < n; i++)
-      for (int j = 0; j < n; j++) cin >> arr[i][j];
+      for (int j = 0; j < n; j++)
+        cin >> arr[i][j];
     Solution obj;
     vector<int> ans = obj.findMaxRow(arr, n);
     for (int val : ans) {

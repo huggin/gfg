@@ -6,7 +6,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int buyMaximumProducts(int n, int k, int price[]) {
     // Write your code here
     vector<pair<int, int>> v(n);
