@@ -11,7 +11,7 @@ class Solution {
     return i <= 1 ? i : M - (long long)(M / i) * inv(M % i) % M;
   }
 
- public:
+public:
   int prefixStrings(int N) {
     // Your code goes here
     vector<long long> dp(N + 1);
