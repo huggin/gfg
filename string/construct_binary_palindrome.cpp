@@ -4,11 +4,12 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   string binaryPalindrome(int n, int k) {
     // Complete the function
     string ans(n, '0');
-    for (int i = 0; i < n; i += k) ans[i] = ans[n - i - 1] = '1';
+    for (int i = 0; i < n; i += k)
+      ans[i] = ans[n - i - 1] = '1';
     return ans;
   }
 };

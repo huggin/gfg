@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   // n: input to count the number of set bits
   // Function to return sum of count of set bits in the integers from 1 to n.
   int countSetBits(int n) {
@@ -23,8 +23,7 @@ class Solution {
       ++k;
     }
     int i = 1;
-    for (; i * 2 <= n; i *= 2)
-      ;
+    for (; i * 2 <= n; i *= 2);
     // cout << "i = " << i << endl;
     int ans = 0;
     for (int j = i; j > 0; j /= 2) {
@@ -45,13 +44,13 @@ class Solution {
 // Driver code
 int main() {
   int t;
-  cin >> t;    // input testcases
-  while (t--)  // while testcases exist
+  cin >> t;   // input testcases
+  while (t--) // while testcases exist
   {
     int n;
-    cin >> n;  // input n
+    cin >> n; // input n
     Solution ob;
-    cout << ob.countSetBits(n) << endl;  // print the answer
+    cout << ob.countSetBits(n) << endl; // print the answer
   }
   return 0;
 }
