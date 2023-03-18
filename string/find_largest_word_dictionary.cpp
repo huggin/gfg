@@ -6,19 +6,20 @@ using namespace std;
 // } Driver Code Ends
 // User function Template for C++
 class Solution {
- public:
-  bool ok(const string& s, const string& p) {
+public:
+  bool ok(const string &s, const string &p) {
     int k = 0;
     for (int i = 0; i < s.size() && k < p.size(); ++i) {
       if (s[i] == p[k]) {
         ++k;
       }
     }
-    if (k == p.size()) return true;
+    if (k == p.size())
+      return true;
     return false;
   }
 
- public:
+public:
   string findLongestWord(string S, vector<string> d) {
     // code here
     string ans;
@@ -43,7 +44,8 @@ int main() {
     int n;
     cin >> n;
     vector<string> d(n + 1);
-    for (int i = 0; i < n; i++) cin >> d[i];
+    for (int i = 0; i < n; i++)
+      cin >> d[i];
     string S;
     cin >> S;
     Solution ob;

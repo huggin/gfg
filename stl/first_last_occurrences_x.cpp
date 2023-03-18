@@ -4,11 +4,12 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   vector<int> firstAndLast(vector<int> &arr, int n, int x) {
     // Code here
     auto it = equal_range(arr.begin(), arr.end(), x);
-    if (it.first == arr.end() || *(it.first) != x) return vector<int>{-1};
+    if (it.first == arr.end() || *(it.first) != x)
+      return vector<int>{-1};
     return vector<int>{it.first - arr.begin(), it.second - arr.begin() - 1};
   }
 };

@@ -7,15 +7,18 @@ class Solution {
   const int M = 1e9 + 7;
   long long dp[10001];
   long long solve(int n) {
-    if (n == 1) return 1;
-    if (n == 0) return 1;
-    if (dp[n] != -1) return dp[n];
+    if (n == 1)
+      return 1;
+    if (n == 0)
+      return 1;
+    if (dp[n] != -1)
+      return dp[n];
     long long &ans = dp[n];
     ans = (solve(n - 1) + solve(n - 2) * (n - 1)) % M;
     return ans;
   }
 
- public:
+public:
   int countFriendsPairings(int n) {
     // code here
     memset(dp, -1, sizeof(dp));

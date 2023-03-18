@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   long long powerMod(string a, long long b, long long m) {
     // code here
     int n = a.size();
@@ -15,7 +15,8 @@ class Solution {
 
     long long ans = 1 % m;
     while (b) {
-      if (b & 1) ans = ans * d % m;
+      if (b & 1)
+        ans = ans * d % m;
       d = d * d % m;
       b >>= 1;
     }

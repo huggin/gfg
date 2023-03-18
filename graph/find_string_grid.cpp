@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
-  bool ok(vector<vector<char>>& g, int i, int j, const string& w) {
+  bool ok(vector<vector<char>> &g, int i, int j, const string &w) {
     int dx[] = {-1, -1, -1, 0, 0, 1, 1, 1};
     int dy[] = {-1, 0, 1, -1, 1, -1, 0, 1};
     int n = w.size();
@@ -18,13 +18,14 @@ class Solution {
             break;
           }
         }
-        if (l == n) return true;
+        if (l == n)
+          return true;
       }
     }
     return false;
   }
 
- public:
+public:
   vector<vector<int>> searchWord(vector<vector<char>> grid, string word) {
     // Code here
     vector<vector<int>> ans;
@@ -49,14 +50,16 @@ int main() {
     cin >> n >> m;
     vector<vector<char>> grid(n, vector<char>(m, 'x'));
     for (int i = 0; i < n; i++) {
-      for (int j = 0; j < m; j++) cin >> grid[i][j];
+      for (int j = 0; j < m; j++)
+        cin >> grid[i][j];
     }
     string word;
     cin >> word;
     Solution obj;
     vector<vector<int>> ans = obj.searchWord(grid, word);
     for (auto i : ans) {
-      for (auto j : i) cout << j << " ";
+      for (auto j : i)
+        cout << j << " ";
       cout << "\n";
     }
     if (ans.size() == 0) {
