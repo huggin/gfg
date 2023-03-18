@@ -18,7 +18,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   int sumOfDivisors(int N) {
     // Write Your Code here
     int ans = 0;

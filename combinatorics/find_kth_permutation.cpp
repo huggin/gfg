@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   string kthPermutation(int n, int k) {
     // code here
     --k;

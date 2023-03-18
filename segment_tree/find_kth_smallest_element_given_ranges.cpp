@@ -8,8 +8,8 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
-  vector<int> kthSmallestNum(vector<vector<int>>& range, vector<int> queries) {
+public:
+  vector<int> kthSmallestNum(vector<vector<int>> &range, vector<int> queries) {
     // Write your code here
     sort(range.begin(), range.end());
     vector<vector<int>> r;

@@ -8,14 +8,17 @@ class Solution {
   vector<vector<int>> dp;
   int n, m;
 
-  int solve(const string& s, const string& t, int i, int j) {
-    if (i == n || j == m) return 0;
-    if (dp[i][j] != -1) return dp[i][j];
-    if (s[i] == t[j]) return dp[i][j] = 1 + solve(s, t, i + 1, j + 1);
+  int solve(const string &s, const string &t, int i, int j) {
+    if (i == n || j == m)
+      return 0;
+    if (dp[i][j] != -1)
+      return dp[i][j];
+    if (s[i] == t[j])
+      return dp[i][j] = 1 + solve(s, t, i + 1, j + 1);
     return dp[i][j] = max(solve(s, t, i + 1, j), solve(s, t, i, j + 1));
   }
 
- public:
+public:
   int build_bridges(string str1, string str2) {
     // code here
     n = str1.size();

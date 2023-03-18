@@ -5,7 +5,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int *findTwoElement(int *arr, int n) {
     // code here
     int *ans = new int[2];
@@ -17,7 +17,8 @@ class Solution {
     }
 
     for (int i = 0; i < n; ++i) {
-      if (arr[i] > 0) ans[1] = i + 1;
+      if (arr[i] > 0)
+        ans[1] = i + 1;
     }
     return ans;
   }

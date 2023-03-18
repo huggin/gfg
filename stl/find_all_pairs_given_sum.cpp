@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   vector<pair<int, int>> allPairs(int A[], int B[], int N, int M, int X) {
     // Your code goes here
     sort(A, A + N);
@@ -29,8 +29,10 @@ int main() {
     cin >> N >> M >> X;
     int A[N], B[M];
 
-    for (int i = 0; i < N; i++) cin >> A[i];
-    for (int i = 0; i < M; i++) cin >> B[i];
+    for (int i = 0; i < N; i++)
+      cin >> A[i];
+    for (int i = 0; i < M; i++)
+      cin >> B[i];
 
     Solution ob;
     vector<pair<int, int>> vp = ob.allPairs(A, B, N, M, X);

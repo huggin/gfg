@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int totalFruits(int N, vector<int> &fruits) {
     int i = 0, j = 0;
     int ans = 0;
@@ -38,7 +38,8 @@ int main() {
     int N;
     cin >> N;
     vector<int> fruits(N);
-    for (int i = 0; i < N; i++) cin >> fruits[i];
+    for (int i = 0; i < N; i++)
+      cin >> fruits[i];
     Solution obj;
     cout << obj.totalFruits(N, fruits) << endl;
   }
