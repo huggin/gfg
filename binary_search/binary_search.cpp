@@ -8,7 +8,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   int binarysearch(int arr[], int n, int k) {
     // code here
     int lo = 0, hi = n - 1;
@@ -34,7 +34,8 @@ int main() {
     int N;
     cin >> N;
     int arr[N];
-    for (int i = 0; i < N; i++) cin >> arr[i];
+    for (int i = 0; i < N; i++)
+      cin >> arr[i];
     int key;
     cin >> key;
     Solution ob;

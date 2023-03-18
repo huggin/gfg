@@ -6,7 +6,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   vector<int> largestSquare(vector<vector<int>> M, int R, int C, int K, int Q,
                             int q_i[], int q_j[]) {
     // code here
@@ -82,13 +82,16 @@ int main() {
 
     int q_i[Q], q_j[Q];
 
-    for (int i = 0; i < Q; i++) cin >> q_i[i];
-    for (int i = 0; i < Q; i++) cin >> q_j[i];
+    for (int i = 0; i < Q; i++)
+      cin >> q_i[i];
+    for (int i = 0; i < Q; i++)
+      cin >> q_j[i];
 
     Solution ob;
     vector<int> res = ob.largestSquare(M, R, C, K, Q, q_i, q_j);
 
-    for (int i = 0; i < Q; i++) cout << res[i] << " ";
+    for (int i = 0; i < Q; i++)
+      cout << res[i] << " ";
     cout << endl;
   }
   return 0;

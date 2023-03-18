@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int maxSum(int N, vector<vector<int>> mat) {
     // code here
     vector<int> a(N);
@@ -16,7 +16,8 @@ class Solution {
       a[i] = max(mat[0][i], mat[1][i]);
       // cout << a[i] << ' ';
     }
-    if (N == 1) return a[0];
+    if (N == 1)
+      return a[0];
     vector<int> dp(N);
     dp[0] = a[0];
     dp[1] = a[1];
@@ -40,7 +41,8 @@ int main() {
     cin >> N;
     vector<vector<int>> mat(2, vector<int>(N, 0));
     for (int i = 0; i < 2; i++) {
-      for (int j = 0; j < N; j++) cin >> mat[i][j];
+      for (int j = 0; j < N; j++)
+        cin >> mat[i][j];
     }
 
     Solution ob;
