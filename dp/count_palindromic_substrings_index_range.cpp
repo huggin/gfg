@@ -23,7 +23,8 @@ int main() {
 
 int countPalinInRange(int n, string A, int q1, int q2) {
   // your code here
-  if (q1 > q2) swap(q1, q2);
+  if (q1 > q2)
+    swap(q1, q2);
   // cout << A.substr(q1, q2-q1+1) << endl;
   vector<vector<int>> dp(n, vector<int>(n));
   int ans = 0;

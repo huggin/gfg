@@ -10,7 +10,7 @@ class Solution {
   int minSteps(int A[], int N, int K) {
     // code here
     sort(A, A + N);
-    int sum[N] = {0};
+    int sum[N];
     sum[0] = A[0];
     for (int i = 1; i < N; ++i) {
       sum[i] = sum[i - 1] + A[i];
