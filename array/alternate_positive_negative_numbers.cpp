@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 // User function template for C++
 class Solution {
- public:
+public:
   void rearrange(int arr[], int n) {
     // code here
     vector<int> pos, neg;
