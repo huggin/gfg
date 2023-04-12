@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   vector<string> AllPossibleStrings(string s) {
     // Code here
     vector<string> ans;
@@ -32,7 +32,8 @@ int main() {
     cin >> s;
     Solution ob;
     vector<string> res = ob.AllPossibleStrings(s);
-    for (auto i : res) cout << i << " ";
+    for (auto i : res)
+      cout << i << " ";
     cout << "\n";
   }
   return 0;
