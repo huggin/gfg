@@ -8,12 +8,14 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   string findLargest(int N, int S) {
     // code here
-    if (S < 0) return "-1";
+    if (S < 0)
+      return "-1";
     if (S == 0) {
-      if (N == 1) return "0";
+      if (N == 1)
+        return "0";
       return "-1";
     }
     string ans;
@@ -28,7 +30,8 @@ class Solution {
         S = 0;
       }
     }
-    if (S > 0) return "-1";
+    if (S > 0)
+      return "-1";
     return ans;
   }
 };
