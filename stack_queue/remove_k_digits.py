@@ -1,4 +1,5 @@
-#User function Template for python3
+# User function Template for python3
+
 
 class Solution:
     def removeKdigits(self, S, K):
@@ -13,23 +14,23 @@ class Solution:
         while K > 0:
             s.pop()
             K -= 1
-            
+
         start = len(s)
         for i in range(len(s)):
-            if s[i] != '0':
+            if s[i] != "0":
                 start = i
                 break
-        
+
         if start == len(s):
-            return '0'
-        return ''.join(s[start:])
+            return "0"
+        return "".join(s[start:])
 
-#{ 
- # Driver Code Starts
-#Initial Template for Python 3
 
-if __name__ == '__main__':
+# {
+# Driver Code Starts
+# Initial Template for Python 3
 
+if __name__ == "__main__":
     t = int(input())
 
     for _ in range(t):
