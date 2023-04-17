@@ -1,8 +1,9 @@
-#User function Template for python3
+# User function Template for python3
 import bisect
 
+
 class Solution:
-    def countPairs(self,X, Y, m, n):
+    def countPairs(self, X, Y, m, n):
         # code here
         X.sort()
         Y.sort()
@@ -20,16 +21,17 @@ class Solution:
             else:
                 idx = bisect.bisect_left(Y, x+1)
                 ans += n - idx
-        
+
         for y in Y:
             if y == 1:
                 idx = bisect.bisect_left(X, 2)
                 ans += m - idx
-        
+
         return ans
-#{ 
+# {
  # Driver Code Starts
-#Initial Template for Python 3
+# Initial Template for Python 3
+
 
 if __name__ == '__main__':
     tc = int(input())

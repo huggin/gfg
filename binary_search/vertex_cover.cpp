@@ -29,8 +29,9 @@ class Solution {
 
     return n;
   }
-  bool ok(int k, vector<pair<int, int>>& edge) {
-    if (k == N) return true;
+  bool ok(int k, vector<pair<int, int>> &edge) {
+    if (k == N)
+      return true;
     long long mask = (1 << k) - 1;
     long long limit = 1 << N;
     int m = edge.size();
@@ -50,8 +51,8 @@ class Solution {
     return false;
   }
 
- public:
-  int vertexCover(int n, vector<pair<int, int>>& edges) {
+public:
+  int vertexCover(int n, vector<pair<int, int>> &edges) {
     // code here
     N = n;
     int lo = 1, hi = n;
