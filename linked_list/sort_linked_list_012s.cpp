@@ -29,7 +29,7 @@ struct Node *start = NULL;
 
 */
 class Solution {
- public:
+public:
   // Function to sort a linked list of 0s, 1s and 2s.
   Node *segregate(Node *head) {
     // Add code here
