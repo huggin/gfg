@@ -1,4 +1,4 @@
-#User function Template for python3
+# Template for python3
 
 class Solution:
     def countKdivPairs(self, arr, n, k):

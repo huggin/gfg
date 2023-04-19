@@ -1,7 +1,7 @@
-#User function Template for python3
+# User function Template for python3
 class Solution:
-	def checkTriplet(self,arr, n):
-    	# code here
+    def checkTriplet(self, arr, n):
+        # code here
         a = list(set(arr))
         a.sort()
         for i in range(2, len(a)):
@@ -15,12 +15,11 @@ class Solution:
                     k -= 1
                 else:
                     j += 1
-        
-        return False
-#{ 
- # Driver Code Starts
-#Initial Template for Python 3
 
+        return False
+# {
+# Driver Code Starts
+# Initial Template for Python 3
 
 
 if __name__ == '__main__':

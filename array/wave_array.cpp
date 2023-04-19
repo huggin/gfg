@@ -5,11 +5,11 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   // arr: input array
   // n: size of array
   // Function to sort the array into a wave-like array.
-  void convertToWave(int n, vector<int>& arr) {
+  void convertToWave(int n, vector<int> &arr) {
     // Your code here
     bool f = true;
     for (int i = 0; i < n - 1; ++i) {
@@ -31,16 +31,18 @@ class Solution {
 
 int main() {
   int t, n;
-  cin >> t;    // Input testcases
-  while (t--)  // While testcases exist
+  cin >> t;   // Input testcases
+  while (t--) // While testcases exist
   {
-    cin >> n;                                 // input size of array
-    vector<int> a(n);                         // declare vector of size n
-    for (int i = 0; i < n; i++) cin >> a[i];  // input elements of array
+    cin >> n;         // input size of array
+    vector<int> a(n); // declare vector of size n
+    for (int i = 0; i < n; i++)
+      cin >> a[i]; // input elements of array
     Solution ob;
     ob.convertToWave(n, a);
 
-    for (int i = 0; i < n; i++) cout << a[i] << " ";  // print array
+    for (int i = 0; i < n; i++)
+      cout << a[i] << " "; // print array
 
     cout << endl;
   }
