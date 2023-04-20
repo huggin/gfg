@@ -6,7 +6,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   // A[]: input array
   // N: input array
   // Function to sort the binary array.
@@ -32,15 +32,17 @@ int main() {
   // Input the number of testcases
   while (T--) {
     int N;
-    cin >> N;  // Input size of array N
+    cin >> N; // Input size of array N
     int A[N];
 
-    for (int i = 0; i < N; i++) cin >> A[i];
+    for (int i = 0; i < N; i++)
+      cin >> A[i];
 
     Solution obj;
     obj.binSort(A, N);
 
-    for (int x : A) cout << x << " ";
+    for (int x : A)
+      cout << x << " ";
 
     cout << endl;
   }

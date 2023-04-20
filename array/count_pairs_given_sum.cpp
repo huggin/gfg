@@ -8,7 +8,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   int getPairsCount(int arr[], int n, int k) {
     // code here
     unordered_map<int, int> m;
@@ -19,7 +19,8 @@ class Solution {
     int ans = 0;
 
     for (auto it = m.begin(); it != m.end(); ++it) {
-      if (v[it->first]) continue;
+      if (v[it->first])
+        continue;
       if (it->first == k - it->first) {
         ans += it->second * (it->second - 1) / 2;
         v[it->first] = 1;
