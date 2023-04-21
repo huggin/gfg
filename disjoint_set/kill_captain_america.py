@@ -17,7 +17,7 @@ class UF:
         return k
     
     def union(self, x, y):
-        px = self.find(x)
+        # px = self.find(x)
         py = self.find(y)
         self.parent[x] = py
         
@@ -35,6 +35,7 @@ class UF:
 class Solution:
     def captainAmerica (self, N, M, V):
         # code here
+        _ = M
         v = [[] for _ in range(N)]
 
         uf = UF(N)
