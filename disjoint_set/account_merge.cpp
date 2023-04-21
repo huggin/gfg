@@ -18,23 +18,25 @@ class Solution {
   void merge(int parent[], int i, int j) {
     i = find(parent, i);
     j = find(parent, j);
-    if (i == j) return;
+    if (i == j)
+      return;
     if (i < j)
       parent[j] = i;
     else
       parent[i] = j;
   }
 
- public:
-  vector<vector<string>> accountsMerge(vector<vector<string>>& accounts) {
+public:
+  vector<vector<string>> accountsMerge(vector<vector<string>> &accounts) {
     // code here
 
     int n = accounts.size();
     int parent[n];
-    for (int i = 0; i < n; ++i) parent[i] = i;
+    for (int i = 0; i < n; ++i)
+      parent[i] = i;
 
     vector<unordered_set<string>> vus;
-    for (auto& a : accounts) {
+    for (auto &a : accounts) {
       unordered_set<string> s(a.begin() + 1, a.end());
       vus.emplace_back(s);
     }
@@ -42,8 +44,10 @@ class Solution {
     for (int i = 1; i < n; ++i) {
       bool found = false;
       for (int j = 0; j < i; ++j) {
-        if (accounts[i][0] != accounts[j][0]) continue;
-        if (vus[j].empty()) continue;
+        if (accounts[i][0] != accounts[j][0])
+          continue;
+        if (vus[j].empty())
+          continue;
         for (int k = 1; k < accounts[i].size(); ++k) {
           if (vus[j].find(accounts[i][k]) != vus[j].end()) {
             merge(parent, i, j);
