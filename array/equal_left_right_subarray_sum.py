@@ -1,10 +1,13 @@
 # User function Template for python3
 
+import math
+
+
 class Solution:
     # Complete this function
-    
-    #Function to find equilibrium point in the array.
-    def equalSum(self,A, N):
+
+    # Function to find equilibrium point in the array.
+    def equalSum(self, A, N):
         # Your code here
         s = sum(A)
         pre = 0
@@ -12,27 +15,25 @@ class Solution:
             if pre == s - A[i] - pre:
                 return i+1
             pre += A[i]
-        
+
         return -1
 
 
-#{ 
+# {
  # Driver Code Starts
 # Initial Template for Python 3
-
-import math
 
 
 def main():
 
     T = int(input())
 
-    while(T > 0):
+    while (T > 0):
 
         N = int(input())
 
         A = [int(x) for x in input().strip().split()]
-        ob=Solution()
+        ob = Solution()
 
         print(ob.equalSum(A, N))
 
