@@ -1,7 +1,8 @@
 class Solution:
     def shuffleArray(self, arr, n):
         # Your code goes here
-        arr[:] = [item for pair in zip(arr[: n // 2], arr[n // 2 :]) for item in pair]
+        arr[:] = [item for pair in zip(
+            arr[: n // 2], arr[n // 2:]) for item in pair]
 
 
 # {

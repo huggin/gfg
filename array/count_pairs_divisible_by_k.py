@@ -1,6 +1,11 @@
 # Template for python3
 
 
+import sys
+import io
+import atexit
+
+
 class Solution:
     def countKdivPairs(self, arr, n, k):
         # code here
@@ -24,9 +29,6 @@ class Solution:
 # Driver Code Starts
 # Initial Template for Python 3
 
-import atexit
-import io
-import sys
 
 _INPUT_LINES = sys.stdin.read().splitlines()
 input = iter(_INPUT_LINES).__next__
