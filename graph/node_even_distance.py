@@ -1,4 +1,5 @@
 # User function Template for python3
+from collections import defaultdict
 from collections import deque
 
 
@@ -32,7 +33,6 @@ class Solution:
 # Driver Code Starts
 # Initial Template for Python 3
 
-from collections import defaultdict
 
 if __name__ == "__main__":
     t = int(input())
