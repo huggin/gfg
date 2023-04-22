@@ -4,10 +4,10 @@
 
 # Initial Template for Python 3
 
+from collections import deque
 import sys
 
 sys.setrecursionlimit(50000)
-from collections import deque
 
 
 # Tree Node
