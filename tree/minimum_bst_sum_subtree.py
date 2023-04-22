@@ -12,6 +12,10 @@ class Node:
         self.left=None
         self.right=None
 """
+from math import inf
+from sys import stdin, stdout
+from collections import deque
+from collections import defaultdict
 import sys
 
 
@@ -50,10 +54,6 @@ class Solution:
 # Driver Code Starts.
 
 # Initial Template for Python 3
-from collections import defaultdict
-from collections import deque
-from sys import stdin, stdout
-from math import inf
 
 
 # Tree Node

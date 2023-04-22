@@ -1,9 +1,11 @@
-#User function Template for python3
+# User function Template for python3
 from collections import deque
 
-#Function to construct the BST from its given level order traversal.
-def constructBst(arr,n):
-    #Your code here
+# Function to construct the BST from its given level order traversal.
+
+
+def constructBst(arr, n):
+    # Your code here
     if len(arr) == 0:
         return None
 
@@ -15,7 +17,7 @@ def constructBst(arr,n):
         curr = q.popleft()
         mi = curr[1]
         ma = curr[2]
-        #print(curr[0].data, mi, ma, arr[i])
+        # print(curr[0].data, mi, ma, arr[i])
         if mi < arr[i] < curr[0].data:
             curr[0].left = Node(arr[i])
             q.append((curr[0].left, mi, curr[0].data))
@@ -26,45 +28,43 @@ def constructBst(arr,n):
             curr[0].right = Node(arr[i])
             q.append((curr[0].right, curr[0].data, ma))
             i += 1
-    
+
     return root
-            
-        
 
 
-#{ 
+# {
  # Driver Code Starts
-#Initial Template for Python 3
+# Initial Template for Python 3
 class Node:
-    def __init__(self,val):
+    def __init__(self, val):
         self.data = val
         self.left = None
         self.right = None
 
-    
+
 def preOrder(root):
     if root is None:
-        return 
-    print(root.data,end=" ")
+        return
+    print(root.data, end=" ")
     preOrder(root.left)
     preOrder(root.right)
-    
 
 
 def main():
-    testcases=int(input())
-    while(testcases>0):
-        root=None
-        sizeOfArray=int(input())
-        arr=[int(x) for x in input().strip().split()]
-      
-        root=constructBst(arr,sizeOfArray)
-        
+    testcases = int(input())
+    while (testcases > 0):
+        root = None
+        sizeOfArray = int(input())
+        arr = [int(x) for x in input().strip().split()]
+
+        root = constructBst(arr, sizeOfArray)
+
         preOrder(root)
         print()
-       
-        testcases-=1
 
-if __name__=="__main__":
+        testcases -= 1
+
+
+if __name__ == "__main__":
     main()
 # } Driver Code Ends

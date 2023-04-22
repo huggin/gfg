@@ -19,11 +19,16 @@ class Tree:
         self.right = None
 
 '''
+import sys
+import io
+import atexit
 from collections import deque
 
-#Function to make binary tree from linked list.
+# Function to make binary tree from linked list.
+
+
 def convert(head):
-  
+
     # code here
     root = None
     q = deque()
@@ -45,17 +50,13 @@ def convert(head):
                 left = True
                 p = q.popleft()
         head = head.next
-                
+
     return root
-        
 
 
-#{ 
+# {
  # Driver Code Starts
 # Initial Template for Python 3
-import atexit
-import io
-import sys
 
 # Contributed by : Nikhil Kumar Singh
 
