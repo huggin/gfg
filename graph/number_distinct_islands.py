@@ -1,20 +1,22 @@
-#User function Template for python3
+# User function Template for python3
 
 import sys
 from collections import deque
 from typing import List
 sys.setrecursionlimit(10**8)
+
+
 class Solution:
-    def countDistinctIslands(self, grid : List[List[int]]) -> int:
+    def countDistinctIslands(self, grid: List[List[int]]) -> int:
         # code here
         sign = set()
         n = len(grid)
         m = len(grid[0])
-        
+
         marked = [[0 for _ in range(m)] for _ in range(n)]
         dx = [-1, 0, 0, 1]
         dy = [0, -1, 1, 0]
-        
+
         q = deque()
         for i in range(n):
             for j in range(m):
@@ -24,7 +26,7 @@ class Solution:
                     q.append(i)
                     q.append(j)
                     marked[i][j] = 1
-                    
+
                     while len(q) > 0:
                         x = q.popleft()
                         y = q.popleft()
@@ -37,7 +39,7 @@ class Solution:
                                 marked[nx][ny] = 1
                                 q.append(nx)
                                 q.append(ny)
-    
+
                     s1 = 0
                     s2 = 0
                     for t in total:
@@ -45,16 +47,17 @@ class Solution:
                         s2 = s2 * 10 + t[1]
                     sign.add((s1, s2))
         return len(sign)
-#{ 
+# {
  # Driver Code Starts
-#Initial Template for Python 3
+# Initial Template for Python 3
 
-if __name__=="__main__":
+
+if __name__ == "__main__":
     for _ in range(int(input())):
-        n,m=map(int,input().strip().split())
-        grid=[]
+        n, m = map(int, input().strip().split())
+        grid = []
         for i in range(n):
             grid.append([int(i) for i in input().strip().split()])
-        obj=Solution()
+        obj = Solution()
         print(obj.countDistinctIslands(grid))
 # } Driver Code Ends

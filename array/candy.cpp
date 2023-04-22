@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int minCandy(int N, vector<int> &ratings) {
     // code here
     vector<int> left(N), right(N);
