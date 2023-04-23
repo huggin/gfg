@@ -1,9 +1,9 @@
-#User function Template for python3
+# User function Template for python3
 
 class Solution:
-    def decodedString(self, s : str) -> str:
+    def decodedString(self, s: str) -> str:
         # code here
-        
+
         stack = []
         for c in s:
             if c == ']':
@@ -18,15 +18,16 @@ class Solution:
             else:
                 stack.append(c)
         return ''.join(stack)
-#{ 
+# {
  # Driver Code Starts
-#Initial Template for Python 3
+# Initial Template for Python 3
+
 
 if __name__ == '__main__':
     t = int(input())
     for _ in range(t):
         s = input()
-        
+
         ob = Solution()
         print(ob.decodedString(s))
 # } Driver Code Ends

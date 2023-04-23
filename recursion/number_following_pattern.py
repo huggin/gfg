@@ -1,4 +1,4 @@
-#User function Template for python3
+# User function Template for python3
 class Solution:
     def solve(self, s, k, curr, c):
         if k == len(s):
@@ -7,7 +7,7 @@ class Solution:
                 self.ans = self.ans * 10 + i
             self.found = True
             return True
-        
+
         if s[k] == 'I':
             for i in range(curr[-1]+1, 10):
                 if i in curr:
@@ -24,11 +24,11 @@ class Solution:
                 if self.solve(s, k+1, curr, i):
                     return True
                 curr.pop()
-        
+
         return False
-        
+
     def printMinNumberForPattern(self, S):
-        # code here 
+        # code here
         self.found = False
         curr = []
         for i in range(1, 10):
@@ -36,17 +36,18 @@ class Solution:
             if self.solve(S, 0, curr, i):
                 return self.ans
             curr.pop()
-        
+
         return -1
 
-#{ 
+
+# {
  # Driver Code Starts
-#Initial Template for Python 3
-if __name__ == '__main__': 
-    t = int (input ())
-    for _ in range (t):
-        
-        S=str(input())
+# Initial Template for Python 3
+if __name__ == '__main__':
+    t = int(input())
+    for _ in range(t):
+
+        S = str(input())
 
         ob = Solution()
         print(ob.printMinNumberForPattern(S))
