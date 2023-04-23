@@ -1,8 +1,8 @@
-#User function Template for python3
+# User function Template for python3
 
 class Solution:
-    def minLength(self, s, n): 
-        #code here 
+    def minLength(self, s, n):
+        # code here
         stack = []
         for c in s:
             if len(stack) == 0:
@@ -29,18 +29,19 @@ class Solution:
                 stack.pop()
             else:
                 stack.append(c)
-        
+
         return len(stack)
 
-#{ 
+# {
  # Driver Code Starts
-#Initial Template for Python 3
+# Initial Template for Python 3
 
-if __name__ == '__main__': 
+
+if __name__ == '__main__':
     t = int(input())
     for _ in range(t):
         n = int(input())
         s = input()
         ob = Solution()
-        print(ob.minLength(s,n))
+        print(ob.minLength(s, n))
 # } Driver Code Ends
