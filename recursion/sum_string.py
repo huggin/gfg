@@ -1,7 +1,7 @@
-#User function Template for python3
+# User function Template for python3
 class Solution:
-    def isSumString (self, s:str) -> int:
-        # code here 
+    def isSumString(self, s: str) -> int:
+        # code here
         n = len(s)
         for i in range(1, n):
             x = int(s[:i])
@@ -22,17 +22,17 @@ class Solution:
                     break
         return 0
 
-#{ 
+
+# {
  # Driver Code Starts
-#Initial Template for Python 3
-if __name__ == '__main__': 
-    t = int (input ())
-    for _ in range (t):
-        
-        S=str(input())
+# Initial Template for Python 3
+if __name__ == '__main__':
+    t = int(input())
+    for _ in range(t):
+
+        S = str(input())
 
         ob = Solution()
-        
+
         print(ob.isSumString(S))
 # } Driver Code Ends
-
