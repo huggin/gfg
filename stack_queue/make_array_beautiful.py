@@ -1,6 +1,7 @@
-#User function Template for python3
+# User function Template for python3
 
 from typing import List
+
 
 class Solution:
     def makeBeautiful(self, arr: List[int]) -> List[int]:
@@ -13,20 +14,20 @@ class Solution:
                 s.append(a)
 
         return s
-                
 
-#{ 
+
+# {
  # Driver Code Starts
-#Initial Template for Python 3
+# Initial Template for Python 3
 
-if __name__=="__main__":
+if __name__ == "__main__":
     t = int(input())
     for _ in range(t):
-        
+
         n = int(input())
-        
-        arr = list(map(int,input().split()))
-        
+
+        arr = list(map(int, input().split()))
+
         obj = Solution()
         res = obj.makeBeautiful(arr)
         print(*res)

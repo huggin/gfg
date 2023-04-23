@@ -1,15 +1,20 @@
-#User function Template for python3
+# User function Template for python3
+
+
+import atexit
+import sys
+import io
 
 
 class Solution:
-    #Function to convert an infix expression to a postfix expression.
+    # Function to convert an infix expression to a postfix expression.
     def InfixtoPostfix(self, exp):
-        #code here
+        # code here
         op = []
         ans = []
         ops = "+-*/^()"
-        left = {'+':1, '-':1, '*':2, '/':2, '^':3, '(':0}
-        right = {'+':1, '-':1, '*':2, '/':2, '^':3, '(':4}
+        left = {'+': 1, '-': 1, '*': 2, '/': 2, '^': 3, '(': 0}
+        right = {'+': 1, '-': 1, '*': 2, '/': 2, '^': 3, '(': 4}
         for c in exp:
             if not c in ops:
                 ans.append(c)
@@ -38,8 +43,7 @@ class Solution:
                     ans.append(s1+s2+op[-1])
                     op.pop()
                 op.append(c)
-            
-            
+
         while len(op) > 0:
             s = op[-1]
             ans.append(s)
@@ -47,32 +51,28 @@ class Solution:
 
         return ''.join(ans)
 
-#{ 
+# {
  # Driver Code Starts
-#Initial Template for Python 3
+# Initial Template for Python 3
 
-import atexit
-import io
-import sys
 
 # This code is contributed by Nikhil Kumar Singh(nickzuck_007)
-
 
 _INPUT_LINES = sys.stdin.read().splitlines()
 input = iter(_INPUT_LINES).__next__
 _OUTPUT_BUFFER = io.StringIO()
 sys.stdout = _OUTPUT_BUFFER
 
-@atexit.register
 
+@atexit.register
 def write():
     sys.__stdout__.write(_OUTPUT_BUFFER.getvalue())
 
 
 if __name__ == '__main__':
     test_cases = int(input())
-    for cases in range(test_cases) :
+    for cases in range(test_cases):
         exp = str(input())
-        ob=Solution()
+        ob = Solution()
         print(ob.InfixtoPostfix(exp))
 # } Driver Code Ends

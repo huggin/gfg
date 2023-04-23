@@ -1,7 +1,7 @@
-#User function Template for python3
+# User function Template for python3
 class Solution:
-    def valid(self, s): 
-        #code here
+    def valid(self, s):
+        # code here
         stack = []
         for c in s:
             if c in '([{':
@@ -21,15 +21,15 @@ class Solution:
                     return 0
                 else:
                     stack.pop()
-        
+
         return 1 if len(stack) == 0 else 0
-            
 
-#{ 
+
+# {
  # Driver Code Starts
-#Initial Template for Python 3
+# Initial Template for Python 3
 
-if __name__ == '__main__': 
+if __name__ == '__main__':
     t = int(input())
     for _ in range(t):
         s = input().strip()

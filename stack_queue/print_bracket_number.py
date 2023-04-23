@@ -1,7 +1,7 @@
-#User function Template for python3
+# User function Template for python3
 class Solution:
-	def barcketNumbers(self, S):
-		# code here
+    def barcketNumbers(self, S):
+        # code here
         i = 1
         ans = []
         stack = []
@@ -13,22 +13,23 @@ class Solution:
             elif s == ')':
                 ans.append(stack[-1])
                 stack.pop()
-        
+
         return ans
 
-#{ 
+# {
  # Driver Code Starts
-#Initial Template for Python 3
+# Initial Template for Python 3
+
 
 if __name__ == '__main__':
-	T=int(input())
-	for i in range(T):
-		S = input()
-		ob = Solution()
-		answer = ob.barcketNumbers(S)
-		for value in answer:
-			print(value, end = " ")
-		print()
+    T = int(input())
+    for i in range(T):
+        S = input()
+        ob = Solution()
+        answer = ob.barcketNumbers(S)
+        for value in answer:
+            print(value, end=" ")
+        print()
 
 
 # } Driver Code Ends

@@ -1,8 +1,8 @@
-#User function Template for python3
+# User function Template for python3
 
 class Solution:
-	def recreationalSpot(self, arr, n):
-		# Your code goes here 
+    def recreationalSpot(self, arr, n):
+        # Your code goes here
         mi = -1
         s = []
         for a in reversed(arr):
@@ -12,26 +12,24 @@ class Solution:
                 mi = s[-1]
                 s.pop()
             s.append(a)
-        
-        return False
-        
 
-#{ 
+        return False
+
+
+# {
  # Driver Code Starts
-#Initial Template for Python 3
+# Initial Template for Python 3
 
 if __name__ == '__main__':
-    tcs=int(input())
+    tcs = int(input())
     for _ in range(tcs):
-        n=int(input())
-        arr=[int(x) for x in input().split()]
+        n = int(input())
+        arr = [int(x) for x in input().split()]
         ob = Solution()
-        if ob.recreationalSpot(arr,n):
-        	print("True")
+        if ob.recreationalSpot(arr, n):
+            print("True")
         else:
-        	print("False")
-
-
+            print("False")
 
 
 # } Driver Code Ends
