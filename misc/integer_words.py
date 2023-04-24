@@ -1,16 +1,16 @@
-#User function Template for python3
+# User function Template for python3
 
 def word(k, ans):
     dist = {
-        1:"one",
-        2:"two",
-        3:"three",
-        4:"four",
-        5:"five",
-        6:"six",
-        7:"seven",
-        8:"eight",
-        9:"nine",
+        1: "one",
+        2: "two",
+        3: "three",
+        4: "four",
+        5: "five",
+        6: "six",
+        7: "seven",
+        8: "eight",
+        9: "nine",
     }
     dist2 = {
         10: "ten",
@@ -25,14 +25,14 @@ def word(k, ans):
         19: "nineteen",
     }
     dist3 = {
-        2 : "twenty",
-        3 : "thirty",
-        4 : "forty",
-        5 : "fifty",
-        6 : "sixty",
-        7 : "seventy",
-        8 : "eighty",
-        9 : "ninety"
+        2: "twenty",
+        3: "thirty",
+        4: "forty",
+        5: "fifty",
+        6: "sixty",
+        7: "seventy",
+        8: "eighty",
+        9: "ninety"
     }
     if k >= 100:
         ans.append(dist[k//100])
@@ -40,18 +40,18 @@ def word(k, ans):
         k %= 100
         if k > 0:
             ans.append("and")
-    
+
     if 10 <= k <= 19:
         ans.append(dist2[k])
         return
-        
+
     k1 = k // 10
     k2 = k % 10
     if k1 != 0:
         ans.append(dist3[k1])
     if k2 != 0:
         ans.append(dist[k2])
-        
+
 
 class Solution:
     def convertToWords(self, n):
@@ -78,12 +78,13 @@ class Solution:
                     ans.append("and")
                 word(n, ans)
                 n = 0
-        
+
         return ' '.join(ans)
 
-#{ 
+# {
  # Driver Code Starts
-#Initial Template for Python 3
+# Initial Template for Python 3
+
 
 if __name__ == '__main__':
     tc = int(input())

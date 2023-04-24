@@ -6,7 +6,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int minSteps(int A[], int N, int K) {
     // code here
     sort(A, A + N);
@@ -21,7 +21,8 @@ class Solution {
       int k1 = lower_bound(A, A + N, i) - A - 1;
       int k2 = upper_bound(A, A + N, i + K) - A;
       int temp = sum[N - 1] - sum[k2 - 1] - (N - k2) * (i + K);
-      if (k1 >= 0) temp += sum[k1];
+      if (k1 >= 0)
+        temp += sum[k1];
       ans = min(ans, temp);
     }
     return ans;
@@ -38,7 +39,8 @@ int main() {
     cin >> N >> K;
 
     int A[N];
-    for (int i = 0; i < N; i++) cin >> A[i];
+    for (int i = 0; i < N; i++)
+      cin >> A[i];
 
     Solution ob;
     cout << ob.minSteps(A, N, K) << endl;

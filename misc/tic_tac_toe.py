@@ -1,4 +1,4 @@
-#User function Template for python3
+# User function Template for python3
 
 class Solution:
     def isValid(self, board):
@@ -28,12 +28,13 @@ class Solution:
         if board[2] == board[4] and board[2] == board[6]:
             if board[2] == 'O':
                 return False
-        
+
         count = board.count('X')
         return True if count == 5 else False
-#{ 
+# {
  # Driver Code Starts
-#Initial Template for Python 3
+# Initial Template for Python 3
+
 
 if __name__ == '__main__':
     tc = int(input())
