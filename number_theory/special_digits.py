@@ -1,5 +1,6 @@
 from collections import deque
 
+
 def inv(n, m):
     k = m - 2
     ans = 1
@@ -10,8 +11,9 @@ def inv(n, m):
         k >>= 1
     return ans
 
+
 class Solution:
-    def bestNumbers(self, N : int, A : int, B : int, C : int, D : int) -> int:
+    def bestNumbers(self, N: int, A: int, B: int, C: int, D: int) -> int:
         # code here
         M = 1000000007
         fact = [1]
@@ -21,10 +23,10 @@ class Solution:
             A, B = B, A
         if C > D:
             C, D = D, C
-            
+
         mi = A * N
         ma = B * N
-        
+
         s = []
         q = deque()
         q.append(C)
@@ -39,8 +41,8 @@ class Solution:
                     q.append(curr * 10 + C)
                 if D != C and curr * 10 + D <= ma:
                     q.append(curr * 10 + D)
-        
-        if A == B: 
+
+        if A == B:
             if mi in s:
                 return pow(2, N, M)
             else:
@@ -52,33 +54,30 @@ class Solution:
             if x * (B-A) != (ma - num):
                 continue
             ans = (ans + fact[N] * inv(fact[x] * fact[N-x] % M, M)) % M
-        
+
         return ans
 
-#{ 
+
+# {
  # Driver Code Starts
-if __name__=="__main__":
+if __name__ == "__main__":
     t = int(input())
     for _ in range(t):
-        
+
         N = int(input())
-        
-        
+
         A = int(input())
-        
-        
+
         B = int(input())
-        
-        
+
         C = int(input())
-        
-        
+
         D = int(input())
-        
+
         obj = Solution()
         res = obj.bestNumbers(N, A, B, C, D)
-        
+
         print(res)
-        
+
 
 # } Driver Code Ends

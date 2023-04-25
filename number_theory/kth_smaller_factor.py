@@ -1,9 +1,10 @@
-#User function Template for python3
+# User function Template for python3
 import math
 
+
 class Solution:
-    def kThSmallestFactor(self, N , K):
-        # code here 
+    def kThSmallestFactor(self, N, K):
+        # code here
         n = int(math.sqrt(N)) + 1
         factor = []
         for i in range(1, n):
@@ -17,15 +18,16 @@ class Solution:
             return -1
         return factor[K-1]
 
-#{ 
+# {
  # Driver Code Starts
-#Initial Template for Python 3
+# Initial Template for Python 3
 
-if __name__ == '__main__': 
-    t = int (input ())
-    for _ in range (t):
-        N,K=map(int,input().split())
-        
+
+if __name__ == '__main__':
+    t = int(input())
+    for _ in range(t):
+        N, K = map(int, input().split())
+
         ob = Solution()
-        print(ob.kThSmallestFactor(N,K))
+        print(ob.kThSmallestFactor(N, K))
 # } Driver Code Ends

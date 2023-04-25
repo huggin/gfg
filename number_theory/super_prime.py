@@ -1,9 +1,10 @@
-#User function Template for python3
+# User function Template for python3
 import math
 
+
 class Solution:
-	def superPrimes(self, n):
-		# code here
+    def superPrimes(self, n):
+        # code here
         ok = [1] * (n+1)
         ok[0] = ok[1] = 0
         for i in range(2, int(math.sqrt(n+1)) + 1):
@@ -17,16 +18,16 @@ class Solution:
         return ans
 
 
-#{ 
+# {
  # Driver Code Starts
-#Initial Template for Python 3
+# Initial Template for Python 3
 
 if __name__ == '__main__':
-	T=int(input())
-	for i in range(T):
-		n = int(input())
-		ob = Solution()
-		ans = ob.superPrimes(n)
-		print(ans)
+    T = int(input())
+    for i in range(T):
+        n = int(input())
+        ob = Solution()
+        ans = ob.superPrimes(n)
+        print(ans)
 
 # } Driver Code Ends
