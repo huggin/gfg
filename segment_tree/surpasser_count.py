@@ -5,12 +5,14 @@ import bisect
 class Solution:
     def sum(self, bit, idx):
         ans = 0
+        idx += 1
         while idx > 0:
             ans += bit[idx]
             idx -= idx & -idx
         return ans
 
     def update(self, bit, n, idx, val):
+        idx += 1
         while idx < n:
             bit[idx] += val
             idx += idx & -idx
@@ -26,19 +28,20 @@ class Solution:
 
         bit = [0] * (n + 1)
         ans = [0] * n
-        for i in range(n-1, -1, -1):
+        for i in range(n - 1, -1, -1):
             inv = self.sum(bit, arr[i] - 1)
-            ans[i] = n-1 - i - inv
-            self.update(bit, n+1, arr[i], 1)
+            ans[i] = n - 1 - i - inv
+            self.update(bit, n + 1, arr[i], 1)
 
         return ans
 
+
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     tc = int(input())
     while tc > 0:
         n = int(input())

@@ -32,16 +32,19 @@ class Solution {
   }
 
   int read(int l, int r, int qs, int qe, int i) {
-    if (qs > qe) swap(qs, qe);
-    if (qs <= l && qe >= r) return st[i];
-    if (qs > r || qe < l) return 0;
+    if (qs > qe)
+      swap(qs, qe);
+    if (qs <= l && qe >= r)
+      return st[i];
+    if (qs > r || qe < l)
+      return 0;
     int mid = l + (r - l) / 2;
     int lv = read(l, mid, qs, qe, i * 2 + 1);
     int rv = read(mid + 1, r, qs, qe, i * 2 + 2);
     return lv ^ rv;
   }
 
- public:
+public:
   vector<int> specialXor(int N, int Q, int a[], vector<int> query[]) {
     // code here
     construct(a, N);
@@ -50,7 +53,7 @@ class Solution {
     for (int i = 0; i < Q; ++i) {
       ans.push_back(read(0, N - 1, query[i][0] - 1, query[i][1] - 1, 0));
     }
-    for (int& e : ans) {
+    for (int &e : ans) {
       e = e ^ st[0];
     }
     return ans;
@@ -66,7 +69,8 @@ int main() {
     int N, Q;
     cin >> N >> Q;
     int a[N];
-    for (int i = 0; i < N; i++) cin >> a[i];
+    for (int i = 0; i < N; i++)
+      cin >> a[i];
     int l, r;
     vector<int> query[Q];
     for (int i = 0; i < Q; i++) {
@@ -77,7 +81,8 @@ int main() {
 
     Solution ob;
     vector<int> ans = ob.specialXor(N, Q, a, query);
-    for (int u : ans) cout << u << "\n";
+    for (int u : ans)
+      cout << u << "\n";
   }
   return 0;
 }

@@ -26,7 +26,8 @@ class Solution {
   }
 
   void update(int pos, int v, int l, int r, int i, int op) {
-    if (pos < l || pos > r) return;
+    if (pos < l || pos > r)
+      return;
     if (l == r) {
       st[i] = v;
       return;
@@ -40,7 +41,7 @@ class Solution {
       st[i] = st[i * 2 + 1] ^ st[i * 2 + 2];
   }
 
- public:
+public:
   vector<int> left(int N, int A[], int q, vector<pair<int, int>> query) {
     // code here
     st.assign(N * 2 - 1, 0);
@@ -48,7 +49,7 @@ class Solution {
     build(A, 0, N - 1, 0, op);
     vector<int> ans;
 
-    for (auto& q : query) {
+    for (auto &q : query) {
       if (q.first >= N) {
         ans.push_back(-1);
         continue;
@@ -69,7 +70,8 @@ int main() {
     int N, q;
     cin >> N;
     int A[N];
-    for (int i = 0; i < N; i++) cin >> A[i];
+    for (int i = 0; i < N; i++)
+      cin >> A[i];
     cin >> q;
     vector<pair<int, int>> query(q);
     int x, y;
@@ -80,7 +82,8 @@ int main() {
 
     Solution ob;
     vector<int> ans = ob.left(N, A, q, query);
-    for (int u : ans) cout << u << "\n";
+    for (int u : ans)
+      cout << u << "\n";
   }
   return 0;
 }
