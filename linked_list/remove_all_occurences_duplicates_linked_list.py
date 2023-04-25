@@ -1,45 +1,47 @@
 # User function Template for python3
 
 """
-# Node Class
-class Node:
-    def __init__(self, data):   # data -> value stored in node
-        self.data = data
-        self.next = None
+# Linked list Node class
+
+    class Node :
+        def __init__(self, val):
+            self.data = val
+            self.next = None
+
 """
 
 
 class Solution:
-    def reverseBetween(self, head, m, n):
+    def removeAllDuplicates(self, head):
         # code here
-        newhead = head
-        prev = None
-        for i in range(m - 1):
-            prev = head
+        newhead = Node(2**31)
+        prev = newhead
+        prev_prev = None
+        dup = False
+        while head:
+            if head.data != prev.data:
+                if dup:
+                    prev_prev.next = head
+                    prev = head
+                else:
+                    prev_prev = prev
+                    prev.next = head
+                    prev = head
+                dup = False
+            else:
+                prev_prev.next = head
+                prev = head
+                dup = True
             head = head.next
 
-        last = None
-        for i in range(m, n + 1):
-            next = head.next
-            head.next = last
-            last = head
-            head = next
+        if dup:
+            prev_prev.next = head
 
-        if prev:
-            prev.next = last
-        else:
-            newhead = last
-
-        while last.next:
-            last = last.next
-        last.next = head
-        return newhead
+        return newhead.next
 
 
 # {
 # Driver Code Starts
-# Initial Template for Python 3
-
 # Initial Template for Python 3
 
 import atexit
@@ -89,23 +91,18 @@ class LinkedList:
         while curr_node:
             print(curr_node.data, end=" ")
             curr_node = curr_node.next
-        print()
+        print(" ")
 
 
 if __name__ == "__main__":
     t = int(input())
     for cases in range(t):
-        inp = list(map(int, input().split()))
-        N = inp[0]
-        m = inp[1]
-        n = inp[2]
-
+        N = int(input())
         a = LinkedList()  # create a new linked list 'a'.
         nodes = list(map(int, input().strip().split()))
         for x in nodes:
             a.append(x)
-
         ob = Solution()
-        newhead = ob.reverseBetween(a.head, m, n)
-        a.printList(newhead)
+        head = ob.removeAllDuplicates(a.head)
+        a.printList(head)
 # } Driver Code Ends

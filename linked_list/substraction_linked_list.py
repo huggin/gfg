@@ -1,4 +1,4 @@
-#User function Template for python3
+# User function Template for python3
 def getNumber(l):
     num = 0
     p = l
@@ -7,12 +7,13 @@ def getNumber(l):
         p = p.next
     return num
 
-def subLinkedList(l1, l2): 
+
+def subLinkedList(l1, l2):
     # Code here
     # return head of difference list
     a1 = getNumber(l1)
     a2 = getNumber(l2)
-    
+
     a = abs(a1 - a2)
     arr = map(int, str(a))
     ans = LinkedList()
@@ -20,15 +21,18 @@ def subLinkedList(l1, l2):
         ans.insert(i)
     return ans.head
 
-#{ 
- # Driver Code Starts
-#Initial Template for Python 3
+
+# {
+# Driver Code Starts
+# Initial Template for Python 3
+
 
 # Node Class
 class Node:
     def __init__(self, data):
         self.data = data
         self.next = None
+
 
 # Linked List Class
 class LinkedList:
@@ -45,28 +49,29 @@ class LinkedList:
             self.tail.next = Node(val)
             self.tail = self.tail.next
 
+
 # prints the elements of linked list starting with head
 def printList(n):
     while n:
-        print(n.data,end=' ')
+        print(n.data, end=" ")
         n = n.next
     print()
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     for _ in range(int(input())):
-        
         n = int(input())
-        arr1 = ( int(x) for x in input().split() )
+        arr1 = (int(x) for x in input().split())
         LL1 = LinkedList()
         for i in arr1:
             LL1.insert(i)
-        
+
         m = int(input())
-        arr2 = ( int(x) for x in input().split() )
+        arr2 = (int(x) for x in input().split())
         LL2 = LinkedList()
         for i in arr2:
             LL2.insert(i)
-        
+
         res = subLinkedList(LL1.head, LL2.head)
         printList(res)
 # } Driver Code Ends

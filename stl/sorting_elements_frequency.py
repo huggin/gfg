@@ -6,7 +6,6 @@ from collections import Counter
 
 
 class Solution:
-
     # Function to sort the array according to frequency of elements.
     def sortByFreq(self, a, n):
         # code here
@@ -16,7 +15,7 @@ class Solution:
 
 
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
 
 
@@ -31,7 +30,7 @@ def write():
     sys.__stdout__.write(_OUTPUT_BUFFER.getvalue())
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     t = int(input())
     for tt in range(t):
         n = int(input())
