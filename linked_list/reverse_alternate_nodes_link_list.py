@@ -10,6 +10,8 @@ class Node:
 		self.next = None
 
 """
+
+
 class Solution:
     def rearrange(self, head):
         # Code here
@@ -25,12 +27,13 @@ class Solution:
             if not p.next:
                 break
             p = p.next
-            
+
         p.next = prev
         return head
 
-#{ 
- # Driver Code Starts
+
+# {
+# Driver Code Starts
 # Node Class
 class Node:
     # Constructor to initialize the node object
@@ -53,22 +56,22 @@ class LinkedList:
 
     def printList(self):
         temp = self.head
-        while (temp):
+        while temp:
             print(temp.data, end=" ")
             temp = temp.next
         print()
 
 
 # Code execution starts here
-if __name__ == '__main__':
+if __name__ == "__main__":
     t = int(input())
-    while (t > 0):
+    while t > 0:
         llist = LinkedList()
         n = int(input())
         values = list(map(int, input().strip().split()))
         for i in reversed(values):
             llist.push(i)
-            
+
         Solution().rearrange(llist.head)
         llist.printList()
         t -= 1

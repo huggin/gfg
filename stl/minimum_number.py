@@ -8,8 +8,9 @@ class Solution:
         # code here
         return reduce(gcd, arr)
 
+
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
 
 

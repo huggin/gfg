@@ -3,7 +3,6 @@ import heapq
 
 
 class Solution:
-
     def findMaxGuests(self, Entry, Exit, N):
         # code here
         guests = [(Entry[i], Exit[i]) for i in range(N)]
@@ -22,17 +21,16 @@ class Solution:
 
         return (ans, time)
 
+
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
 
 
-if __name__ == '__main__':
-
+if __name__ == "__main__":
     t = int(input())
 
     for _ in range(t):
-
         N = int(input())
 
         entry = [int(x) for x in input().split()]
