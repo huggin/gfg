@@ -1,7 +1,8 @@
-#User function Template for python3
+# User function Template for python3
+
 
 class Solution:
-    def count (self, N):
+    def count(self, N):
         # code here
         ans = []
         n = 1
@@ -13,21 +14,18 @@ class Solution:
         return ans
 
 
+# {
+# Driver Code Starts
+# Initial Template for Python 3
 
-#{ 
- # Driver Code Starts
-#Initial Template for Python 3
 
-
-if __name__ == '__main__': 
+if __name__ == "__main__":
     ob = Solution()
-    t = int (input ())
-    for _ in range (t):
+    t = int(input())
+    for _ in range(t):
         N = int(input())
-        ans = ob.count(N);
+        ans = ob.count(N)
         print(*ans)
-
-
 
 
 # } Driver Code Ends

@@ -1,6 +1,6 @@
-#User function Template for python3
+# User function Template for python3
 class Solution:
-    def count(self, N, A, X): 
+    def count(self, N, A, X):
         # code here
         prefix = 0
         ans = N
@@ -13,24 +13,23 @@ class Solution:
             for a in A:
                 if (a & prefix) == prefix:
                     cnt += 1
-            
+
             ans = min(ans, N - cnt)
             prefix ^= 1 << i
-            #print(ans)
-        
+            # print(ans)
+
         return ans
 
-#{ 
- # Driver Code Starts
-#Initial Template for Python 3
+
+# {
+# Driver Code Starts
+# Initial Template for Python 3
 
 
-
-
-if __name__ == '__main__': 
+if __name__ == "__main__":
     t = int(input())
     for _ in range(t):
-        N,X = map(int,input().strip().split())
+        N, X = map(int, input().strip().split())
         A = list(map(int, input().strip().split()))
         ob = Solution()
         ans = ob.count(N, A, X)

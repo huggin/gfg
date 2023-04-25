@@ -1,5 +1,6 @@
-#User function Template for python3
+# User function Template for python3
 from collections import Counter
+
 
 class Solution:
     def repeatingEven(self, arr, n):
@@ -11,11 +12,12 @@ class Solution:
             return [-1]
         return ans
 
-#{ 
- # Driver Code Starts
-#Initial Template for Python 3
 
-if __name__ == '__main__':
+# {
+# Driver Code Starts
+# Initial Template for Python 3
+
+if __name__ == "__main__":
     tc = int(input())
     while tc > 0:
         n = int(input())

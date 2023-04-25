@@ -1,11 +1,13 @@
-#User function Template for python3
+# User function Template for python3
+
 
 def count(a, b):
     ans = 0
     for i in range(18):
-        if (a & (1 << i)) != (b & (1<<i)):
+        if (a & (1 << i)) != (b & (1 << i)):
             ans += 1
     return ans
+
 
 class Solution:
     def findX(self, arr, n, q):
@@ -17,18 +19,16 @@ class Solution:
             if ans == -1 or cnt > k or cnt == k and ans > arr[i]:
                 ans = arr[i]
                 cnt = k
-        
+
         return ans
 
-#{ 
- # Driver Code Starts
-#Initial Template for Python 3
+
+# {
+# Driver Code Starts
+# Initial Template for Python 3
 
 
-
-
-
-if __name__ == '__main__':
+if __name__ == "__main__":
     tc = int(input())
     while tc > 0:
         n, q = list(map(int, input().strip().split()))
