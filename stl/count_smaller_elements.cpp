@@ -1,6 +1,5 @@
 //{ Driver Code Starts
 #include <bits/stdc++.h>
-
 #include <ext/pb_ds/assoc_container.hpp>
 #include <ext/pb_ds/tree_policy.hpp>
 
@@ -10,38 +9,18 @@ using namespace std;
 // } Driver Code Ends
 // User function template for C++
 class Solution {
-  vector<int> bit;
-
-  int sum(int idx, int n) {
-    int ans = 0;
-    for (++idx; idx > 0; idx -= idx & -idx) {
-      ans += bit[idx];
-    }
-    return ans;
-  }
-
-  void update(int idx, int n, int value) {
-    for (++idx; idx < n; idx += idx & -idx) {
-      bit[idx] += value;
-    }
-  }
+  using ordered_set = tree<int, null_type, less_equal<int>, rb_tree_tag,
+                           tree_order_statistics_node_update>;
 
 public:
   vector<int> constructLowerArray(int *arr, int n) {
     // code here
-    bit.assign(n + 1, 0);
-
-    vector<int> a(arr, arr + n);
-    sort(a.begin(), a.end());
-
-    for (int i = 0; i < n; ++i) {
-      arr[i] = lower_bound(a.begin(), a.end(), arr[i]) - a.begin() + 1;
-    }
-
+    ordered_set s;
     vector<int> ans(n);
+
     for (int i = n - 1; i >= 0; --i) {
-      ans[i] = sum(arr[i] - 1, n + 1);
-      update(arr[i], n + 1, 1);
+      ans[i] = s.order_of_key(arr[i]);
+      s.insert(arr[i]);
     }
     return ans;
   }

@@ -8,7 +8,7 @@ using namespace std;
 class Solution {
   vector<pair<int, int>> st;
 
-  pair<int, int> build(const vector<int>& a, int tl, int tr, int i) {
+  pair<int, int> build(const vector<int> &a, int tl, int tr, int i) {
     if (tl == tr) {
       st[i] = {1, 1};
       return st[i];
@@ -26,7 +26,7 @@ class Solution {
     return st[i];
   }
 
-  void update(vector<int>& a, int tl, int tr, int v, int pos, int val) {
+  void update(vector<int> &a, int tl, int tr, int v, int pos, int val) {
     if (tl == tr) {
       a[pos] = val;
     } else {
@@ -44,9 +44,10 @@ class Solution {
     }
   }
 
-  pair<int, int> query(const vector<int>& a, int tl, int tr, int l, int r,
+  pair<int, int> query(const vector<int> &a, int tl, int tr, int l, int r,
                        int v) {
-    if (l > r) return {0, 0};
+    if (l > r)
+      return {0, 0};
     if (l == tl && r == tr) {
       return st[v];
     }
@@ -69,7 +70,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   vector<int> solveQueries(vector<int> nums, vector<vector<int>> Queries) {
     // Code here
     int n = nums.size();
@@ -77,7 +78,7 @@ class Solution {
     build(nums, 0, n - 1, 0);
 
     vector<int> ans;
-    for (auto& q : Queries) {
+    for (auto &q : Queries) {
       if (q[0] == 1) {
         update(nums, 0, n - 1, 0, q[1] - 1, q[2]);
       } else {
@@ -102,7 +103,8 @@ int main() {
     int n;
     cin >> n;
     vector<int> nums(n);
-    for (int i = 0; i < n; i++) cin >> nums[i];
+    for (int i = 0; i < n; i++)
+      cin >> nums[i];
     int q;
     cin >> q;
     vector<vector<int>> Queries;
@@ -113,7 +115,8 @@ int main() {
     }
     Solution obj;
     vector<int> ans = obj.solveQueries(nums, Queries);
-    for (auto i : ans) cout << i << "\n";
+    for (auto i : ans)
+      cout << i << "\n";
   }
   return 0;
 }
