@@ -2,9 +2,11 @@
 
 
 class Solution:
-    def setAllRangeBits(self, N, L, R):
+    def xorCal(self, k):
         # code here
-        return N | (1 << R) - (1 << L - 1)
+        if k == 1:
+            return 2
+        return -1 if k & (k + 1) else k // 2
 
 
 # {
@@ -14,8 +16,8 @@ class Solution:
 if __name__ == "__main__":
     t = int(input())
     for _ in range(t):
-        N, L, R = map(int, input().split())
+        k = int(input())
 
         ob = Solution()
-        print(ob.setAllRangeBits(N, L, R))
+        print(ob.xorCal(k))
 # } Driver Code Ends

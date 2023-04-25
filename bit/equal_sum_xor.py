@@ -9,11 +9,11 @@ def countValues(n):
     return ans
 
 
-#{ 
- # Driver Code Starts
+# {
+# Driver Code Starts
 # Your code goes here
-if __name__=='__main__':
-    t =int(input())
+if __name__ == "__main__":
+    t = int(input())
     for i in range(t):
         n = int(input().strip())
         print(countValues(n))
