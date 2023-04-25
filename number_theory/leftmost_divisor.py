@@ -1,4 +1,4 @@
-#User function Template for python3
+# User function Template for python3
 class Solution:
     def leftMostDiv(self, p, q):
         # code here
@@ -16,18 +16,18 @@ class Solution:
         return -1
 
 
-#{ 
+# {
  # Driver Code Starts
-#Initial Template for Python 3
+# Initial Template for Python 3
 
-#Initial Template for Python 3
+# Initial Template for Python 3
 if __name__ == '__main__':
-    T=int(input())
+    T = int(input())
     for i in range(T):
-        p,q = input().split()
-        p=int(p)
-        q=int(q)
-        ob = Solution();
+        p, q = input().split()
+        p = int(p)
+        q = int(q)
+        ob = Solution()
         print(ob.leftMostDiv(p, q))
 
 # } Driver Code Ends
