@@ -2,6 +2,7 @@
 
 # Complete this code
 
+
 class Solution:
     # Function to rearrange an array so that arr[i] becomes arr[arr[i]]
     # with O(1) extra space.
@@ -17,15 +18,15 @@ class Solution:
 
         return arr
 
+
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
 
 
 def main():
     T = int(input())
-    while (T > 0):
-
+    while T > 0:
         n = int(input())
 
         arr = [int(x) for x in input().strip().split()]
