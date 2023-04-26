@@ -1,4 +1,5 @@
-#User function Template for python3
+# User function Template for python3
+
 
 class Solution:
     def findSubArraySum(self, Arr, N, k):
@@ -10,18 +11,19 @@ class Solution:
         for a in Arr:
             prefix += a
             if prefix - k in m:
-                ans += m[prefix-k]
+                ans += m[prefix - k]
             m[prefix] = m.get(prefix, 0) + 1
-        
+
         return ans
 
-#{ 
- # Driver Code Starts
-#Initial Template for Python 3
 
-if __name__ == '__main__':
+# {
+# Driver Code Starts
+# Initial Template for Python 3
+
+if __name__ == "__main__":
     t = int(input())
-    for _ in range (t):
+    for _ in range(t):
         N = int(input())
         Arr = input().split()
         for itr in range(N):
