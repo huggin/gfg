@@ -2,7 +2,7 @@
 class Solution:
     def leftMostDiv(self, p, q):
         # code here
-        a = p ** q
+        a = p**q
         s = str(a)
         if len(s) > 18:
             s = s[0:10]
@@ -17,11 +17,11 @@ class Solution:
 
 
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
 
 # Initial Template for Python 3
-if __name__ == '__main__':
+if __name__ == "__main__":
     T = int(input())
     for i in range(T):
         p, q = input().split()

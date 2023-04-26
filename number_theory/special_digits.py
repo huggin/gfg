@@ -17,7 +17,7 @@ class Solution:
         # code here
         M = 1000000007
         fact = [1]
-        for i in range(1, N+1):
+        for i in range(1, N + 1):
             fact.append(fact[-1] * i % M)
         if A > B:
             A, B = B, A
@@ -51,19 +51,18 @@ class Solution:
         ans = 0
         for num in s:
             x = (ma - num) // (B - A)
-            if x * (B-A) != (ma - num):
+            if x * (B - A) != (ma - num):
                 continue
-            ans = (ans + fact[N] * inv(fact[x] * fact[N-x] % M, M)) % M
+            ans = (ans + fact[N] * inv(fact[x] * fact[N - x] % M, M)) % M
 
         return ans
 
 
 # {
- # Driver Code Starts
+# Driver Code Starts
 if __name__ == "__main__":
     t = int(input())
     for _ in range(t):
-
         N = int(input())
 
         A = int(input())

@@ -30,18 +30,18 @@ class Solution:
 
                 for k, v in dict.copy().items():
                     if k * a in gs:
-                        dict[k * a] = (dict.get(k*a, 0) + dict[k]) % M
+                        dict[k * a] = (dict.get(k * a, 0) + dict[k]) % M
 
         ans = 0
         for k, v in dict.items():
             ans = (ans + v) % M
 
-        ans = ans * 2 ** one
+        ans = ans * 2**one
         return ans
 
 
 # {
- # Driver Code Starts
+# Driver Code Starts
 class IntArray:
     def __init__(self) -> None:
         pass
@@ -59,7 +59,6 @@ class IntArray:
 if __name__ == "__main__":
     t = int(input())
     for _ in range(t):
-
         n = int(input())
 
         arr = IntArray().Input(n)

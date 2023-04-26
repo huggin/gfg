@@ -1,5 +1,6 @@
 # User function Template for python3
 
+
 class Solution:
     def countSpecialNumbers(self, N, arr):
         # Code here
@@ -8,7 +9,7 @@ class Solution:
         for a in arr:
             if mark[a] == -1:
                 mark[a] = 1
-                for i in range(a+a, ma+1, a):
+                for i in range(a + a, ma + 1, a):
                     mark[i] = 0
             elif mark[a] == 1:
                 mark[a] = 0
@@ -20,13 +21,13 @@ class Solution:
 
         return ans
 
+
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
 
 
-if __name__ == '__main__':
-
+if __name__ == "__main__":
     T = int(input())
     while T > 0:
         N = int(input())
