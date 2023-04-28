@@ -8,7 +8,7 @@ int marked[101][101][101] = {0};
 double dp[101][101][101] = {0};
 
 class Solution {
- public:
+public:
   double findProb(int N, int start_x, int start_y, int steps) {
     // Code here
     memset(dp, 0, sizeof(dp));
@@ -26,7 +26,8 @@ class Solution {
       int x = tp.first / N;
       int y = tp.first % N;
       int s = tp.second;
-      if (s == steps) break;
+      if (s == steps)
+        break;
       for (int i = 0; i < 8; ++i) {
         int nx = x + dx[i];
         int ny = y + dy[i];

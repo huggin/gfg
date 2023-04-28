@@ -12,18 +12,19 @@ struct edge {
   edge(int a, int b, int v1, int v2) : v(a), w(b), s(v1), c(v2) {}
 
   int other(int vertex) {
-    if (v == vertex) return w;
+    if (v == vertex)
+      return w;
     return v;
   }
 };
 
 class Solution {
- public:
-  int shortestPath(int n, int m, int a, int b, vector<vector<int>>& edges) {
+public:
+  int shortestPath(int n, int m, int a, int b, vector<vector<int>> &edges) {
     // code here
-    vector<edge*> adj[n];
-    for (auto& e : edges) {
-      edge* ed = new edge(e[0] - 1, e[1] - 1, e[2], e[3]);
+    vector<edge *> adj[n];
+    for (auto &e : edges) {
+      edge *ed = new edge(e[0] - 1, e[1] - 1, e[2], e[3]);
       adj[e[0] - 1].push_back(ed);
       adj[e[1] - 1].push_back(ed);
     }
@@ -46,7 +47,8 @@ class Solution {
       int d = get<0>(c);
       int used = get<1>(c);
       int v = get<2>(c);
-      if (v == dst) return d;
+      if (v == dst)
+        return d;
 
       for (auto e : adj[v]) {
         int w = e->other(v);

@@ -3,16 +3,14 @@
 using namespace std;
 
 class Array {
- public:
-  template <class T>
-  static void input(vector<T> &A, int n) {
+public:
+  template <class T> static void input(vector<T> &A, int n) {
     for (int i = 0; i < n; i++) {
       scanf("%d ", &A[i]);
     }
   }
 
-  template <class T>
-  static void print(vector<T> &A) {
+  template <class T> static void print(vector<T> &A) {
     for (int i = 0; i < A.size(); i++) {
       cout << A[i] << " ";
     }
@@ -22,7 +20,7 @@ class Array {
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int chocolates(int n, vector<int> &arr) {
     // code here
     int i = 0, j = n - 1;

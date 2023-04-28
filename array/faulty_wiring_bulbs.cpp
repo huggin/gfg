@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int countFlips(int a[], int n) {
     // code here.
     int ans = 0;
@@ -26,7 +26,8 @@ int main() {
   while (t--) {
     cin >> n;
     int a[n];
-    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
     Solution ob;
     cout << ob.countFlips(a, n) << endl;
   }

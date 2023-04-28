@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 // User function Template for C++
 class Solution {
- public:
+public:
   long long maxPossibleValue(int N, vector<int> A, vector<int> B) {
     // code here
     long long ans = 0;
@@ -20,7 +20,8 @@ class Solution {
         mi = A[i];
       }
     }
-    if (sticks % 4 == 0) return ans;
+    if (sticks % 4 == 0)
+      return ans;
     return ans - 2 * mi;
   }
 };

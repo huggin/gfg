@@ -7,13 +7,14 @@ using namespace std;
 // User function Template for C++
 class Solution {
   vector<int> all;
-  bool dfs(int k, vector<int>& arr, vector<int>& marked, vector<int>& safe) {
+  bool dfs(int k, vector<int> &arr, vector<int> &marked, vector<int> &safe) {
     marked[k] = 1;
     all.push_back(k);
     if (arr[k] == 0) {
       return false;
     }
-    if (k + arr[k] < 0 || k + arr[k] >= arr.size()) return true;
+    if (k + arr[k] < 0 || k + arr[k] >= arr.size())
+      return true;
     if (!marked[k + arr[k]]) {
       return dfs(k + arr[k], arr, marked, safe);
     } else if (!safe[k + arr[k]]) {
@@ -22,8 +23,8 @@ class Solution {
     return true;
   }
 
- public:
-  int goodStones(int n, vector<int>& arr) {
+public:
+  int goodStones(int n, vector<int> &arr) {
     // Code here
     vector<int> marked(n);
     vector<int> safe(n);

@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 // User function template for C++
 class Solution {
- public:
+public:
   vector<int> valueEqualToIndex(int arr[], int n) {
     // code here
     vector<int> ans;

@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   long long findMinDiff(vector<long long> a, long long n, long long m) {
     // code
     sort(begin(a), end(a));

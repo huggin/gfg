@@ -9,7 +9,7 @@ using namespace std;
 
 class Solution {
   vector<int> post;
-  void dfs(int u, vector<pair<int, int>> adj[], vector<int>& marked) {
+  void dfs(int u, vector<pair<int, int>> adj[], vector<int> &marked) {
     marked[u] = 1;
     for (auto w : adj[u]) {
       if (!marked[w.first]) {
@@ -19,7 +19,7 @@ class Solution {
     post.push_back(u);
   }
 
- public:
+public:
   vector<int> maximumDistance(vector<vector<int>> edges, int v, int e,
                               int src) {
     // code here
@@ -65,7 +65,8 @@ int main() {
     int src;
     cin >> src;
     vector<vector<int>> edges(e, vector<int>(3));
-    for (auto& j : edges) cin >> j[0] >> j[1] >> j[2];
+    for (auto &j : edges)
+      cin >> j[0] >> j[1] >> j[2];
 
     Solution s;
     vector<int> ans = s.maximumDistance(edges, v, e, src);

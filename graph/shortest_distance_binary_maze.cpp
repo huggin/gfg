@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int shortestPath(vector<vector<int>> &grid, pair<int, int> source,
                    pair<int, int> destination) {
     // code here
@@ -37,8 +37,10 @@ class Solution {
       for (int k = 0; k < 4; ++k) {
         int nx = x + dx[k];
         int ny = y + dy[k];
-        if (nx < 0 || nx >= n || ny < 0 || ny >= m) continue;
-        if (grid[nx][ny] == 0 || dist[nx][ny] != -1) continue;
+        if (nx < 0 || nx >= n || ny < 0 || ny >= m)
+          continue;
+        if (grid[nx][ny] == 0 || dist[nx][ny] != -1)
+          continue;
 
         dist[nx][ny] = dist[x][y] + 1;
         Q.push(nx);

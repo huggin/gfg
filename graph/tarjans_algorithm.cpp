@@ -37,14 +37,15 @@ class Solution {
         S.pop();
         v.push_back(c);
         onStack[c] = 0;
-        if (c == i) break;
+        if (c == i)
+          break;
       }
       sort(v.begin(), v.end());
       ans.push_back(v);
     }
   }
 
- public:
+public:
   // Function to return a list of lists of integers denoting the members
   // of strongly connected components in the given graph.
   vector<vector<int>> tarjans(int V, vector<int> adj[]) {

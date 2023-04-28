@@ -10,21 +10,23 @@ class Solution {
   bool cycle;
 
   void dfs(int v, vector<int> adj[]) {
-    if (cycle) return;
+    if (cycle)
+      return;
     visited[v] = 1;
     on[v] = 1;
     for (auto w : adj[v]) {
       if (!visited[w]) {
         dfs(w, adj);
       } else {
-        if (on[w]) cycle = true;
+        if (on[w])
+          cycle = true;
       }
     }
     on[v] = 0;
   }
 
- public:
-  bool isPossible(int N, vector<pair<int, int> >& p) {
+public:
+  bool isPossible(int N, vector<pair<int, int>> &p) {
     // Code here
     vector<int> adj[N];
     for (int i = 0; i < p.size(); ++i) {
@@ -46,7 +48,7 @@ int main() {
   cin >> tc;
   while (tc--) {
     int N, P;
-    vector<pair<int, int> > prerequisites;
+    vector<pair<int, int>> prerequisites;
     cin >> N;
     cin >> P;
     for (int i = 0; i < P; ++i) {

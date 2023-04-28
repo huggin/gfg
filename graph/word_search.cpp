@@ -14,13 +14,15 @@ class Solution {
 
   bool solve(int i, int j, int k) {
     if (b[i][j] == w[k]) {
-      if (k == w.size() - 1) return true;
+      if (k == w.size() - 1)
+        return true;
       for (int ii = 0; ii < 4; ++ii) {
         int ni = i + dx[ii];
         int nj = j + dy[ii];
         if (ni >= 0 && ni < n && nj >= 0 && nj < m && v[ni][nj] == 0) {
           v[ni][nj] = 1;
-          if (solve(ni, nj, k + 1)) return true;
+          if (solve(ni, nj, k + 1))
+            return true;
           v[ni][nj] = 0;
         }
       }
@@ -28,8 +30,8 @@ class Solution {
     return false;
   }
 
- public:
-  bool isWordExist(vector<vector<char>>& board, string word) {
+public:
+  bool isWordExist(vector<vector<char>> &board, string word) {
     // Code here
     b = board;
     w = word;
@@ -40,7 +42,8 @@ class Solution {
         if (b[i][j] == word[0]) {
           memset(v, 0, sizeof(v));
           v[i][j] = 1;
-          if (solve(i, j, 0)) return 1;
+          if (solve(i, j, 0))
+            return 1;
         }
       }
     }
@@ -57,7 +60,8 @@ int main() {
     cin >> n >> m;
     vector<vector<char>> board(n, vector<char>(m, '*'));
     for (int i = 0; i < n; i++)
-      for (int j = 0; j < m; j++) cin >> board[i][j];
+      for (int j = 0; j < m; j++)
+        cin >> board[i][j];
     string word;
     cin >> word;
     Solution obj;

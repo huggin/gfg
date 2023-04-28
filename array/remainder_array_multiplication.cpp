@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int remArray(int N, int arr[], int K) {
     // code here
     int ans = 1;
@@ -25,7 +25,8 @@ int main() {
     cin >> N;
 
     int arr[N];
-    for (int i = 0; i < N; i++) cin >> arr[i];
+    for (int i = 0; i < N; i++)
+      cin >> arr[i];
 
     cin >> K;
 

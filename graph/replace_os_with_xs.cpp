@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   vector<vector<char>> fill(int n, int m, vector<vector<char>> mat) {
     vector<vector<char>> ans(mat);
     vector<vector<char>> v(n, vector<char>(m));
@@ -59,7 +59,8 @@ class Solution {
     }
     for (int i = 0; i < n; ++i) {
       for (int j = 0; j < m; ++j) {
-        if (v[i][j] == 0) ans[i][j] = 'X';
+        if (v[i][j] == 0)
+          ans[i][j] = 'X';
       }
     }
     return ans;
@@ -76,7 +77,8 @@ int main() {
     cin >> n >> m;
     vector<vector<char>> mat(n, vector<char>(m, '.'));
     for (int i = 0; i < n; i++)
-      for (int j = 0; j < m; j++) cin >> mat[i][j];
+      for (int j = 0; j < m; j++)
+        cin >> mat[i][j];
 
     Solution ob;
     vector<vector<char>> ans = ob.fill(n, m, mat);

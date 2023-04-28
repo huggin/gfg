@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   string exercise(int N, int M, vector<vector<int>> A, int src, int dest,
                   int X) {
     // code here
@@ -30,7 +30,8 @@ class Solution {
     while (!Q.empty()) {
       auto c = Q.top();
       Q.pop();
-      if (visited[c.second]) continue;
+      if (visited[c.second])
+        continue;
       visited[c.second] = 1;
       dist[c.second] = c.first;
       for (int i = 0; i < adj[c.second].size(); i += 2) {
@@ -40,7 +41,8 @@ class Solution {
       }
     }
     // cout << dist[dest] << endl;
-    if (dist[dest] <= X) return "Neeman's Cotton Classics";
+    if (dist[dest] <= X)
+      return "Neeman's Cotton Classics";
     return "Neeman's Wool Joggers";
   }
 };

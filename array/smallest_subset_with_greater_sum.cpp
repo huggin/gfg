@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int minSubset(vector<int> &Arr, int N) {
     sort(Arr.begin(), Arr.end());
     long long t = accumulate(Arr.begin(), Arr.end(), 0LL);

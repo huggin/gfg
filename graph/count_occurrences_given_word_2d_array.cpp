@@ -34,7 +34,7 @@ class Solution {
     }
   }
 
- public:
+public:
   int findOccurrence(vector<vector<char>> &mat, string target) {
     n = mat.size();
     m = mat[0].size();
@@ -66,7 +66,8 @@ int main() {
     vector<vector<char>> mat(R);
     for (int i = 0; i < R; i++) {
       mat[i].resize(C);
-      for (int j = 0; j < C; j++) cin >> mat[i][j];
+      for (int j = 0; j < C; j++)
+        cin >> mat[i][j];
     }
     string target;
     cin >> target;

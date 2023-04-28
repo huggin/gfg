@@ -8,10 +8,11 @@ using namespace std;
 // Back-end complete function Template for C++
 
 class Solution {
- public:
+public:
   vector<vector<int>> transitiveClosure(int N, vector<vector<int>> graph) {
     // code here
-    for (int i = 0; i < N; ++i) graph[i][i] = 1;
+    for (int i = 0; i < N; ++i)
+      graph[i][i] = 1;
     for (int k = 0; k < N; ++k) {
       for (int i = 0; i < N; ++i) {
         for (int j = 0; j < N; ++j) {
@@ -33,12 +34,14 @@ int main() {
     cin >> N;
     vector<vector<int>> graph(N, vector<int>(N, -1));
     for (int i = 0; i < N; i++)
-      for (int j = 0; j < N; j++) cin >> graph[i][j];
+      for (int j = 0; j < N; j++)
+        cin >> graph[i][j];
 
     Solution ob;
     vector<vector<int>> ans = ob.transitiveClosure(N, graph);
     for (int i = 0; i < N; i++) {
-      for (int j = 0; j < N; j++) cout << ans[i][j] << " ";
+      for (int j = 0; j < N; j++)
+        cout << ans[i][j] << " ";
       cout << "\n";
     }
   }

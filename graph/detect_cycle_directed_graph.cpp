@@ -10,7 +10,8 @@ class Solution {
   bool cycle;
 
   void dfs(int v, vector<int> adj[]) {
-    if (cycle) return;
+    if (cycle)
+      return;
     visited[v] = 1;
     onStack[v] = 1;
     for (auto w : adj[v]) {
@@ -23,7 +24,7 @@ class Solution {
     onStack[v] = 0;
   }
 
- public:
+public:
   // Function to detect cycle in a directed graph.
   bool isCyclic(int V, vector<int> adj[]) {
     // code here

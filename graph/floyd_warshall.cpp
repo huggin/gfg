@@ -8,8 +8,8 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
-  void shortest_distance(vector<vector<int>>& m) {
+public:
+  void shortest_distance(vector<vector<int>> &m) {
     // Code here
     for (int k = 0; k < m.size(); ++k) {
       for (int i = 0; i < m.size(); ++i) {

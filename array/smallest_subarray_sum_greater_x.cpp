@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int smallestSubWithSum(int arr[], int n, int x) {
     // Your code goes here
     int t = 0;
@@ -23,7 +23,8 @@ class Solution {
       t -= arr[i++];
     }
 
-    if (ans == INT_MAX) return 0;
+    if (ans == INT_MAX)
+      return 0;
     return ans;
   }
 };
@@ -38,7 +39,8 @@ int main() {
     int n, x;
     cin >> n >> x;
     int a[n];
-    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
     Solution obj;
     cout << obj.smallestSubWithSum(a, n, x) << endl;
   }

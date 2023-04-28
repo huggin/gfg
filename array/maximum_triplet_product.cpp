@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   long long maxTripletProduct(long long arr[], int n) {
     // Complete the function
     sort(arr, arr + n);
@@ -29,7 +29,8 @@ int main() {
     int n, i;
     cin >> n;
     long long arr[n];
-    for (i = 0; i < n; i++) cin >> arr[i];
+    for (i = 0; i < n; i++)
+      cin >> arr[i];
     Solution ob;
     cout << ob.maxTripletProduct(arr, n);
     cout << "\n";

@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int LongestBitonicSequence(vector<int> nums) {
     // code here
     int g[1001] = {0}, l[1001] = {0};
@@ -43,7 +43,8 @@ int main() {
     int n;
     cin >> n;
     vector<int> nums(n);
-    for (int i = 0; i < n; i++) cin >> nums[i];
+    for (int i = 0; i < n; i++)
+      cin >> nums[i];
     Solution ob;
     int ans = ob.LongestBitonicSequence(nums);
     cout << ans << "\n";

@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int isNegativeWeightCycle(int n, vector<vector<int>> edges) {
     // Code here
     vector<vector<int>> g(n, vector<int>(n, 100000));

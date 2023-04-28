@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   // Function to find equilibrium point in the array.
   // a: input array
   // n: size of array
@@ -18,7 +18,8 @@ class Solution {
       else
         right += a[j--];
     }
-    if (left == right) return i + 1;
+    if (left == right)
+      return i + 1;
     return -1;
   }
 };

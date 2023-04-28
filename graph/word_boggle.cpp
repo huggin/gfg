@@ -14,29 +14,32 @@ class Solution {
   int v[51][51];
 
   bool solve(int i, int j, int t) {
-    if (t == w.size() - 1 && b[i][j] == w[t]) return true;
-    if (b[i][j] != w[t]) return false;
+    if (t == w.size() - 1 && b[i][j] == w[t])
+      return true;
+    if (b[i][j] != w[t])
+      return false;
     for (int k = 0; k < 8; ++k) {
       int ni = i + dx[k];
       int nj = j + dy[k];
       if (ni >= 0 && ni < n && nj >= 0 && nj < m && v[ni][nj] == 0) {
         v[ni][nj] = 1;
-        if (solve(ni, nj, t + 1)) return true;
+        if (solve(ni, nj, t + 1))
+          return true;
         v[ni][nj] = 0;
       }
     }
     return false;
   }
 
- public:
-  vector<string> wordBoggle(vector<vector<char>>& board,
-                            vector<string>& dictionary) {
+public:
+  vector<string> wordBoggle(vector<vector<char>> &board,
+                            vector<string> &dictionary) {
     // Code here
     b = board;
     n = b.size();
     m = b[0].size();
     vector<string> ans;
-    for (auto& c : dictionary) {
+    for (auto &c : dictionary) {
       bool found = false;
       for (int i = 0; i < n; ++i) {
         for (int j = 0; j < m; ++j) {
@@ -51,7 +54,8 @@ class Solution {
             }
           }
         }
-        if (found) break;
+        if (found)
+          break;
       }
     }
     return ans;
@@ -78,7 +82,8 @@ int main() {
     vector<vector<char>> board(R);
     for (int i = 0; i < R; i++) {
       board[i].resize(C);
-      for (int j = 0; j < C; j++) cin >> board[i][j];
+      for (int j = 0; j < C; j++)
+        cin >> board[i][j];
     }
     Solution obj;
     vector<string> output = obj.wordBoggle(board, dictionary);
@@ -86,7 +91,8 @@ int main() {
       cout << "-1";
     else {
       sort(output.begin(), output.end());
-      for (int i = 0; i < output.size(); i++) cout << output[i] << " ";
+      for (int i = 0; i < output.size(); i++)
+        cout << output[i] << " ";
     }
     cout << endl;
   }
@@ -108,29 +114,32 @@ class Solution {
   int v[51][51];
 
   bool solve(int i, int j, int t) {
-    if (t == w.size() - 1 && b[i][j] == w[t]) return true;
-    if (b[i][j] != w[t]) return false;
+    if (t == w.size() - 1 && b[i][j] == w[t])
+      return true;
+    if (b[i][j] != w[t])
+      return false;
     for (int k = 0; k < 8; ++k) {
       int ni = i + dx[k];
       int nj = j + dy[k];
       if (ni >= 0 && ni < n && nj >= 0 && nj < m && v[ni][nj] == 0) {
         v[ni][nj] = 1;
-        if (solve(ni, nj, t + 1)) return true;
+        if (solve(ni, nj, t + 1))
+          return true;
         v[ni][nj] = 0;
       }
     }
     return false;
   }
 
- public:
-  vector<string> wordBoggle(vector<vector<char>>& board,
-                            vector<string>& dictionary) {
+public:
+  vector<string> wordBoggle(vector<vector<char>> &board,
+                            vector<string> &dictionary) {
     // Code here
     b = board;
     n = b.size();
     m = b[0].size();
     vector<string> ans;
-    for (auto& c : dictionary) {
+    for (auto &c : dictionary) {
       bool found = false;
       for (int i = 0; i < n; ++i) {
         for (int j = 0; j < m; ++j) {
@@ -145,7 +154,8 @@ class Solution {
             }
           }
         }
-        if (found) break;
+        if (found)
+          break;
       }
     }
     return ans;
@@ -172,7 +182,8 @@ int main() {
     vector<vector<char>> board(R);
     for (int i = 0; i < R; i++) {
       board[i].resize(C);
-      for (int j = 0; j < C; j++) cin >> board[i][j];
+      for (int j = 0; j < C; j++)
+        cin >> board[i][j];
     }
     Solution obj;
     vector<string> output = obj.wordBoggle(board, dictionary);
@@ -180,7 +191,8 @@ int main() {
       cout << "-1";
     else {
       sort(output.begin(), output.end());
-      for (int i = 0; i < output.size(); i++) cout << output[i] << " ";
+      for (int i = 0; i < output.size(); i++)
+        cout << output[i] << " ";
     }
     cout << endl;
   }

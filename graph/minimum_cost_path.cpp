@@ -5,10 +5,10 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   // Function to return the minimum cost to react at bottom
   // right cell from top left cell.
-  int minimumCostPath(vector<vector<int>>& grid) {
+  int minimumCostPath(vector<vector<int>> &grid) {
     // Code here
     int n = grid.size();
     vector<vector<int>> dist(n, vector<int>(n, INT_MAX));
@@ -29,7 +29,8 @@ class Solution {
       int y = c.second.second;
 
       dist[x][y] = c.first;
-      if (x == n - 1 && y == n - 1) return dist[x][y];
+      if (x == n - 1 && y == n - 1)
+        return dist[x][y];
       for (int k = 0; k < 4; ++k) {
         int nx = x + dx[k];
         int ny = y + dy[k];

@@ -7,7 +7,7 @@ using namespace std;
 // } Driver Code Ends
 // User function Template for C++
 class Solution {
- public:
+public:
   int overlap(vector<pair<int, int>> iv, int n) {
     // Write your code here
     vector<pair<int, int>> v;

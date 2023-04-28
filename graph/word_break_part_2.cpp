@@ -12,7 +12,7 @@ class Solution {
   string S;
   int N;
   vector<string> vs;
-  bool solve(int k, vector<string>& dict) {
+  bool solve(int k, vector<string> &dict) {
     if (k == S.size()) {
       string t;
       for (int i = 0; i < vs.size() - 1; ++i) {
@@ -33,8 +33,8 @@ class Solution {
     return false;
   }
 
- public:
-  vector<string> wordBreak(int n, vector<string>& dict, string s) {
+public:
+  vector<string> wordBreak(int n, vector<string> &dict, string s) {
     // code here
     ans.clear();
     S = s;
@@ -67,7 +67,8 @@ int main() {
       cout << "Empty\n";
     else {
       sort(ans.begin(), ans.end());
-      for (int i = 0; i < ans.size(); i++) cout << "(" << ans[i] << ")";
+      for (int i = 0; i < ans.size(); i++)
+        cout << "(" << ans[i] << ")";
       cout << endl;
     }
   }

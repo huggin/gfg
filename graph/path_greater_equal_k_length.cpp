@@ -18,8 +18,9 @@ class Solution {
   int total;
   bool found;
 
-  void dfs(int u, vector<Edge*> adj[], int k) {
-    if (found) return;
+  void dfs(int u, vector<Edge *> adj[], int k) {
+    if (found)
+      return;
     marked[u] = 1;
     for (auto e : adj[u]) {
       int vertex = e->v;
@@ -40,12 +41,12 @@ class Solution {
     marked[u] = 0;
   }
 
- public:
-  bool pathMoreThanK(int V, int E, int k, int* a) {
+public:
+  bool pathMoreThanK(int V, int E, int k, int *a) {
     //  Code Here
-    vector<Edge*> adj[V];
+    vector<Edge *> adj[V];
     for (int i = 0; i < E * 3; i += 3) {
-      Edge* e = new Edge(a[i], a[i + 1], a[i + 2]);
+      Edge *e = new Edge(a[i], a[i + 1], a[i + 2]);
       adj[a[i]].push_back(e);
       adj[a[i + 1]].push_back(e);
     }

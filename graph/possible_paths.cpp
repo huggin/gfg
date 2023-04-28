@@ -8,8 +8,8 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
-  int MinimumWalk(vector<vector<int>>& graph, int u, int v, int k) {
+public:
+  int MinimumWalk(vector<vector<int>> &graph, int u, int v, int k) {
     // Code here
     int n = graph.size();
     vector<vector<int>> dp(n, vector<int>(n));
@@ -49,4 +49,3 @@ int main() {
   return 0;
 }
 // } Driver Code Ends
-

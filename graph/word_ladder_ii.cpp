@@ -6,20 +6,22 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
-  bool neighbor(const string& s1, const string& s2) {
-    if (s1.size() != s2.size()) return false;
+public:
+  bool neighbor(const string &s1, const string &s2) {
+    if (s1.size() != s2.size())
+      return false;
     int ans = 0;
     for (int i = 0; i < s1.size(); ++i) {
-      if (s1[i] != s2[i]) ++ans;
+      if (s1[i] != s2[i])
+        ++ans;
     }
     return ans == 1;
   }
 
   vector<string> vs;
 
-  void dfs(vector<vector<int>>& to, int dest, int src, vector<string>& vertex,
-           vector<vector<string>>& ans) {
+  void dfs(vector<vector<int>> &to, int dest, int src, vector<string> &vertex,
+           vector<vector<string>> &ans) {
     if (dest == src) {
       ans.push_back(vs);
       return;
@@ -31,9 +33,9 @@ class Solution {
     }
   }
 
- public:
+public:
   vector<vector<string>> findSequences(string beginWord, string endWord,
-                                       vector<string>& wordList) {
+                                       vector<string> &wordList) {
     // Code here
     vector<string> vertex(wordList);
     int n = vertex.size();
@@ -80,7 +82,8 @@ class Solution {
         }
       }
     }
-    if (dist[dest] == INT_MAX) return ans;
+    if (dist[dest] == INT_MAX)
+      return ans;
     vs.clear();
 
     vs.push_back(vertex[dest]);
@@ -98,8 +101,10 @@ class Solution {
 
 bool comp(vector<string> a, vector<string> b) {
   string x = "", y = "";
-  for (string i : a) x += i;
-  for (string i : b) y += i;
+  for (string i : a)
+    x += i;
+  for (string i : b)
+    y += i;
 
   return x < y;
 }
@@ -111,7 +116,8 @@ int main() {
     int n;
     cin >> n;
     vector<string> wordList(n);
-    for (int i = 0; i < n; i++) cin >> wordList[i];
+    for (int i = 0; i < n; i++)
+      cin >> wordList[i];
     string startWord, targetWord;
     cin >> startWord >> targetWord;
     Solution obj;

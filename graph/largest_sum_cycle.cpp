@@ -11,7 +11,7 @@ class Solution {
   int ans;
   vector<int> onStack;
 
-  void dfs(const vector<int>& e, int k) {
+  void dfs(const vector<int> &e, int k) {
     onStack[k] = 1;
     marked[k] = 1;
     int w = e[k];
@@ -24,14 +24,15 @@ class Solution {
       dfs(e, w);
     } else if (onStack[w]) {
       int temp = 0;
-      for (int i = w; i != k; i = e[i]) temp += i;
+      for (int i = w; i != k; i = e[i])
+        temp += i;
       temp += k;
       ans = max(ans, temp);
     }
     onStack[k] = 0;
   }
 
- public:
+public:
   long long largestSumCycle(int N, vector<int> Edge) {
     // code here
     n = N;

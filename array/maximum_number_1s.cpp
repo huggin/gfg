@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int maxOnes(string s) {
     // Your code goes here
     int n = s.size();
@@ -31,7 +31,8 @@ class Solution {
         ma = dp[i];
       }
     }
-    if (one == n) return n - 1;
+    if (one == n)
+      return n - 1;
 
     return one + ma;
   }

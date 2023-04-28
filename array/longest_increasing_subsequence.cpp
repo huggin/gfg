@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   // Function to find length of longest increasing subsequence.
   int longestSubsequence(int n, int a[]) {
     // your code here
@@ -33,7 +33,8 @@ int main() {
     int a[n];
 
     // inserting elements to the array
-    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
     Solution ob;
     // calling method longestSubsequence()
     cout << ob.longestSubsequence(n, a) << endl;

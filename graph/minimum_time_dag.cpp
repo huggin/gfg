@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   vector<int> minimumTime(int n, vector<vector<int>> &edges, int m) {
     // code here
     vector<int> degree(n);
@@ -28,7 +28,8 @@ class Solution {
         }
       }
       k++;
-      if (Q.empty()) break;
+      if (Q.empty())
+        break;
       while (!Q.empty()) {
         int c = Q.front();
         Q.pop();
@@ -52,10 +53,12 @@ int main() {
     int m;
     cin >> m;
     vector<vector<int>> edges(m, vector<int>(2));
-    for (int i = 0; i < m; i++) cin >> edges[i][0] >> edges[i][1];
+    for (int i = 0; i < m; i++)
+      cin >> edges[i][0] >> edges[i][1];
     Solution s;
     vector<int> ans = s.minimumTime(n, edges, m);
-    for (auto j : ans) cout << j << " ";
+    for (auto j : ans)
+      cout << j << " ";
     cout << endl;
   }
   return 0;

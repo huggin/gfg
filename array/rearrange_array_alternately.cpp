@@ -6,7 +6,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   // This function wants you to modify the given input
   // array and no need to return anything
   // arr: input array
@@ -76,7 +76,8 @@ int main() {
     ob.rearrange(arr, n);
 
     // printing the elements
-    for (int i = 0; i < n; i++) cout << arr[i] << " ";
+    for (int i = 0; i < n; i++)
+      cout << arr[i] << " ";
 
     cout << endl;
   }

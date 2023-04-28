@@ -19,14 +19,15 @@ class Solution {
   void dfs2(int v, vector<int> adj[], int c, int d) {
     visited[v] = 1;
     for (auto w : adj[v]) {
-      if (w == c && v == d || w == d && v == c) continue;
+      if (w == c && v == d || w == d && v == c)
+        continue;
       if (!visited[w]) {
         dfs2(w, adj, c, d);
       }
     }
   }
 
- public:
+public:
   // Function to find if the given edge is a bridge in graph.
   int isBridge(int V, vector<int> adj[], int c, int d) {
     // Code here

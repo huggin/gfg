@@ -8,8 +8,8 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
-  void dfs(int v, vector<vector<int>>& adj, vector<int>& post,
-           vector<int>& marked) {
+  void dfs(int v, vector<vector<int>> &adj, vector<int> &post,
+           vector<int> &marked) {
     marked[v] = 1;
     for (auto w : adj[v]) {
       if (!marked[w]) {
@@ -19,8 +19,8 @@ class Solution {
     post.push_back(v);
   }
 
- public:
-  int findNumberOfGoodComponent(int V, vector<vector<int>>& adj) {
+public:
+  int findNumberOfGoodComponent(int V, vector<vector<int>> &adj) {
     // code here
     vector<int> marked(V + 1);
     int ans = 0;
@@ -30,9 +30,11 @@ class Solution {
         dfs(i, adj, post, marked);
         int j = 0;
         for (j = 0; j < post.size(); ++j) {
-          if (adj[post[j]].size() != post.size() - 1) break;
+          if (adj[post[j]].size() != post.size() - 1)
+            break;
         }
-        if (j == post.size()) ++ans;
+        if (j == post.size())
+          ++ans;
       }
     }
     return ans;

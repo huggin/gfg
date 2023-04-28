@@ -4,10 +4,10 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   // Function to find a continuous sub-array which adds up to a given number.
 
-  vector<int> subarraySum(const vector<int>& arr, int n, long long S) {
+  vector<int> subarraySum(const vector<int> &arr, int n, long long S) {
     // Your code here
     int i = 0, j = 0;
     long long t = 0;
@@ -51,7 +51,8 @@ int main() {
     vector<int> res;
     res = ob.subarraySum(arr, n, s);
 
-    for (int i = 0; i < res.size(); i++) cout << res[i] << " ";
+    for (int i = 0; i < res.size(); i++)
+      cout << res[i] << " ";
     cout << endl;
   }
   return 0;

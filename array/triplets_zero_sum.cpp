@@ -11,7 +11,7 @@ using namespace std;
  *  n: size of array
  */
 class Solution {
- public:
+public:
   // Function to find triplets with zero sum.
   bool findTriplets(int arr[], int n) {
     // Your code here
@@ -21,7 +21,8 @@ class Solution {
       int sum = arr[i] + arr[j] + arr[k];
 
       while (j < k) {
-        if (sum == 0) return true;
+        if (sum == 0)
+          return true;
 
         if (sum > 0) {
           sum -= arr[k];
@@ -44,7 +45,8 @@ int main() {
     int n;
     cin >> n;
     int arr[n] = {0};
-    for (int i = 0; i < n; i++) cin >> arr[i];
+    for (int i = 0; i < n; i++)
+      cin >> arr[i];
     Solution obj;
     if (obj.findTriplets(arr, n))
       cout << "1" << endl;

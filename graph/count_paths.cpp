@@ -8,7 +8,7 @@ class Solution {
   vector<int> marked;
   vector<int> post;
 
-  void dfs(int k, vector<vector<int>>& g) {
+  void dfs(int k, vector<vector<int>> &g) {
     marked[k] = 1;
     for (int i = 0; i < g[k].size(); ++i) {
       if (g[k][i] && !marked[i]) {
@@ -18,11 +18,11 @@ class Solution {
     post.push_back(k);
   }
 
- public:
+public:
   int possible_paths(vector<vector<int>> edges, int n, int s, int d) {
     // Code here
     vector<vector<int>> g(n, vector<int>(n));
-    for (auto& e : edges) {
+    for (auto &e : edges) {
       g[e[0]][e[1]] = 1;
     }
     marked.assign(n, 0);

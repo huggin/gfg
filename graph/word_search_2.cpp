@@ -14,9 +14,10 @@ class Solution {
   int dy[4] = {0, 0, -1, 1};
   vector<vector<int>> marked;
 
-  void solve(const vector<vector<char>>& mat, int i, int j, const string& w,
+  void solve(const vector<vector<char>> &mat, int i, int j, const string &w,
              int k) {
-    if (found) return;
+    if (found)
+      return;
     if (k == w.size() - 1) {
       found = true;
       return;
@@ -33,8 +34,8 @@ class Solution {
     }
   }
 
- public:
-  bool wordSearch(vector<vector<char>>& mat, string w) {
+public:
+  bool wordSearch(vector<vector<char>> &mat, string w) {
     // code here
     n = mat.size();
     m = mat[0].size();
@@ -45,7 +46,8 @@ class Solution {
           marked.assign(n, vector<int>(m));
           marked[i][j] = 1;
           solve(mat, i, j, w, 0);
-          if (found) return true;
+          if (found)
+            return true;
         }
       }
     }

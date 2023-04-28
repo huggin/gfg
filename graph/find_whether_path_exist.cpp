@@ -5,9 +5,9 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   // Function to find whether a path exists from the source to destination.
-  bool is_Possible(vector<vector<int>>& grid) {
+  bool is_Possible(vector<vector<int>> &grid) {
     // code here
     int startx = -1, starty = -1, endx = -1, endy = -1;
     for (int i = 0; i < grid.size(); ++i) {
@@ -21,7 +21,8 @@ class Solution {
         }
       }
     }
-    if (startx == -1 || endx == -1) return 0;
+    if (startx == -1 || endx == -1)
+      return 0;
     queue<pair<int, int>> Q;
     int dx[] = {-1, 0, 1, 0};
     int dy[] = {0, -1, 0, 1};
@@ -32,12 +33,14 @@ class Solution {
     Q.emplace(startx, starty);
     while (!Q.empty()) {
       auto c = Q.front();
-      if (c.first == endx && c.second == endy) return 1;
+      if (c.first == endx && c.second == endy)
+        return 1;
       Q.pop();
       for (int i = 0; i < 4; ++i) {
         int x = c.first + dx[i];
         int y = c.second + dy[i];
-        if (x == endx && y == endy) return 1;
+        if (x == endx && y == endy)
+          return 1;
         if (x >= 0 && x < n && y >= 0 && y < m && v[x][y] == 0 &&
             grid[x][y] == 3) {
           v[x][y] = 1;

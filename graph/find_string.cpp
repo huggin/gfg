@@ -24,15 +24,17 @@ class Solution {
     }
   }
 
-  bool dfs(string& t, int k) {
-    if (k == vs.size()) return true;
+  bool dfs(string &t, int k) {
+    if (k == vs.size())
+      return true;
 
     for (int j = 0; j < vs.size(); ++j) {
       if (!marked[j]) {
         if (neighbour(t.substr(t.size() - N), vs[j])) {
           t += vs[j][N - 1];
           marked[j] = 1;
-          if (dfs(t, k + 1)) return true;
+          if (dfs(t, k + 1))
+            return true;
           marked[j] = 0;
           t.pop_back();
         }
@@ -41,14 +43,15 @@ class Solution {
     return false;
   }
 
-  bool neighbour(const string& s1, const string& s2) {
+  bool neighbour(const string &s1, const string &s2) {
     for (int i = 1; i < N; ++i) {
-      if (s1[i] != s2[i - 1]) return false;
+      if (s1[i] != s2[i - 1])
+        return false;
     }
     return true;
   }
 
- public:
+public:
   string findString(int n, int k) {
     // code here
     N = n;
@@ -74,7 +77,8 @@ int main() {
     string ans = ob.findString(N, K);
     int ok = 1;
     for (auto i : ans) {
-      if (i < '0' || i > K - 1 + '0') ok = 0;
+      if (i < '0' || i > K - 1 + '0')
+        ok = 0;
     }
     if (!ok) {
       cout << -1 << endl;
@@ -85,7 +89,8 @@ int main() {
       st.insert(ans.substr(i, N));
     }
     int tot = 1;
-    for (int i = 1; i <= N; i++) tot *= K;
+    for (int i = 1; i <= N; i++)
+      tot *= K;
     if (st.size() == tot) {
       cout << ans.size() << endl;
     } else {

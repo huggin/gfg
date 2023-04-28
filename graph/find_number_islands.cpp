@@ -5,9 +5,9 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   // Function to find the number of islands.
-  int numIslands(vector<vector<char>>& grid) {
+  int numIslands(vector<vector<char>> &grid) {
     // Code here
     int dx[] = {-1, -1, -1, 0, 0, 1, 1, 1};
     int dy[] = {-1, 0, 1, -1, 1, -1, 0, 1};

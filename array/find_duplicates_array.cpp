@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   vector<int> duplicates(int arr[], int n) {
     // code here
     vector<int> c(n);
@@ -32,10 +32,12 @@ int main() {
     int n;
     cin >> n;
     int a[n];
-    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
     Solution obj;
     vector<int> ans = obj.duplicates(a, n);
-    for (int i : ans) cout << i << ' ';
+    for (int i : ans)
+      cout << i << ' ';
     cout << endl;
   }
   return 0;

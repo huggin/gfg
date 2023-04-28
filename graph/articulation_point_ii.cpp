@@ -28,7 +28,8 @@ class Solution {
           low[u] = min(low[u], low[w]);
         }
       } else {
-        if (w == prev[u]) continue;
+        if (w == prev[u])
+          continue;
         low[u] = min(low[u], dis[w]);
       }
     }
@@ -38,7 +39,7 @@ class Solution {
     }
   }
 
- public:
+public:
   vector<int> articulationPoints(int V, vector<int> adj[]) {
     // Code here
     marked.assign(V, 0);
@@ -56,7 +57,8 @@ class Solution {
     }
     sort(ans.begin(), ans.end());
     ans.erase(unique(ans.begin(), ans.end()), ans.end());
-    if (ans.size() == 0) return vector<int>{-1};
+    if (ans.size() == 0)
+      return vector<int>{-1};
     return ans;
   }
 };
@@ -77,7 +79,8 @@ int main() {
     }
     Solution obj;
     vector<int> ans = obj.articulationPoints(V, adj);
-    for (auto i : ans) cout << i << " ";
+    for (auto i : ans)
+      cout << i << " ";
     cout << "\n";
   }
   return 0;

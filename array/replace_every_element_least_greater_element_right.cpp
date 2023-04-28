@@ -8,8 +8,8 @@ using namespace std;
 // Back-end complete function Template for C++
 
 class Solution {
- public:
-  vector<int> findLeastGreater(vector<int>& arr, int n) {
+public:
+  vector<int> findLeastGreater(vector<int> &arr, int n) {
     set<int> s;
     vector<int> ans(n);
     ans[n - 1] = -1;

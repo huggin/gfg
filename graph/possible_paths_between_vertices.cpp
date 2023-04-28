@@ -18,7 +18,7 @@ class Solution {
     post.push_back(i);
   }
 
- public:
+public:
   // Function to count paths between two vertices in a directed graph.
   int countPaths(int V, vector<int> adj[], int source, int destination) {
     // Code here

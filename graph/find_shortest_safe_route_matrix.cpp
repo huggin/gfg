@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int findShortestPath(vector<vector<int>> &mat) {
     // code here
     int n = mat.size();
@@ -52,7 +52,8 @@ class Solution {
       int d = Q.front();
       Q.pop();
       // cout << x << ' ' << y << ' ' << d << endl;
-      if (y == m - 1) return d;
+      if (y == m - 1)
+        return d;
       for (int k = 0; k < 4; ++k) {
         int nx = x + dx[k];
         int ny = y + dy[k];

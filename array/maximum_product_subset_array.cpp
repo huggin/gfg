@@ -7,8 +7,8 @@ using namespace std;
 // } Driver Code Ends
 // User function Template for C++
 class Solution {
- public:
-  long long int findMaxProduct(vector<int>& a, int n) {
+public:
+  long long int findMaxProduct(vector<int> &a, int n) {
     // Write your code here
     int m = 0;
     int z = 0;
@@ -25,9 +25,12 @@ class Solution {
       }
       t = (t * a[i]) % 1000000007;
     }
-    if (m == 1 && m == n) return t;
-    if (m + z == n && m == 1) return 0;
-    if (t > 0) return t;
+    if (m == 1 && m == n)
+      return t;
+    if (m + z == n && m == 1)
+      return 0;
+    if (t > 0)
+      return t;
     return t / mi;
   }
 };

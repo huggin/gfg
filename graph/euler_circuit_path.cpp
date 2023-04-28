@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
-  void dfs(int i, vector<int> adj[], vector<int>& v) {
+  void dfs(int i, vector<int> adj[], vector<int> &v) {
     v[i] = 1;
     for (auto w : adj[i]) {
       if (!v[w]) {
@@ -14,7 +14,7 @@ class Solution {
     }
   }
 
- public:
+public:
   int isEularCircuit(int V, vector<int> adj[]) {
     // Code here
     int odd = 0;
@@ -24,7 +24,8 @@ class Solution {
       for (int j = 0; j < adj[i].size(); ++j) {
         ++degree;
       }
-      if (degree == 0) visited[i] = 1;
+      if (degree == 0)
+        visited[i] = 1;
       if (degree % 2 != 0) {
         ++odd;
       }
@@ -36,9 +37,12 @@ class Solution {
         dfs(i, adj, visited);
       }
     }
-    if (part >= 2) return 0;
-    if (odd > 2) return 0;
-    if (odd == 2) return 1;
+    if (part >= 2)
+      return 0;
+    if (odd > 2)
+      return 0;
+    if (odd == 2)
+      return 1;
     return 2;
   }
 };

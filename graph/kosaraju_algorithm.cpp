@@ -27,7 +27,7 @@ class Solution {
     }
   }
 
- public:
+public:
   // Function to find number of strongly connected components in the graph.
   int kosaraju(int V, vector<int> adj[]) {
     // code here

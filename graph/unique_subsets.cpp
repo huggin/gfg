@@ -6,7 +6,7 @@ using namespace std;
 class Solution {
   vector<vector<int>> ans;
 
-  void solve(const vector<int>& a, int k, vector<int>& vi) {
+  void solve(const vector<int> &a, int k, vector<int> &vi) {
     if (k == a.size()) {
       ans.push_back(vi);
       sort(ans[ans.size() - 1].begin(), ans[ans.size() - 1].end());
@@ -18,7 +18,7 @@ class Solution {
     vi.pop_back();
   }
 
- public:
+public:
   // Function to find all possible unique subsets.
   vector<vector<int>> AllSubsets(vector<int> arr, int n) {
     // code here
@@ -51,7 +51,8 @@ int main() {
       cout << '(';
       for (int j = 0; j < result[i].size(); j++) {
         cout << result[i][j];
-        if (j < result[i].size() - 1) cout << " ";
+        if (j < result[i].size() - 1)
+          cout << " ";
       }
       cout << ")";
     }
