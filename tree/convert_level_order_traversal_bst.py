@@ -11,7 +11,7 @@ def constructBst(arr, n):
 
     root = Node(arr[0])
     q = deque()
-    q.append((root, -2 ** 31, 2 ** 31))
+    q.append((root, -(2**31), 2**31))
     i = 1
     while len(q) > 0 and i < n:
         curr = q.popleft()
@@ -33,7 +33,7 @@ def constructBst(arr, n):
 
 
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
 class Node:
     def __init__(self, val):
@@ -52,7 +52,7 @@ def preOrder(root):
 
 def main():
     testcases = int(input())
-    while (testcases > 0):
+    while testcases > 0:
         root = None
         sizeOfArray = int(input())
         arr = [int(x) for x in input().strip().split()]

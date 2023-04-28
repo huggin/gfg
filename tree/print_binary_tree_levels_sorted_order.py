@@ -1,4 +1,3 @@
-
 class Solution:
     def binTreeSortedLevels(self, arr, n):
         # code here.
@@ -23,8 +22,9 @@ class Solution:
 
         return ans
 
+
 # {
- # Driver Code Starts
+# Driver Code Starts
 
 
 t = int(input())

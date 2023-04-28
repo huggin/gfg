@@ -1,6 +1,6 @@
 # User function Template for python3
 
-''' structure of tree node:
+""" structure of tree node:
 
 class Node:
     def __init__(self,x):
@@ -9,7 +9,7 @@ class Node:
         self.right=None
         self.height=1
 
-'''
+"""
 
 
 class Solution:
@@ -68,8 +68,9 @@ class Solution:
 
 
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
+
 
 class Node:
     def __init__(self, x):
@@ -104,10 +105,10 @@ def isBalanced(n):
 
 def isBalancedBST(root):
     if not isBST(root, -1000000000, 1000000000):
-        print("BST voilated, inorder traversal :", end=' ')
+        print("BST voilated, inorder traversal :", end=" ")
 
     elif not isBalanced(root)[1]:
-        print("Unbalanced BST, inorder traversal :", end=' ')
+        print("Unbalanced BST, inorder traversal :", end=" ")
 
     else:
         return True
@@ -119,7 +120,7 @@ def printInorder(n):
     if not n:
         return
     printInorder(n.left)
-    print(n.data, end=' ')
+    print(n.data, end=" ")
     printInorder(n.right)
 
 

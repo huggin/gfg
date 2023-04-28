@@ -1,7 +1,7 @@
 # User function Template for python3
 
-class Node:
 
+class Node:
     def __init__(self, data=0):
         self.data = data
         self.left = None
@@ -14,26 +14,28 @@ def construct(pre, s, e):
     if s == e:
         return Node(pre[s])
 
-    j = e+1
-    for i in range(s+1, e+1):
+    j = e + 1
+    for i in range(s + 1, e + 1):
         if pre[i] > pre[s]:
             j = i
             break
 
     node = Node(pre[s])
-    node.left = construct(pre, s+1, j-1)
+    node.left = construct(pre, s + 1, j - 1)
     node.right = construct(pre, j, e)
     return node
+
 
 # Function that constructs BST from its preorder traversal.
 
 
 def post_order(pre, size):
     # code here
-    return construct(pre, 0, size-1)
+    return construct(pre, 0, size - 1)
+
 
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
 
 # contributed by RavinderSinghPB
@@ -44,15 +46,15 @@ def postOrd(root):
         return
     postOrd(root.left)
     postOrd(root.right)
-    print(root.data, end=' ')
+    print(root.data, end=" ")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     t = int(input())
 
     for _tcs in range(t):
         size = int(input())
-        pre = [int(x)for x in input().split()]
+        pre = [int(x) for x in input().split()]
 
         root = post_order(pre, size)
 

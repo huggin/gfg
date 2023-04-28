@@ -1,6 +1,6 @@
 # User function Template for python3
 
-'''
+"""
 class ListNode:
 
     # Constructor to create a new node
@@ -18,7 +18,7 @@ class Tree:
         self.left = None
         self.right = None
 
-'''
+"""
 import sys
 import io
 import atexit
@@ -28,7 +28,6 @@ from collections import deque
 
 
 def convert(head):
-
     # code here
     root = None
     q = deque()
@@ -55,7 +54,7 @@ def convert(head):
 
 
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
 
 # Contributed by : Nikhil Kumar Singh
@@ -64,7 +63,6 @@ def convert(head):
 
 
 class ListNode:
-
     # Constructor to create a new node
     def __init__(self, data):
         self.data = data
@@ -73,7 +71,6 @@ class ListNode:
 
 # Tree Node structure
 class Tree:
-
     # Constructor to create a new node
     def __init__(self, data):
         self.data = data
@@ -90,7 +87,6 @@ class Conversion:
         self.root = None
 
     def push(self, new_data):
-
         # Creating a new linked list node and storing data
         new_node = ListNode(new_data)
 
@@ -110,7 +106,7 @@ class Conversion:
             n = len(que)
             if n == 0:
                 break
-            while (n > 0):
+            while n > 0:
                 node = que.pop(0)
                 mylist.append(node.data)
                 if node.left is not None:
@@ -123,7 +119,7 @@ class Conversion:
         return
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     test_cases = int(input())
     for cases in range(test_cases):
         n = int(input())
