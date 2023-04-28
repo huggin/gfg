@@ -6,13 +6,13 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   /*  Function to implement Bellman Ford
    *   edges: vector of vectors which represents the graph
    *   S: source vertex to start traversing graph with
    *   V: number of vertices
    */
-  vector<int> bellman_ford(int V, vector<vector<int>>& edges, int S) {
+  vector<int> bellman_ford(int V, vector<vector<int>> &edges, int S) {
     // Code here
     vector<int> ans(V, 100000000);
     ans[S] = 0;
@@ -31,7 +31,8 @@ class Solution {
           }
         }
       }
-      if (!change) break;
+      if (!change)
+        break;
     }
     bool change = false;
     for (int i = 0; i < V; ++i) {
@@ -42,7 +43,8 @@ class Solution {
         }
       }
     }
-    if (change) return vector<int>{-1};
+    if (change)
+      return vector<int>{-1};
     return ans;
   }
 };

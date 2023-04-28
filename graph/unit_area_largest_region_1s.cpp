@@ -7,9 +7,9 @@ using namespace std;
 class Solution {
   int t = 0;
 
- public:
+public:
   // Function to find unit area of the largest region of 1s.
-  int findMaxArea(vector<vector<int>>& grid) {
+  int findMaxArea(vector<vector<int>> &grid) {
     // Code here
     int dx[] = {-1, -1, -1, 0, 0, 1, 1, 1};
     int dy[] = {-1, 0, 1, -1, 1, -1, 0, 1};

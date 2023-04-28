@@ -8,10 +8,10 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   // nums: given vector
   // return the Product vector P that hold product except self at each index
-  vector<long long int> productExceptSelf(vector<long long int>& nums, int n) {
+  vector<long long int> productExceptSelf(vector<long long int> &nums, int n) {
     // code here
     long long total = 1;
     int zero = 0;
@@ -25,7 +25,8 @@ class Solution {
       total *= nums[i];
     }
     vector<long long> ans(n);
-    if (zero > 1) return ans;
+    if (zero > 1)
+      return ans;
     if (zero == 1) {
       ans[pos] = total;
       return ans;
@@ -39,21 +40,21 @@ class Solution {
 
 //{ Driver Code Starts.
 int main() {
-  int t;  // number of test cases
+  int t; // number of test cases
   cin >> t;
   while (t--) {
-    int n;  // size of the array
+    int n; // size of the array
     cin >> n;
     vector<long long int> arr(n), vec(n);
 
-    for (int i = 0; i < n; i++)  // input the array
+    for (int i = 0; i < n; i++) // input the array
     {
       cin >> arr[i];
     }
     Solution obj;
-    vec = obj.productExceptSelf(arr, n);  // function call
+    vec = obj.productExceptSelf(arr, n); // function call
 
-    for (int i = 0; i < n; i++)  // print the output
+    for (int i = 0; i < n; i++) // print the output
     {
       cout << vec[i] << " ";
     }

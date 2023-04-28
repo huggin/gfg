@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   vector<int> maxPrefixes(int a[], int L[], int R[], int N, int Q) {
     vector<int> ans;
     for (int i = 0; i < Q; ++i) {
@@ -30,12 +30,15 @@ int main() {
     cin >> n >> q;
     int a[n], L[q], R[q];
 
-    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
 
-    for (int i = 0; i < q; i++) cin >> L[i] >> R[i];
+    for (int i = 0; i < q; i++)
+      cin >> L[i] >> R[i];
     Solution obj;
     vector<int> ans = obj.maxPrefixes(a, L, R, n, q);
-    for (auto it : ans) cout << it << " ";
+    for (auto it : ans)
+      cout << it << " ";
     cout << endl;
   }
 }

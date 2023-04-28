@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   vector<int> bfsOfGraph(int V, vector<int> adj[]) {
     // Code here
     queue<int> q;

@@ -8,7 +8,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   vector<int> sumClosest(vector<int> arr, int x) {
     // code here
     vector<int> ans(2);

@@ -10,7 +10,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   vector<int> maximizeArray(int arr1[], int arr2[], int n) {
     // code here
     priority_queue<int> Q;
@@ -22,7 +22,8 @@ class Solution {
     while (s.size() != n && !Q.empty()) {
       auto c = Q.top();
       Q.pop();
-      if (s.find(c) == s.end()) s.insert(c);
+      if (s.find(c) == s.end())
+        s.insert(c);
     }
     vector<int> ans;
     for (int i = 0; i < n; ++i) {

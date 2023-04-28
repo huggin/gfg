@@ -21,10 +21,11 @@ struct cmp {
 };
 
 class Solution {
- public:
+public:
   vector<vector<int>> minCashFlow(vector<vector<int>> &t, int n) {
     // code here
-    if (n == 0) return t;
+    if (n == 0)
+      return t;
     if (n == 1) {
       t[0][0] = 0;
       return t;
@@ -52,7 +53,8 @@ class Solution {
       int b2 = b->second;
       S.erase(b);
 
-      if (a1 == 0 && b1 == 0) break;
+      if (a1 == 0 && b1 == 0)
+        break;
       int diff = min(-a1, b1);
       ans[b2][a2] += diff;
       S.insert({a1 + diff, a2});
@@ -73,12 +75,14 @@ int main() {
     cin >> n;
     vector<vector<int>> g(n, vector<int>(n));
     for (int i = 0; i < n; i++) {
-      for (int j = 0; j < n; j++) cin >> g[i][j];
+      for (int j = 0; j < n; j++)
+        cin >> g[i][j];
     }
     Solution s;
     vector<vector<int>> r = s.minCashFlow(g, n);
     for (auto j : r) {
-      for (auto i : j) cout << i << " ";
+      for (auto i : j)
+        cout << i << " ";
       cout << endl;
     }
     // cout<<endl;

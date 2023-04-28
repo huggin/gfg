@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   // arr[] : the input array
   // N : size of the array arr[]
 
@@ -36,7 +36,8 @@ int main() {
   cin >> t;
   while (t--) {
     cin >> n;
-    for (i = 0; i < n; i++) cin >> a[i];
+    for (i = 0; i < n; i++)
+      cin >> a[i];
     Solution obj;
     cout << obj.findLongestConseqSubseq(a, n) << endl;
   }

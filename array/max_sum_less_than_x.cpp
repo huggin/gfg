@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int findMaxSubarraySum(long long arr[], int n, long long sum) {
     // Your code goes here
     int j = 0;
@@ -35,7 +35,8 @@ int main() {
     cin >> n;
 
     long long a[n];
-    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
 
     long long sum;
     cin >> sum;

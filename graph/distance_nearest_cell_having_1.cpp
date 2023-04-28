@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   vector<vector<int>> nearest(vector<vector<int>> grid) {
     // Code here
     vector<vector<int>> ans = grid;
@@ -40,8 +40,10 @@ class Solution {
       for (int k = 0; k < 4; ++k) {
         int nx = x + dx[k];
         int ny = y + dy[k];
-        if (nx < 0 || nx >= n || ny < 0 || ny >= m || v[nx][ny] == 1) continue;
-        if (grid[nx][ny] == 1) continue;
+        if (nx < 0 || nx >= n || ny < 0 || ny >= m || v[nx][ny] == 1)
+          continue;
+        if (grid[nx][ny] == 1)
+          continue;
         v[nx][ny] = 1;
         Q.push(nx);
         Q.push(ny);

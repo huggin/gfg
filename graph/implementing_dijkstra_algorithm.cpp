@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   // Function to find the shortest distance of all the vertices
   // from the source vertex S.
   vector<int> dijkstra(int V, vector<vector<int>> adj[], int S) {
@@ -21,10 +21,11 @@ class Solution {
     while (!Q.empty()) {
       auto c = Q.top();
       Q.pop();
-      if (visited[c.second]) continue;
+      if (visited[c.second])
+        continue;
       visited[c.second] = 1;
       dist[c.second] = c.first;
-      for (auto& e : adj[c.second]) {
+      for (auto &e : adj[c.second]) {
         Q.emplace(c.first + e[1], e[0]);
       }
     }
@@ -59,7 +60,8 @@ int main() {
     Solution obj;
     vector<int> res = obj.dijkstra(V, adj, S);
 
-    for (int i = 0; i < V; i++) cout << res[i] << " ";
+    for (int i = 0; i < V; i++)
+      cout << res[i] << " ";
     cout << endl;
   }
 

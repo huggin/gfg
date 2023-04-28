@@ -16,11 +16,11 @@ struct Edge {
 };
 
 class Solution {
- public:
-  int findCity(int n, int m, vector<vector<int>>& edges,
+public:
+  int findCity(int n, int m, vector<vector<int>> &edges,
                int distanceThreshold) {
     vector<vector<int>> g(n, vector<int>(n, -1));
-    for (auto& e : edges) {
+    for (auto &e : edges) {
       g[e[0]][e[1]] = e[2];
       g[e[1]][e[0]] = e[2];
     }
@@ -30,7 +30,8 @@ class Solution {
     for (int k = 0; k < n; ++k) {
       for (int j = 0; j < n; ++j) {
         for (int i = 0; i < n; ++i) {
-          if (g[i][k] < 0 || g[k][j] < 0) continue;
+          if (g[i][k] < 0 || g[k][j] < 0)
+            continue;
           if (g[i][j] == -1 || g[i][j] > g[i][k] + g[k][j]) {
             g[i][j] = g[i][k] + g[k][j];
           }
@@ -43,7 +44,8 @@ class Solution {
     for (int i = 0; i < n; ++i) {
       int t = 0;
       for (int j = 0; j < n; ++j) {
-        if (i == j) continue;
+        if (i == j)
+          continue;
         if (g[i][j] != -1 && g[i][j] <= distanceThreshold) {
           ++t;
         }

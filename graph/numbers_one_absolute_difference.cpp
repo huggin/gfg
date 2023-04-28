@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   vector<long long> absDifOne(long long N) {
     // code here.
     queue<long long> Q;
@@ -45,8 +45,10 @@ int main() {
     cin >> n;
     Solution ob;
     vector<long long> res = ob.absDifOne(n);
-    for (int i = 0; i < res.size(); i++) cout << res[i] << " ";
-    if (res.size() == 0) cout << -1;
+    for (int i = 0; i < res.size(); i++)
+      cout << res[i] << " ";
+    if (res.size() == 0)
+      cout << -1;
     cout << endl;
   }
 }

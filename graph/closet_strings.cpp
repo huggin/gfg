@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 // User function template for C++
 class Solution {
- public:
+public:
   int shortestDistance(vector<string> &s, string word1, string word2) {
     // Your code goes here
     int ans = s.size();
@@ -45,7 +45,8 @@ int main() {
     cin >> n;
 
     vector<string> s(n);
-    for (int i = 0; i < n; i++) cin >> s[i];
+    for (int i = 0; i < n; i++)
+      cin >> s[i];
 
     string word1, word2;
 

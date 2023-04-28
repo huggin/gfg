@@ -8,8 +8,8 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
-  int closedIslands(vector<vector<int>>& matrix, int N, int M) {
+public:
+  int closedIslands(vector<vector<int>> &matrix, int N, int M) {
     // Code here
     queue<int> Q;
     vector<vector<int>> v(N, vector<int>(M));
@@ -95,7 +95,8 @@ int main() {
     cin >> N >> M;
     vector<vector<int>> matrix(N, vector<int>(M, 0));
     for (int i = 0; i < N; i++)
-      for (int j = 0; j < M; j++) cin >> matrix[i][j];
+      for (int j = 0; j < M; j++)
+        cin >> matrix[i][j];
 
     Solution obj;
     int ans = obj.closedIslands(matrix, N, M);

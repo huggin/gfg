@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int water_flow(vector<vector<int>> &mat, int N, int M) {
     // Write your code here.
     vector<vector<int>> o(N, vector<int>(M)), s(N, vector<int>(M));
@@ -78,7 +78,8 @@ class Solution {
     int ans = 0;
     for (int i = 0; i < N; ++i) {
       for (int j = 0; j < M; ++j) {
-        if (o[i][j] && s[i][j]) ++ans;
+        if (o[i][j] && s[i][j])
+          ++ans;
       }
     }
     return ans;

@@ -4,14 +4,15 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   // Function to search x in arr
   // arr: input array
   // X: element to be searched for
   int search(int arr[], int N, int X) {
     // Your code here
     for (int i = 0; i < N; ++i) {
-      if (arr[i] == X) return i;
+      if (arr[i] == X)
+        return i;
     }
     return -1;
   }
@@ -33,7 +34,7 @@ int main() {
     }
     cin >> x;
     Solution ob;
-    cout << ob.search(arr, sizeOfArray, x) << endl;  // Linear search
+    cout << ob.search(arr, sizeOfArray, x) << endl; // Linear search
   }
 
   return 0;

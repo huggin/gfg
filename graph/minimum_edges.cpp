@@ -26,7 +26,8 @@ class Solution {
         }
       }
 
-      if (v[dst] != 0) return v[dst] - 1;
+      if (v[dst] != 0)
+        return v[dst] - 1;
       for (int i = 1; i <= n; ++i) {
         if (v[i] == k) {
           for (auto w : adj2[i]) {
@@ -38,12 +39,13 @@ class Solution {
         }
       }
       k++;
-      if (Q.empty()) break;
+      if (Q.empty())
+        break;
     }
     return -1;
   }
 
- public:
+public:
   int minimumEdgeReversal(vector<vector<int>> &edges, int n, int src, int dst) {
     vector<int> adj[n + 1];
     vector<int> adj2[n + 1];
@@ -67,7 +69,8 @@ int main() {
     cin >> n >> m;
     vector<vector<int>> edges(m, vector<int>(2));
     for (auto &j : edges)
-      for (auto &i : j) cin >> i;
+      for (auto &i : j)
+        cin >> i;
     int src, dst;
     cin >> src >> dst;
     Solution s;

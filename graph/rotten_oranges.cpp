@@ -4,9 +4,9 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   // Function to find minimum time required to rot all oranges.
-  int orangesRotting(vector<vector<int>>& grid) {
+  int orangesRotting(vector<vector<int>> &grid) {
     // Code here
     queue<tuple<int, int, int>> Q;
 
@@ -42,7 +42,8 @@ class Solution {
     }
     for (int i = 0; i < n; ++i) {
       for (int j = 0; j < m; ++j) {
-        if (grid[i][j] == 1) return -1;
+        if (grid[i][j] == 1)
+          return -1;
       }
     }
     return ans;

@@ -19,7 +19,7 @@ class Solution {
     post.push_back(v);
   }
 
- public:
+public:
   // Function to return list containing vertices in Topological order.
   vector<int> topoSort(int V, vector<int> adj[]) {
     // code here
@@ -44,7 +44,8 @@ class Solution {
  *   adj[]: graph input
  */
 int check(int V, vector<int> &res, vector<int> adj[]) {
-  if (V != res.size()) return 0;
+  if (V != res.size())
+    return 0;
 
   vector<int> map(V, -1);
   for (int i = 0; i < V; i++) {
@@ -52,7 +53,8 @@ int check(int V, vector<int> &res, vector<int> adj[]) {
   }
   for (int i = 0; i < V; i++) {
     for (int v : adj[i]) {
-      if (map[i] > map[v]) return 0;
+      if (map[i] > map[v])
+        return 0;
     }
   }
   return 1;

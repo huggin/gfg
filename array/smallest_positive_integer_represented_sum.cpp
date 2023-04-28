@@ -8,12 +8,12 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   long long smallestpositive(vector<long long> array, int n) {
     // code here
     sort(array.begin(), array.end());
     long long total = 1;
-    for (auto& value : array) {
+    for (auto &value : array) {
       if (total >= value) {
         total += value;
       }

@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   long long differentWaysToSpell(string N) {
     // code here
     long long ans = 1;

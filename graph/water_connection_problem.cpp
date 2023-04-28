@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   vector<vector<int>> solve(int n, int p, vector<int> a, vector<int> b,
                             vector<int> d) {
     // code here
@@ -24,7 +24,8 @@ class Solution {
           mi = min(mi, adj[k][0].second);
           k = adj[k][0].first;
         }
-        if (mi != INT_MAX) ans.push_back(vector<int>{i, k, mi});
+        if (mi != INT_MAX)
+          ans.push_back(vector<int>{i, k, mi});
       }
     }
     return ans;

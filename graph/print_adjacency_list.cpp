@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   // Function to return the adjacency list for each vertex.
   vector<vector<int>> printGraph(int V, vector<int> adj[]) {
     // Code here

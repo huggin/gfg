@@ -10,15 +10,19 @@ class Solution {
 
   bool ok(int k, bool g[101][101], int c) {
     for (int i = 0; i < n; ++i) {
-      if (k == i) continue;
-      if (!g[k][i]) continue;
-      if (color[i] == c) return false;
+      if (k == i)
+        continue;
+      if (!g[k][i])
+        continue;
+      if (color[i] == c)
+        return false;
     }
     return true;
   }
 
   bool dfs(int k, bool g[101][101], int M) {
-    if (k == n) return true;
+    if (k == n)
+      return true;
     for (int i = 0; i < M; ++i) {
       if (ok(k, g, i)) {
         color[k] = i;
@@ -33,7 +37,7 @@ class Solution {
     return false;
   }
 
- public:
+public:
   // Function to determine if graph can be coloured with at most M colours such
   // that no two adjacent vertices of graph are coloured with same colour.
   bool graphColoring(bool g[101][101], int M, int N) {

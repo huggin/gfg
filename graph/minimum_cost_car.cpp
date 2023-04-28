@@ -8,9 +8,10 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int minimumCost(int n, vector<vector<int>> &cars, int src, int dst, int k) {
-    if (src == dst) return 0;
+    if (src == dst)
+      return 0;
     vector<vector<int>> g(n, vector<int>(n));
     for (int i = 0; i < cars.size(); ++i) {
       g[cars[i][0]][cars[i][1]] = cars[i][2];
@@ -26,9 +27,11 @@ class Solution {
       auto c = q.top();
       q.pop();
       // cout << get<0>(c) << ' ' << get<1>(c) << ' ' << get<2>(c) << endl;
-      if (get<1>(c) == k + 1) continue;
+      if (get<1>(c) == k + 1)
+        continue;
       for (int i = 0; i < n; ++i) {
-        if (g[get<2>(c)][i] == 0) continue;
+        if (g[get<2>(c)][i] == 0)
+          continue;
         if (dist[i] > dist[get<2>(c)] + g[get<2>(c)][i]) {
           dist[i] = dist[get<2>(c)] + g[get<2>(c)][i];
           q.emplace(dist[i], get<1>(c) + 1, i);
@@ -36,7 +39,8 @@ class Solution {
       }
     }
 
-    if (dist[dst] == INT_MAX) return -1;
+    if (dist[dst] == INT_MAX)
+      return -1;
     return dist[dst];
   }
 };
@@ -49,7 +53,8 @@ int main() {
     int n, m, src, dst, k;
     cin >> n >> src >> dst >> k >> m;
     vector<vector<int>> cars(m, vector<int>(3));
-    for (auto &j : cars) cin >> j[0] >> j[1] >> j[2];
+    for (auto &j : cars)
+      cin >> j[0] >> j[1] >> j[2];
     Solution s;
     cout << s.minimumCost(n, cars, src, dst, k) << endl;
   }

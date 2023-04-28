@@ -8,8 +8,8 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
-  int smallestSumSubarray(vector<int>& a) {
+public:
+  int smallestSumSubarray(vector<int> &a) {
     // Code here
     int ans = INT_MAX;
     int total = 0;

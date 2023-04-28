@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
-  void dfs(vector<int> adj[], int k, vector<int>& v) {
+  void dfs(vector<int> adj[], int k, vector<int> &v) {
     for (auto c : adj[k]) {
       if (v[c] == 0) {
         v[c] = 1;
@@ -17,7 +17,7 @@ class Solution {
     }
   }
 
- public:
+public:
   int isCircle(int N, vector<string> A) {
     // code here
     vector<int> adj[26];
@@ -33,11 +33,13 @@ class Solution {
     v[s] = 1;
     dfs(adj, s, v);
     for (int i = 0; i < 26; ++i) {
-      if (v[i] == 0 && V[i] == 1) return 0;
+      if (v[i] == 0 && V[i] == 1)
+        return 0;
     }
     for (int i = 0; i < 26; ++i) {
       if (V[i] == 1) {
-        if (adj[i].size() != in[i]) return 0;
+        if (adj[i].size() != in[i])
+          return 0;
       }
     }
     return 1;

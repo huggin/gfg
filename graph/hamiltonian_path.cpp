@@ -7,19 +7,21 @@ using namespace std;
 class Solution {
   int v[11];
   int n, m;
-  bool solve(int k, vector<vector<int>>& g, int u) {
-    if (u == n) return true;
+  bool solve(int k, vector<vector<int>> &g, int u) {
+    if (u == n)
+      return true;
     for (int i = 0; i < n; ++i) {
       if (g[k][i] == 1 && v[i] == 0) {
         v[i] = 1;
-        if (solve(i, g, u + 1)) return true;
+        if (solve(i, g, u + 1))
+          return true;
         v[i] = 0;
       }
     }
     return false;
   }
 
- public:
+public:
   bool check(int N, int M, vector<vector<int>> Edges) {
     // code here
     vector<vector<int>> g(N, vector<int>(N));
@@ -32,7 +34,8 @@ class Solution {
     for (int i = 0; i < N; ++i) {
       memset(v, 0, sizeof(v));
       v[i] = 1;
-      if (solve(i, g, 1)) return true;
+      if (solve(i, g, 1))
+        return true;
     }
     return false;
   }

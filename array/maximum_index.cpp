@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   // A[]: input array
   // N: size of array
   // Function to find the maximum index difference.
@@ -53,7 +53,8 @@ int main() {
     int arr[num];
 
     // inserting elements
-    for (int i = 0; i < num; i++) cin >> arr[i];
+    for (int i = 0; i < num; i++)
+      cin >> arr[i];
     Solution ob;
 
     // calling maxIndexDiff() function

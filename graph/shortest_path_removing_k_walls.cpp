@@ -12,7 +12,7 @@ int dx[] = {-1, 0, 1, 0};
 int dy[] = {0, -1, 0, 1};
 
 class Solution {
- public:
+public:
   int shotestPath(vector<vector<int>> mat, int n, int m, int k) {
     // code here
     memset(visited, 0, sizeof(visited));
@@ -30,11 +30,13 @@ class Solution {
       int j = get<3>(c);
       int dist = get<0>(c);
       int b = get<1>(c);
-      if (dist >= oo || b > k) return -1;
+      if (dist >= oo || b > k)
+        return -1;
       for (int l = 0; l < 4; ++l) {
         int x = i + dx[l];
         int y = j + dy[l];
-        if (x < 0 || x >= mat.size() || y < 0 || y >= mat[0].size()) continue;
+        if (x < 0 || x >= mat.size() || y < 0 || y >= mat[0].size())
+          continue;
         bool f = false;
         for (int ii = 0; ii <= b; ++ii) {
           if (visited[x][y][ii] == 1) {
@@ -42,8 +44,10 @@ class Solution {
             break;
           }
         }
-        if (f) continue;
-        if (x == mat.size() - 1 && y == mat[0].size() - 1) return dist + 1;
+        if (f)
+          continue;
+        if (x == mat.size() - 1 && y == mat[0].size() - 1)
+          return dist + 1;
         if (mat[x][y] == 0) {
           visited[x][y][b] = 1;
           Q.push(make_tuple(dist + 1, b, x, y));

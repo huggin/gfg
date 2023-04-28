@@ -39,7 +39,8 @@ bool pallan(int n) {
     v.push_back(v[k++]);
   }
   for (int i = 0; i < cnt / 2; ++i) {
-    if (v[i] != v[cnt - 1 - i]) return false;
+    if (v[i] != v[cnt - 1 - i])
+      return false;
   }
   return true;
 }

@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int Maximize(int a[], int n) {
     // Complete the function
     const int M = 1e9 + 7;
@@ -25,7 +25,8 @@ int main() {
     int n;
     cin >> n;
     int a[n];
-    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
     Solution ob;
     cout << ob.Maximize(a, n) << endl;
   }

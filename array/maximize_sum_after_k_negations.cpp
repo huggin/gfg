@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   long long int maximizeSum(long long int a[], int n, int k) {
     // Your code goes here
     sort(a, a + n);
@@ -33,7 +33,8 @@ int main() {
     int n, k;
     cin >> n >> k;
     long long int a[n + 5];
-    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
     Solution ob;
     cout << ob.maximizeSum(a, n, k) << endl;
   }

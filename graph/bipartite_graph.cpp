@@ -10,7 +10,8 @@ class Solution {
   bool ans;
 
   void dfs(int v, vector<int> adj[]) {
-    if (!ans) return;
+    if (!ans)
+      return;
     visited[v] = 1;
     for (auto w : adj[v]) {
       if (!visited[w]) {
@@ -22,7 +23,7 @@ class Solution {
     }
   }
 
- public:
+public:
   bool isBipartite(int V, vector<int> adj[]) {
     // Code here
     ans = true;

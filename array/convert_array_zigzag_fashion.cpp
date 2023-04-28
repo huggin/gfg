@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 // User function template for C++
 class Solution {
- public:
+public:
   // Program for zig-zag conversion of array
   void zigZag(int arr[], int n) {
     // code here
@@ -33,9 +33,11 @@ bool isZigzag(int arr[], int n) {
 
   for (int i = 1; i < n; i++) {
     if (f) {
-      if (arr[i - 1] > arr[i]) return 0;
+      if (arr[i - 1] > arr[i])
+        return 0;
     } else {
-      if (arr[i - 1] < arr[i]) return 0;
+      if (arr[i - 1] < arr[i])
+        return 0;
     }
     f = f ^ 1;
   }

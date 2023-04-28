@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int longestPerfectPiece(int arr[], int N) {
     // code here
     multiset<int> s;
@@ -30,7 +30,8 @@ int main() {
 
     cin >> N;
     int arr[N];
-    for (int i = 0; i < N; i++) cin >> arr[i];
+    for (int i = 0; i < N; i++)
+      cin >> arr[i];
 
     Solution ob;
     cout << ob.longestPerfectPiece(arr, N) << endl;

@@ -5,9 +5,9 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   // Function to find out minimum steps Knight needs to reach target position.
-  int minStepToReachTarget(vector<int>& KnightPos, vector<int>& TargetPos,
+  int minStepToReachTarget(vector<int> &KnightPos, vector<int> &TargetPos,
                            int N) {
     // Code here
     int dx[8] = {-2, -2, -1, -1, 1, 1, 2, 2};
@@ -25,7 +25,8 @@ class Solution {
       Q.pop();
       int d = Q.front();
       Q.pop();
-      if (x == TargetPos[0] && y == TargetPos[1]) return d;
+      if (x == TargetPos[0] && y == TargetPos[1])
+        return d;
       for (int i = 0; i < 8; ++i) {
         int nx = x + dx[i];
         int ny = y + dy[i];

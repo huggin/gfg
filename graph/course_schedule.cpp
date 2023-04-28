@@ -12,7 +12,8 @@ class Solution {
   vector<int> post;
 
   void dfs(int i, vector<int> adj[]) {
-    if (cycle) return;
+    if (cycle)
+      return;
     v[i] = 1;
     on[i] = 1;
     for (auto w : adj[i]) {
@@ -26,7 +27,7 @@ class Solution {
     on[i] = 0;
   }
 
- public:
+public:
   vector<int> findOrder(int n, int m, vector<vector<int>> p) {
     // code here
     vector<int> adj[n];
@@ -41,7 +42,8 @@ class Solution {
         dfs(i, adj);
       }
     }
-    if (cycle) return vector<int>{};
+    if (cycle)
+      return vector<int>{};
     reverse(post.begin(), post.end());
     return post;
   }
@@ -56,7 +58,8 @@ int check(int V, vector<int> &res, vector<int> adj[]) {
   }
   for (int i = 0; i < V; i++) {
     for (int v : adj[i]) {
-      if (map[i] > map[v]) return 0;
+      if (map[i] > map[v])
+        return 0;
     }
   }
   return 1;
@@ -78,7 +81,8 @@ int main() {
     }
 
     vector<int> adj[n];
-    for (auto pre : prerequisites) adj[pre[1]].push_back(pre[0]);
+    for (auto pre : prerequisites)
+      adj[pre[1]].push_back(pre[0]);
 
     Solution obj;
     vector<int> res = obj.findOrder(n, m, prerequisites);

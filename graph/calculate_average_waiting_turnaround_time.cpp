@@ -14,7 +14,7 @@ double round(double var) {
 }
 
 class Solution {
- public:
+public:
   vector<double> averageTimes(vector<int> arrivalTime, vector<int> burstTime,
                               int n) {
     // Write your code here

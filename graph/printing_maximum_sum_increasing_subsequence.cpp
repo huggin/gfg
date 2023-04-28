@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   vector<int> maxSumSequence(int N, int A[]) {
     // code here
     vector<int> dp(N);
@@ -53,11 +53,13 @@ int main() {
     cin >> N;
     ;
     int A[N];
-    for (int i = 0; i < N; i++) cin >> A[i];
+    for (int i = 0; i < N; i++)
+      cin >> A[i];
 
     Solution ob;
     vector<int> ans = ob.maxSumSequence(N, A);
-    for (auto num : ans) cout << num << " ";
+    for (auto num : ans)
+      cout << num << " ";
     cout << "\n";
   }
   return 0;

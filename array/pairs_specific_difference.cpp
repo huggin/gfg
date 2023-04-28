@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int maxSumPairWithDifferenceLessThanK(int arr[], int N, int K) {
     // Your code goes here
     sort(arr, arr + N, greater<>{});
@@ -30,7 +30,8 @@ int main() {
     int N;
     cin >> N;
     int arr[N];
-    for (int i = 0; i < N; i++) cin >> arr[i];
+    for (int i = 0; i < N; i++)
+      cin >> arr[i];
 
     int K;
     cin >> K;

@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int canReach(int A[], int N) {
     // code here
     int curr = 0;
@@ -45,7 +45,8 @@ int main() {
 
     int A[N];
 
-    for (int i = 0; i < N; i++) cin >> A[i];
+    for (int i = 0; i < N; i++)
+      cin >> A[i];
 
     Solution ob;
     cout << ob.canReach(A, N) << endl;

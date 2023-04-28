@@ -5,14 +5,15 @@
 #define N 105
 using namespace std;
 void printArray(vector<int> arr, int size) {
-  for (int i = 0; i < size; i++) cout << arr[i] << " ";
+  for (int i = 0; i < size; i++)
+    cout << arr[i] << " ";
 }
 
 // } Driver Code Ends
 // User function Template for C++
 
 class Solution {
- public:
+public:
   // Function to merge k sorted arrays.
   vector<int> mergeKArrays(vector<vector<int>> arr, int K) {
     // code here

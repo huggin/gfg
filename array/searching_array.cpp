@@ -15,7 +15,8 @@ int main() {
   while (t--) {
     cin >> n >> k;
     int arr[n];
-    for (int i = 0; i < n; i++) cin >> arr[i];
+    for (int i = 0; i < n; i++)
+      cin >> arr[i];
     cin >> x;
     cout << search(arr, n, x, k) << endl;
   }
@@ -29,7 +30,8 @@ int main() {
 int search(int arr[], int n, int x, int k) {
   // Complete the function
   for (int i = 0; i < n; ++i) {
-    if (arr[i] == x) return i;
+    if (arr[i] == x)
+      return i;
   }
   return -1;
 }

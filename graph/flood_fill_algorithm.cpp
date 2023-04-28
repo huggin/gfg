@@ -4,12 +4,13 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
-  vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc,
+public:
+  vector<vector<int>> floodFill(vector<vector<int>> &image, int sr, int sc,
                                 int newColor) {
     // Code here
     vector<vector<int>> ans(image);
-    if (image[sr][sc] == newColor) return ans;
+    if (image[sr][sc] == newColor)
+      return ans;
     int oldColor = image[sr][sc];
     int dx[] = {0, 1, -1, 0};
     int dy[] = {-1, 0, 0, 1};
@@ -46,14 +47,16 @@ int main() {
     cin >> n >> m;
     vector<vector<int>> image(n, vector<int>(m, 0));
     for (int i = 0; i < n; i++) {
-      for (int j = 0; j < m; j++) cin >> image[i][j];
+      for (int j = 0; j < m; j++)
+        cin >> image[i][j];
     }
     int sr, sc, newColor;
     cin >> sr >> sc >> newColor;
     Solution obj;
     vector<vector<int>> ans = obj.floodFill(image, sr, sc, newColor);
     for (auto i : ans) {
-      for (auto j : i) cout << j << " ";
+      for (auto j : i)
+        cout << j << " ";
       cout << "\n";
     }
   }

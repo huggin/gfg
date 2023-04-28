@@ -8,14 +8,15 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int numberOfTriangles(vector<vector<int>> &g, int n) {
     // code it up
     int ans = 0;
     for (int i = 0; i < n; ++i) {
       for (int j = 0; j < n; ++j) {
         for (int k = 0; k < n; ++k) {
-          if (i == j || j == k || i == k) continue;
+          if (i == j || j == k || i == k)
+            continue;
           if (g[i][j] == 1 && g[j][k] == 1 && g[k][i] == 1) {
             // cout << i << ' ' << j << ' ' << k << endl;
             ++ans;
@@ -37,7 +38,8 @@ int main() {
     cin >> n;
     vector<vector<int>> g(n, vector<int>(n));
     for (auto &j : g)
-      for (auto &i : j) cin >> i;
+      for (auto &i : j)
+        cin >> i;
     Solution s;
     cout << s.numberOfTriangles(g, n) << endl;
   }

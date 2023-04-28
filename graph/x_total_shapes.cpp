@@ -5,9 +5,9 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   // Function to find the number of 'X' total shapes.
-  int xShape(vector<vector<char>>& grid) {
+  int xShape(vector<vector<char>> &grid) {
     // Code here
     int n = grid.size();
     int m = grid[0].size();

@@ -8,12 +8,13 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int shortestDistance(int N, int M, vector<vector<int>> A, int X, int Y) {
     // code here
     int dx[] = {-1, 0, 1, 0};
     int dy[] = {0, -1, 0, 1};
-    if (A[0][0] == 0) return -1;
+    if (A[0][0] == 0)
+      return -1;
     queue<int> Q;
     Q.push(0);
     Q.push(0);
@@ -27,7 +28,8 @@ class Solution {
       Q.pop();
       int d = Q.front();
       Q.pop();
-      if (x == X && y == Y) return d;
+      if (x == X && y == Y)
+        return d;
       for (int i = 0; i < 4; ++i) {
         int nx = x + dx[i];
         int ny = y + dy[i];
@@ -53,7 +55,8 @@ int main() {
     cin >> N >> M;
     vector<vector<int>> v(N, vector<int>(M));
     for (int i = 0; i < N; i++)
-      for (int j = 0; j < M; j++) cin >> v[i][j];
+      for (int j = 0; j < M; j++)
+        cin >> v[i][j];
     cin >> x >> y;
     Solution ob;
     cout << ob.shortestDistance(N, M, v, x, y) << "\n";
