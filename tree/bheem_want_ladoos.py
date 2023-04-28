@@ -41,8 +41,7 @@ class Solution:
             return 0
 
         return (
-            node.data + self.getAll(node.left, k - 1) +
-            self.getAll(node.right, k - 1)
+            node.data + self.getAll(node.left, k - 1) + self.getAll(node.right, k - 1)
         )
 
     def ladoos(self, root, home, k):
@@ -55,8 +54,7 @@ class Solution:
         ans = 0
         node = self.home_node
         ans += (
-            node.data + self.getAll(node.left, k - 1) +
-            self.getAll(node.right, k - 1)
+            node.data + self.getAll(node.left, k - 1) + self.getAll(node.right, k - 1)
         )
 
         while self.parent[node]:
