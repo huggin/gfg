@@ -8,13 +8,14 @@ using namespace std;
 // in increasing order when heapSort() is called.
 
 class Solution {
- public:
+public:
   // Heapify function to maintain heap property.
   void heapify(int arr[], int n, int i) {
     // Your Code Here
     while (2 * i + 1 < n) {
       int j = 2 * i + 1;
-      if (j + 1 < n && arr[j] < arr[j + 1]) ++j;
+      if (j + 1 < n && arr[j] < arr[j + 1])
+        ++j;
       if (arr[i] < arr[j]) {
         swap(arr[i], arr[j]);
         i = j;
@@ -24,7 +25,7 @@ class Solution {
     }
   }
 
- public:
+public:
   // Function to build a Heap from array.
   void buildHeap(int arr[], int n) {
     // Your Code Here
@@ -33,7 +34,7 @@ class Solution {
     }
   }
 
- public:
+public:
   // Function to sort an array using Heap Sort.
   void heapSort(int arr[], int n) {
     // code here
@@ -51,7 +52,8 @@ class Solution {
 /* Function to print an array */
 void printArray(int arr[], int size) {
   int i;
-  for (i = 0; i < size; i++) printf("%d ", arr[i]);
+  for (i = 0; i < size; i++)
+    printf("%d ", arr[i]);
   printf("\n");
 }
 
@@ -61,7 +63,8 @@ int main() {
   scanf("%d", &T);
   while (T--) {
     scanf("%d", &n);
-    for (i = 0; i < n; i++) scanf("%d", &arr[i]);
+    for (i = 0; i < n; i++)
+      scanf("%d", &arr[i]);
     Solution ob;
     ob.heapSort(arr, n);
     printArray(arr, n);

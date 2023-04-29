@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   void sortHalves(int arr[], int n) {
     // your code here
     int j = -1;
@@ -15,7 +15,8 @@ class Solution {
         break;
       }
     }
-    if (j == -1) return;
+    if (j == -1)
+      return;
 
     int a[n];
     int i = 0;
@@ -46,12 +47,14 @@ int main() {
     cin >> n;
     int arr[n];
 
-    for (int i = 0; i < n; ++i) cin >> arr[i];
+    for (int i = 0; i < n; ++i)
+      cin >> arr[i];
 
     Solution ob;
 
     ob.sortHalves(arr, n);
-    for (int i = 0; i < n; ++i) cout << arr[i] << " ";
+    for (int i = 0; i < n; ++i)
+      cout << arr[i] << " ";
     cout << endl;
   }
 }

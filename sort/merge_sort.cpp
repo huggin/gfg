@@ -6,7 +6,8 @@ using namespace std;
 /* Function to print an array */
 void printArray(int arr[], int size) {
   int i;
-  for (i = 0; i < size; i++) printf("%d ", arr[i]);
+  for (i = 0; i < size; i++)
+    printf("%d ", arr[i]);
   printf("\n");
 }
 
@@ -32,10 +33,11 @@ class Solution {
     memcpy(arr + l, aux, sizeof(int) * (r - l + 1));
   }
 
- public:
+public:
   void mergeSort(int arr[], int l, int r) {
     // code here
-    if (l >= r) return;
+    if (l >= r)
+      return;
     int m = l + (r - l) / 2;
     mergeSort(arr, l, m);
     mergeSort(arr, m + 1, r);
@@ -53,7 +55,8 @@ int main() {
   while (T--) {
     scanf("%d", &n);
     int arr[n + 1];
-    for (i = 0; i < n; i++) scanf("%d", &arr[i]);
+    for (i = 0; i < n; i++)
+      scanf("%d", &arr[i]);
 
     Solution ob;
     ob.mergeSort(arr, 0, n - 1);

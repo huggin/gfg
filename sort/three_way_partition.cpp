@@ -10,10 +10,10 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   // Function to partition the array around the range such
   // that array is divided into three parts.
-  void threeWayPartition(vector<int>& arr, int a, int b) {
+  void threeWayPartition(vector<int> &arr, int a, int b) {
     // code here
     int lt = 0, i = 0, gt = arr.size() - 1;
 
@@ -69,23 +69,29 @@ int main() {
     ob.threeWayPartition(array, a, b);
 
     for (int i = 0; i < k1; i++) {
-      if (array[i] < b) kk1++;
+      if (array[i] < b)
+        kk1++;
     }
 
     for (int i = k1; i < k1 + k2; i++) {
-      if (array[i] <= b and array[i] >= a) kk2++;
+      if (array[i] <= b and array[i] >= a)
+        kk2++;
     }
 
     for (int i = k1 + k2; i < k1 + k2 + k3; i++) {
-      if (array[i] > b) kk3++;
+      if (array[i] > b)
+        kk3++;
     }
     bool ok = 0;
-    if (k1 == kk1 and k2 == kk2 and k3 == kk3) ok = 1;
-
-    for (int i = 0; i < array.size(); i++) ump[array[i]]--;
+    if (k1 == kk1 and k2 == kk2 and k3 == kk3)
+      ok = 1;
 
     for (int i = 0; i < array.size(); i++)
-      if (ump[array[i]] != 0) ok = 0;
+      ump[array[i]]--;
+
+    for (int i = 0; i < array.size(); i++)
+      if (ump[array[i]] != 0)
+        ok = 0;
 
     if (ok)
       cout << 1 << endl;

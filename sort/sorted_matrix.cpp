@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   vector<vector<int>> sortedMatrix(int N, vector<vector<int>> Mat) {
     // code here
     vector<int> t(N * N);
@@ -37,11 +37,13 @@ int main() {
     cin >> N;
     vector<vector<int>> v(N, vector<int>(N));
     for (int i = 0; i < N; i++)
-      for (int j = 0; j < N; j++) cin >> v[i][j];
+      for (int j = 0; j < N; j++)
+        cin >> v[i][j];
     Solution ob;
     v = ob.sortedMatrix(N, v);
     for (int i = 0; i < N; i++) {
-      for (int j = 0; j < N; j++) cout << v[i][j] << " ";
+      for (int j = 0; j < N; j++)
+        cout << v[i][j] << " ";
       cout << "\n";
     }
   }

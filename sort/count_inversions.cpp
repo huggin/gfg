@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   // arr[]: Input Array
   // N : Size of the Array arr[]
   // Function to count inversions in the array.

@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   void sort012(int a[], int n) {
     // code here
     int count[3] = {0, 0, 0};
