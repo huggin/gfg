@@ -18,7 +18,7 @@ class Solution:
 
         ans = [0] * n
         for i in range(n):
-            idx = bisect.bisect_left(d, d[i][0], key = lambda x : x[0])
+            idx = bisect.bisect_left(d, d[i][0], key=lambda x: x[0])
             # idx = bisect.bisect_left(d, (d[i][0], 0))
             ans[d[i][1]] = prefix[idx]
 
@@ -26,7 +26,7 @@ class Solution:
 
 
 # {
- # Driver Code Starts
+# Driver Code Starts
 class IntArray:
     def __init__(self) -> None:
         pass
@@ -44,7 +44,6 @@ class IntArray:
 if __name__ == "__main__":
     t = int(input())
     for _ in range(t):
-
         n = int(input())
 
         arr = IntArray().Input(n)
