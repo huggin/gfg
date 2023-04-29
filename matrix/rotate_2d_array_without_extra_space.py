@@ -1,28 +1,24 @@
-#User function Template for python3
+# User function Template for python3
 class Solution:
-    
-    def rotateMatrix(self,arr, n):
+    def rotateMatrix(self, arr, n):
         # code here
-        for i in range(n//2):
-            for j in range(i, n-1-i):
+        for i in range(n // 2):
+            for j in range(i, n - 1 - i):
                 temp = arr[i][j]
-                arr[i][j] = arr[j][n-1-i]
-                arr[j][n-1-i] = arr[n-1-i][n-1-j]
-                arr[n-1-i][n-1-j] = arr[n-1-j][i]
-                arr[n-1-j][i] = temp
-        
+                arr[i][j] = arr[j][n - 1 - i]
+                arr[j][n - 1 - i] = arr[n - 1 - i][n - 1 - j]
+                arr[n - 1 - i][n - 1 - j] = arr[n - 1 - j][i]
+                arr[n - 1 - j][i] = temp
+
         return arr
-                
-            
-
-#{ 
- # Driver Code Starts
-#Initial Template for Python 3
 
 
+# {
+# Driver Code Starts
+# Initial Template for Python 3
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     tc = int(input())
     while tc > 0:
         n = int(input())
