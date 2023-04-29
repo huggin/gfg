@@ -31,9 +31,11 @@ class Solution:
                 elif dist[neighbour] == d + weight:
                     path[neighbour] += path[node]
 
-        return path[n-1]
+        return path[n - 1]
+
+
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
 
 
@@ -54,7 +56,6 @@ class IntArray:
 if __name__ == "__main__":
     t = int(input())
     for _ in range(t):
-
         n, m = map(int, input().split())
 
         adj = []

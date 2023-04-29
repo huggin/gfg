@@ -40,7 +40,7 @@ class Solution:
         sz = len(points)
         for i in range(sz - 1, -1, -1):
             if i + points[i] < len(points):
-                points[i] += points[i+points[i]]
+                points[i] += points[i + points[i]]
 
             if points[i] >= ma:
                 ma = points[i]
@@ -50,9 +50,9 @@ class Solution:
 
 
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
-if __name__ == '__main__':
+if __name__ == "__main__":
     test_cases = int(input())
     for _ in range(test_cases):
         n, m = map(int, input().split())
@@ -63,7 +63,6 @@ if __name__ == '__main__':
             l = list(map(int, input().split()))
             orignal_array.append(l)
 
-        res = Solution().knightInGeekland(
-            orignal_array, [starting_x, starting_y])
+        res = Solution().knightInGeekland(orignal_array, [starting_x, starting_y])
         print(res)
 # } Driver Code Ends

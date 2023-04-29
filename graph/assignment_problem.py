@@ -49,8 +49,8 @@ class Solution:
 
             curcost = INF
             for i in range(N):
-                if f[i+N][t] == 0 and dist[i+N] < curcost:
-                    curcost = dist[i+N]
+                if f[i + N][t] == 0 and dist[i + N] < curcost:
+                    curcost = dist[i + N]
                     p[t] = i + N
 
             if curcost == INF:
@@ -69,9 +69,9 @@ class Solution:
 
 
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
-if __name__ == '__main__':
+if __name__ == "__main__":
     t = int(input())
     for _ in range(t):
         N = int(input())

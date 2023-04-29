@@ -17,17 +17,17 @@ class Solution:
                 q.append((i, 0))
                 grid[i][0] = 0
 
-            if grid[i][m-1] == 1:
-                q.append((i, m-1))
-                grid[i][m-1] = 0
+            if grid[i][m - 1] == 1:
+                q.append((i, m - 1))
+                grid[i][m - 1] = 0
 
         for j in range(m):
             if grid[0][j] == 1:
                 q.append((0, j))
                 grid[0][j] = 0
-            if grid[n-1][j] == 1:
-                q.append((n-1, j))
-                grid[n-1][j] = 0
+            if grid[n - 1][j] == 1:
+                q.append((n - 1, j))
+                grid[n - 1][j] = 0
 
         dx = [-1, 0, 0, 1]
         dy = [0, -1, 1, 0]
@@ -45,7 +45,7 @@ class Solution:
 
 
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
 
 

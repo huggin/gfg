@@ -3,6 +3,7 @@
 import sys
 from collections import deque
 from typing import List
+
 sys.setrecursionlimit(10**8)
 
 
@@ -30,12 +31,19 @@ class Solution:
                     while len(q) > 0:
                         x = q.popleft()
                         y = q.popleft()
-                        total.append((x-i, y-j))
+                        total.append((x - i, y - j))
                         num += 1
                         for k in range(4):
                             nx = x + dx[k]
                             ny = y + dy[k]
-                            if nx >= 0 and nx < n and ny >= 0 and ny < m and not marked[nx][ny] and grid[nx][ny]:
+                            if (
+                                nx >= 0
+                                and nx < n
+                                and ny >= 0
+                                and ny < m
+                                and not marked[nx][ny]
+                                and grid[nx][ny]
+                            ):
                                 marked[nx][ny] = 1
                                 q.append(nx)
                                 q.append(ny)
@@ -47,8 +55,10 @@ class Solution:
                         s2 = s2 * 10 + t[1]
                     sign.add((s1, s2))
         return len(sign)
+
+
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
 
 
