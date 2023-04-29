@@ -7,11 +7,12 @@ using namespace std;
 // you are required to complete this function
 // function should print the required range
 class Solution {
- public:
+public:
   pair<int, int> findSmallestRange(int KSortedArray[][N], int n, int k) {
     // code here
     priority_queue<pair<int, int>, vector<pair<int, int>>,
-                   greater<pair<int, int>>> Q;
+                   greater<pair<int, int>>>
+        Q;
     int ma = INT_MIN, mi = INT_MAX;
     for (int i = 0; i < k; ++i) {
       Q.emplace(KSortedArray[i][0], i);
@@ -31,7 +32,8 @@ class Solution {
         ans_mi = mi;
       }
 
-      if (index[line] == n - 1) break;
+      if (index[line] == n - 1)
+        break;
       Q.emplace(KSortedArray[line][index[line] + 1], line);
       if (KSortedArray[line][index[line] + 1] > ma) {
         ma = KSortedArray[line][index[line] + 1];
@@ -52,7 +54,8 @@ int main() {
     int arr[N][N];
     pair<int, int> rangee;
     for (int i = 0; i < k; i++)
-      for (int j = 0; j < n; j++) cin >> arr[i][j];
+      for (int j = 0; j < n; j++)
+        cin >> arr[i][j];
     Solution obj;
     rangee = obj.findSmallestRange(arr, n, k);
     cout << rangee.first << " " << rangee.second << "\n";

@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   // Function to merge the arrays.
   void merge(long long arr1[], long long arr2[], int n, int m) {
     // code here
@@ -45,9 +45,11 @@ int main() {
     Solution ob;
     ob.merge(arr1, arr2, n, m);
 
-    for (int i = 0; i < n; i++) cout << arr1[i] << " ";
+    for (int i = 0; i < n; i++)
+      cout << arr1[i] << " ";
 
-    for (int i = 0; i < m; i++) cout << arr2[i] << " ";
+    for (int i = 0; i < m; i++)
+      cout << arr2[i] << " ";
 
     cout << endl;
   }

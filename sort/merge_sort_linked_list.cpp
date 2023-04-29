@@ -8,7 +8,7 @@ using namespace std;
 
 struct Node {
   int data;
-  struct Node* next;
+  struct Node *next;
   Node(int x) {
     data = x;
     next = NULL;
@@ -26,19 +26,20 @@ struct Node
 */
 
 class Solution {
- public:
+public:
   // Function to sort the given linked list using Merge Sort.
-  Node* mergeSort(Node* head) {
+  Node *mergeSort(Node *head) {
     // your code here
-    Node* p = head;
+    Node *p = head;
     int n = 0;
     while (p) {
       ++n;
       p = p->next;
     }
-    if (n == 0 || n == 1) return head;
+    if (n == 0 || n == 1)
+      return head;
     p = head;
-    Node* prev = NULL;
+    Node *prev = NULL;
     int k = n / 2;
     while (k > 0) {
       --k;
@@ -46,10 +47,10 @@ class Solution {
       p = p->next;
     }
     prev->next = NULL;
-    Node* first = mergeSort(head);
-    Node* second = mergeSort(p);
+    Node *first = mergeSort(head);
+    Node *second = mergeSort(p);
     prev = NULL;
-    Node* ans = NULL;
+    Node *ans = NULL;
     while (first && second) {
       if (first->data <= second->data) {
         if (ans == NULL) {
@@ -90,7 +91,7 @@ class Solution {
 
 //{ Driver Code Starts.
 
-void printList(Node* node) {
+void printList(Node *node) {
   while (node != NULL) {
     printf("%d ", node->data);
     node = node->next;
@@ -98,8 +99,8 @@ void printList(Node* node) {
   printf("\n");
 }
 
-void push(struct Node** head_ref, int new_data) {
-  Node* new_node = new Node(new_data);
+void push(struct Node **head_ref, int new_data) {
+  Node *new_node = new Node(new_data);
 
   new_node->next = (*head_ref);
   (*head_ref) = new_node;
@@ -109,7 +110,7 @@ int main() {
   long test;
   cin >> test;
   while (test--) {
-    struct Node* a = NULL;
+    struct Node *a = NULL;
     long n, tmp;
     cin >> n;
     for (int i = 0; i < n; i++) {

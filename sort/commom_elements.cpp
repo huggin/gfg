@@ -8,7 +8,7 @@ using namespace std;
 // Back-end complete function Template for C++
 
 class Solution {
- public:
+public:
   vector<int> common_element(vector<int> v1, vector<int> v2) {
     // Your code here
     sort(begin(v1), end(v1));

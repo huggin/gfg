@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int count(int n) {
     int ans = 0;
     while (n) {
@@ -35,7 +35,8 @@ int main() {
     }
     Solution ob;
     ob.sortBySetBitCount(arr, n);
-    for (int i = 0; i < n; i++) cout << arr[i] << " ";
+    for (int i = 0; i < n; i++)
+      cout << arr[i] << " ";
     cout << endl;
   }
   return 0;

@@ -6,7 +6,7 @@ using namespace std;
 /* a node of the singly linked list */
 struct node {
   int data;
-  struct node* next;
+  struct node *next;
 
   node(int x) {
     data = x;
@@ -15,9 +15,9 @@ struct node {
 };
 
 /* A utility function to insert a node at the beginning of linked list */
-void push(struct node** head_ref, int new_data) {
+void push(struct node **head_ref, int new_data) {
   /* allocate node */
-  struct node* new_node = new node(new_data);
+  struct node *new_node = new node(new_data);
 
   /* link the old list off the new node */
   new_node->next = (*head_ref);
@@ -27,14 +27,14 @@ void push(struct node** head_ref, int new_data) {
 }
 
 /* A utility function to print linked list */
-void printList(struct node* node) {
+void printList(struct node *node) {
   while (node != NULL) {
     printf("%d ", node->data);
     node = node->next;
   }
   printf("\n");
 }
-void quickSort(struct node** headRef);
+void quickSort(struct node **headRef);
 int main() {
   int t, n, x;
   cin >> t;
@@ -76,13 +76,14 @@ struct node
 }; */
 
 // you have to complete this function
-node* qSort(node* head) {
-  if (head == NULL || head->next == NULL) return head;
+node *qSort(node *head) {
+  if (head == NULL || head->next == NULL)
+    return head;
 
   int pivot = head->data;
   node *left_head = NULL, *left_tail = NULL, *right_head = NULL,
        *right_tail = NULL;
-  node* current = head->next;
+  node *current = head->next;
   while (current) {
     if (current->data < pivot) {
       if (left_head == NULL) {
@@ -103,17 +104,19 @@ node* qSort(node* head) {
     }
     current = current->next;
   }
-  if (left_tail) left_tail->next = NULL;
-  if (right_tail) right_tail->next = NULL;
+  if (left_tail)
+    left_tail->next = NULL;
+  if (right_tail)
+    right_tail->next = NULL;
 
-  node* left = qSort(left_head);
-  node* right = qSort(right_head);
+  node *left = qSort(left_head);
+  node *right = qSort(right_head);
 
   if (!left) {
     head->next = right;
     return head;
   } else {
-    node* temp = left;
+    node *temp = left;
     while (temp->next != NULL) {
       temp = temp->next;
     }
@@ -124,8 +127,9 @@ node* qSort(node* head) {
 }
 
 // you have to complete this function
-void quickSort(struct node** headRef) {
-  if (*headRef == NULL || (*headRef)->next == NULL) return;
-  node* head = *headRef;
+void quickSort(struct node **headRef) {
+  if (*headRef == NULL || (*headRef)->next == NULL)
+    return;
+  node *head = *headRef;
   *headRef = qSort(head);
 }
