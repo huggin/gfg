@@ -18,7 +18,7 @@ class Shop:
 
     def get(self, i):
         self.countOfCalls += 1
-        if (self.countOfCalls > 50 or i >= len(self.chocolates) or i < 0):
+        if self.countOfCalls > 50 or i >= len(self.chocolates) or i < 0:
             return -1
         return self.chocolates[i]
 
@@ -50,15 +50,16 @@ class Solution:
             i = bisect.bisect_right(shop.chocolates, k)
             if i == 0:
                 break
-            ans += k // shop.chocolates[i-1]
-            k %= shop.chocolates[i-1]
+            ans += k // shop.chocolates[i - 1]
+            k %= shop.chocolates[i - 1]
         return ans
 
+
 # {
- # Driver Code Starts.
+# Driver Code Starts.
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     tc = int(input())
     while tc > 0:
         shop = Shop()

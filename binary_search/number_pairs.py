@@ -19,7 +19,7 @@ class Solution:
                 ans += n - idx
                 ans -= bisect.bisect(Y, 3) - bisect.bisect_left(Y, 3)
             else:
-                idx = bisect.bisect_left(Y, x+1)
+                idx = bisect.bisect_left(Y, x + 1)
                 ans += n - idx
 
         for y in Y:
@@ -28,12 +28,14 @@ class Solution:
                 ans += m - idx
 
         return ans
+
+
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     tc = int(input())
     while tc > 0:
         m, n = list(map(int, input().strip().split()))
