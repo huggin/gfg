@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 // User function template for C++
 class Solution {
- public:
+public:
   string removeDuplicates(string str) {
     // code here
     string s;

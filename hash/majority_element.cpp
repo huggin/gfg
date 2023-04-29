@@ -8,7 +8,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   // Function to find majority element in the array
   // a: input array
   // size: size of input array

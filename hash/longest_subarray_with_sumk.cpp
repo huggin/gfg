@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int lenOfLongSubarr(int A[], int N, int K) {
     // Complete the function
     int ans = 0;
@@ -12,7 +12,8 @@ class Solution {
     int total = 0;
     for (int i = 0; i < N; ++i) {
       total += A[i];
-      if (total == K) ans = max(ans, i + 1);
+      if (total == K)
+        ans = max(ans, i + 1);
       if (m.find(total) == m.end()) {
         m[total] = i;
       }
@@ -37,7 +38,8 @@ int main() {
     cin >> n >> k;
     int a[n];
 
-    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
     Solution ob;
     cout << ob.lenOfLongSubarr(a, n, k) << endl;
   }

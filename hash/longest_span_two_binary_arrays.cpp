@@ -10,7 +10,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   int longestCommonSum(bool arr1[], bool arr2[], int n) {
     // code here
     unordered_map<int, int> m;
@@ -18,8 +18,10 @@ class Solution {
     int total = 0;
     int ans = 0;
     for (int i = 0; i < n; ++i) {
-      if (arr1[i] == 1) ++total;
-      if (arr2[i] == 1) --total;
+      if (arr1[i] == 1)
+        ++total;
+      if (arr2[i] == 1)
+        --total;
       if (m.find(total) != m.end())
         ans = max(ans, i - m[total]);
       else

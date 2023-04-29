@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   vector<int> countDistinct(int A[], int n, int k) {
     // code here.
     unordered_map<int, int> m;
@@ -34,10 +34,12 @@ int main() {
     int n, k;
     cin >> n >> k;
     int a[n];
-    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
     Solution obj;
     vector<int> result = obj.countDistinct(a, n, k);
-    for (int i : result) cout << i << " ";
+    for (int i : result)
+      cout << i << " ";
     cout << endl;
   }
   return 0;

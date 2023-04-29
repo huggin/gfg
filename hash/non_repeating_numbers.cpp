@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   vector<int> singleNumber(vector<int> nums) {
     // Code here.
     vector<int> ans;
@@ -33,10 +33,12 @@ int main() {
     int n;
     cin >> n;
     vector<int> v(2 * n + 2);
-    for (int i = 0; i < 2 * n + 2; i++) cin >> v[i];
+    for (int i = 0; i < 2 * n + 2; i++)
+      cin >> v[i];
     Solution ob;
     vector<int> ans = ob.singleNumber(v);
-    for (auto i : ans) cout << i << " ";
+    for (auto i : ans)
+      cout << i << " ";
     cout << "\n";
   }
   return 0;

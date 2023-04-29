@@ -8,7 +8,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   // Function to count subarrays with sum equal to 0.
   long long int findSubarray(vector<long long int> &arr, int n) {
     // code here
@@ -30,11 +30,12 @@ int main() {
   cin >> t;
   while (t--) {
     int n;
-    cin >> n;  // input size of array
+    cin >> n; // input size of array
 
     vector<long long int> arr(n, 0);
 
-    for (int i = 0; i < n; i++) cin >> arr[i];  // input array elements
+    for (int i = 0; i < n; i++)
+      cin >> arr[i]; // input array elements
     Solution ob;
     cout << ob.findSubarray(arr, n) << "\n";
   }

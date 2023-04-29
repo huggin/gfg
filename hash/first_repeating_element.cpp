@@ -8,7 +8,7 @@ using namespace std;
 // User function template in C++
 
 class Solution {
- public:
+public:
   // Function to return the position of the first repeating element.
   int firstRepeated(int arr[], int n) {
     // code here
@@ -21,7 +21,8 @@ class Solution {
         ans = min(ans, m[arr[i]]);
       }
     }
-    if (ans == INT_MAX) return -1;
+    if (ans == INT_MAX)
+      return -1;
     return ans;
   }
 };
@@ -37,7 +38,8 @@ int main() {
 
     int arr[n];
 
-    for (int i = 0; i < n; ++i) cin >> arr[i];
+    for (int i = 0; i < n; ++i)
+      cin >> arr[i];
     Solution ob;
     cout << ob.firstRepeated(arr, n) << "\n";
   }

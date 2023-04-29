@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 // User function template for C++
 class Solution {
- public:
+public:
   string removeDups(string S) {
     // Your code goes here
     unordered_set<char> s;

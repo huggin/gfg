@@ -11,7 +11,7 @@ using namespace std;
 // return the maximum length of the subarray
 // with equal 0s and 1s
 class Solution {
- public:
+public:
   int maxLen(int arr[], int N) {
     // Your code here
     unordered_map<int, int> m;
@@ -44,7 +44,8 @@ int main() {
     int n;
     cin >> n;
     int a[n];
-    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
     Solution obj;
     cout << obj.maxLen(a, n) << endl;
   }
