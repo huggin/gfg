@@ -21,16 +21,16 @@ class Solution:
             for nb in g[curr]:
                 if dist[nb] == -1:
                     dist[nb] = d + 1
-                    q.append((nb, d+1))
+                    q.append((nb, d + 1))
 
         return dist
 
 
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     tc = int(input())
     while tc > 0:
         n, m = map(int, input().strip().split())

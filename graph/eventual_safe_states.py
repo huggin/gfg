@@ -40,13 +40,12 @@ class Solution:
 
 
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
 
 if __name__ == "__main__":
     T = int(input())
     for t in range(T):
-
         V, E = map(int, input().strip().split())
         adj = [[] for i in range(V)]
         for i in range(E):
@@ -55,7 +54,7 @@ if __name__ == "__main__":
         obj = Solution()
         ans = obj.eventualSafeNodes(V, adj)
         for nodes in ans:
-            print(nodes, end=' ')
+            print(nodes, end=" ")
         print()
 
 

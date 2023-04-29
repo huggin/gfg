@@ -5,7 +5,7 @@ from collections import deque
 class Solution:
     def numberOfCells(self, n, m, r, c, u, d, mat):
         # code here
-        if mat[r][c] == '#':
+        if mat[r][c] == "#":
             return 0
 
         marked = [[0 for _ in range(m)] for _ in range(n)]
@@ -32,7 +32,7 @@ class Solution:
                 ny = y + dy[i]
                 if not (nx >= 0 and nx < n and ny >= 0 and ny < m):
                     continue
-                if mat[nx][ny] == '#' or marked[nx][ny] == 1:
+                if mat[nx][ny] == "#" or marked[nx][ny] == 1:
                     continue
                 if i == 2 and cu == 0:
                     continue
@@ -53,16 +53,16 @@ class Solution:
 
         return ans
 
+
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     t = int(int(input()))
 
     for tcs in range(t):
-
         n, m, r, c, u, d = [int(x) for x in input().split()]
 
         mat = []
