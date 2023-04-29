@@ -6,12 +6,13 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   // Complete this function
   // Function to check whether there is a subarray present with 0-sum or not.
   bool subArrayExists(int arr[], int n) {
     // Your code here
-    if (n == 0) return false;
+    if (n == 0)
+      return false;
     unordered_set<int> s;
     int t = 0;
     s.insert(0);
@@ -36,7 +37,8 @@ int main() {
     int n;
     cin >> n;
     int arr[n];
-    for (int i = 0; i < n; i++) cin >> arr[i];
+    for (int i = 0; i < n; i++)
+      cin >> arr[i];
     Solution obj;
     if (obj.subArrayExists(arr, n))
       cout << "Yes\n";

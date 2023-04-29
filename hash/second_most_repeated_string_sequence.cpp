@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   string secFrequent(string arr[], int n) {
     // code here.
     unordered_map<string, int> m;
@@ -19,7 +19,8 @@ class Solution {
     }
     auto it = m2.rbegin();
     ++it;
-    if (it == m2.rend()) return "";
+    if (it == m2.rend())
+      return "";
     return it->second;
   }
 };
@@ -32,7 +33,8 @@ int main() {
     int n;
     cin >> n;
     string arr[n];
-    for (int i = 0; i < n; ++i) cin >> arr[i];
+    for (int i = 0; i < n; ++i)
+      cin >> arr[i];
     Solution ob;
     cout << ob.secFrequent(arr, n) << endl;
   }

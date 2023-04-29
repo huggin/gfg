@@ -8,11 +8,12 @@ using namespace std;
 /*You are required to complete this function*/
 
 class Solution {
- public:
-  int maxLen(vector<int>& A, int n) {
+public:
+  int maxLen(vector<int> &A, int n) {
     // Your code here
     int ans = 0;
-    if (n == 0) return ans;
+    if (n == 0)
+      return ans;
     unordered_map<int, int> m;
     int t = 0;
     for (int i = 0; i < n; ++i) {

@@ -8,14 +8,15 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int findTime(string S1, string S2) {
     // code here
     unordered_map<char, int> m;
     for (int i = 0; i < S1.size(); ++i) {
       m[S1[i]] = i;
     }
-    if (S2.size() == 0) return 0;
+    if (S2.size() == 0)
+      return 0;
     int ans = m[S2[0]];
     for (int i = 1; i < S2.size(); ++i) {
       ans += abs(m[S2[i]] - m[S2[i - 1]]);

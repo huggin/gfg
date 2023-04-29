@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int firstElementKTime(int a[], int n, int k) {
     unordered_map<int, int> m;
     for (int i = 0; i < n; ++i) {

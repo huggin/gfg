@@ -4,8 +4,8 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
-  int numberOfSubarrays(vector<int>& arr, int N, int target) {
+public:
+  int numberOfSubarrays(vector<int> &arr, int N, int target) {
     // code here
     int ans = 0;
     unordered_map<int, int> m;
@@ -13,7 +13,8 @@ class Solution {
     int sum = 0;
     for (int i = 0; i < N; ++i) {
       sum += arr[i];
-      if (m.find(sum - target) != m.end()) ans += m[sum - target];
+      if (m.find(sum - target) != m.end())
+        ans += m[sum - target];
       m[sum]++;
     }
     return ans;
@@ -31,7 +32,8 @@ int main() {
     int target;
     cin >> target;
     vector<int> arr(N);
-    for (int i = 0; i < N; i++) cin >> arr[i];
+    for (int i = 0; i < N; i++)
+      cin >> arr[i];
     Solution obj;
     cout << obj.numberOfSubarrays(arr, N, target) << endl;
   }

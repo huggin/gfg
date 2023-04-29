@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   // Function to count subarrays with 1s and 0s.
   long long int countSubarrWithEqualZeroAndOne(int arr[], int n) {
     // Your code here
@@ -35,7 +35,8 @@ int main() {
     int n, i;
     cin >> n;
     int arr[n];
-    for (i = 0; i < n; i++) cin >> arr[i];
+    for (i = 0; i < n; i++)
+      cin >> arr[i];
     Solution obj;
     cout << obj.countSubarrWithEqualZeroAndOne(arr, n) << "\n";
   }

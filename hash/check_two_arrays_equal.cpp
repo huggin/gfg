@@ -9,7 +9,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   // Function to check if two arrays are equal or not.
   bool check(vector<ll> A, vector<ll> B, int N) {
     // code here
@@ -18,7 +18,8 @@ class Solution {
       ++m[A[i]];
     }
     for (int i = 0; i < N; ++i) {
-      if (--m[B[i]] < 0) return false;
+      if (--m[B[i]] < 0)
+        return false;
     }
     return true;
   }
@@ -35,13 +36,15 @@ int main() {
     vector<ll> arr(n, 0), brr(n, 0);
 
     // increase the count of elements in first array
-    for (ll i = 0; i < n; i++) cin >> arr[i];
+    for (ll i = 0; i < n; i++)
+      cin >> arr[i];
 
     // iterate through another array
     // and decrement the count of elements
     // in the map in which frequency of elements
     // is stored for first array
-    for (ll i = 0; i < n; i++) cin >> brr[i];
+    for (ll i = 0; i < n; i++)
+      cin >> brr[i];
     Solution ob;
     cout << ob.check(arr, brr, n) << "\n";
   }

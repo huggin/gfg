@@ -6,7 +6,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int firstNonRepeating(int arr[], int n) {
     // Complete the function
     unordered_map<int, int> m;

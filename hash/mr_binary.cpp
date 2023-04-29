@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int maximum_index(string s) {
     // Code here
     int n = s.size();

@@ -8,7 +8,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   // Function to find most frequent word in an array of strings.
   string mostFrequentWord(string arr[], int n) {
     // code here
@@ -39,7 +39,8 @@ int main() {
     cin >> n;
 
     string arr[n];
-    for (int i = 0; i < n; i++) cin >> arr[i];
+    for (int i = 0; i < n; i++)
+      cin >> arr[i];
     Solution obj;
     cout << obj.mostFrequentWord(arr, n) << endl;
   }
