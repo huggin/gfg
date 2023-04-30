@@ -7,14 +7,17 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   string reverseWithSpacesIntact(string s) {
     // code here.
     int n = s.size();
     for (int i = 0, j = n - 1; i < j;) {
-      while (s[i] == ' ') ++i;
-      while (s[j] == ' ') --j;
-      if (i >= j) break;
+      while (s[i] == ' ')
+        ++i;
+      while (s[j] == ' ')
+        --j;
+      if (i >= j)
+        break;
       swap(s[i], s[j]);
       ++i;
       --j;

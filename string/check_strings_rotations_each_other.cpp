@@ -5,13 +5,15 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   // Function to check if two strings are rotations of each other or not.
   bool areRotations(string s1, string s2) {
     // Your code here
-    if (s1.size() != s2.size()) return false;
+    if (s1.size() != s2.size())
+      return false;
     s2 = s2 + s2;
-    if (s2.find(s1) != string::npos) return true;
+    if (s2.find(s1) != string::npos)
+      return true;
     return false;
   }
 };

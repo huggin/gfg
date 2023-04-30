@@ -27,7 +27,7 @@ class Solution {
     return next[m - 1];
   }
 
- public:
+public:
   int minChar(string str) {
     // Write your code here
     string s(str);

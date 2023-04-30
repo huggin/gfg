@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int lcsK(int k, string st) {
     // code here
     int n = st.size();
@@ -37,7 +37,8 @@ class Solution {
 
     ans = 0;
     int ans2 = pre + suf;
-    if (k == 1) ans2 = max(pre, suf);
+    if (k == 1)
+      ans2 = max(pre, suf);
     for (int i = pre; i + suf < n; ++i) {
       if (st[i] == '1') {
         ans2 = max(ans, ans2);

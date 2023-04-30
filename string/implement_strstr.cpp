@@ -34,7 +34,8 @@ int strstr(string s, string x) {
         break;
       }
     }
-    if (j == x.size()) return i;
+    if (j == x.size())
+      return i;
   }
   return -1;
 }

@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 // User function template for C++
 class Solution {
- public:
+public:
   int search(string text, string pat) {
     // Your code goes here
     return text.find(pat) != string::npos;

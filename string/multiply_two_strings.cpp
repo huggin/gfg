@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
-  void multi(int ans[], const string& s1, const string& s2, int k, int more) {
+  void multi(int ans[], const string &s1, const string &s2, int k, int more) {
     int d = s1[k] - '0';
     for (int i = 0; i < s2.size(); ++i) {
       int t = ans[i + k] + (s2[i] - '0') * d + more;
@@ -16,7 +16,7 @@ class Solution {
     }
   }
 
- public:
+public:
   /*You are required to complete below function */
   string multiplyStrings(string s1, string s2) {
     // Your code here
@@ -29,8 +29,10 @@ class Solution {
     }
     reverse(s1.begin(), s1.end());
     reverse(s2.begin(), s2.end());
-    if (s1[s1.size() - 1] == '-') s1.pop_back();
-    if (s2[s2.size() - 1] == '-') s2.pop_back();
+    if (s1[s1.size() - 1] == '-')
+      s1.pop_back();
+    if (s2[s2.size() - 1] == '-')
+      s2.pop_back();
 
     int ans[2001] = {0};
     int more = 0;
@@ -45,8 +47,10 @@ class Solution {
     while (s[s.size() - 1] == '0') {
       s.pop_back();
     }
-    if (s.size() == 0) return "0";
-    if (f == -1) s.push_back('-');
+    if (s.size() == 0)
+      return "0";
+    if (f == -1)
+      s.push_back('-');
     reverse(s.begin(), s.end());
     return s;
   }

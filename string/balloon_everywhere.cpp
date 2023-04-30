@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int maxInstance(string s) {
     int cnt[26] = {0};
     for (char c : s) {

@@ -9,21 +9,23 @@ using namespace std;
 // Back-end complete function Template for C++
 
 class Solution {
-  bool isAnagram(const string& s1, const string& s2, int l1, int r1, int l2,
+  bool isAnagram(const string &s1, const string &s2, int l1, int r1, int l2,
                  int r2) {
     unordered_map<char, int> m;
     for (int i = l1; i <= r1; ++i) {
       ++m[s1[i]];
     }
     for (int i = l2; i <= r2; ++i) {
-      if (--m[s2[i]] < 0) return false;
+      if (--m[s2[i]] < 0)
+        return false;
     }
     return true;
   }
 
-  bool isScramble(const string& s1, const string& s2, int l1, int r1, int l2,
+  bool isScramble(const string &s1, const string &s2, int l1, int r1, int l2,
                   int r2) {
-    if (r1 - l1 <= 2) return true;
+    if (r1 - l1 <= 2)
+      return true;
     for (int i = l1; i < r1; ++i) {
       if (isAnagram(s1, s2, l1, i, l2, l2 + i - l1)) {
         return isScramble(s1, s2, l1, i, l2, l2 + i - l1) &&
@@ -37,10 +39,11 @@ class Solution {
     return false;
   }
 
- public:
+public:
   bool isScramble(string S1, string S2) {
     // code here
-    if (!isAnagram(S1, S2, 0, S1.size() - 1, 0, S2.size() - 1)) return false;
+    if (!isAnagram(S1, S2, 0, S1.size() - 1, 0, S2.size() - 1))
+      return false;
     return isScramble(S1, S2, 0, S1.size() - 1, 0, S2.size() - 1);
   }
 };

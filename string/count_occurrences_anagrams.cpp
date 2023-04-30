@@ -8,12 +8,13 @@ using namespace std;
 class Solution {
   bool cmp(int a[], int b[], int n) {
     for (int i = 0; i < n; ++i) {
-      if (a[i] != b[i]) return false;
+      if (a[i] != b[i])
+        return false;
     }
     return true;
   }
 
- public:
+public:
   int search(string pat, string txt) {
     // code here
     int cp[256] = {0};
@@ -26,11 +27,13 @@ class Solution {
       ++ct[txt[i]];
     }
     int ans = 0;
-    if (cmp(cp, ct, 256)) ++ans;
+    if (cmp(cp, ct, 256))
+      ++ans;
     for (int i = n; i < txt.size(); ++i) {
       ++ct[txt[i]];
       --ct[txt[i - n]];
-      if (cmp(cp, ct, 256)) ++ans;
+      if (cmp(cp, ct, 256))
+        ++ans;
     }
     return ans;
   }

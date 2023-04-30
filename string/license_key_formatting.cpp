@@ -7,14 +7,15 @@ using namespace std;
 // } Driver Code Ends
 // Back-end complete function Template for C++
 class Solution {
- public:
+public:
   string ReFormatString(string S, int K) {
     reverse(S.begin(), S.end());
     string ans;
     ans.reserve(S.size());
     int k = 0;
     for (auto c : S) {
-      if (c == '-') continue;
+      if (c == '-')
+        continue;
       if (c >= '0' && c <= '9' || c >= 'A' && c <= 'Z') {
         ans.push_back(c);
       } else {

@@ -6,18 +6,20 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
-  bool ok(const string& ans, int k, char c) {
+  bool ok(const string &ans, int k, char c) {
     for (int i = ans.size() - 1; i >= 0 && k > 0; --i) {
-      if (ans[i] != c) return false;
+      if (ans[i] != c)
+        return false;
       --k;
     }
     return k == 0;
   }
 
- public:
+public:
   string Reduced_String(int k, string s) {
     // Your code goes here
-    if (k == 1) return "";
+    if (k == 1)
+      return "";
     string ans;
     ans.reserve(s.size());
     for (auto c : s) {

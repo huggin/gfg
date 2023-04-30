@@ -6,7 +6,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int minRepeats(string A, string B) {
     // code here
     int n = A.size();
@@ -15,7 +15,8 @@ class Solution {
     string s(A);
     s.reserve(m + n);
     for (int i = 1; i <= d + 1; ++i) {
-      if (s.find(B) != string::npos) return i;
+      if (s.find(B) != string::npos)
+        return i;
       s += A;
     }
     return -1;

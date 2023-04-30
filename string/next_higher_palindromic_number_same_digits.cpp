@@ -8,7 +8,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   string nextPalin(string N) {
     // complete the function here
     int len = N.size();
@@ -22,7 +22,8 @@ class Solution {
         p = i - 1;
       }
     }
-    if (p == -1) return "-1";
+    if (p == -1)
+      return "-1";
     sort(N.begin() + p + 1, N.begin() + len / 2);
     for (int i = p + 1; i < len / 2; ++i) {
       if (N[i] > N[p]) {

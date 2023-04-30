@@ -12,7 +12,7 @@ class Solution {
     return s;
   }
 
- public:
+public:
   string encryptString(string S) {
     // code here
     string ans;

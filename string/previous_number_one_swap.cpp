@@ -4,10 +4,11 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   string previousNumber(string S) {
     // code here
-    if (is_sorted(S.begin(), S.end())) return "-1";
+    if (is_sorted(S.begin(), S.end()))
+      return "-1";
     int n = S.size();
     for (int i = n - 2; i >= 0; --i) {
       if (S[i] > S[i + 1]) {
@@ -21,7 +22,8 @@ class Solution {
         }
         // cout << i << ' ' << j << endl;
         swap(S[i], S[j]);
-        if (S[0] == '0') return "-1";
+        if (S[0] == '0')
+          return "-1";
         return S;
       }
     }
