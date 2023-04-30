@@ -8,7 +8,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   // Function to check if a string is Pangram or not.
   bool checkPangram(string &str) {
     // your code here
@@ -19,7 +19,8 @@ class Solution {
       }
     }
     for (int i = 0; i < 26; ++i) {
-      if (c[i] == 0) return false;
+      if (c[i] == 0)
+        return false;
     }
     return true;
   }

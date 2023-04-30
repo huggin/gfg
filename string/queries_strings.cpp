@@ -25,7 +25,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   vector<int> SolveQueris(string str, vector<vector<int>> Query) {
     // Code here
     int n = str.size();
@@ -60,7 +60,8 @@ int main() {
     }
     Solution obj;
     vector<int> ans = obj.SolveQueris(str, Query);
-    for (auto i : ans) cout << i << " ";
+    for (auto i : ans)
+      cout << i << " ";
     cout << "\n";
   }
   return 0;

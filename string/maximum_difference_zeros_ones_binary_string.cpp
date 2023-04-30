@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 // User function template for C++
 class Solution {
- public:
+public:
   int maxSubstring(string S) {
     // Your code goes here
     int ans = 0;
@@ -22,7 +22,8 @@ class Solution {
         }
       }
     }
-    if (ans == 0) return -1;
+    if (ans == 0)
+      return -1;
     return ans;
   }
 };

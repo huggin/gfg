@@ -8,7 +8,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   string longestCommonPrefix(string arr[], int N) {
     // your code here
     string ans;
@@ -27,7 +27,8 @@ class Solution {
         ans += c;
       }
     }
-    if (ans.empty()) return "-1";
+    if (ans.empty())
+      return "-1";
     return ans;
   }
 };
@@ -40,7 +41,8 @@ int main() {
     int n;
     cin >> n;
     string arr[n];
-    for (int i = 0; i < n; ++i) cin >> arr[i];
+    for (int i = 0; i < n; ++i)
+      cin >> arr[i];
 
     Solution ob;
     cout << ob.longestCommonPrefix(arr, n) << endl;

@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   string kthSmallestNumber(string num, int k) {
     // Code here
     // if(num=="0"){
@@ -15,8 +15,10 @@ class Solution {
     sort(num.begin(), num.end());
     if (num[0] == '0') {
       int i = 0;
-      while (i < num.size() && num[i] == '0') ++i;
-      if (i == num.size()) return num;
+      while (i < num.size() && num[i] == '0')
+        ++i;
+      if (i == num.size())
+        return num;
       num[0] = num[i];
       num[i] = '0';
     }

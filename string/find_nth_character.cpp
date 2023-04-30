@@ -6,7 +6,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   char nthCharacter(string S, int R, int N) {
     // code here
     int num = pow(2, R);

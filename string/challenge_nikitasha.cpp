@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   long long int findMaximum(string S, int N, int Z, int K) {
     // Code Here
     const int M = 1e9 + 7;

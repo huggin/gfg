@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   // Function to perform case-specific sorting of strings.
   string caseSort(string str, int n) {
     // your code here
@@ -23,7 +23,7 @@ class Solution {
     sort(begin(up), end(up));
     sort(begin(lo), end(lo));
     int i = 0, j = 0;
-    for (char& c : str) {
+    for (char &c : str) {
       if (isupper(c)) {
         c = up[i++];
       } else {

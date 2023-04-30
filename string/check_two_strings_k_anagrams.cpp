@@ -8,10 +8,11 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   bool areKAnagrams(string str1, string str2, int k) {
     // code here
-    if (str1.size() != str2.size()) return false;
+    if (str1.size() != str2.size())
+      return false;
     int c1[26] = {0}, c2[26] = {0};
     for (int i = 0; i < str1.size(); ++i) {
       c1[str1[i] - 'a']++;

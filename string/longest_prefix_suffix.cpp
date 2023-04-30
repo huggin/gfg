@@ -9,7 +9,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   int lps(string s) {
     // Your code goes here
     s.push_back('$');

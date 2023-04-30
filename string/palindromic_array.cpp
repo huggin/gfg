@@ -16,16 +16,18 @@ class Solution {
     ss >> s;
     int n = s.size();
     for (int i = 0; i < n; ++i) {
-      if (s[i] != s[n - 1 - i]) return false;
+      if (s[i] != s[n - 1 - i])
+        return false;
     }
     return true;
   }
 
- public:
+public:
   int PalinArray(int a[], int n) {
     // code here
     for (int i = 0; i < n; ++i) {
-      if (!isPalindrome(a[i])) return 0;
+      if (!isPalindrome(a[i]))
+        return 0;
     }
     return 1;
   }
@@ -40,7 +42,8 @@ int main() {
     int n;
     cin >> n;
     int a[n];
-    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
     Solution obj;
     cout << obj.PalinArray(a, n) << endl;
   }

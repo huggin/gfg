@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   // Function to reverse words in a given string.
   string reverseWords(string S) {
     // code here

@@ -6,7 +6,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   string findAndReplace(string S, int Q, int index[], string sources[],
                         string targets[]) {
     // code here
@@ -42,9 +42,12 @@ int main() {
     int index[Q];
     string sources[Q], targets[Q];
 
-    for (int i = 0; i < Q; i++) cin >> index[i];
-    for (int i = 0; i < Q; i++) cin >> sources[i];
-    for (int i = 0; i < Q; i++) cin >> targets[i];
+    for (int i = 0; i < Q; i++)
+      cin >> index[i];
+    for (int i = 0; i < Q; i++)
+      cin >> sources[i];
+    for (int i = 0; i < Q; i++)
+      cin >> targets[i];
 
     Solution ob;
     cout << ob.findAndReplace(S, Q, index, sources, targets) << endl;

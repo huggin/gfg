@@ -14,7 +14,8 @@ int main() {
     if (ans.size() == 0)
       cout << "No Integers";
     else
-      for (auto i : ans) cout << i << ' ';
+      for (auto i : ans)
+        cout << i << ' ';
     cout << endl;
   }
   return 0;

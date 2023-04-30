@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   string FirstNonRepeating(string A) {
     // Code here
     string ans(A.size(), A[0]);

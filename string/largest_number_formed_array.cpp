@@ -5,18 +5,18 @@ using namespace std;
 
 // } Driver Code Ends
 // User function template for C++
-bool comp(const string& l, const string& r) {
+bool comp(const string &l, const string &r) {
   string s = l + r;
   string t = r + l;
   return s > t;
 }
 
 class Solution {
- public:
+public:
   // The main function that returns the arrangement with the largest value as
   // string.
   // The function accepts a vector of strings
-  string printLargest(vector<string>& arr) {
+  string printLargest(vector<string> &arr) {
     // code here
     sort(arr.begin(), arr.end(), comp);
     stringstream ss;

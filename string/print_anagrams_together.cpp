@@ -9,8 +9,8 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
-  vector<vector<string>> Anagrams(vector<string>& s) {
+public:
+  vector<vector<string>> Anagrams(vector<string> &s) {
     // code here
     vector<vector<string>> ans;
     map<string, int> m;
@@ -41,7 +41,8 @@ int main() {
     int n;
     cin >> n;
     vector<string> string_list(n);
-    for (int i = 0; i < n; ++i) cin >> string_list[i];
+    for (int i = 0; i < n; ++i)
+      cin >> string_list[i];
     Solution ob;
     vector<vector<string>> result = ob.Anagrams(string_list);
     sort(result.begin(), result.end());

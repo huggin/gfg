@@ -6,7 +6,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   long long getSubstringWithEqual012(string str) {
     // code here
     unordered_map<int, int> m;

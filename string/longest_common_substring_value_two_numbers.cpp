@@ -27,7 +27,7 @@ string getString(long long n) {
   return ans;
 }
 
-long long getNumber(const string& s) {
+long long getNumber(const string &s) {
   long long ans = 0;
   for (int i = 0; i < s.size(); ++i) {
     ans = ans * 2 + (s[i] - '0');

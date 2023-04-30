@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   vector<int> search(string pat, string txt) {
     // code hee.
     int m = pat.size();
@@ -47,7 +47,8 @@ int main() {
     if (res.size() == 0)
       cout << -1 << endl;
     else {
-      for (int i : res) cout << i << " ";
+      for (int i : res)
+        cout << i << " ";
       cout << endl;
     }
   }

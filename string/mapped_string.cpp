@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 // User function Template for C++
 class Solution {
- public:
+public:
   long long int mapStr(long long int n) {
     // code here
     const int M = 1e9 + 7;

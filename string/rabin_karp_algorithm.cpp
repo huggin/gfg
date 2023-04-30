@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   vector<int> search(string pat, string txt) {
     // code here.
     vector<int> ans;
@@ -24,15 +24,18 @@ class Solution {
     for (int i = 0; i < M; ++i) {
       th = (R * th + txt[i]) % Q;
     }
-    if (h == th) ans.push_back(1);
+    if (h == th)
+      ans.push_back(1);
     // cout << "th = " << th << endl;
     for (int i = M; i < N; i++) {
       th = (th + Q - (RM * txt[i - M]) % Q) % Q;
       th = (th * R + txt[i]) % Q;
       // cout << th << ' ' << h << endl;
-      if (h == th) ans.push_back(i - M + 2);
+      if (h == th)
+        ans.push_back(i - M + 2);
     }
-    if (ans.size() == 0) return vector<int>{-1};
+    if (ans.size() == 0)
+      return vector<int>{-1};
     return ans;
   }
 };
@@ -46,7 +49,8 @@ int main() {
     cin >> S >> pat;
     Solution ob;
     vector<int> res = ob.search(pat, S);
-    for (int i : res) cout << i << " ";
+    for (int i : res)
+      cout << i << " ";
     cout << endl;
   }
   return 0;

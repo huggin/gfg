@@ -5,16 +5,18 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   bool checkBinary(string s) {
     // Your Code Here
     int i = 0;
     for (char c : s) {
       if (c == '1') {
-        if (i == 2) return false;
+        if (i == 2)
+          return false;
         i = 1;
       } else {
-        if (i == 1) i = 2;
+        if (i == 1)
+          i = 2;
       }
     }
     return true;

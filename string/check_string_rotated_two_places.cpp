@@ -4,12 +4,13 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   // Function to check if a string can be obtained by rotating
   // another string by exactly 2 places.
   bool isRotated(string str1, string str2) {
     // Your code here
-    if (str1.size() != str2.size()) return false;
+    if (str1.size() != str2.size())
+      return false;
     int n = str1.size();
     bool ans1 = true, ans2 = true;
     for (int i = 0; i < str1.size(); ++i) {

@@ -4,11 +4,12 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   string stringPartition(string S, int a, int b) {
     // code here
     int n = S.size();
-    if (n < 2) return "-1";
+    if (n < 2)
+      return "-1";
     int n1 = (S[0] - '0') % a, n2 = 0;
 
     vector<int> dp(n);
@@ -28,7 +29,8 @@ class Solution {
       n2 = (n2 + b - dp[i]) % b;
       // cout << n1 << ' ' << n2 << endl;
       if (n1 == 0 && n2 == 0) {
-        if (pos == S.size()) return "-1";
+        if (pos == S.size())
+          return "-1";
         return S.substr(0, pos) + " " + S.substr(pos);
       }
     }

@@ -8,7 +8,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   string rremove(string s) {
     // code here
     string ans;
@@ -32,7 +32,8 @@ class Solution {
           }
         }
       }
-      if (finish) return ans;
+      if (finish)
+        return ans;
       s = ans;
       ans.clear();
     }

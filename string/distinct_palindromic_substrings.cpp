@@ -8,7 +8,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   int palindromeSubStrs(string s) {
     // code here
     int n = s.size();

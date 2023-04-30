@@ -6,7 +6,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   int findIndex(string str) {
     // Your code goes here
     vector<int> v(str.size() + 1), v2(str.size() + 1);
@@ -28,7 +28,8 @@ class Solution {
       }
     }
     for (int i = 0; i <= n; ++i) {
-      if (v[i] == v2[i]) return i;
+      if (v[i] == v2[i])
+        return i;
     }
     return -1;
   }

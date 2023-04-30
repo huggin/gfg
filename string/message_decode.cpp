@@ -27,6 +27,7 @@ bool decode(string S) {
       ++j;
     }
   }
-  if (j == p.size()) return true;
+  if (j == p.size())
+    return true;
   return false;
 }
