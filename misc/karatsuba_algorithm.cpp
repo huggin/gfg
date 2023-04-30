@@ -4,13 +4,14 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
-  long long get(const string& a) {
+  long long get(const string &a) {
     long long ans = 0;
-    for (int i = 0; i < a.size(); ++i) ans = ans * 2 + (a[i] - '0');
+    for (int i = 0; i < a.size(); ++i)
+      ans = ans * 2 + (a[i] - '0');
     return ans;
   }
 
- public:
+public:
   long long karatsubaAlgo(string A, string B) {
     // code here
     long long a = get(A);

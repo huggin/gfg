@@ -6,7 +6,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int countOfSubstrings(string S, int K) {
     // code here
     int c[26] = {0};
@@ -14,11 +14,13 @@ class Solution {
       c[S[i] - 'a']++;
     }
     int ans = 0;
-    if (count(c, c + 26, 0) == 27 - K) ++ans;
+    if (count(c, c + 26, 0) == 27 - K)
+      ++ans;
     for (int i = K; i < S.size(); ++i) {
       c[S[i - K] - 'a']--;
       c[S[i] - 'a']++;
-      if (count(c, c + 26, 0) == 27 - K) ++ans;
+      if (count(c, c + 26, 0) == 27 - K)
+        ++ans;
     }
     return ans;
   }

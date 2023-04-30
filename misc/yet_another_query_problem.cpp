@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   vector<int> solveQueries(int N, int num, vector<int> &A,
                            vector<vector<int>> &Q) {
     // code here
@@ -20,7 +20,8 @@ class Solution {
       int t = 0;
       for (int i = q[0]; i <= q[1]; ++i) {
         auto it = equal_range(v[i].begin(), v[i].end(), A[i]);
-        if (it.second - it.first == q[2]) ++t;
+        if (it.second - it.first == q[2])
+          ++t;
       }
       ans.push_back(t);
     }

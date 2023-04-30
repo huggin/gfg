@@ -6,7 +6,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int checkCompressed(string S, string T) {
     // code here
     int j = 0;
@@ -18,7 +18,8 @@ class Solution {
           ++i;
         }
         --i;
-        if (j + t > S.size()) return 0;
+        if (j + t > S.size())
+          return 0;
         j += t;
       } else if (j >= S.size() || T[i] != S[j++]) {
         return 0;

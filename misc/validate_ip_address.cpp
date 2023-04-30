@@ -7,10 +7,11 @@ using namespace std;
 IP string is valid else return 0
 You are required to complete this method */
 class Solution {
- public:
+public:
   int isValid(string s) {
     // code here
-    if (count(s.begin(), s.end(), '.') != 3) return 0;
+    if (count(s.begin(), s.end(), '.') != 3)
+      return 0;
     vector<string> v(4);
     auto it = s.find('.');
     v[0] = s.substr(0, it);
@@ -22,14 +23,18 @@ class Solution {
     // for(auto c : v)
     //     cout << c << endl;
     for (int i = 0; i < 4; ++i) {
-      if (v[i].size() == 0 || v[i].size() > 3) return 0;
-      if (v[i].size() > 1 && v[i][0] == '0') return 0;
+      if (v[i].size() == 0 || v[i].size() > 3)
+        return 0;
+      if (v[i].size() > 1 && v[i][0] == '0')
+        return 0;
       int ip = 0;
       for (int j = 0; j < v[i].size(); ++j) {
-        if (v[i][j] < '0' || v[i][j] > '9') return 0;
+        if (v[i][j] < '0' || v[i][j] > '9')
+          return 0;
         ip = ip * 10 + (v[i][j] - '0');
       }
-      if (ip > 255) return 0;
+      if (ip > 255)
+        return 0;
     }
     return 1;
   }

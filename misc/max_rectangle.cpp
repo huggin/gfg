@@ -7,7 +7,7 @@ using namespace std;
 /*You are required to complete this method*/
 
 class Solution {
-  int getMaxArea(int* arr, int n) {
+  int getMaxArea(int *arr, int n) {
     // Your code here
     int ans = 0;
     stack<int> s;
@@ -36,7 +36,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   int maxArea(int M[MAX][MAX], int n, int m) {
     // Your code here
     int ans = 0;
@@ -46,7 +46,8 @@ class Solution {
 
     for (int i = 1; i < n; ++i) {
       for (int j = 0; j < m; ++j) {
-        if (M[i][j]) M[i][j] += M[i - 1][j];
+        if (M[i][j])
+          M[i][j] += M[i - 1][j];
       }
       ans = max(ans, getMaxArea(M[i], m));
     }

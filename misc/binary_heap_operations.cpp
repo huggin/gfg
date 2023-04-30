@@ -26,7 +26,7 @@ struct MinHeap {
 
   int right(int i) { return (2 * i + 2); }
 
-  void MinHeapify(int);  // Implemented in user editor
+  void MinHeapify(int); // Implemented in user editor
   int extractMin();
   void decreaseKey(int i, int new_val);
   void deleteKey(int i);
@@ -88,7 +88,8 @@ struct MinHeap
 // next minimum value at first index.
 int MinHeap::extractMin() {
   // Your code here
-  if (heap_size == 0) return -1;
+  if (heap_size == 0)
+    return -1;
   int res = harr[0];
   deleteKey(0);
   return res;
@@ -97,7 +98,8 @@ int MinHeap::extractMin() {
 // Function to delete a key at ith index.
 void MinHeap::deleteKey(int i) {
   // Your code here
-  if (i > heap_size - 1) return;
+  if (i > heap_size - 1)
+    return;
   if (heap_size - 1 == i) {
     heap_size--;
     return;
@@ -111,14 +113,16 @@ void MinHeap::deleteKey(int i) {
 // Function to insert a value in Heap.
 void MinHeap::insertKey(int k) {
   // Your code here
-  if (heap_size == capacity) return;
+  if (heap_size == capacity)
+    return;
   harr[heap_size++] = k;
   decreaseKey(heap_size - 1, k);
 }
 
 // Function to change value at ith index and store that value at first index.
 void MinHeap::decreaseKey(int i, int new_val) {
-  if (i > heap_size) return;
+  if (i > heap_size)
+    return;
   harr[i] = new_val;
   while (i != 0 && harr[parent(i)] > harr[i]) {
     swap(harr[i], harr[parent(i)]);
@@ -133,8 +137,10 @@ void MinHeap::MinHeapify(int i) {
   int l = left(i);
   int r = right(i);
   int smallest = i;
-  if (l < heap_size && harr[l] < harr[i]) smallest = l;
-  if (r < heap_size && harr[r] < harr[smallest]) smallest = r;
+  if (l < heap_size && harr[l] < harr[i])
+    smallest = l;
+  if (r < heap_size && harr[r] < harr[smallest])
+    smallest = r;
   if (smallest != i) {
     swap(harr[i], harr[smallest]);
     MinHeapify(smallest);

@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int maxSumLis(int Arr[], int n) {
     // code here
     vector<int> dp(n, 1);
@@ -46,7 +46,8 @@ int main() {
     int n;
     cin >> n;
     int Arr[n];
-    for (int i = 0; i < n; i++) cin >> Arr[i];
+    for (int i = 0; i < n; i++)
+      cin >> Arr[i];
     Solution obj;
     cout << obj.maxSumLis(Arr, n) << endl;
   }

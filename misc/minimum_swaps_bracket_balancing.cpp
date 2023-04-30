@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int minimumNumberOfSwaps(string S) {
     // code here
     int ans = 0;

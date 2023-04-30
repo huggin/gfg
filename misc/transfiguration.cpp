@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int transfigure(string A, string B) {
     // Your code goes here
     int ca[256] = {0}, cb[256] = {0};
@@ -15,7 +15,8 @@ class Solution {
       cb[c]++;
     }
     for (int i = 0; i < 256; ++i) {
-      if (ca[i] < cb[i]) return -1;
+      if (ca[i] < cb[i])
+        return -1;
     }
     int count = 0;
     for (int i = A.size() - 1, j = B.size() - 1; i >= 0 && j >= 0;) {

@@ -16,23 +16,27 @@ struct MinHeapNode {
   }
 };
 struct compare {
-  bool operator()(MinHeapNode* l, MinHeapNode* r) {
+  bool operator()(MinHeapNode *l, MinHeapNode *r) {
     return (l->freq > r->freq);
   }
 };
-void printCodes(struct MinHeapNode* root, string str) {
-  if (!root) return;
-  if (root->data != '$') cout << root->data << ": " << str << "\n";
+void printCodes(struct MinHeapNode *root, string str) {
+  if (!root)
+    return;
+  if (root->data != '$')
+    cout << root->data << ": " << str << "\n";
   printCodes(root->left, str + "0");
   printCodes(root->right, str + "1");
 }
-void storeCodes(struct MinHeapNode* root, string str) {
-  if (root == NULL) return;
-  if (root->data != '$') codes[root->data] = str;
+void storeCodes(struct MinHeapNode *root, string str) {
+  if (root == NULL)
+    return;
+  if (root->data != '$')
+    codes[root->data] = str;
   storeCodes(root->left, str + "0");
   storeCodes(root->right, str + "1");
 }
-priority_queue<MinHeapNode*, vector<MinHeapNode*>, compare> minHeap;
+priority_queue<MinHeapNode *, vector<MinHeapNode *>, compare> minHeap;
 void HuffmanCodes(int size) {
   struct MinHeapNode *left, *right, *top;
   for (map<char, int>::iterator v = freq.begin(); v != freq.end(); v++)
@@ -50,16 +54,17 @@ void HuffmanCodes(int size) {
   storeCodes(minHeap.top(), "");
 }
 void calcFreq(string str, int n) {
-  for (int i = 0; i < str.size(); i++) freq[str[i]]++;
+  for (int i = 0; i < str.size(); i++)
+    freq[str[i]]++;
 }
-string decode_file(struct MinHeapNode* root, string s);
+string decode_file(struct MinHeapNode *root, string s);
 int main() {
   int t;
   cin >> t;
   while (t--) {
     codes.clear();
     freq.clear();
-    minHeap = priority_queue<MinHeapNode*, vector<MinHeapNode*>, compare>();
+    minHeap = priority_queue<MinHeapNode *, vector<MinHeapNode *>, compare>();
     string str;
     cin >> str;
     string encodedString, decodedString;
@@ -68,7 +73,8 @@ int main() {
     /*cout << "Character With there Frequencies:\n";
     for (auto v=codes.begin(); v!=codes.end(); v++)
         cout << v->first <<' ' << v->second << endl;*/
-    for (auto i : str) encodedString += codes[i];
+    for (auto i : str)
+      encodedString += codes[i];
     // cout <</* "\nEncoded Huffman data:\n" << */encodedString << endl;
     decodedString = decode_file(minHeap.top(), encodedString);
     cout << /* "\nDecoded Huffman Data:\n" << */ decodedString << endl;
@@ -81,7 +87,7 @@ int main() {
 Which contains 2 arguments
 1) root of the tree formed while encoding
 2) Encoded String*/
-string decode_file(struct MinHeapNode* root, string s) {
+string decode_file(struct MinHeapNode *root, string s) {
   // add code here.
   map<string, char> m;
   for (auto it = codes.begin(); it != codes.end(); ++it) {

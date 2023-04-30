@@ -11,13 +11,14 @@ class Solution {
   int count(int n, int x) {
     int ans = 0;
     while (n > 0) {
-      if (n % 10 == x) ++ans;
+      if (n % 10 == x)
+        ++ans;
       n /= 10;
     }
     return ans;
   }
 
- public:
+public:
   int countX(int L, int R, int X) {
     // code here
     int ans = 0;

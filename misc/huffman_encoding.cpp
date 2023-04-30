@@ -7,19 +7,20 @@ using namespace std;
 struct Node {
   int f;
   char c;
-  Node* left;
-  Node* right;
+  Node *left;
+  Node *right;
 
   Node(int freq, char ch) : f(freq), c(ch), left(NULL), right(NULL) {}
 };
 
 struct compare {
-  bool operator()(Node* l, Node* r) { return (l->f > r->f); }
+  bool operator()(Node *l, Node *r) { return (l->f > r->f); }
 };
 
 class Solution {
-  void preOrder(Node* p, vector<string>& ans, string s) {
-    if (!p) return;
+  void preOrder(Node *p, vector<string> &ans, string s) {
+    if (!p)
+      return;
     preOrder(p->left, ans, s + '0');
 
     if (!p->left && !p->right) {
@@ -29,25 +30,25 @@ class Solution {
     preOrder(p->right, ans, s + '1');
   }
 
- public:
+public:
   vector<string> huffmanCodes(string S, vector<int> f, int N) {
-    using Q = priority_queue<Node*, vector<Node*>, compare>;
+    using Q = priority_queue<Node *, vector<Node *>, compare>;
 
     Q q;
     for (int i = 0; i < N; ++i) {
       q.emplace(new Node(f[i], S[i]));
     }
-    Node* root = NULL;
+    Node *root = NULL;
     while (!q.empty()) {
-      Node* c = q.top();
+      Node *c = q.top();
       q.pop();
       if (q.empty()) {
         root = c;
         break;
       }
-      Node* c2 = q.top();
+      Node *c2 = q.top();
       q.pop();
-      Node* p = new Node(c->f + c2->f, '\0');
+      Node *p = new Node(c->f + c2->f, '\0');
       p->left = c;
       p->right = c2;
       // q.emplace(p->f, count++, p);
@@ -73,7 +74,8 @@ int main() {
     }
     Solution ob;
     vector<string> ans = ob.huffmanCodes(S, f, N);
-    for (auto i : ans) cout << i << " ";
+    for (auto i : ans)
+      cout << i << " ";
     cout << "\n";
   }
   return 0;

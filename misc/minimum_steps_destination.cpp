@@ -8,16 +8,18 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int minSteps(int D) {
     // code here
-    if (D < 0) D = -D;
+    if (D < 0)
+      D = -D;
     int d = 1;
     int ans = 0;
     int total = 0;
     while (true) {
       total += d;
-      if (total == D) return d;
+      if (total == D)
+        return d;
       if (total > D) {
         // cout << total << ' ' << d << endl;
         if ((total - D) % 2 == 0) {

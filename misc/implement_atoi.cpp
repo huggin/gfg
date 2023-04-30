@@ -8,7 +8,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   /*You are required to complete this method */
   int atoi(string str) {
     // Your code here

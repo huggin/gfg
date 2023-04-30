@@ -8,7 +8,7 @@ class Solution {
   priority_queue<int> max_q;
   priority_queue<int, vector<int>, greater<int>> min_q;
 
- public:
+public:
   // Function to insert heap.
   void insertHeap(int &x) {
     if (min_q.size() == 0) {

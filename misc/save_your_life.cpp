@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   string maxSum(string w, char x[], int b[], int n) {
     // code here
     int sz = w.size();
@@ -67,8 +67,10 @@ int main() {
     cin >> n;
     char x[n];
     int b[n];
-    for (int i = 0; i < n; i++) cin >> x[i];
-    for (int i = 0; i < n; i++) cin >> b[i];
+    for (int i = 0; i < n; i++)
+      cin >> x[i];
+    for (int i = 0; i < n; i++)
+      cin >> b[i];
     Solution ob;
     cout << ob.maxSum(w, x, b, n) << endl;
   }

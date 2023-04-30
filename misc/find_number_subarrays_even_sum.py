@@ -2,14 +2,17 @@
 
 
 class Solution:
-    def findSmallest(self, arr, n):
+    def countEvenSum(self, arr, n):
         # code here
-        ans = 1
+        cnt = [0, 0]
+        ans = 0
         for a in arr:
-            if a > ans:
-                return ans
-            ans += a
-
+            if a % 2 == 0:
+                ans += cnt[0] + 1
+                cnt[0] += 1
+            else:
+                ans += cnt[1]
+                cnt[0], cnt[1] = cnt[1], cnt[0] + 1
         return ans
 
 
@@ -24,7 +27,7 @@ if __name__ == "__main__":
         n = int(input())
         arr = list(map(int, input().strip().split()))
         ob = Solution()
-        ans = ob.findSmallest(arr, n)
+        ans = ob.countEvenSum(arr, n)
         print(ans)
         tc -= 1
 

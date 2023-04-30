@@ -8,7 +8,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   long long subarraySum(long long a[], long long n) {
     // Your code goes here
     const int M = 1e9 + 7;
@@ -31,7 +31,8 @@ int main() {
     long long n;
     cin >> n;
     long long a[n + 5];
-    for (long long i = 0; i < n; i++) cin >> a[i];
+    for (long long i = 0; i < n; i++)
+      cin >> a[i];
     Solution ob;
     cout << ob.subarraySum(a, n) << endl;
   }

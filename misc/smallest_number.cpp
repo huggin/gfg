@@ -5,17 +5,19 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   string smallestNumber(int S, int D) {
     // code here
-    if (S > D * 9) return "-1";
+    if (S > D * 9)
+      return "-1";
     string ans;
     while (S >= 9) {
       ans.push_back('9');
       S -= 9;
     }
     if (S == 0) {
-      if (ans.size() == D) return ans;
+      if (ans.size() == D)
+        return ans;
       ans.pop_back();
       ans.push_back('8');
       while (ans.size() < D - 1) {

@@ -10,7 +10,7 @@ using namespace std;
 using namespace boost::multiprecision;
 
 class Solution {
- public:
+public:
   vector<int> factorial(int N) {
     // code here
     cpp_int v = 1;

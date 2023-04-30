@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   long long squaresInChessBoard(long long N) {
     // code here
     long long ans = 0;

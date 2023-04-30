@@ -8,12 +8,14 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int minimumDays(int S, int N, int M) {
     // code here
-    if (N < M) return -1;
+    if (N < M)
+      return -1;
     if (N == M) {
-      if (S >= 7) return -1;
+      if (S >= 7)
+        return -1;
       return S;
     }
     if (N * 6 < M * 7) {

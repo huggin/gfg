@@ -10,13 +10,13 @@ using namespace std;
 class Solution {
   using ll = long long;
 
- public:
-  vector<long long int> countZero(int n, int k, vector<vector<int>>& arr) {
+public:
+  vector<long long int> countZero(int n, int k, vector<vector<int>> &arr) {
     // Code Here
     vector<ll> ans;
     vector<int> row(n), col(n);
     int m = n;
-    for (auto& q : arr) {
+    for (auto &q : arr) {
       if (row[q[0] - 1] == 0) {
         row[q[0] - 1] = 1;
         --n;

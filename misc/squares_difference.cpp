@@ -7,7 +7,7 @@ using namespace std;
 
 // User function Template for C++
 class Solution {
- public:
+public:
   long long int squaresDiff(int N) {
     // code here
     long long a = 0, b = 0;

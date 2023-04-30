@@ -1,5 +1,6 @@
 # User function Template for python3
 
+
 def word(k, ans):
     dist = {
         1: "one",
@@ -32,10 +33,10 @@ def word(k, ans):
         6: "sixty",
         7: "seventy",
         8: "eighty",
-        9: "ninety"
+        9: "ninety",
     }
     if k >= 100:
-        ans.append(dist[k//100])
+        ans.append(dist[k // 100])
         ans.append("hundred")
         k %= 100
         if k > 0:
@@ -79,14 +80,15 @@ class Solution:
                 word(n, ans)
                 n = 0
 
-        return ' '.join(ans)
+        return " ".join(ans)
+
 
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     tc = int(input())
     while tc > 0:
         n = int(input())

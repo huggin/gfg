@@ -4,12 +4,13 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   vector<int> candyStore(int candies[], int N, int K) {
     // Write Your Code here
     sort(candies, candies + N);
     int t = N / (K + 1);
-    if (N % (K + 1) != 0) ++t;
+    if (N % (K + 1) != 0)
+      ++t;
     vector<int> ans(2);
     for (int i = 0; i < t; ++i) {
       ans[0] += candies[i];

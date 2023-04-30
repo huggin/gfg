@@ -14,14 +14,14 @@ struct Node {
 };
 
 class LRUCache {
- private:
+private:
   int cap;
   int size;
   unordered_map<int, Node *> m;
   Node *head;
   Node *last;
 
- public:
+public:
   // Constructor for initializing the cache capacity with the given value.
   LRUCache(int c) : size(0), cap(c), head(new Node(0, 0)), last(nullptr) {}
 
@@ -73,7 +73,8 @@ class LRUCache {
         m.erase(p->index);
         p->val = value;
         p->index = key;
-        if (last == head) last = p;
+        if (last == head)
+          last = p;
       } else {
         p = new Node(value, key);
         if (!last) {
@@ -89,7 +90,8 @@ class LRUCache {
       if (p == last) {
         last = last->prev;
         last->next = nullptr;
-        if (last == head) last = p;
+        if (last == head)
+          last = p;
       } else {
         p->prev->next = p->next;
         p->next->prev = p->prev;

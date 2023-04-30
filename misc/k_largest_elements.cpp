@@ -6,17 +6,19 @@ using namespace std;
 // } Driver Code Ends
 // User function template for C++
 class Solution {
-  void sink(vector<int>& h, int i, int k) {
+  void sink(vector<int> &h, int i, int k) {
     int left = i * 2 + 1;
-    if (left >= k) return;
-    if (left + 1 < k && h[left] > h[left + 1]) left++;
+    if (left >= k)
+      return;
+    if (left + 1 < k && h[left] > h[left + 1])
+      left++;
     if (h[i] > h[left]) {
       swap(h[i], h[left]);
       sink(h, left, k);
     }
   }
 
- public:
+public:
   vector<int> kLargest(int arr[], int n, int k) {
     // code here
     vector<int> heap(arr, arr + k);

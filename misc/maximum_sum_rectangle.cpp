@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
-  int solve(int R, int C, vector<int>& M) {
+  int solve(int R, int C, vector<int> &M) {
     int ans = M[0];
     int t = 0;
     for (int i = 0; i < R; ++i) {
@@ -22,7 +22,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   int maximumSumRectangle(int R, int C, vector<vector<int>> M) {
     // code here
     vector<int> d(R);
@@ -59,7 +59,8 @@ int main() {
     cin >> N >> M;
     vector<vector<int>> v(N, vector<int>(M));
     for (int i = 0; i < N; i++)
-      for (int j = 0; j < M; j++) cin >> v[i][j];
+      for (int j = 0; j < M; j++)
+        cin >> v[i][j];
     Solution ob;
     cout << ob.maximumSumRectangle(N, M, v) << "\n";
   }
