@@ -5,8 +5,8 @@ using namespace std;
 // Tree Node
 struct Node {
   int data;
-  Node* left;
-  Node* right;
+  Node *left;
+  Node *right;
   Node() { left = right = NULL; }
   Node(int x) {
     data = x;
@@ -15,8 +15,8 @@ struct Node {
 };
 
 // Utility function to create a new Tree Node
-Node* newNode(int val) {
-  Node* temp = new Node;
+Node *newNode(int val) {
+  Node *temp = new Node;
   temp->data = val;
   temp->left = NULL;
   temp->right = NULL;
@@ -25,29 +25,31 @@ Node* newNode(int val) {
 }
 
 // Function to Build Tree
-Node* buildTree(string str) {
+Node *buildTree(string str) {
   // Corner Case
-  if (str.length() == 0 || str[0] == 'N') return NULL;
+  if (str.length() == 0 || str[0] == 'N')
+    return NULL;
 
   // Creating vector of strings from input
   // string after spliting by space
   vector<string> ip;
 
   istringstream iss(str);
-  for (string str; iss >> str;) ip.push_back(str);
+  for (string str; iss >> str;)
+    ip.push_back(str);
 
   // Create the root of the tree
-  Node* root = newNode(stoi(ip[0]));
+  Node *root = newNode(stoi(ip[0]));
 
   // Push the root to the queue
-  queue<Node*> queue;
+  queue<Node *> queue;
   queue.push(root);
 
   // Starting from the second element
   int i = 1;
   while (!queue.empty() && i < ip.size()) {
     // Get and remove the front of the queue
-    Node* currNode = queue.front();
+    Node *currNode = queue.front();
     queue.pop();
 
     // Get the current node's value from the string
@@ -64,7 +66,8 @@ Node* buildTree(string str) {
 
     // For the right child
     i++;
-    if (i >= ip.size()) break;
+    if (i >= ip.size())
+      break;
     currVal = ip[i];
 
     // If the right child is not null
@@ -99,23 +102,25 @@ struct Node
 
 // This function should return head to the DLL
 class Solution {
-  vector<Node*> t;
+  vector<Node *> t;
 
-  void solve(Node* p) {
-    if (!p) return;
+  void solve(Node *p) {
+    if (!p)
+      return;
     solve(p->left);
     t.push_back(p);
     solve(p->right);
   }
 
- public:
+public:
   // Function to convert binary tree to doubly linked list and return it.
-  Node* bToDLL(Node* root) {
+  Node *bToDLL(Node *root) {
     // your code here
-    if (!root) return NULL;
+    if (!root)
+      return NULL;
     solve(root);
-    Node* ans = t[0];
-    Node* prev = t[0];
+    Node *ans = t[0];
+    Node *prev = t[0];
     for (int i = 1; i < t.size(); ++i) {
       prev->right = t[i];
       t[i]->left = prev;
@@ -129,8 +134,8 @@ class Solution {
 //{ Driver Code Starts.
 
 /* Function to print nodes in a given doubly linked list */
-void printList(Node* node) {
-  Node* prev = NULL;
+void printList(Node *node) {
+  Node *prev = NULL;
   while (node != NULL) {
     cout << node->data << " ";
     prev = node;
@@ -144,7 +149,7 @@ void printList(Node* node) {
   cout << endl;
 }
 
-void inorder(Node* root) {
+void inorder(Node *root) {
   if (root != NULL) {
     inorder(root->left);
     cout << root->data;
@@ -161,10 +166,10 @@ int main() {
   while (t--) {
     string inp;
     getline(cin, inp);
-    Node* root = buildTree(inp);
+    Node *root = buildTree(inp);
 
     Solution ob;
-    Node* head = ob.bToDLL(root);
+    Node *head = ob.bToDLL(root);
     printList(head);
   }
   return 0;

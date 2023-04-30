@@ -11,36 +11,38 @@ struct Node {
 };
 
 // A utility function to create a new Binary Tree Node
-struct Node* newNode(int item) {
-  struct Node* temp = new Node;
+struct Node *newNode(int item) {
+  struct Node *temp = new Node;
   temp->data = item;
   temp->left = temp->right = NULL;
   return temp;
 }
 
-Node* buildTree(string str) {
+Node *buildTree(string str) {
   // Corner Case
-  if (str.length() == 0 || str[0] == 'N') return NULL;
+  if (str.length() == 0 || str[0] == 'N')
+    return NULL;
 
   // Creating vector of strings from input
   // string after spliting by space
   vector<string> ip;
 
   istringstream iss(str);
-  for (string str; iss >> str;) ip.push_back(str);
+  for (string str; iss >> str;)
+    ip.push_back(str);
 
   // Create the root of the tree
-  Node* root = newNode(stoi(ip[0]));
+  Node *root = newNode(stoi(ip[0]));
 
   // Push the root to the queue
-  queue<Node*> queue;
+  queue<Node *> queue;
   queue.push(root);
 
   // Starting from the second element
   int i = 1;
   while (!queue.empty() && i < ip.size()) {
     // Get and remove the front of the queue
-    Node* currNode = queue.front();
+    Node *currNode = queue.front();
     queue.pop();
 
     // Get the current node's value from the string
@@ -57,7 +59,8 @@ Node* buildTree(string str) {
 
     // For the right child
     i++;
-    if (i >= ip.size()) break;
+    if (i >= ip.size())
+      break;
     currVal = ip[i];
 
     // If the right child is not null
@@ -86,7 +89,7 @@ Node* buildTree(string str) {
 class Solution {
   int first = 1;
   int t = 0;
-  void solve(Node* root) {
+  void solve(Node *root) {
     if (!root) {
       return;
     }
@@ -104,8 +107,8 @@ class Solution {
     solve(root->left);
   }
 
- public:
-  void transformTree(struct Node* root) {
+public:
+  void transformTree(struct Node *root) {
     // code here
     first = 1;
     t = 0;
@@ -115,8 +118,9 @@ class Solution {
 
 //{ Driver Code Starts.
 
-void printInorder(struct Node* root) {
-  if (root == NULL) return;
+void printInorder(struct Node *root) {
+  if (root == NULL)
+    return;
 
   printInorder(root->left);
   cout << root->data << " ";
@@ -132,7 +136,7 @@ int main() {
     string inp, ch;
     getline(cin, inp);
 
-    struct Node* root = buildTree(inp);
+    struct Node *root = buildTree(inp);
 
     Solution ob;
     ob.transformTree(root);

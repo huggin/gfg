@@ -4,8 +4,8 @@ using namespace std;
 
 struct Node {
   int data;
-  struct Node* left;
-  struct Node* right;
+  struct Node *left;
+  struct Node *right;
 
   Node(int val) {
     data = val;
@@ -14,29 +14,31 @@ struct Node {
 };
 
 // Function to Build Tree
-Node* buildTree(string str) {
+Node *buildTree(string str) {
   // Corner Case
-  if (str.length() == 0 || str[0] == 'N') return NULL;
+  if (str.length() == 0 || str[0] == 'N')
+    return NULL;
 
   // Creating vector of strings from input
   // string after spliting by space
   vector<string> ip;
 
   istringstream iss(str);
-  for (string str; iss >> str;) ip.push_back(str);
+  for (string str; iss >> str;)
+    ip.push_back(str);
 
   // Create the root of the tree
-  Node* root = new Node(stoi(ip[0]));
+  Node *root = new Node(stoi(ip[0]));
 
   // Push the root to the queue
-  queue<Node*> queue;
+  queue<Node *> queue;
   queue.push(root);
 
   // Starting from the second element
   int i = 1;
   while (!queue.empty() && i < ip.size()) {
     // Get and remove the front of the queue
-    Node* currNode = queue.front();
+    Node *currNode = queue.front();
     queue.pop();
 
     // Get the current node's value from the string
@@ -54,7 +56,8 @@ Node* buildTree(string str) {
 
     // For the right child
     i++;
-    if (i >= ip.size()) break;
+    if (i >= ip.size())
+      break;
     currVal = ip[i];
 
     // If the right child is not null
@@ -71,7 +74,7 @@ Node* buildTree(string str) {
   return root;
 }
 
-void preorder(Node* root, vector<int>& temp) {
+void preorder(Node *root, vector<int> &temp) {
   if (!root) {
     return;
   }
@@ -91,22 +94,25 @@ struct Node {
         struct Node* left, *right;
 };
 */
-unordered_map<Node*, int> h;
+unordered_map<Node *, int> h;
 
-int postOrder(Node* p) {
-  if (!p) return 0;
+int postOrder(Node *p) {
+  if (!p)
+    return 0;
   int l = postOrder(p->left);
   int r = postOrder(p->right);
   h[p] = max(l, r) + 1;
   return h[p];
 }
 
-unordered_map<Node*, int> used;
+unordered_map<Node *, int> used;
 
-bool solve(Node* p, Node* q) {
-  if (!p && !q) return true;
+bool solve(Node *p, Node *q) {
+  if (!p && !q)
+    return true;
   // if (used[p] == 1 || used[q] == 1) return false;
-  if (!p && q || p && !q) return false;
+  if (!p && q || p && !q)
+    return false;
   if (p->data == q->data && solve(p->left, q->left) &&
       solve(p->right, q->right)) {
     // if (used[p] == 0 && used[q] == 0) {
@@ -121,14 +127,14 @@ bool solve(Node* p, Node* q) {
 // you are required to complete this function
 // the function and return an vector of Node
 // which contains all the duplicate sub-tree
-vector<Node*> printAllDups(Node* root) {
+vector<Node *> printAllDups(Node *root) {
   // Code here
   h.clear();
   used.clear();
   postOrder(root);
 
-  vector<Node*> ans;
-  vector<pair<int, Node*>> v;
+  vector<Node *> ans;
+  vector<pair<int, Node *>> v;
   for (auto c : h) {
     v.emplace_back(c.second, c.first);
   }
@@ -139,7 +145,8 @@ vector<Node*> printAllDups(Node* root) {
       if (v[i].first != v[j].first) {
         break;
       }
-      if (used[v[i].second] || used[v[j].second]) continue;
+      if (used[v[i].second] || used[v[j].second])
+        continue;
       if (solve(v[i].second, v[j].second)) {
         used[v[i].second] = 1;
         used[v[j].second] = 1;
@@ -164,8 +171,8 @@ int main() {
     // cin.clear();
     // cout<<treeString<<"\n";
 
-    Node* root = buildTree(treeString);
-    vector<Node*> res = printAllDups(root);
+    Node *root = buildTree(treeString);
+    vector<Node *> res = printAllDups(root);
 
     vector<vector<int>> ans;
 

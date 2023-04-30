@@ -17,7 +17,8 @@ struct Node {
 };
 
 void printPostOrder(Node *root) {
-  if (root == NULL) return;
+  if (root == NULL)
+    return;
   printPostOrder(root->left);
   printPostOrder(root->right);
   cout << root->data << " ";
@@ -36,7 +37,8 @@ struct Node
 */
 class Solution {
   Node *build(int in[], int l1, int r1, int pre[], int l2, int r2) {
-    if (l1 > r1) return NULL;
+    if (l1 > r1)
+      return NULL;
     Node *p = new Node(pre[l2]);
     int k = find(in + l1, in + r1 + 1, pre[l2]) - in;
     p->left = build(in, l1, k - 1, pre, l2 + 1, l2 + k - 1 - l1 + 1);
@@ -44,7 +46,7 @@ class Solution {
     return p;
   }
 
- public:
+public:
   Node *buildTree(int in[], int pre[], int n) {
     // Code here
     return build(in, 0, n - 1, pre, 0, n - 1);
@@ -60,8 +62,10 @@ int main() {
     cin >> n;
 
     int inorder[n], preorder[n];
-    for (int i = 0; i < n; i++) cin >> inorder[i];
-    for (int i = 0; i < n; i++) cin >> preorder[i];
+    for (int i = 0; i < n; i++)
+      cin >> inorder[i];
+    for (int i = 0; i < n; i++)
+      cin >> preorder[i];
     Solution obj;
     Node *root = obj.buildTree(inorder, preorder, n);
     printPostOrder(root);

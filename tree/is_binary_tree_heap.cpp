@@ -17,14 +17,16 @@ struct Node {
 // Function to Build Tree
 Node *buildTree(string str) {
   // Corner Case
-  if (str.length() == 0 || str[0] == 'N') return NULL;
+  if (str.length() == 0 || str[0] == 'N')
+    return NULL;
 
   // Creating vector of strings from input
   // string after spliting by space
   vector<string> ip;
 
   istringstream iss(str);
-  for (string str; iss >> str;) ip.push_back(str);
+  for (string str; iss >> str;)
+    ip.push_back(str);
 
   // Create the root of the tree
   Node *root = new Node(stoi(ip[0]));
@@ -54,7 +56,8 @@ Node *buildTree(string str) {
 
     // For the right child
     i++;
-    if (i >= ip.size()) break;
+    if (i >= ip.size())
+      break;
     currVal = ip[i];
 
     // If the right child is not null
@@ -95,13 +98,15 @@ class Solution {
       Node *curr = q.front();
 
       q.pop();
-      if (done && (curr->left || curr->right)) return false;
+      if (done && (curr->left || curr->right))
+        return false;
       if (curr->left) {
         q.push(curr->left);
       } else {
         done = true;
       }
-      if (done && curr->right) return false;
+      if (done && curr->right)
+        return false;
       if (curr->right) {
         q.push(curr->right);
       } else {
@@ -111,16 +116,20 @@ class Solution {
     return true;
   }
 
- public:
+public:
   bool isHeap(struct Node *tree) {
     // code here
-    if (tree == NULL) return true;
-    if (!isComplete(tree)) return false;
+    if (tree == NULL)
+      return true;
+    if (!isComplete(tree))
+      return false;
     if (tree->left) {
-      if (tree->data < tree->left->data) return false;
+      if (tree->data < tree->left->data)
+        return false;
     }
     if (tree->right) {
-      if (tree->data < tree->right->data) return false;
+      if (tree->data < tree->right->data)
+        return false;
     }
     return isHeap(tree->left) && isHeap(tree->right);
   }

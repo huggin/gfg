@@ -6,8 +6,8 @@ using namespace std;
 
 struct Node {
   int data;
-  struct Node* left;
-  struct Node* right;
+  struct Node *left;
+  struct Node *right;
 
   Node(int val) {
     data = val;
@@ -16,29 +16,31 @@ struct Node {
 };
 
 // Function to Build Tree
-Node* buildTree(string str) {
+Node *buildTree(string str) {
   // Corner Case
-  if (str.length() == 0 || str[0] == 'N') return NULL;
+  if (str.length() == 0 || str[0] == 'N')
+    return NULL;
 
   // Creating vector of strings from input
   // string after spliting by space
   vector<string> ip;
 
   istringstream iss(str);
-  for (string str; iss >> str;) ip.push_back(str);
+  for (string str; iss >> str;)
+    ip.push_back(str);
 
   // Create the root of the tree
-  Node* root = new Node(stoi(ip[0]));
+  Node *root = new Node(stoi(ip[0]));
 
   // Push the root to the queue
-  queue<Node*> queue;
+  queue<Node *> queue;
   queue.push(root);
 
   // Starting from the second element
   int i = 1;
   while (!queue.empty() && i < ip.size()) {
     // Get and remove the front of the queue
-    Node* currNode = queue.front();
+    Node *currNode = queue.front();
     queue.pop();
 
     // Get the current node's value from the string
@@ -55,7 +57,8 @@ Node* buildTree(string str) {
 
     // For the right child
     i++;
-    if (i >= ip.size()) break;
+    if (i >= ip.size())
+      break;
     currVal = ip[i];
 
     // If the right child is not null
@@ -90,14 +93,18 @@ struct Node
 */
 
 class Solution {
-  int find(Node* root2, int x) {
-    if (!root2) return 0;
-    if (root2->data == x) return 1;
-    if (root2->data < x) return find(root2->right, x);
+  int find(Node *root2, int x) {
+    if (!root2)
+      return 0;
+    if (root2->data == x)
+      return 1;
+    if (root2->data < x)
+      return find(root2->right, x);
     return find(root2->left, x);
   }
-  int go(Node* root1, Node* root2, int x) {
-    if (!root1) return 0;
+  int go(Node *root1, Node *root2, int x) {
+    if (!root1)
+      return 0;
     if (find(root2, x - root1->data)) {
       return 1 + go(root1->left, root2, x) + go(root1->right, root2, x);
     } else {
@@ -105,8 +112,8 @@ class Solution {
     }
   }
 
- public:
-  int countPairs(Node* root1, Node* root2, int x) {
+public:
+  int countPairs(Node *root1, Node *root2, int x) {
     int ans = 0;
     return go(root1, root2, x);
   }
@@ -122,8 +129,8 @@ int main() {
     string tree1, tree2;
     getline(cin, tree1);
     getline(cin, tree2);
-    Node* root1 = buildTree(tree1);
-    Node* root2 = buildTree(tree2);
+    Node *root1 = buildTree(tree1);
+    Node *root2 = buildTree(tree2);
     int x;
     cin >> x;
     cin.ignore();

@@ -6,8 +6,8 @@ using namespace std;
 // Tree Node
 struct Node {
   int data;
-  Node* left;
-  Node* right;
+  Node *left;
+  Node *right;
 
   Node(int val) {
     data = val;
@@ -16,29 +16,31 @@ struct Node {
 };
 
 // Function to Build Tree
-Node* buildTree(string str) {
+Node *buildTree(string str) {
   // Corner Case
-  if (str.length() == 0 || str[0] == 'N') return NULL;
+  if (str.length() == 0 || str[0] == 'N')
+    return NULL;
 
   // Creating vector of strings from input
   // string after spliting by space
   vector<string> ip;
 
   istringstream iss(str);
-  for (string str; iss >> str;) ip.push_back(str);
+  for (string str; iss >> str;)
+    ip.push_back(str);
 
   // Create the root of the tree
-  Node* root = new Node(stoi(ip[0]));
+  Node *root = new Node(stoi(ip[0]));
 
   // Push the root to the queue
-  queue<Node*> queue;
+  queue<Node *> queue;
   queue.push(root);
 
   // Starting from the second element
   int i = 1;
   while (!queue.empty() && i < ip.size()) {
     // Get and remove the front of the queue
-    Node* currNode = queue.front();
+    Node *currNode = queue.front();
     queue.pop();
 
     // Get the current node's value from the string
@@ -55,7 +57,8 @@ Node* buildTree(string str) {
 
     // For the right child
     i++;
-    if (i >= ip.size()) break;
+    if (i >= ip.size())
+      break;
     currVal = ip[i];
 
     // If the right child is not null
@@ -88,23 +91,27 @@ struct Node {
 */
 
 class Solution {
-  int total(Node* p, unordered_map<Node*, int>& m) {
-    if (!p) return 0;
-    if (m.find(p) != m.end()) return m[p];
+  int total(Node *p, unordered_map<Node *, int> &m) {
+    if (!p)
+      return 0;
+    if (m.find(p) != m.end())
+      return m[p];
     return m[p] = total(p->left, m) + total(p->right, m) + 1;
   }
 
- public:
+public:
   // Return the Kth smallest element in the given BST
-  int KthSmallestElement(Node* root, int K) {
+  int KthSmallestElement(Node *root, int K) {
     // add code here.
-    unordered_map<Node*, int> m;
+    unordered_map<Node *, int> m;
     int t = total(root, m);
-    if (t < K) return -1;
+    if (t < K)
+      return -1;
     auto p = root;
     while (p) {
       int t = total(p->left, m);
-      if (t + 1 == K) return p->data;
+      if (t + 1 == K)
+        return p->data;
       if (t + 1 > K) {
         p = p->left;
       } else {
@@ -125,7 +132,7 @@ int main() {
   while (t--) {
     string s;
     getline(cin, s);
-    Node* root = buildTree(s);
+    Node *root = buildTree(s);
 
     getline(cin, s);
     int k = stoi(s);

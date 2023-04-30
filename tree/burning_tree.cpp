@@ -17,14 +17,16 @@ struct Node {
 
 Node *buildTree(string str) {
   // Corner Case
-  if (str.length() == 0 || str[0] == 'N') return NULL;
+  if (str.length() == 0 || str[0] == 'N')
+    return NULL;
 
   // Creating vector of strings from input
   // string after spliting by space
   vector<string> ip;
 
   istringstream iss(str);
-  for (string str; iss >> str;) ip.push_back(str);
+  for (string str; iss >> str;)
+    ip.push_back(str);
 
   // Create the root of the tree
   Node *root = new Node(stoi(ip[0]));
@@ -54,7 +56,8 @@ Node *buildTree(string str) {
 
     // For the right child
     i++;
-    if (i >= ip.size()) break;
+    if (i >= ip.size())
+      break;
     currVal = ip[i];
 
     // If the right child is not null
@@ -79,7 +82,8 @@ class Solution {
   unordered_map<Node *, int> m;
 
   bool find(Node *p, int target) {
-    if (!p) return false;
+    if (!p)
+      return false;
     if (p->data == target) {
       v.push_back(p);
       return true;
@@ -97,7 +101,8 @@ class Solution {
   }
 
   int height(Node *p) {
-    if (!p) return 0;
+    if (!p)
+      return 0;
     if (m.find(p) != m.end()) {
       return m[p];
     }
@@ -107,7 +112,7 @@ class Solution {
     return m[p];
   }
 
- public:
+public:
   int minTime(Node *root, int target) {
     // Your code goes here
     find(root, target);

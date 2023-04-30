@@ -5,8 +5,8 @@ using namespace std;
 // Tree Node
 struct Node {
   int data;
-  Node* left;
-  Node* right;
+  Node *left;
+  Node *right;
 
   Node(int val) {
     data = val;
@@ -29,16 +29,17 @@ struct Node {
 }; */
 
 class Solution {
-  void inOrder(Node* n, vector<int>& ans) {
-    if (!n) return;
+  void inOrder(Node *n, vector<int> &ans) {
+    if (!n)
+      return;
     inOrder(n->left, ans);
     ans.push_back(n->data);
     inOrder(n->right, ans);
   }
 
- public:
+public:
   // Function to return a list containing the inorder traversal of the tree.
-  vector<int> inOrder(Node* root) {
+  vector<int> inOrder(Node *root) {
     // Your code here
     vector<int> ans;
     inOrder(root, ans);
@@ -49,29 +50,31 @@ class Solution {
 //{ Driver Code Starts.
 
 // Function to Build Tree
-Node* buildTree(string str) {
+Node *buildTree(string str) {
   // Corner Case
-  if (str.length() == 0 || str[0] == 'N') return NULL;
+  if (str.length() == 0 || str[0] == 'N')
+    return NULL;
 
   // Creating vector of strings from input
   // string after spliting by space
   vector<string> ip;
 
   istringstream iss(str);
-  for (string str; iss >> str;) ip.push_back(str);
+  for (string str; iss >> str;)
+    ip.push_back(str);
 
   // Create the root of the tree
-  Node* root = new Node(stoi(ip[0]));
+  Node *root = new Node(stoi(ip[0]));
 
   // Push the root to the queue
-  queue<Node*> queue;
+  queue<Node *> queue;
   queue.push(root);
 
   // Starting from the second element
   int i = 1;
   while (!queue.empty() && i < ip.size()) {
     // Get and remove the front of the queue
-    Node* currNode = queue.front();
+    Node *currNode = queue.front();
     queue.pop();
 
     // Get the current node's value from the string
@@ -88,7 +91,8 @@ Node* buildTree(string str) {
 
     // For the right child
     i++;
-    if (i >= ip.size()) break;
+    if (i >= ip.size())
+      break;
     currVal = ip[i];
 
     // If the right child is not null
@@ -113,11 +117,12 @@ int main() {
   while (t--) {
     string s;
     getline(cin, s);
-    Node* root = buildTree(s);
+    Node *root = buildTree(s);
 
     Solution ob;
     vector<int> res = ob.inOrder(root);
-    for (int i = 0; i < res.size(); i++) cout << res[i] << " ";
+    for (int i = 0; i < res.size(); i++)
+      cout << res[i] << " ";
     cout << endl;
   }
   return 0;

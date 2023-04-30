@@ -18,14 +18,16 @@ struct Node {
 // Function to Build Tree
 Node *buildTree(string str) {
   // Corner Case
-  if (str.length() == 0 || str[0] == 'N') return NULL;
+  if (str.length() == 0 || str[0] == 'N')
+    return NULL;
 
   // Creating vector of strings from input
   // string after spliting by space
   vector<string> ip;
 
   istringstream iss(str);
-  for (string str; iss >> str;) ip.push_back(str);
+  for (string str; iss >> str;)
+    ip.push_back(str);
 
   // Create the root of the tree
   Node *root = new Node(stoi(ip[0]));
@@ -55,7 +57,8 @@ Node *buildTree(string str) {
 
     // For the right child
     i++;
-    if (i >= ip.size()) break;
+    if (i >= ip.size())
+      break;
     currVal = ip[i];
 
     // If the right child is not null
@@ -83,12 +86,13 @@ struct Node
 }; */
 
 class Solution {
- public:
+public:
   // Function to serialize a tree and return a list containing nodes of tree.
   vector<int> serialize(Node *root) {
     // Your code here
     vector<int> ans;
-    if (!root) return ans;
+    if (!root)
+      return ans;
     queue<Node *> Q;
     Q.push(root);
     while (!Q.empty()) {
@@ -109,7 +113,8 @@ class Solution {
   // Function to deserialize a list and construct the tree.
   Node *deSerialize(vector<int> &A) {
     // Your code here
-    if (A.size() == 0) return NULL;
+    if (A.size() == 0)
+      return NULL;
     Node *ans = new Node(A[0]);
     int i = 1;
     queue<Node *> Q;
@@ -141,14 +146,16 @@ class Solution {
 //{ Driver Code Starts.
 
 void inorder(Node *root) {
-  if (root == NULL) return;
+  if (root == NULL)
+    return;
   inorder(root->left);
   cout << root->data << " ";
   inorder(root->right);
 }
 
 void _deleteTree(Node *node) {
-  if (node == NULL) return;
+  if (node == NULL)
+    return;
 
   /* first delete both subtrees */
   _deleteTree(node->left);

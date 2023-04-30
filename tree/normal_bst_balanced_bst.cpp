@@ -4,8 +4,8 @@ using namespace std;
 
 struct Node {
   int data;
-  struct Node* left;
-  struct Node* right;
+  struct Node *left;
+  struct Node *right;
 
   Node(int x) {
     data = x;
@@ -14,8 +14,9 @@ struct Node {
   }
 };
 
-Node* insert(struct Node* node, int key) {
-  if (node == NULL) return new Node(key);
+Node *insert(struct Node *node, int key) {
+  if (node == NULL)
+    return new Node(key);
   if (key < node->data)
     node->left = insert(node->left, key);
   else if (key > node->data)
@@ -23,14 +24,15 @@ Node* insert(struct Node* node, int key) {
   return node;
 }
 
-void preOrder(Node* node) {
-  if (node == NULL) return;
+void preOrder(Node *node) {
+  if (node == NULL)
+    return;
   printf("%d ", node->data);
   preOrder(node->left);
   preOrder(node->right);
 }
 
-int height(struct Node* node) {
+int height(struct Node *node) {
   if (node == NULL)
     return 0;
   else {
@@ -43,29 +45,31 @@ int height(struct Node* node) {
   }
   return 2;
 }
-Node* buildTree(string str) {
+Node *buildTree(string str) {
   // Corner Case
-  if (str.length() == 0 || str[0] == 'N') return NULL;
+  if (str.length() == 0 || str[0] == 'N')
+    return NULL;
 
   // Creating vector of strings from input
   // string after spliting by space
   vector<string> ip;
 
   istringstream iss(str);
-  for (string str; iss >> str;) ip.push_back(str);
+  for (string str; iss >> str;)
+    ip.push_back(str);
 
   // Create the root of the tree
-  Node* root = new Node(stoi(ip[0]));
+  Node *root = new Node(stoi(ip[0]));
 
   // Push the root to the queue
-  queue<Node*> queue;
+  queue<Node *> queue;
   queue.push(root);
 
   // Starting from the second element
   int i = 1;
   while (!queue.empty() && i < ip.size()) {
     // Get and remove the front of the queue
-    Node* currNode = queue.front();
+    Node *currNode = queue.front();
     queue.pop();
 
     // Get the current node's value from the string
@@ -82,7 +86,8 @@ Node* buildTree(string str) {
 
     // For the right child
     i++;
-    if (i >= ip.size()) break;
+    if (i >= ip.size())
+      break;
     currVal = ip[i];
 
     // If the right child is not null
@@ -99,14 +104,14 @@ Node* buildTree(string str) {
   return root;
 }
 
-Node* buildBalancedTree(Node* root);
+Node *buildBalancedTree(Node *root);
 
 int main() {
   int t;
   cin >> t;
   getchar();
   while (t--) {
-    struct Node* root = NULL;
+    struct Node *root = NULL;
     int n, temp;
     string tree;
     getline(cin, tree);
@@ -127,17 +132,19 @@ struct Node
         Node* left, *right;
 };
 */
-void go(Node* p, vector<int>& v) {
-  if (!p) return;
+void go(Node *p, vector<int> &v) {
+  if (!p)
+    return;
   go(p->left, v);
   v.push_back(p->data);
   go(p->right, v);
 }
 
-Node* build(vector<int>& v, int l, int r) {
-  if (l > r) return NULL;
+Node *build(vector<int> &v, int l, int r) {
+  if (l > r)
+    return NULL;
   int m = l + (r - l) / 2;
-  Node* n = new Node(v[m]);
+  Node *n = new Node(v[m]);
   n->left = build(v, l, m - 1);
   n->right = build(v, m + 1, r);
   return n;
@@ -145,10 +152,10 @@ Node* build(vector<int>& v, int l, int r) {
 
 // Your are required to complete this function
 // function should return root of the modified BST
-Node* buildBalancedTree(Node* root) {
+Node *buildBalancedTree(Node *root) {
   // Code here
   vector<int> v;
   go(root, v);
-  Node* p = build(v, 0, v.size() - 1);
+  Node *p = build(v, 0, v.size() - 1);
   return p;
 }

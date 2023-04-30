@@ -6,8 +6,8 @@ using namespace std;
 // Tree Node
 struct Node {
   int data;
-  Node* left;
-  Node* right;
+  Node *left;
+  Node *right;
 
   Node(int val) {
     data = val;
@@ -17,7 +17,7 @@ struct Node {
 
 // } Driver Code Ends
 class Solution {
-  bool is(Node* root, int& mi, int& ma) {
+  bool is(Node *root, int &mi, int &ma) {
     if (root == NULL) {
       return true;
     }
@@ -29,23 +29,26 @@ class Solution {
     if (root->left) {
       int left_mi = 0, left_ma = 0;
       bool is_left = is(root->left, left_mi, left_ma);
-      if (!is_left || left_ma >= root->data) return false;
+      if (!is_left || left_ma >= root->data)
+        return false;
       mi = left_mi;
     }
     if (root->right) {
       int right_mi = 0, right_ma = 0;
       bool is_right = is(root->right, right_mi, right_ma);
-      if (!is_right || right_mi <= root->data) return false;
+      if (!is_right || right_mi <= root->data)
+        return false;
       ma = right_ma;
     }
     return true;
   }
 
- public:
+public:
   // Function to check whether a Binary Tree is BST or not.
-  bool isBST(Node* root) {
+  bool isBST(Node *root) {
     // Your code here
-    if (root == NULL) return true;
+    if (root == NULL)
+      return true;
     int mi = INT_MAX;
     int ma = INT_MIN;
     return is(root, mi, ma);
@@ -55,29 +58,31 @@ class Solution {
 //{ Driver Code Starts.
 
 // Function to Build Tree
-Node* buildTree(string str) {
+Node *buildTree(string str) {
   // Corner Case
-  if (str.length() == 0 || str[0] == 'N') return NULL;
+  if (str.length() == 0 || str[0] == 'N')
+    return NULL;
 
   // Creating vector of strings from input
   // string after spliting by space
   vector<string> ip;
 
   istringstream iss(str);
-  for (string str; iss >> str;) ip.push_back(str);
+  for (string str; iss >> str;)
+    ip.push_back(str);
 
   // Create the root of the tree
-  Node* root = new Node(stoi(ip[0]));
+  Node *root = new Node(stoi(ip[0]));
 
   // Push the root to the queue
-  queue<Node*> queue;
+  queue<Node *> queue;
   queue.push(root);
 
   // Starting from the second element
   int i = 1;
   while (!queue.empty() && i < ip.size()) {
     // Get and remove the front of the queue
-    Node* currNode = queue.front();
+    Node *currNode = queue.front();
     queue.pop();
 
     // Get the current node's value from the string
@@ -94,7 +99,8 @@ Node* buildTree(string str) {
 
     // For the right child
     i++;
-    if (i >= ip.size()) break;
+    if (i >= ip.size())
+      break;
     currVal = ip[i];
 
     // If the right child is not null
@@ -111,8 +117,9 @@ Node* buildTree(string str) {
   return root;
 }
 
-void inorder(Node* root, vector<int>& v) {
-  if (root == NULL) return;
+void inorder(Node *root, vector<int> &v) {
+  if (root == NULL)
+    return;
 
   inorder(root->left, v);
   v.push_back(root->data);
@@ -127,7 +134,7 @@ int main() {
   while (t--) {
     string s;
     getline(cin, s);
-    Node* root = buildTree(s);
+    Node *root = buildTree(s);
     Solution ob;
     if (ob.isBST(root))
       cout << "1\n";

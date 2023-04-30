@@ -11,9 +11,12 @@ class Solution {
   vector<int> dp;
 
   int solve(int a[], int i, int j, int hi, int lo) {
-    if (i > j) return 1;
-    if (i == j) return a[i] > lo && a[i] < hi;
-    if (a[i] < lo || a[i] > hi) return 0;
+    if (i > j)
+      return 1;
+    if (i == j)
+      return a[i] > lo && a[i] < hi;
+    if (a[i] < lo || a[i] > hi)
+      return 0;
 
     if (dp[i] == -1) {
       return solve(a, i + 1, j, a[i], lo);
@@ -22,7 +25,7 @@ class Solution {
     return solve(a, i + 1, dp[i] - 1, a[i], lo) && solve(a, dp[i], j, hi, a[i]);
   }
 
- public:
+public:
   int canRepresentBST(int arr[], int N) {
     // code here
     dp.assign(N, -1);
@@ -52,7 +55,8 @@ int main() {
     int N;
     cin >> N;
     int arr[N];
-    for (int i = 0; i < N; i++) cin >> arr[i];
+    for (int i = 0; i < N; i++)
+      cin >> arr[i];
     Solution ob;
     cout << ob.canRepresentBST(arr, N) << endl;
   }

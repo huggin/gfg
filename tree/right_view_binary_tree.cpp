@@ -5,12 +5,12 @@ using namespace std;
 // Tree Node
 struct Node {
   int data;
-  Node* left;
-  Node* right;
+  Node *left;
+  Node *right;
 };
 // Utility function to create a new Tree Node
-Node* newNode(int val) {
-  Node* temp = new Node;
+Node *newNode(int val) {
+  Node *temp = new Node;
   temp->data = val;
   temp->left = NULL;
   temp->right = NULL;
@@ -35,19 +35,20 @@ struct Node
 
 // Should return  right view of tree
 class Solution {
- public:
+public:
   // Function to return list containing elements of right view of binary tree.
-  vector<int> rightView(Node* root) {
+  vector<int> rightView(Node *root) {
     // Your Code here
     vector<int> ans;
-    if (!root) return ans;
-    queue<Node*> Q;
+    if (!root)
+      return ans;
+    queue<Node *> Q;
     Q.push(root);
     queue<int> Q2;
     Q2.push(0);
     int level = 0;
     while (!Q.empty()) {
-      Node* c = Q.front();
+      Node *c = Q.front();
       Q.pop();
       int l = Q2.front();
       Q2.pop();
@@ -71,29 +72,31 @@ class Solution {
 //{ Driver Code Starts.
 
 // Function to Build Tree
-Node* buildTree(string str) {
+Node *buildTree(string str) {
   // Corner Case
-  if (str.length() == 0 || str[0] == 'N') return NULL;
+  if (str.length() == 0 || str[0] == 'N')
+    return NULL;
 
   // Creating vector of strings from input
   // string after spliting by space
   vector<string> ip;
 
   istringstream iss(str);
-  for (string str; iss >> str;) ip.push_back(str);
+  for (string str; iss >> str;)
+    ip.push_back(str);
 
   // Create the root of the tree
-  Node* root = newNode(stoi(ip[0]));
+  Node *root = newNode(stoi(ip[0]));
 
   // Push the root to the queue
-  queue<Node*> queue;
+  queue<Node *> queue;
   queue.push(root);
 
   // Starting from the second element
   int i = 1;
   while (!queue.empty() && i < ip.size()) {
     // Get and remove the front of the queue
-    Node* currNode = queue.front();
+    Node *currNode = queue.front();
     queue.pop();
 
     // Get the current node's value from the string
@@ -110,7 +113,8 @@ Node* buildTree(string str) {
 
     // For the right child
     i++;
-    if (i >= ip.size()) break;
+    if (i >= ip.size())
+      break;
     currVal = ip[i];
 
     // If the right child is not null
@@ -135,7 +139,7 @@ int main() {
   while (t--) {
     string s;
     getline(cin, s);
-    Node* root = buildTree(s);
+    Node *root = buildTree(s);
 
     Solution ob;
     vector<int> vec = ob.rightView(root);

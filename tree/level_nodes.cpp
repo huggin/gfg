@@ -5,11 +5,12 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   // Function to find the level of node X.
   int nodeLevel(int V, vector<int> adj[], int X) {
     // code here
-    if (X >= V) return -1;
+    if (X >= V)
+      return -1;
     vector<int> v(V);
     v[0] = 1;
 

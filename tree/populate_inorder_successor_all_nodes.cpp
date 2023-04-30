@@ -28,14 +28,16 @@ void printInorder(Node *node) {
 }
 Node *buildTree(string str) {
   // Corner Case
-  if (str.length() == 0 || str[0] == 'N') return NULL;
+  if (str.length() == 0 || str[0] == 'N')
+    return NULL;
 
   // Creating vector of strings from input
   // string after spliting by space
   vector<string> ip;
 
   istringstream iss(str);
-  for (string str; iss >> str;) ip.push_back(str);
+  for (string str; iss >> str;)
+    ip.push_back(str);
 
   // Create the root of the tree
   Node *root = new Node(stoi(ip[0]));
@@ -65,7 +67,8 @@ Node *buildTree(string str) {
 
     // For the right child
     i++;
-    if (i >= ip.size()) break;
+    if (i >= ip.size())
+      break;
     currVal = ip[i];
 
     // If the right child is not null
@@ -83,7 +86,8 @@ Node *buildTree(string str) {
 }
 
 Node *Inorder(Node *root) {
-  if (root->left == NULL) return root;
+  if (root->left == NULL)
+    return root;
   Inorder(root->left);
 }
 
@@ -108,16 +112,18 @@ struct Node
 class Solution {
   Node *prev = NULL;
   void inOrder(Node *p) {
-    if (!p) return;
+    if (!p)
+      return;
     inOrder(p->right);
     p->next = prev;
     prev = p;
     inOrder(p->left);
   }
 
- public:
+public:
   void populateNext(Node *root) {
-    if (!root) return;
+    if (!root)
+      return;
     // code here
     inOrder(root);
   }

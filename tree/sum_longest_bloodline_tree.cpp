@@ -26,14 +26,16 @@ void printInorder(Node *node) {
 }
 Node *buildTree(string str) {
   // Corner Case
-  if (str.length() == 0 || str[0] == 'N') return NULL;
+  if (str.length() == 0 || str[0] == 'N')
+    return NULL;
 
   // Creating vector of strings from input
   // string after spliting by space
   vector<string> ip;
 
   istringstream iss(str);
-  for (string str; iss >> str;) ip.push_back(str);
+  for (string str; iss >> str;)
+    ip.push_back(str);
 
   // Create the root of the tree
   Node *root = new Node(stoi(ip[0]));
@@ -63,7 +65,8 @@ Node *buildTree(string str) {
 
     // For the right child
     i++;
-    if (i >= ip.size()) break;
+    if (i >= ip.size())
+      break;
     currVal = ip[i];
 
     // If the right child is not null
@@ -101,7 +104,8 @@ struct Node
 */
 class Solution {
   pair<int, int> go(Node *p) {
-    if (!p) return make_pair(0, 0);
+    if (!p)
+      return make_pair(0, 0);
     auto a = go(p->left);
     auto b = go(p->right);
     if (a.first < b.first) {
@@ -113,10 +117,11 @@ class Solution {
     return make_pair(a.first + 1, p->data + max(a.second, b.second));
   }
 
- public:
+public:
   int sumOfLongRootToLeafPath(Node *root) {
     // code here
-    if (!root) return 0;
+    if (!root)
+      return 0;
     auto a = go(root);
     return a.second;
   }

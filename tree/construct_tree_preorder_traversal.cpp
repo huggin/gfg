@@ -6,8 +6,8 @@ using namespace std;
 
 struct Node {
   int data;
-  struct Node* left;
-  struct Node* right;
+  struct Node *left;
+  struct Node *right;
 
   Node(int x) {
     data = x;
@@ -16,26 +16,29 @@ struct Node {
   }
 };
 
-void printInorder(struct Node* node) {
-  if (node == NULL) return;
+void printInorder(struct Node *node) {
+  if (node == NULL)
+    return;
   printInorder(node->left);
   printf("%d ", node->data);
   printInorder(node->right);
 }
 
-Node* constructTree(int n, int pre[], char preLN[]);
+Node *constructTree(int n, int pre[], char preLN[]);
 
 int main() {
   int t;
   cin >> t;
   while (t--) {
-    Node* root = NULL;
+    Node *root = NULL;
     int n;
     cin >> n;
     int pre[n];
     char preLN[n];
-    for (int i = 0; i < n; i++) cin >> pre[i];
-    for (int i = 0; i < n; i++) cin >> preLN[i];
+    for (int i = 0; i < n; i++)
+      cin >> pre[i];
+    for (int i = 0; i < n; i++)
+      cin >> preLN[i];
     root = constructTree(n, pre, preLN);
     printInorder(root);
     cout << endl;
@@ -54,15 +57,16 @@ struct Node
 };
 */
 // function should return the root of the new binary tree formed
-struct Node* constructTree(int n, int pre[], char preLN[]) {
+struct Node *constructTree(int n, int pre[], char preLN[]) {
   // Code here
-  if (n == 0) return NULL;
-  Node* root = NULL;
-  stack<Node*> S;
-  Node* prev = NULL;
+  if (n == 0)
+    return NULL;
+  Node *root = NULL;
+  stack<Node *> S;
+  Node *prev = NULL;
   bool left = true;
   for (int i = 0; i < n; ++i) {
-    Node* p = new Node(pre[i]);
+    Node *p = new Node(pre[i]);
     if (!root)
       root = p;
     else {
@@ -78,7 +82,8 @@ struct Node* constructTree(int n, int pre[], char preLN[]) {
       prev = p;
       left = true;
     } else {
-      if (S.empty()) break;
+      if (S.empty())
+        break;
       prev = S.top();
       S.pop();
       left = false;

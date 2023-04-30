@@ -19,14 +19,16 @@ struct Node {
 // Function to Build Tree
 Node *buildTree(string str) {
   // Corner Case
-  if (str.length() == 0 || str[0] == 'N') return NULL;
+  if (str.length() == 0 || str[0] == 'N')
+    return NULL;
 
   // Creating vector of strings from input
   // string after spliting by space
   vector<string> ip;
 
   istringstream iss(str);
-  for (string str; iss >> str;) ip.push_back(str);
+  for (string str; iss >> str;)
+    ip.push_back(str);
 
   // Create the root of the tree
   Node *root = new Node(stoi(ip[0]));
@@ -56,7 +58,8 @@ Node *buildTree(string str) {
 
     // For the right child
     i++;
-    if (i >= ip.size()) break;
+    if (i >= ip.size())
+      break;
     currVal = ip[i];
 
     // If the right child is not null
@@ -97,7 +100,8 @@ struct Node
 unordered_map<Node *, int> dp[2];
 
 int solve(Node *p, int used) {
-  if (!p) return 0;
+  if (!p)
+    return 0;
   if (dp[used].find(p) != dp[used].end()) {
     return dp[used][p];
   }
@@ -118,7 +122,8 @@ int solve(Node *p, int used) {
 
 int LISS(Node *root) {
   // Code here
-  if (!root) return 0;
+  if (!root)
+    return 0;
   return max(solve(root, 1), solve(root, 0));
 }
 

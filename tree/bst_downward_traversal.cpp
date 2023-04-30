@@ -7,8 +7,8 @@ using namespace std;
 // Tree Node
 struct Node {
   int data;
-  Node* left;
-  Node* right;
+  Node *left;
+  Node *right;
 
   Node(int val) {
     data = val;
@@ -35,15 +35,17 @@ class Solution {
   long long ans;
   long long col;
 
-  void solve(Node* root, int pos) {
-    if (!root) return;
-    if (pos == col) ans += root->data;
+  void solve(Node *root, int pos) {
+    if (!root)
+      return;
+    if (pos == col)
+      ans += root->data;
     solve(root->left, pos - 1);
     solve(root->right, pos + 1);
   }
 
- public:
-  long long int verticallyDownBST(Node* root, int target) {
+public:
+  long long int verticallyDownBST(Node *root, int target) {
     // Code here
     col = -1;
     while (root) {
@@ -56,7 +58,8 @@ class Solution {
         root = root->right;
       }
     }
-    if (!root) return -1;
+    if (!root)
+      return -1;
     ans = 0;
     solve(root, 0);
     return ans - target;
@@ -66,29 +69,31 @@ class Solution {
 //{ Driver Code Starts.
 
 // Function to Build Tree
-Node* buildTree(string str) {
+Node *buildTree(string str) {
   // Corner Case
-  if (str.length() == 0 || str[0] == 'N') return NULL;
+  if (str.length() == 0 || str[0] == 'N')
+    return NULL;
 
   // Creating vector of strings from input
   // string after spliting by space
   vector<string> ip;
 
   istringstream iss(str);
-  for (string str; iss >> str;) ip.push_back(str);
+  for (string str; iss >> str;)
+    ip.push_back(str);
 
   // Create the root of the tree
-  Node* root = new Node(stoi(ip[0]));
+  Node *root = new Node(stoi(ip[0]));
 
   // Push the root to the queue
-  queue<Node*> queue;
+  queue<Node *> queue;
   queue.push(root);
 
   // Starting from the second element
   int i = 1;
   while (!queue.empty() && i < ip.size()) {
     // Get and remove the front of the queue
-    Node* currNode = queue.front();
+    Node *currNode = queue.front();
     queue.pop();
 
     // Get the current node's value from the string
@@ -105,7 +110,8 @@ Node* buildTree(string str) {
 
     // For the right child
     i++;
-    if (i >= ip.size()) break;
+    if (i >= ip.size())
+      break;
     currVal = ip[i];
 
     // If the right child is not null
@@ -122,8 +128,9 @@ Node* buildTree(string str) {
   return root;
 }
 
-void inorder(Node* root, vector<int>& v) {
-  if (root == NULL) return;
+void inorder(Node *root, vector<int> &v) {
+  if (root == NULL)
+    return;
 
   inorder(root->left, v);
   v.push_back(root->data);
@@ -142,7 +149,7 @@ int main() {
     getline(cin, newline);
     string s;
     getline(cin, s);
-    Node* root = buildTree(s);
+    Node *root = buildTree(s);
     Solution ob;
     cout << ob.verticallyDownBST(root, target) << endl;
   }

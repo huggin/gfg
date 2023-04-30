@@ -6,8 +6,8 @@ using namespace std;
 
 struct Node {
   int data;
-  struct Node* left;
-  struct Node* right;
+  struct Node *left;
+  struct Node *right;
 
   Node(int val) {
     data = val;
@@ -16,28 +16,30 @@ struct Node {
 };
 
 // Function to Build Tree
-Node* buildTree(string str) {
+Node *buildTree(string str) {
   // Corner Case
-  if (str.length() == 0 || str[0] == 'N') return NULL;
+  if (str.length() == 0 || str[0] == 'N')
+    return NULL;
 
   // Creating vector of strings from input string after spliting by space
   vector<string> ip;
 
   istringstream iss(str);
-  for (string str; iss >> str;) ip.push_back(str);
+  for (string str; iss >> str;)
+    ip.push_back(str);
 
   // Create the root of the tree
-  Node* root = new Node(stoi(ip[0]));
+  Node *root = new Node(stoi(ip[0]));
 
   // Push the root to the queue
-  queue<Node*> queue;
+  queue<Node *> queue;
   queue.push(root);
 
   // Starting from the second element
   int i = 1;
   while (!queue.empty() && i < ip.size()) {
     // Get and remove the front of the queue
-    Node* currNode = queue.front();
+    Node *currNode = queue.front();
     queue.pop();
 
     // Get the current node's value from the string
@@ -54,7 +56,8 @@ Node* buildTree(string str) {
 
     // For the right child
     i++;
-    if (i >= ip.size()) break;
+    if (i >= ip.size())
+      break;
     currVal = ip[i];
 
     // If the right child is not null
@@ -82,15 +85,16 @@ struct Node {
 */
 
 class Solution {
-  vector<Node*> p1, p2;
+  vector<Node *> p1, p2;
 
-  Node* find(Node* p, int target, vector<Node*>& v) {
-    if (!p) return NULL;
+  Node *find(Node *p, int target, vector<Node *> &v) {
+    if (!p)
+      return NULL;
     if (p->data == target) {
       v.push_back(p);
       return p;
     }
-    Node* ret = find(p->left, target, v);
+    Node *ret = find(p->left, target, v);
     if (ret) {
       v.push_back(p);
       return ret;
@@ -102,15 +106,15 @@ class Solution {
     return ret;
   }
 
- public:
+public:
   // function should return the number of turns required to go from first node
   // to second node
-  int NumberOFTurns(struct Node* root, int first, int second) {
+  int NumberOFTurns(struct Node *root, int first, int second) {
     // Your code goes here
     p1.clear();
     p2.clear();
-    Node* p = find(root, first, p1);
-    Node* q = find(root, second, p2);
+    Node *p = find(root, first, p1);
+    Node *q = find(root, second, p2);
     int n1 = p1.size();
     int n2 = p2.size();
     if (n1 > n2) {
@@ -118,7 +122,7 @@ class Solution {
       swap(n1, n2);
     }
 
-    Node* parent = NULL;
+    Node *parent = NULL;
     int pos = -1;
     for (int i = 0; i < n1; ++i) {
       if (p1[i] == p2[i + n2 - n1]) {
@@ -144,7 +148,8 @@ class Solution {
         }
         parent = p2[j];
       }
-      if (ans2 == 0) return -1;
+      if (ans2 == 0)
+        return -1;
       return ans2;
     }
     // cout << pos << ' ' << parent->data << endl;
@@ -190,12 +195,12 @@ class Solution {
 
 int main() {
   int t;
-  struct Node* child;
+  struct Node *child;
   scanf("%d ", &t);
   while (t--) {
     string s;
     getline(cin, s);
-    Node* root = buildTree(s);
+    Node *root = buildTree(s);
     int turn, first, second;
     cin >> first >> second;
     Solution ob;

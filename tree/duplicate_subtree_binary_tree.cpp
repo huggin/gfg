@@ -4,8 +4,8 @@ using namespace std;
 
 struct Node {
   char data;
-  struct Node* left;
-  struct Node* right;
+  struct Node *left;
+  struct Node *right;
 
   Node(char x) {
     data = x;
@@ -14,29 +14,31 @@ struct Node {
   }
 };
 
-struct Node* buildTree(string str) {
+struct Node *buildTree(string str) {
   // Corner Case
-  if (str.length() == 0 || str[0] == 'N') return NULL;
+  if (str.length() == 0 || str[0] == 'N')
+    return NULL;
 
   // Creating vector of strings from input
   // string after spliting by space
   vector<string> ip;
 
   istringstream iss(str);
-  for (string str; iss >> str;) ip.push_back(str);
+  for (string str; iss >> str;)
+    ip.push_back(str);
 
   // Create the root of the tree
-  Node* root = new Node(stoi(ip[0]));
+  Node *root = new Node(stoi(ip[0]));
 
   // Push the root to the queue
-  queue<Node*> queue;
+  queue<Node *> queue;
   queue.push(root);
 
   // Starting from the second element
   int i = 1;
   while (!queue.empty() && i < ip.size()) {
     // Get and remove the front of the queue
-    Node* currNode = queue.front();
+    Node *currNode = queue.front();
     queue.pop();
 
     // Get the current node's value from the string
@@ -53,7 +55,8 @@ struct Node* buildTree(string str) {
 
     // For the right child
     i++;
-    if (i >= ip.size()) break;
+    if (i >= ip.size())
+      break;
     currVal = ip[i];
 
     // If the right child is not null
@@ -80,36 +83,45 @@ struct Node
 };*/
 
 class Solution {
-  unordered_map<Node*, int> height;
-  int postOrder(Node* p) {
-    if (!p) return 0;
+  unordered_map<Node *, int> height;
+  int postOrder(Node *p) {
+    if (!p)
+      return 0;
     int l = postOrder(p->left);
     int r = postOrder(p->right);
     height[p] = max(l, r) + 1;
     return height[p];
   }
 
-  bool solve(Node* p, Node* q) {
-    if (p == q) return false;
-    if (p->data != q->data) return false;
-    if (p->left && !q->left || !p->left && q->left) return false;
-    if (p->right && !q->right || !p->right && q->right) return false;
-    if (p->left && q->left && p->left->data != q->left->data) return false;
-    if (p->right && q->right && p->right->data != q->right->data) return false;
+  bool solve(Node *p, Node *q) {
+    if (p == q)
+      return false;
+    if (p->data != q->data)
+      return false;
+    if (p->left && !q->left || !p->left && q->left)
+      return false;
+    if (p->right && !q->right || !p->right && q->right)
+      return false;
+    if (p->left && q->left && p->left->data != q->left->data)
+      return false;
+    if (p->right && q->right && p->right->data != q->right->data)
+      return false;
     return true;
   }
 
- public:
+public:
   /*This function returns true if the tree contains
   a duplicate subtree of size 2 or more else returns false*/
-  int dupSub(Node* root) {
+  int dupSub(Node *root) {
     // code here
     postOrder(root);
     for (auto c1 : height) {
       for (auto c2 : height) {
-        if (c1 == c2) continue;
+        if (c1 == c2)
+          continue;
         if (c1.second == 2 && c2.second == 2 && c1.first != c2.first) {
-          if (solve(c1.first, c2.first)) return 1;
+          if (solve(c1.first, c2.first))
+            return 1;
         }
       }
     }
@@ -126,7 +138,7 @@ int main() {
   while (t--) {
     string treeString;
     getline(cin >> ws, treeString);
-    struct Node* root = buildTree(treeString);
+    struct Node *root = buildTree(treeString);
     Solution ob;
     cout << ob.dupSub(root) << "\n";
   }

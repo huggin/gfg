@@ -6,8 +6,8 @@ using namespace std;
 
 struct Node {
   int data;
-  struct Node* left;
-  struct Node* right;
+  struct Node *left;
+  struct Node *right;
 
   Node(int val) {
     data = val;
@@ -15,8 +15,9 @@ struct Node {
   }
 };
 
-void printInorder(struct Node* node) {
-  if (node == NULL) return;
+void printInorder(struct Node *node) {
+  if (node == NULL)
+    return;
 
   printInorder(node->left);
   printf("%d ", node->data);
@@ -24,29 +25,31 @@ void printInorder(struct Node* node) {
 }
 
 // Function to Build Tree
-Node* buildTree(string str) {
+Node *buildTree(string str) {
   // Corner Case
-  if (str.length() == 0 || str[0] == 'N') return NULL;
+  if (str.length() == 0 || str[0] == 'N')
+    return NULL;
 
   // Creating vector of strings from input
   // string after spliting by space
   vector<string> ip;
 
   istringstream iss(str);
-  for (string str; iss >> str;) ip.push_back(str);
+  for (string str; iss >> str;)
+    ip.push_back(str);
 
   // Create the root of the tree
-  Node* root = new Node(stoi(ip[0]));
+  Node *root = new Node(stoi(ip[0]));
 
   // Push the root to the queue
-  queue<Node*> queue;
+  queue<Node *> queue;
   queue.push(root);
 
   // Starting from the second element
   int i = 1;
   while (!queue.empty() && i < ip.size()) {
     // Get and remove the front of the queue
-    Node* currNode = queue.front();
+    Node *currNode = queue.front();
     queue.pop();
 
     // Get the current node's value from the string
@@ -63,7 +66,8 @@ Node* buildTree(string str) {
 
     // For the right child
     i++;
-    if (i >= ip.size()) break;
+    if (i >= ip.size())
+      break;
     currVal = ip[i];
 
     // If the right child is not null
@@ -98,27 +102,29 @@ struct Node
 
 class Solution {
   int count;
-  void go(Node* p, vector<int>& v, map<Node*, int>& m) {
-    if (!p) return;
+  void go(Node *p, vector<int> &v, map<Node *, int> &m) {
+    if (!p)
+      return;
     go(p->left, v, m);
     v.push_back(p->data);
     m[p] = count++;
     go(p->right, v, m);
   }
-  void go2(Node* p, const vector<int>& v, map<Node*, int>& m) {
-    if (!p) return;
+  void go2(Node *p, const vector<int> &v, map<Node *, int> &m) {
+    if (!p)
+      return;
     go2(p->left, v, m);
     p->data = v[m[p]];
     go2(p->right, v, m);
   }
 
- public:
+public:
   // The given root is the root of the Binary Tree
   // Return the root of the generated BST
-  Node* binaryTreeToBST(Node* root) {
+  Node *binaryTreeToBST(Node *root) {
     // Your code goes here
     vector<int> v;
-    map<Node*, int> m;
+    map<Node *, int> m;
     count = 0;
     go(root, v, m);
     sort(v.begin(), v.end());
@@ -137,9 +143,9 @@ int main() {
   while (t--) {
     string s;
     getline(cin, s);
-    Node* root = buildTree(s);
+    Node *root = buildTree(s);
     Solution obj;
-    Node* res = obj.binaryTreeToBST(root);
+    Node *res = obj.binaryTreeToBST(root);
     printInorder(res);
     cout << endl;
   }
