@@ -8,7 +8,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   int ExcelColumnNumber(string s) {
     // Your code goes here
     int ans = 0;

@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   long long nthFortunateNum(int n) {
     // code here
     vector<long long> v{3,  5,  7,  13, 23, 17, 19, 23,

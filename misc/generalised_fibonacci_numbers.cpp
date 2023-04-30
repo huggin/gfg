@@ -30,11 +30,12 @@ class Solution {
     }
   }
 
- public:
+public:
   long long genFibNum(long long a, long long b, long long c, long long n,
                       long long m) {
     // code here
-    if (n <= 2) return 1 % m;
+    if (n <= 2)
+      return 1 % m;
     long long f[3][3] = {0, 1, 0, b, a, 1, 0, 0, 1};
     long long res[3][3] = {1, 0, 0, 0, 1, 0, 0, 0, 1};
 

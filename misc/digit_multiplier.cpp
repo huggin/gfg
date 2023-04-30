@@ -6,13 +6,15 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   string getSmallest(long long N) {
     // code here
-    if (N == 1) return "1";
+    if (N == 1)
+      return "1";
     int cnt[10] = {0};
     for (long long i = 2; i <= N; ++i) {
-      if (i >= 10) return "-1";
+      if (i >= 10)
+        return "-1";
       while (N % i == 0) {
         cnt[i]++;
         N /= i;
@@ -37,7 +39,8 @@ class Solution {
       cnt[2] -= 2;
     }
     for (int i = 0; i < 10; ++i) {
-      if (cnt[i] == 0) continue;
+      if (cnt[i] == 0)
+        continue;
       ans += string(cnt[i], '0' + i);
     }
     return ans;

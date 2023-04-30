@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int solve(int n, string s) {
     // code here
     int ans = 0;

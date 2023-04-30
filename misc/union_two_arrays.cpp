@@ -8,7 +8,7 @@ using namespace std;
 // User function template in C++
 
 class Solution {
- public:
+public:
   // Function to return the count of number of elements in union of two arrays.
   int doUnion(int a[], int n, int b[], int m) {
     // code here
@@ -34,9 +34,11 @@ int main() {
     cin >> n >> m;
     int a[n], b[m];
 
-    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
 
-    for (int i = 0; i < m; i++) cin >> b[i];
+    for (int i = 0; i < m; i++)
+      cin >> b[i];
     Solution ob;
     cout << ob.doUnion(a, n, b, m) << endl;
   }

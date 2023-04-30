@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   string digitsNum(int N) {
     // Code here.
     string ans;

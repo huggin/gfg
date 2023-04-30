@@ -6,33 +6,40 @@ using namespace std;
 
 class Solution {
   int gcd(int a, int b) {
-    if (b == 0) return a;
+    if (b == 0)
+      return a;
     return gcd(b, a % b);
   }
 
- public:
+public:
   int minSteps(int m, int n, int d) {
     // Code here
-    if (d > m && d > n) return -1;
+    if (d > m && d > n)
+      return -1;
     int c = gcd(m, n);
     // cout << c << endl;
-    if (d % c != 0) return -1;
-    if (m > n) swap(n, m);
+    if (d % c != 0)
+      return -1;
+    if (m > n)
+      swap(n, m);
     int ans = 0;
     int i = 0, j = 0;
     while (true) {
       ++ans;
       i += m;
-      if (i == d) break;
+      if (i == d)
+        break;
       if (n - j >= m) {
         j += m;
         i -= m;
         ++ans;
-        if (j == d) break;
+        if (j == d)
+          break;
       } else {
         i -= n - j;
         ++ans;
-        if (i == d) break;
+        if (i == d)
+          break;
         ans += 2;
         j = i;
         i = 0;
@@ -46,19 +53,22 @@ class Solution {
         ++ans2;
         j = n;
       }
-      if (j == d) break;
+      if (j == d)
+        break;
       if (j >= m - i) {
         j -= (m - i);
         i = m;
         ++ans2;
-        if (j == d) break;
+        if (j == d)
+          break;
         ++ans2;
         i = 0;
       } else {
         i += j;
         ++ans2;
         j = 0;
-        if (i == d) break;
+        if (i == d)
+          break;
       }
     }
 

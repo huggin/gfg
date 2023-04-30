@@ -1,18 +1,20 @@
 # User function Template for python3
 
+
 class Solution:
     def colName(self, n):
         # your code here
         ans = []
         while n:
             n -= 1
-            ans.append(chr(n % 26 + ord('A')))
+            ans.append(chr(n % 26 + ord("A")))
             n //= 26
 
-        return ''.join(reversed(ans))
+        return "".join(reversed(ans))
+
 
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
 
 

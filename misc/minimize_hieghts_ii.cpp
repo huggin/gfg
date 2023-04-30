@@ -8,7 +8,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   int getMinDiff(int arr[], int n, int k) {
     // code here
     sort(arr, arr + n);

@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int divisibleBy5(string N) {
     // code here
     return N[N.size() - 1] == '5' || N[N.size() - 1] == '0';

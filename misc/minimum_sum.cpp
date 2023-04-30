@@ -8,7 +8,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   string solve(int arr[], int n) {
     // code here
     sort(arr, arr + n);

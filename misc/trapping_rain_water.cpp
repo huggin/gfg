@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
   // Function to find the trapped water between the blocks.
- public:
+public:
   long long trappingWater(int arr[], int n) {
     // code here
     int left = 0, right = n - 1;
@@ -27,7 +27,8 @@ class Solution {
         --j;
       }
     }
-    if (left >= right) return 0;
+    if (left >= right)
+      return 0;
     i = left, j = right;
     long long ans = 0;
     while (i < j) {

@@ -8,7 +8,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   string lookandsay(int n) {
     // code here
     string s = "1";

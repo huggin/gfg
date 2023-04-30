@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   vector<int> satisfyEqn(int A[], int N) {
     // code here
     vector<tuple<int, int, int>> v;
@@ -27,7 +27,8 @@ class Solution {
           int b = get<2>(v[i - 1]);
           int c = get<1>(v[j]);
           int d = get<2>(v[j]);
-          if (a == c || a == d || b == c || b == d) continue;
+          if (a == c || a == d || b == c || b == d)
+            continue;
           vector<int> temp{a, b, c, d};
           if (ans[0] == -1 || ans > temp) {
             ans = temp;
@@ -49,7 +50,8 @@ int main() {
     cin >> N;
     int A[N];
 
-    for (int i = 0; i < N; i++) cin >> A[i];
+    for (int i = 0; i < N; i++)
+      cin >> A[i];
 
     Solution ob;
     vector<int> ptr = ob.satisfyEqn(A, N);

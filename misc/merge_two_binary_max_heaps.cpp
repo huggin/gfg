@@ -10,7 +10,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   vector<int> mergeHeaps(vector<int> &a, vector<int> &b, int n, int m) {
     // your code here
     a.reserve(n + m);
@@ -36,7 +36,8 @@ bool isMerged(vector<int> &arr1, vector<int> &arr2, vector<int> &merged) {
     return false;
   }
   for (int i = 1; i < merged.size(); i++) {
-    if (merged[i] > merged[(i - 1) / 2]) return false;
+    if (merged[i] > merged[(i - 1) / 2])
+      return false;
   }
   return true;
 }

@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int getCarries(string N, string M) {
     // code here
     int ans = 0;

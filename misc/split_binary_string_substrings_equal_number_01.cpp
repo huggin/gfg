@@ -6,7 +6,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int maxSubStr(string str) {
     // Write your code here
     int ans = 0;
@@ -17,9 +17,11 @@ class Solution {
       } else {
         ++t;
       }
-      if (t == 0) ++ans;
+      if (t == 0)
+        ++ans;
     }
-    if (t != 0) return -1;
+    if (t != 0)
+      return -1;
     return ans;
   }
 };

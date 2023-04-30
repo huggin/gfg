@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   vector<int> minPartition(int N) {
     // code here
     vector<int> ans;
@@ -60,7 +60,8 @@ int main() {
 
     Solution ob;
     vector<int> numbers = ob.minPartition(N);
-    for (auto u : numbers) cout << u << " ";
+    for (auto u : numbers)
+      cout << u << " ";
     cout << "\n";
   }
   return 0;

@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
-  int calc1(vector<int>& a, int pi, int i, vector<int>& b, int pj, int j) {
+  int calc1(vector<int> &a, int pi, int i, vector<int> &b, int pj, int j) {
     int ans = 0;
     if (pi >= 0) {
       ans = max(ans, a[i] - a[pi]);
@@ -19,7 +19,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   /*You are required to complete this method*/
   int max_path_sum(int A[], int B[], int l1, int l2) {
     // Your code here
@@ -75,8 +75,10 @@ int main() {
     cin >> N >> M;
     fflush(stdin);
     int a[N], b[M];
-    for (int i = 0; i < N; i++) cin >> a[i];
-    for (int i = 0; i < M; i++) cin >> b[i];
+    for (int i = 0; i < N; i++)
+      cin >> a[i];
+    for (int i = 0; i < M; i++)
+      cin >> b[i];
     Solution obj;
     int result = obj.max_path_sum(a, b, N, M);
     cout << result << endl;

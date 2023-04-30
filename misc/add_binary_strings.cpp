@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 // User function template for C++
 class Solution {
- public:
+public:
   string addBinary(string A, string B) {
     // your code here
     reverse(A.begin(), A.end());

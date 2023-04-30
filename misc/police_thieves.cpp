@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int catchThieves(char arr[], int n, int k) {
     // Code here
     int ans = 0;
@@ -19,7 +19,8 @@ class Solution {
       while (j < n && arr[j] != 'P') {
         ++j;
       }
-      if (i == n || j == n) break;
+      if (i == n || j == n)
+        break;
       if (abs(i - j) <= k) {
         ++ans;
         arr[i] = '\0';
@@ -47,7 +48,8 @@ int main() {
     int n, k;
     cin >> n >> k;
     char arr[n];
-    for (int i = 0; i < n; ++i) cin >> arr[i];
+    for (int i = 0; i < n; ++i)
+      cin >> arr[i];
     Solution obj;
     cout << obj.catchThieves(arr, n, k) << endl;
   }

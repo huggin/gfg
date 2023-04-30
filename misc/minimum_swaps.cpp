@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int minimumSwaps(int c[], int v[], int n, int k, int b, int T) {
     // code here
     // vector<pair<int, int>> sheep;
@@ -21,12 +21,14 @@ class Solution {
     for (int i = n - 1; i >= 0; --i) {
       if (c[i] + T * v[i] >= b) {
         ans += u;
-        if (--k == 0) break;
+        if (--k == 0)
+          break;
       } else {
         ++u;
       }
     }
-    if (k != 0) return -1;
+    if (k != 0)
+      return -1;
     return ans;
   }
 };
@@ -40,8 +42,10 @@ int main() {
     cin >> n >> k >> b >> T;
     int c[n];
     int v[n];
-    for (auto &j : c) cin >> j;
-    for (auto &j : v) cin >> j;
+    for (auto &j : c)
+      cin >> j;
+    for (auto &j : v)
+      cin >> j;
     Solution s;
     int ans = s.minimumSwaps(c, v, n, k, b, T);
     cout << ans << endl;

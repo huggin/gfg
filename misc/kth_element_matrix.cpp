@@ -14,7 +14,8 @@ int main() {
     cin >> n;
 
     for (int i = 0; i < n; i++)
-      for (int j = 0; j < n; j++) cin >> mat[i][j];
+      for (int j = 0; j < n; j++)
+        cin >> mat[i][j];
     int r;
     cin >> r;
     cout << kthSmallest(mat, n, r) << endl;
@@ -37,7 +38,8 @@ int kthSmallest(int mat[MAX][MAX], int n, int k) {
   int count = 0;
   while (!Q.empty()) {
     auto c = Q.top();
-    if (++count == k) return get<0>(c);
+    if (++count == k)
+      return get<0>(c);
     Q.pop();
     int x = get<1>(c);
     int y = get<2>(c);

@@ -8,10 +8,11 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int largestArea(int n, int m, int k, vector<vector<int>> &enemy) {
     //  code here
-    if (k == 0) return n * m;
+    if (k == 0)
+      return n * m;
 
     vector<int> v1(k + 1), v2(k + 1);
     for (int i = 0; i < k; ++i) {
@@ -55,7 +56,8 @@ int main() {
     int k;
     cin >> k;
     vector<vector<int>> e(k, vector<int>(2));
-    for (int i = 0; i < k; i++) cin >> e[i][0] >> e[i][1];
+    for (int i = 0; i < k; i++)
+      cin >> e[i][0] >> e[i][1];
     Solution a;
     cout << a.largestArea(n, m, k, e) << endl;
   }

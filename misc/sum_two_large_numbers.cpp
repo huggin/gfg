@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 // User function template for C++
 class Solution {
- public:
+public:
   string findSum(string X, string Y) {
     // Your code goes here
     reverse(begin(X), end(X));
@@ -56,7 +56,8 @@ class Solution {
         break;
       }
     }
-    if (len == 0) return "0";
+    if (len == 0)
+      return "0";
     string s(len, ' ');
     for (int j = len - 1; j >= 0; --j) {
       s[len - 1 - j] = ans[j] + '0';

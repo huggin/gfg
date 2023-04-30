@@ -8,8 +8,8 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
-  long long int wineSelling(vector<int>& Arr, int N) {
+public:
+  long long int wineSelling(vector<int> &Arr, int N) {
     // Code here.
     long long ans = 0;
     for (int i = 0, j = 0; i < N && j < N;) {
@@ -19,7 +19,8 @@ class Solution {
       while (j < N && Arr[j] <= 0) {
         ++j;
       }
-      if (i == N || j == N) break;
+      if (i == N || j == N)
+        break;
       if (-Arr[i] <= Arr[j]) {
         ans += (static_cast<long long>(-Arr[i])) * abs(j - i);
         Arr[j] += Arr[i];

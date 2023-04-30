@@ -8,16 +8,17 @@ class Solution:
         finish = defaultdict(int)
         ans = 0
         for i in range(n):
-            if arr[i] in finish and finish[arr[i]] + time[arr[i]-1] > ans:
-                ans = finish[arr[i]] + time[arr[i]-1]
+            if arr[i] in finish and finish[arr[i]] + time[arr[i] - 1] > ans:
+                ans = finish[arr[i]] + time[arr[i] - 1]
             temp = ans
             finish[arr[i]] = temp
             ans += 1
 
         return ans - 1
 
+
 # {
- # Driver Code Starts
+# Driver Code Starts
 
 
 class IntArray:
@@ -37,7 +38,6 @@ class IntArray:
 if __name__ == "__main__":
     t = int(input())
     for _ in range(t):
-
         n = int(input())
 
         arr = IntArray().Input(n)

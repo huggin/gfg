@@ -6,7 +6,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   // Function to find the minimum number of platforms required at the
   // railway station such that no train waits.
   int findPlatform(int arr[], int dep[], int n) {
@@ -16,9 +16,12 @@ class Solution {
       t.push_back(make_pair(dep[i], arr[i]));
     }
     sort(t.begin(), t.end(), [](pair<int, int> left, pair<int, int> right) {
-      if (left.second < right.second) return 1;
-      if (left.second > right.second) return 0;
-      if (left.first < right.first) return 1;
+      if (left.second < right.second)
+        return 1;
+      if (left.second > right.second)
+        return 0;
+      if (left.first < right.first)
+        return 1;
       return 0;
     });
 
@@ -50,7 +53,8 @@ int main() {
     cin >> n;
     int arr[n];
     int dep[n];
-    for (int i = 0; i < n; i++) cin >> arr[i];
+    for (int i = 0; i < n; i++)
+      cin >> arr[i];
     for (int j = 0; j < n; j++) {
       cin >> dep[j];
     }
