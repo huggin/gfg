@@ -15,7 +15,8 @@ struct Node {
 
 void sort_and_print(vector<int> &v) {
   sort(v.begin(), v.end());
-  for (int i = 0; i < v.size(); i++) cout << v[i] << " ";
+  for (int i = 0; i < v.size(); i++)
+    cout << v[i] << " ";
   v.clear();
 }
 
@@ -40,12 +41,14 @@ void printLevelOrder(struct Node *root) {
 
     if (n->left) {
       q.push(n->left);
-      if (next_row == NULL) next_row = n->left;
+      if (next_row == NULL)
+        next_row = n->left;
     }
 
     if (n->right) {
       q.push(n->right);
-      if (next_row == NULL) next_row = n->right;
+      if (next_row == NULL)
+        next_row = n->right;
     }
   }
   sort_and_print(v);
@@ -71,7 +74,7 @@ struct Node
 }; */
 
 class Solution {
- public:
+public:
   // Function to construct binary tree from parent array.
   Node *createTree(int parent[], int N) {
     // Your code here
@@ -107,7 +110,8 @@ int main() {
     int n;
     cin >> n;
     int a[n];
-    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
 
     Solution ob;
 

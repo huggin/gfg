@@ -7,7 +7,7 @@ using namespace std;
 /* A binary tree node has data, pointer to left
 child and a pointer to right child */
 class Node {
- public:
+public:
   int data;
   Node *left, *right;
   Node(int data) {
@@ -18,7 +18,8 @@ class Node {
 
 /* This function is to print the inorder of the tree  */
 void inorder(Node *root) {
-  if (root == NULL) return;
+  if (root == NULL)
+    return;
   inorder(root->left);
   printf("%d ", root->data);
   inorder(root->right);
@@ -42,7 +43,7 @@ public:
 */
 
 class Solution {
- public:
+public:
   // function to construct tree from string
   Node *treeFromString(string str) {
     // code here

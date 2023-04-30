@@ -32,13 +32,16 @@ struct Node
 */
 
 class Solution {
- public:
+public:
   // Function to check if two trees are identical.
   bool isIdentical(Node *r1, Node *r2) {
     // Your Code here
-    if (!r1 && !r2) return true;
-    if (r1 && !r2 || !r1 && r2) return false;
-    if (r1->data != r2->data) return false;
+    if (!r1 && !r2)
+      return true;
+    if (r1 && !r2 || !r1 && r2)
+      return false;
+    if (r1->data != r2->data)
+      return false;
     return isIdentical(r1->left, r2->left) && isIdentical(r1->right, r2->right);
   }
 };
@@ -48,14 +51,16 @@ class Solution {
 // Function to Build Tree
 Node *buildTree(string str) {
   // Corner Case
-  if (str.length() == 0 || str[0] == 'N') return NULL;
+  if (str.length() == 0 || str[0] == 'N')
+    return NULL;
 
   // Creating vector of strings from input
   // string after spliting by space
   vector<string> ip;
 
   istringstream iss(str);
-  for (string str; iss >> str;) ip.push_back(str);
+  for (string str; iss >> str;)
+    ip.push_back(str);
 
   // Create the root of the tree
   Node *root = new Node(stoi(ip[0]));
@@ -85,7 +90,8 @@ Node *buildTree(string str) {
 
     // For the right child
     i++;
-    if (i >= ip.size()) break;
+    if (i >= ip.size())
+      break;
     currVal = ip[i];
 
     // If the right child is not null

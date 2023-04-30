@@ -10,14 +10,15 @@ using namespace std;
 class Solution {
   vector<int> a;
   int ans;
-  void inOrder(const vector<int>& A, int i, int n) {
-    if (i >= n) return;
+  void inOrder(const vector<int> &A, int i, int n) {
+    if (i >= n)
+      return;
     inOrder(A, i * 2 + 1, n);
     a.push_back(A[i]);
     inOrder(A, i * 2 + 2, n);
   }
 
-  void dfs(int v, unordered_map<int, int>& m, vector<int>& marked, int count) {
+  void dfs(int v, unordered_map<int, int> &m, vector<int> &marked, int count) {
     marked[v] = 1;
     ++count;
     if (!marked[m[a[v]]]) {
@@ -27,8 +28,8 @@ class Solution {
     }
   }
 
- public:
-  int minSwaps(vector<int>& A, int n) {
+public:
+  int minSwaps(vector<int> &A, int n) {
     // Write your code here
     inOrder(A, 0, n);
 

@@ -31,9 +31,11 @@ void insert(Node **tree, int val) {
 }
 
 int getCountOfNode(Node *root, int l, int h) {
-  if (!root) return 0;
+  if (!root)
+    return 0;
 
-  if (root->data == h && root->data == l) return 1;
+  if (root->data == h && root->data == l)
+    return 1;
 
   if (root->data <= h && root->data >= l)
     return 1 + getCountOfNode(root->left, l, h) +
@@ -79,12 +81,14 @@ Node * right, * left;
 };*/
 
 bool ok(Node *p, int mi, int mx) {
-  if (!p) return false;
+  if (!p)
+    return false;
 
   // cout << p->data << ' ' << mi << ' ' << mx << endl;
 
   if (!p->left && !p->right) {
-    if (p->data == mi + 1 && p->data == mx - 1) return true;
+    if (p->data == mi + 1 && p->data == mx - 1)
+      return true;
   }
 
   return ok(p->left, mi, p->data) || ok(p->right, p->data, mx);
@@ -93,6 +97,7 @@ bool ok(Node *p, int mi, int mx) {
 /*You are required to complete below method */
 bool isDeadEnd(Node *root) {
   // Your code here
-  if (!root) return false;
+  if (!root)
+    return false;
   return ok(root, 0, INT_MAX);
 }

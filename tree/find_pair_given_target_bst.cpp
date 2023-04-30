@@ -7,8 +7,8 @@ using namespace std;
 // Tree Node
 struct Node {
   int data;
-  Node* left;
-  Node* right;
+  Node *left;
+  Node *right;
 
   Node(int val) {
     data = val;
@@ -17,29 +17,31 @@ struct Node {
 };
 
 // Function to Build Tree
-Node* buildTree(string str) {
+Node *buildTree(string str) {
   // Corner Case
-  if (str.length() == 0 || str[0] == 'N') return NULL;
+  if (str.length() == 0 || str[0] == 'N')
+    return NULL;
 
   // Creating vector of strings from input
   // string after spliting by space
   vector<string> ip;
 
   istringstream iss(str);
-  for (string str; iss >> str;) ip.push_back(str);
+  for (string str; iss >> str;)
+    ip.push_back(str);
 
   // Create the root of the tree
-  Node* root = new Node(stoi(ip[0]));
+  Node *root = new Node(stoi(ip[0]));
 
   // Push the root to the queue
-  queue<Node*> queue;
+  queue<Node *> queue;
   queue.push(root);
 
   // Starting from the second element
   int i = 1;
   while (!queue.empty() && i < ip.size()) {
     // Get and remove the front of the queue
-    Node* currNode = queue.front();
+    Node *currNode = queue.front();
     queue.pop();
 
     // Get the current node's value from the string
@@ -56,7 +58,8 @@ Node* buildTree(string str) {
 
     // For the right child
     i++;
-    if (i >= ip.size()) break;
+    if (i >= ip.size())
+      break;
     currVal = ip[i];
 
     // If the right child is not null
@@ -91,9 +94,9 @@ struct Node {
 class Solution {
   bool found;
   int t;
-  Node* r;
+  Node *r;
 
-  bool find(Node* root, Node* curr, int k) {
+  bool find(Node *root, Node *curr, int k) {
     while (root) {
       if (root == curr) {
         return find(root->left, curr, k) || find(root->right, curr, k);
@@ -108,9 +111,11 @@ class Solution {
     return false;
   }
 
-  int preOrder(Node* p) {
-    if (found) return 0;
-    if (!p) return 0;
+  int preOrder(Node *p) {
+    if (found)
+      return 0;
+    if (!p)
+      return 0;
     found = find(r, p, t - p->data);
     if (!found) {
       preOrder(p->left);
@@ -118,12 +123,13 @@ class Solution {
     }
   }
 
- public:
+public:
   // root : the root Node of the given BST
   // target : the target sum
-  int isPairPresent(struct Node* root, int target) {
+  int isPairPresent(struct Node *root, int target) {
     // add code here.
-    if (!root) return 0;
+    if (!root)
+      return 0;
     found = false;
     t = target;
     r = root;
@@ -141,7 +147,7 @@ int main() {
   while (t--) {
     string s;
     getline(cin, s);
-    Node* root = buildTree(s);
+    Node *root = buildTree(s);
 
     getline(cin, s);
     int k = stoi(s);

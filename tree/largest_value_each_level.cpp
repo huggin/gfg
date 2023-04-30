@@ -7,13 +7,13 @@ using namespace std;
 // Tree Node
 struct Node {
   int data;
-  Node* left;
-  Node* right;
+  Node *left;
+  Node *right;
 };
 
 // Utility function to create a new Tree Node
-Node* newNode(int val) {
-  Node* temp = new Node;
+Node *newNode(int val) {
+  Node *temp = new Node;
   temp->data = val;
   temp->left = NULL;
   temp->right = NULL;
@@ -22,29 +22,31 @@ Node* newNode(int val) {
 }
 
 // Function to Build Tree
-Node* buildTree(string str) {
+Node *buildTree(string str) {
   // Corner Case
-  if (str.length() == 0 || str[0] == 'N') return NULL;
+  if (str.length() == 0 || str[0] == 'N')
+    return NULL;
 
   // Creating vector of strings from input
   // string after spliting by space
   vector<string> ip;
 
   istringstream iss(str);
-  for (string str; iss >> str;) ip.push_back(str);
+  for (string str; iss >> str;)
+    ip.push_back(str);
 
   // Create the root of the tree
-  Node* root = newNode(stoi(ip[0]));
+  Node *root = newNode(stoi(ip[0]));
 
   // Push the root to the queue
-  queue<Node*> queue;
+  queue<Node *> queue;
   queue.push(root);
 
   // Starting from the second element
   int i = 1;
   while (!queue.empty() && i < ip.size()) {
     // Get and remove the front of the queue
-    Node* currNode = queue.front();
+    Node *currNode = queue.front();
     queue.pop();
 
     // Get the current node's value from the string
@@ -61,7 +63,8 @@ Node* buildTree(string str) {
 
     // For the right child
     i++;
-    if (i >= ip.size()) break;
+    if (i >= ip.size())
+      break;
     currVal = ip[i];
 
     // If the right child is not null
@@ -82,19 +85,20 @@ Node* buildTree(string str) {
 // User function Template for C++
 
 class Solution {
- public:
-  vector<int> largestValues(Node* root) {
+public:
+  vector<int> largestValues(Node *root) {
     // code here
-    queue<Node*> Q;
+    queue<Node *> Q;
     queue<int> Q2;
     vector<int> ans;
-    if (!root) return ans;
+    if (!root)
+      return ans;
     Q.push(root);
     Q2.push(0);
     int t = INT_MIN;
     int level = 0;
     while (!Q.empty()) {
-      Node* c = Q.front();
+      Node *c = Q.front();
       Q.pop();
       int l = Q2.front();
       Q2.pop();
@@ -129,11 +133,12 @@ int main() {
     string inp;
     getline(cin, inp);
 
-    struct Node* root = buildTree(inp);
+    struct Node *root = buildTree(inp);
     Solution ob;
     vector<int> ans = ob.largestValues(root);
 
-    for (int i = 0; i < ans.size(); i++) cout << ans[i] << " ";
+    for (int i = 0; i < ans.size(); i++)
+      cout << ans[i] << " ";
 
     cout << "\n";
   }

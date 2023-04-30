@@ -7,13 +7,13 @@ using namespace std;
 // Tree Node
 struct Node {
   int data;
-  Node* left;
-  Node* right;
+  Node *left;
+  Node *right;
 };
 
 // Utility function to create a new Tree Node
-Node* newNode(int val) {
-  Node* temp = new Node;
+Node *newNode(int val) {
+  Node *temp = new Node;
   temp->data = val;
   temp->left = NULL;
   temp->right = NULL;
@@ -22,29 +22,31 @@ Node* newNode(int val) {
 }
 
 // Function to Build Tree
-Node* buildTree(string str) {
+Node *buildTree(string str) {
   // Corner Case
-  if (str.length() == 0 || str[0] == 'N') return NULL;
+  if (str.length() == 0 || str[0] == 'N')
+    return NULL;
 
   // Creating vector of strings from input
   // string after spliting by space
   vector<string> ip;
 
   istringstream iss(str);
-  for (string str; iss >> str;) ip.push_back(str);
+  for (string str; iss >> str;)
+    ip.push_back(str);
 
   // Create the root of the tree
-  Node* root = newNode(stoi(ip[0]));
+  Node *root = newNode(stoi(ip[0]));
 
   // Push the root to the queue
-  queue<Node*> queue;
+  queue<Node *> queue;
   queue.push(root);
 
   // Starting from the second element
   int i = 1;
   while (!queue.empty() && i < ip.size()) {
     // Get and remove the front of the queue
-    Node* currNode = queue.front();
+    Node *currNode = queue.front();
     queue.pop();
 
     // Get the current node's value from the string
@@ -61,7 +63,8 @@ Node* buildTree(string str) {
 
     // For the right child
     i++;
-    if (i >= ip.size()) break;
+    if (i >= ip.size())
+      break;
     currVal = ip[i];
 
     // If the right child is not null
@@ -89,17 +92,18 @@ struct Node
 */
 class Solution {
   vector<tuple<int, int, int>> v;
-  void preOrder(Node* p, int k, int level) {
-    if (!p) return;
+  void preOrder(Node *p, int k, int level) {
+    if (!p)
+      return;
     v.emplace_back(k, level, p->data);
     preOrder(p->left, k - 1, level + 1);
     preOrder(p->right, k + 1, level + 1);
   }
 
- public:
+public:
   // Function to return a list of nodes visible from the top view
   // from left to right in Binary Tree.
-  vector<int> topView(Node* root) {
+  vector<int> topView(Node *root) {
     // Your code here
     preOrder(root, 0, 0);
     sort(v.begin(), v.end());
@@ -126,9 +130,10 @@ int main() {
     string treeString;
     getline(cin, treeString);
     Solution ob;
-    Node* root = buildTree(treeString);
+    Node *root = buildTree(treeString);
     vector<int> vec = ob.topView(root);
-    for (int x : vec) cout << x << " ";
+    for (int x : vec)
+      cout << x << " ";
     cout << endl;
   }
   return 0;

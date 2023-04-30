@@ -6,8 +6,8 @@ using namespace std;
 // BST Node
 struct Node {
   int key;
-  struct Node* left;
-  struct Node* right;
+  struct Node *left;
+  struct Node *right;
 
   Node(int x) {
     key = x;
@@ -19,18 +19,19 @@ struct Node {
 int key = 0;
 // This function finds predecessor and successor of key in BST.
 // It sets pre and suc as predecessor and successor respectively
-void findPreSuc(Node* root, Node*& pre, Node*& suc, int key);
+void findPreSuc(Node *root, Node *&pre, Node *&suc, int key);
 
-void insert(struct Node* root, int n1, int n2, char lr) {
-  if (root == NULL) return;
+void insert(struct Node *root, int n1, int n2, char lr) {
+  if (root == NULL)
+    return;
   if (root->key == n1) {
     switch (lr) {
-      case 'L':
-        root->left = new Node(n2);
-        break;
-      case 'R':
-        root->right = new Node(n2);
-        break;
+    case 'L':
+      root->left = new Node(n2);
+      break;
+    case 'R':
+      root->right = new Node(n2);
+      break;
     }
   } else {
     insert(root->left, n1, n2, lr);
@@ -45,9 +46,9 @@ int main() {
   while (t--) {
     int n;
     cin >> n;
-    struct Node* root = NULL;
-    Node* pre = NULL;
-    Node* suc = NULL;
+    struct Node *root = NULL;
+    Node *pre = NULL;
+    Node *suc = NULL;
     while (n--) {
       char lr;
       int n1, n2;
@@ -56,12 +57,12 @@ int main() {
       if (root == NULL) {
         root = new Node(n1);
         switch (lr) {
-          case 'L':
-            root->left = new Node(n2);
-            break;
-          case 'R':
-            root->right = new Node(n2);
-            break;
+        case 'L':
+          root->left = new Node(n2);
+          break;
+        case 'R':
+          root->right = new Node(n2);
+          break;
         }
       } else {
         insert(root, n1, n2, lr);
@@ -98,17 +99,18 @@ struct Node
 
 #include <vector>
 
-vector<Node*> v;
+vector<Node *> v;
 
-void inOrder(Node* p) {
-  if (!p) return;
+void inOrder(Node *p) {
+  if (!p)
+    return;
   inOrder(p->left);
   v.push_back(p);
   inOrder(p->right);
 }
 // This function finds predecessor and successor of key in BST.
 // It sets pre and suc as predecessor and successor respectively
-void findPreSuc(Node* root, Node*& pre, Node*& suc, int key) {
+void findPreSuc(Node *root, Node *&pre, Node *&suc, int key) {
   // Your code goes here
   v.clear();
   inOrder(root);

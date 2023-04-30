@@ -17,14 +17,16 @@ struct Node {
 // Function to Build Tree
 Node *buildTree(string str) {
   // Corner Case
-  if (str.length() == 0 || str[0] == 'N') return NULL;
+  if (str.length() == 0 || str[0] == 'N')
+    return NULL;
 
   // Creating vector of strings from input
   // string after spliting by space
   vector<string> ip;
 
   istringstream iss(str);
-  for (string str; iss >> str;) ip.push_back(str);
+  for (string str; iss >> str;)
+    ip.push_back(str);
 
   // Create the root of the tree
   Node *root = new Node(stoi(ip[0]));
@@ -54,7 +56,8 @@ Node *buildTree(string str) {
 
     // For the right child
     i++;
-    if (i >= ip.size()) break;
+    if (i >= ip.size())
+      break;
     currVal = ip[i];
 
     // If the right child is not null
@@ -91,7 +94,8 @@ class Solution {
   Node *R = NULL;
 
   int postOrder(Node *p) {
-    if (!p) return 0;
+    if (!p)
+      return 0;
     int l = postOrder(p->left);
     int r = postOrder(p->right);
     int ret = 0;
@@ -115,7 +119,7 @@ class Solution {
     return ret;
   }
 
- public:
+public:
   int maxPathSum(Node *root) {
     // code here
     ans = INT_MIN;

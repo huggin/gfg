@@ -4,12 +4,12 @@ using namespace std;
 
 struct Node {
   int data;
-  struct Node* left;
-  struct Node* right;
+  struct Node *left;
+  struct Node *right;
 };
 // Utility function to create a new Tree Node
-Node* newNode(int val) {
-  Node* temp = new Node;
+Node *newNode(int val) {
+  Node *temp = new Node;
   temp->data = val;
   temp->left = NULL;
   temp->right = NULL;
@@ -17,29 +17,31 @@ Node* newNode(int val) {
   return temp;
 }
 // Function to Build Tree
-Node* buildTree(string str) {
+Node *buildTree(string str) {
   // Corner Case
-  if (str.length() == 0 || str[0] == 'N') return NULL;
+  if (str.length() == 0 || str[0] == 'N')
+    return NULL;
 
   // Creating vector of strings from input
   // string after spliting by space
   vector<string> ip;
 
   istringstream iss(str);
-  for (string str; iss >> str;) ip.push_back(str);
+  for (string str; iss >> str;)
+    ip.push_back(str);
 
   // Create the root of the tree
-  Node* root = newNode(stoi(ip[0]));
+  Node *root = newNode(stoi(ip[0]));
 
   // Push the root to the queue
-  queue<Node*> queue;
+  queue<Node *> queue;
   queue.push(root);
 
   // Starting from the second element
   int i = 1;
   while (!queue.empty() && i < ip.size()) {
     // Get and remove the front of the queue
-    Node* currNode = queue.front();
+    Node *currNode = queue.front();
     queue.pop();
 
     // Get the current node's value from the string
@@ -56,7 +58,8 @@ Node* buildTree(string str) {
 
     // For the right child
     i++;
-    if (i >= ip.size()) break;
+    if (i >= ip.size())
+      break;
     currVal = ip[i];
 
     // If the right child is not null
@@ -83,8 +86,9 @@ struct Node
 
 // Should return true if tree is Sum Tree, else false
 class Solution {
-  pair<bool, int> ok(Node* p) {
-    if (!p) return make_pair(true, 0);
+  pair<bool, int> ok(Node *p) {
+    if (!p)
+      return make_pair(true, 0);
     auto l = ok(p->left);
     auto r = ok(p->right);
     if (l.first && r.first) {
@@ -97,8 +101,8 @@ class Solution {
     return make_pair(false, 0);
   }
 
- public:
-  bool isSumTree(Node* root) {
+public:
+  bool isSumTree(Node *root) {
     // Your code here
     auto c = ok(root);
     return c.first;
@@ -113,7 +117,7 @@ int main() {
   while (t--) {
     string s;
     getline(cin, s);
-    Node* root = buildTree(s);
+    Node *root = buildTree(s);
     Solution ob;
     cout << ob.isSumTree(root) << endl;
   }

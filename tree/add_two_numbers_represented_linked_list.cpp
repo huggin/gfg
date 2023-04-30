@@ -7,19 +7,19 @@ using namespace std;
 /* Linked list Node */
 struct Node {
   int data;
-  struct Node* next;
+  struct Node *next;
   Node(int x) {
     data = x;
     next = NULL;
   }
 };
 
-struct Node* buildList(int size) {
+struct Node *buildList(int size) {
   int val;
   cin >> val;
 
-  Node* head = new Node(val);
-  Node* tail = head;
+  Node *head = new Node(val);
+  Node *tail = head;
 
   for (int i = 0; i < size - 1; i++) {
     cin >> val;
@@ -30,7 +30,7 @@ struct Node* buildList(int size) {
   return head;
 }
 
-void printList(Node* n) {
+void printList(Node *n) {
   while (n) {
     cout << n->data << " ";
     n = n->next;
@@ -53,10 +53,10 @@ struct Node {
 */
 
 class Solution {
-  Node* reverse(Node* p) {
-    Node* prev = NULL;
+  Node *reverse(Node *p) {
+    Node *prev = NULL;
     while (p) {
-      Node* next = p->next;
+      Node *next = p->next;
       p->next = prev;
       prev = p;
       p = next;
@@ -64,15 +64,15 @@ class Solution {
     return prev;
   }
 
- public:
+public:
   // Function to add two numbers represented by linked list.
-  struct Node* addTwoLists(struct Node* first, struct Node* second) {
+  struct Node *addTwoLists(struct Node *first, struct Node *second) {
     // code here
     first = reverse(first);
     second = reverse(second);
     int more = 0;
-    Node* ans = NULL;
-    Node* prev = NULL;
+    Node *ans = NULL;
+    Node *prev = NULL;
     while (first && second) {
       int t = first->data + second->data + more;
       if (t >= 10) {
@@ -136,12 +136,12 @@ int main() {
     int n, m;
 
     cin >> n;
-    Node* first = buildList(n);
+    Node *first = buildList(n);
 
     cin >> m;
-    Node* second = buildList(m);
+    Node *second = buildList(m);
     Solution ob;
-    Node* res = ob.addTwoLists(first, second);
+    Node *res = ob.addTwoLists(first, second);
     printList(res);
   }
   return 0;

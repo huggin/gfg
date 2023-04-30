@@ -19,7 +19,8 @@ bool search(Node *root, int x);
 
 Node *insert(Node *tree, int val) {
   Node *temp = NULL;
-  if (tree == NULL) return new Node(val);
+  if (tree == NULL)
+    return new Node(val);
 
   if (val < tree->data) {
     tree->left = insert(tree->left, val);
@@ -57,8 +58,11 @@ int main() {
 // Function to search a node in BST.
 bool search(Node *root, int x) {
   // Your code here
-  if (!root) return false;
-  if (root->data == x) return true;
-  if (root->data < x) return search(root->right, x);
+  if (!root)
+    return false;
+  if (root->data == x)
+    return true;
+  if (root->data < x)
+    return search(root->right, x);
   return search(root->left, x);
 }

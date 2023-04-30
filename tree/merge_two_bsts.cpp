@@ -6,8 +6,8 @@ using namespace std;
 // Tree Node
 struct Node {
   int data;
-  Node* left;
-  Node* right;
+  Node *left;
+  Node *right;
 
   Node(int val) {
     data = val;
@@ -16,29 +16,31 @@ struct Node {
 };
 
 // Function to Build Tree
-Node* buildTree(string str) {
+Node *buildTree(string str) {
   // Corner Case
-  if (str.length() == 0 || str[0] == 'N') return NULL;
+  if (str.length() == 0 || str[0] == 'N')
+    return NULL;
 
   // Creating vector of strings from input
   // string after spliting by space
   vector<string> ip;
 
   istringstream iss(str);
-  for (string str; iss >> str;) ip.push_back(str);
+  for (string str; iss >> str;)
+    ip.push_back(str);
 
   // Create the root of the tree
-  Node* root = new Node(stoi(ip[0]));
+  Node *root = new Node(stoi(ip[0]));
 
   // Push the root to the queue
-  queue<Node*> queue;
+  queue<Node *> queue;
   queue.push(root);
 
   // Starting from the second element
   int i = 1;
   while (!queue.empty() && i < ip.size()) {
     // Get and remove the front of the queue
-    Node* currNode = queue.front();
+    Node *currNode = queue.front();
     queue.pop();
 
     // Get the current node's value from the string
@@ -55,7 +57,8 @@ Node* buildTree(string str) {
 
     // For the right child
     i++;
-    if (i >= ip.size()) break;
+    if (i >= ip.size())
+      break;
     currVal = ip[i];
 
     // If the right child is not null
@@ -86,19 +89,20 @@ struct Node {
 };
 */
 class Solution {
-  void inOrder(Node* p, vector<Node*>& v) {
-    if (!p) return;
+  void inOrder(Node *p, vector<Node *> &v) {
+    if (!p)
+      return;
     inOrder(p->left, v);
     v.push_back(p);
     inOrder(p->right, v);
   }
 
- public:
+public:
   // Function to return a list of integers denoting the node
   // values of both the BST in a sorted order.
-  vector<int> merge(Node* root1, Node* root2) {
+  vector<int> merge(Node *root1, Node *root2) {
     // Your code here
-    vector<Node*> v1, v2;
+    vector<Node *> v1, v2;
 
     inOrder(root1, v1);
     inOrder(root2, v2);
@@ -128,15 +132,16 @@ int main() {
   while (t--) {
     string s;
     getline(cin, s);
-    Node* root1 = buildTree(s);
+    Node *root1 = buildTree(s);
 
     getline(cin, s);
-    Node* root2 = buildTree(s);
+    Node *root2 = buildTree(s);
 
     // getline(cin, s);
     Solution obj;
     vector<int> vec = obj.merge(root1, root2);
-    for (int i = 0; i < vec.size(); i++) cout << vec[i] << " ";
+    for (int i = 0; i < vec.size(); i++)
+      cout << vec[i] << " ";
     cout << endl;
     /// cout<<"~"<<endl;
   }

@@ -6,9 +6,9 @@ using namespace std;
    and a pointer to right child */
 struct Node {
   int data;
-  struct Node* left;
-  struct Node* right;
-  struct Node* random;
+  struct Node *left;
+  struct Node *right;
+  struct Node *random;
 
   Node(int x) {
     data = x;
@@ -17,8 +17,9 @@ struct Node {
     random = NULL;
   }
 };
-int checkcloned(Node* a, Node* b) {
-  if ((a == NULL and b == NULL)) return 1;
+int checkcloned(Node *a, Node *b) {
+  if ((a == NULL and b == NULL))
+    return 1;
 
   if (a != NULL && b != NULL) {
     int t = (a->data == b->data && checkcloned(a->left, b->left) &&
@@ -26,7 +27,8 @@ int checkcloned(Node* a, Node* b) {
 
     if (a->random != NULL && b->random != NULL)
       return (t && a->random->data == b->random->data);
-    if (a->random == b->random) return t;
+    if (a->random == b->random)
+      return t;
 
     return 0;
   }
@@ -34,8 +36,9 @@ int checkcloned(Node* a, Node* b) {
   return 0;
 }
 
-void inorder(Node* root) {
-  if (root == NULL) return;
+void inorder(Node *root) {
+  if (root == NULL)
+    return;
   inorder(root->left);
   cout << root->data << " ";
   inorder(root->right);
@@ -54,17 +57,19 @@ struct Node
 */
 
 class Solution {
-  Node* clone(Node* p, unordered_map<Node*, Node*>& m) {
-    if (!p) return NULL;
-    Node* n = new Node(p->data);
+  Node *clone(Node *p, unordered_map<Node *, Node *> &m) {
+    if (!p)
+      return NULL;
+    Node *n = new Node(p->data);
     m[p] = n;
     n->left = clone(p->left, m);
     n->right = clone(p->right, m);
     return n;
   }
 
-  void fill(Node* p, Node* n, unordered_map<Node*, Node*>& m) {
-    if (!p) return;
+  void fill(Node *p, Node *n, unordered_map<Node *, Node *> &m) {
+    if (!p)
+      return;
     if (p->random) {
       n->random = m[p->random];
     }
@@ -72,21 +77,22 @@ class Solution {
     fill(p->right, n->right, m);
   }
 
-  void print(Node* p) {
-    if (!p) return;
+  void print(Node *p) {
+    if (!p)
+      return;
     cout << p->data << ' ';
     print(p->left);
     print(p->right);
     cout << endl;
   }
 
- public:
+public:
   /* The function should clone the passed tree and return
      root of the cloned tree */
-  Node* cloneTree(Node* tree) {
+  Node *cloneTree(Node *tree) {
     // Your code here
-    unordered_map<Node*, Node*> m;
-    Node* p = clone(tree, m);
+    unordered_map<Node *, Node *> m;
+    Node *p = clone(tree, m);
     // print(tree);
     // print(p);
 
@@ -101,13 +107,13 @@ int main() {
   int t;
   scanf("%d\n", &t);
   while (t--) {
-    map<int, Node*> m;
+    map<int, Node *> m;
     int n;
     scanf("%d", &n);
-    struct Node* root = NULL;
-    struct Node* child;
+    struct Node *root = NULL;
+    struct Node *child;
     while (n--) {
-      Node* parent;
+      Node *parent;
       char lr;
       int n1, n2;
       scanf("%d %d %c", &n1, &n2, &lr);
@@ -115,7 +121,8 @@ int main() {
       if (m.find(n1) == m.end()) {
         parent = new Node(n1);
         m[n1] = parent;
-        if (root == NULL) root = parent;
+        if (root == NULL)
+          root = parent;
       } else
         parent = m[n1];
 
@@ -131,7 +138,7 @@ int main() {
       }
     }
     Solution obj;
-    Node* t = obj.cloneTree(root);
+    Node *t = obj.cloneTree(root);
     if (t == root)
       cout << 0 << endl;
     else
