@@ -6,7 +6,7 @@ using namespace std;
 // Function to find square root
 // x: element to find square root
 class Solution {
- public:
+public:
   long long int floorSqrt(long long int x) {
     // Your code goes here
     long long lo = 1, hi = x;

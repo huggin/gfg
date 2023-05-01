@@ -20,7 +20,7 @@ class Solution {
     return ans + 1;
   }
 
- public:
+public:
   int leastWeightCapacity(int arr[], int N, int D) {
     // code here
     int lo = 0, hi = 0;
@@ -53,7 +53,8 @@ int main() {
     cin >> N;
 
     int arr[N];
-    for (int i = 0; i < N; i++) cin >> arr[i];
+    for (int i = 0; i < N; i++)
+      cin >> arr[i];
     cin >> D;
 
     Solution ob;

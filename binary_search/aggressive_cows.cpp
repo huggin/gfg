@@ -7,7 +7,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
-  bool ok(const vector<int>& s, int n, int k, int dist) {
+  bool ok(const vector<int> &s, int n, int k, int dist) {
     int u = 1;
     int prev = s[0];
     for (int i = 1; i < n; ++i) {
@@ -19,8 +19,8 @@ class Solution {
     return u >= k;
   }
 
- public:
-  int solve(int n, int k, vector<int>& stalls) {
+public:
+  int solve(int n, int k, vector<int> &stalls) {
     // Write your code here
     int lo = 0, hi = 1e9;
     int ans = -1;

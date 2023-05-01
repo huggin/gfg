@@ -9,16 +9,19 @@ using namespace std;
 // arr: input array
 // n: size of array
 class Solution {
- public:
+public:
   int peakElement(int arr[], int n) {
     // Your code here
 
     int lo = 0, hi = n - 1;
     while (lo < hi) {
       int mid = lo + (hi - lo) / 2;
-      if (mid == 0 && arr[mid] >= arr[mid + 1]) return mid;
-      if (mid == n - 1 && arr[mid] >= arr[mid - 1]) return mid;
-      if (arr[mid - 1] <= arr[mid] && arr[mid] >= arr[mid + 1]) return mid;
+      if (mid == 0 && arr[mid] >= arr[mid + 1])
+        return mid;
+      if (mid == n - 1 && arr[mid] >= arr[mid - 1])
+        return mid;
+      if (arr[mid - 1] <= arr[mid] && arr[mid] >= arr[mid + 1])
+        return mid;
       if (arr[mid - 1] > arr[mid]) {
         hi = mid - 1;
       } else if (arr[mid + 1] > arr[mid]) {

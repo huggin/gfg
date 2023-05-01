@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 // User function template for C++
 class Solution {
- public:
+public:
   int findMaximum(int arr[], int n) {
     // code here
     int lo = 0, hi = n - 1;

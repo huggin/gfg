@@ -15,7 +15,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   string baseEquiv(int n, int m) {
     // code here
     int lo = 2, hi = 32;

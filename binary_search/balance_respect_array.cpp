@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   string isBalanced(int a[], int n, int x) {
     auto it = lower_bound(a, a + n, x);
     // cout << *it << endl;
@@ -25,7 +25,8 @@ int main() {
     int n, x;
     cin >> n;
     int arr[n];
-    for (int i = 0; i < n; i++) cin >> arr[i];
+    for (int i = 0; i < n; i++)
+      cin >> arr[i];
     cin >> x;
     Solution ob;
     cout << ob.isBalanced(arr, n, x) << endl;

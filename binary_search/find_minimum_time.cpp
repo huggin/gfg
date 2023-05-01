@@ -9,7 +9,7 @@ using namespace std;
 class Solution {
   bool enough(int s1, int s2, int n, int t) { return t / s1 + t / s2 >= n; }
 
- public:
+public:
   int minTime(int S1, int S2, int N) {
     // code here
     int lo = 1, hi = 1e9;

@@ -17,7 +17,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   int KthSmallest(int m, int n, int k) {
     // Write your code here
     int lo = 1, hi = m * n;

@@ -6,7 +6,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int minInsAndDel(int A[], int B[], int N, int M) {
     // code here
     vector<int> dp;
@@ -37,8 +37,10 @@ int main() {
     cin >> N >> M;
 
     int A[N], B[M];
-    for (int i = 0; i < N; i++) cin >> A[i];
-    for (int i = 0; i < M; i++) cin >> B[i];
+    for (int i = 0; i < N; i++)
+      cin >> A[i];
+    for (int i = 0; i < M; i++)
+      cin >> B[i];
 
     Solution ob;
     cout << ob.minInsAndDel(A, B, N, M) << endl;

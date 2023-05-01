@@ -8,7 +8,7 @@ using namespace std;
 class Solution {
   using ll = long long;
 
- public:
+public:
   vector<long long> distributeCandies(int N, int K) {
     // code here
     vector<ll> ans(K);
@@ -52,7 +52,8 @@ int main() {
     Solution ob;
     vector<long long> res = ob.distributeCandies(N, K);
 
-    for (int i = 0; i < res.size(); i++) cout << res[i] << " ";
+    for (int i = 0; i < res.size(); i++)
+      cout << res[i] << " ";
     cout << endl;
   }
   return 0;

@@ -18,7 +18,8 @@ int main() {
 
     vector<int> vec(n);
 
-    for (int i = 0; i < n; i++) cin >> vec[i];
+    for (int i = 0; i < n; i++)
+      cin >> vec[i];
 
     int target;
     cin >> target;
@@ -37,7 +38,8 @@ int Search(vector<int> vec, int K) {
   int lo = 0, hi = vec.size() - 1;
   while (lo <= hi) {
     int mi = lo + (hi - lo) / 2;
-    if (vec[mi] == K) return mi;
+    if (vec[mi] == K)
+      return mi;
     if (vec[lo] < vec[mi]) {
       if (vec[lo] <= K && K < vec[mi]) {
         hi = mi - 1;

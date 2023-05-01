@@ -13,7 +13,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   long long int numberCount(long long int N, long long int K) {
     // your code here
     int lo = 9, hi = N;
@@ -28,7 +28,8 @@ class Solution {
         lo = mid + 1;
       }
     }
-    if (ans == 0) return 0;
+    if (ans == 0)
+      return 0;
     return N - ans + 1;
   }
 };

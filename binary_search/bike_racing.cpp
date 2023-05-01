@@ -12,12 +12,13 @@ class Solution {
     long long ans = 0;
     for (int i = 0; i < N; ++i) {
       long c = H[i] + m * A[i];
-      if (c >= L) ans += c;
+      if (c >= L)
+        ans += c;
     }
     return ans;
   }
 
- public:
+public:
   long buzzTime(long N, long M, long L, long H[], long A[]) {
     // code here
     long lo = 1, hi = max(M, L);
@@ -45,7 +46,8 @@ int main() {
     long N, M, L;
     cin >> N >> M >> L;
     long H[N], A[N];
-    for (long i = 0; i < N; i++) cin >> H[i] >> A[i];
+    for (long i = 0; i < N; i++)
+      cin >> H[i] >> A[i];
 
     Solution ob;
     cout << ob.buzzTime(N, M, L, H, A) << "\n";

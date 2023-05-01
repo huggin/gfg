@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 // User function Template for C++
 class Solution {
-  double distance(tuple<int, int, int>& l, vector<pair<int, int>>& p, int n,
+  double distance(tuple<int, int, int> &l, vector<pair<int, int>> &p, int n,
                   double x) {
     double a = get<0>(l);
     double b = get<1>(l);
@@ -22,7 +22,7 @@ class Solution {
     return total;
   }
 
- public:
+public:
   double findOptimumCost(tuple<int, int, int> l, vector<pair<int, int>> p,
                          int n) {
     // Write your code here

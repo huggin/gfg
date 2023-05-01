@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   long long int killinSpree(long long int n) {
     // Code Here
     long long lo = 1, hi = 15000;

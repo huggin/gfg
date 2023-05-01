@@ -7,7 +7,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int findClosest(int arr[], int n, int target) {
     // Complete the function
     int lo = 0, hi = n - 1;
@@ -21,7 +21,8 @@ class Solution {
         value = abs(arr[mi] - target);
         ans = arr[mi];
       }
-      if (arr[mi] == target) return arr[mi];
+      if (arr[mi] == target)
+        return arr[mi];
       if (arr[mi] < target) {
         lo = mi + 1;
       } else {

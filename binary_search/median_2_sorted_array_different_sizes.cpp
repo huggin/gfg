@@ -3,17 +3,18 @@
 
 #include <bits/stdc++.h>
 using namespace std;
-double MedianOfArrays(vector<int>& array1, vector<int>& array2);
+double MedianOfArrays(vector<int> &array1, vector<int> &array2);
 
 // } Driver Code Ends
 // User function Template for C++
 
 class Solution {
- public:
-  double MedianOfArrays(vector<int>& array1, vector<int>& array2) {
+public:
+  double MedianOfArrays(vector<int> &array1, vector<int> &array2) {
     // Your code goes here
     int n = array1.size(), m = array2.size();
-    if (n < m) return MedianOfArrays(array2, array1);
+    if (n < m)
+      return MedianOfArrays(array2, array1);
     int k = (n + m + 1) / 2;
 
     int lo = 0, hi = m;

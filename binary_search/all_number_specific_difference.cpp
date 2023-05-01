@@ -13,7 +13,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   long long int getCount(long long N, long long D) {
     // your code here
     long long lo = 9, hi = N;
@@ -28,7 +28,8 @@ class Solution {
         lo = mid + 1;
       }
     }
-    if (ans == 0) return 0;
+    if (ans == 0)
+      return 0;
     return N - ans + 1;
   }
 };

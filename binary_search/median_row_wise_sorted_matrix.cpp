@@ -8,7 +8,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   int median(vector<vector<int>> &matrix, int R, int C) {
     // code here
     int lo = 1, hi = 2000;
@@ -45,7 +45,8 @@ int main() {
     cin >> r >> c;
     vector<vector<int>> matrix(r, vector<int>(c));
     for (int i = 0; i < r; ++i)
-      for (int j = 0; j < c; ++j) cin >> matrix[i][j];
+      for (int j = 0; j < c; ++j)
+        cin >> matrix[i][j];
     Solution obj;
     cout << obj.median(matrix, r, c) << endl;
   }

@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 // User function Template for C++
 class Solution {
- public:
+public:
   long long int minDaysToEmpty(long long int C, long long int l) {
     // code here
     int lo = 1, hi = C;

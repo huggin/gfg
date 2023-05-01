@@ -15,14 +15,17 @@ class Solution {
         return arr[lo];
     }
     int mi = lo + (hi - lo) / 2;
-    if (arr[lo] < arr[mi]) return search(arr, mi, hi);
-    if (arr[mi] < arr[hi]) return search(arr, lo, mi);
+    if (arr[lo] < arr[mi])
+      return search(arr, mi, hi);
+    if (arr[mi] < arr[hi])
+      return search(arr, lo, mi);
   }
 
- public:
+public:
   int findMin(int arr[], int n) {
     // complete the function here
-    if (arr[0] < arr[n - 1]) return arr[0];
+    if (arr[0] < arr[n - 1])
+      return arr[0];
     return search(arr, 0, n - 1);
   }
 };
