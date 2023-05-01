@@ -9,14 +9,15 @@ class Solution {
     for (int i = 0; i < N; ++i) {
       t += arr[i];
       if (t > mi) {
-        if (--k == 0) return false;
+        if (--k == 0)
+          return false;
         t = arr[i];
       }
     }
     return true;
   }
 
- public:
+public:
   int splitArray(int arr[], int N, int K) {
     // code here
     int hi = accumulate(arr, arr + N, 0);
@@ -46,7 +47,8 @@ int main() {
     cin >> N >> K;
     int arr[N];
 
-    for (int i = 0; i < N; i++) cin >> arr[i];
+    for (int i = 0; i < N; i++)
+      cin >> arr[i];
 
     Solution ob;
     cout << ob.splitArray(arr, N, K);

@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
-  bool ok(int mid, int N, vector<int>& A, int n) {
+  bool ok(int mid, int N, vector<int> &A, int n) {
     int ans = 0;
     for (int i = 0; i < n; ++i) {
       int k = mid;
@@ -19,13 +19,14 @@ class Solution {
         k -= v;
         v += u;
       }
-      if (ans >= N) return true;
+      if (ans >= N)
+        return true;
     }
     return false;
   }
 
- public:
-  int findMinTime(int N, vector<int>& A, int L) {
+public:
+  int findMinTime(int N, vector<int> &A, int L) {
     // write your code here
     int lo = 1, hi = INT_MAX;
     int ans = -1;

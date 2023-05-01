@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int kthElement(int arr1[], int arr2[], int n, int m, int k) {
     int low = max(0, k - m);
     int high = min(n, k);
@@ -39,8 +39,10 @@ int main() {
     int n, m, k;
     cin >> n >> m >> k;
     int arr1[n], arr2[m];
-    for (int i = 0; i < n; i++) cin >> arr1[i];
-    for (int i = 0; i < m; i++) cin >> arr2[i];
+    for (int i = 0; i < n; i++)
+      cin >> arr1[i];
+    for (int i = 0; i < m; i++)
+      cin >> arr2[i];
 
     Solution ob;
     cout << ob.kthElement(arr1, arr2, n, m, k) << endl;

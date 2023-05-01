@@ -5,8 +5,8 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
-  int findPeakElement(vector<int>& a) {
+public:
+  int findPeakElement(vector<int> &a) {
     // Code here.
     int lo = 0, hi = a.size() - 1;
     int ans = INT_MIN;
@@ -37,7 +37,8 @@ int main() {
     int n;
     cin >> n;
     vector<int> a(n);
-    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
     Solution ob;
     int ans = ob.findPeakElement(a);
     cout << ans << "\n";

@@ -24,18 +24,21 @@ class Solution {
     int ans = 0;
     l += n, r += n;
     while (l < r) {
-      if (l & 1) ans = __gcd(ans, st[l++]);
-      if (r & 1) ans = __gcd(ans, st[--r]);
+      if (l & 1)
+        ans = __gcd(ans, st[l++]);
+      if (r & 1)
+        ans = __gcd(ans, st[--r]);
       l /= 2, r /= 2;
     }
     return ans;
   }
 
- public:
+public:
   int findSmallestSubArr(int arr[], int n, int g) {
     // code here
     for (int i = 0; i < n; ++i) {
-      if (arr[i] == g) return 1;
+      if (arr[i] == g)
+        return 1;
     }
     buildTree(arr, n);
     int ans = INT_MAX;

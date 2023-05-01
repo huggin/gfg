@@ -5,10 +5,11 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int findNum(int n) {
     // complete the function here
-    if (n == 0) return 0;
+    if (n == 0)
+      return 0;
     int lo = 1;
     int hi = 100000;
     int ans = -1;

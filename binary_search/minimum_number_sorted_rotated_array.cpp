@@ -5,11 +5,12 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   // Function to find the minimum element in sorted and rotated array.
   int minNumber(int arr[], int low, int high) {
     // Your code here
-    if (arr[low] < arr[high]) return arr[low];
+    if (arr[low] < arr[high])
+      return arr[low];
 
     while (low <= high) {
       int mid = (low + high) >> 1;
@@ -35,7 +36,8 @@ int main() {
     int n;
     cin >> n;
     int a[n];
-    for (int i = 0; i < n; ++i) cin >> a[i];
+    for (int i = 0; i < n; ++i)
+      cin >> a[i];
     Solution obj;
     cout << obj.minNumber(a, 0, n - 1) << endl;
   }

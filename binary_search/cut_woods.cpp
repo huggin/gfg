@@ -7,7 +7,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
-  bool ok(int h, const vector<int>& a, int M) {
+  bool ok(int h, const vector<int> &a, int M) {
     long long total = 0;
     for (auto c : a) {
       if (c > h) {
@@ -17,8 +17,8 @@ class Solution {
     return total >= M;
   }
 
- public:
-  int maxHeight(vector<int>& A, int M) {
+public:
+  int maxHeight(vector<int> &A, int M) {
     // Write your code here
     int hi = 0;
     for (int i = 0; i < A.size(); ++i) {

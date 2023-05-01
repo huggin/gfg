@@ -12,7 +12,8 @@ int main() {
     int l, n;
     cin >> l >> n;
     int arr[l];
-    for (int i = 0; i < l; i++) cin >> arr[i];
+    for (int i = 0; i < l; i++)
+      cin >> arr[i];
     if (findPair(arr, l, n))
       cout << 1 << endl;
     else
@@ -28,12 +29,14 @@ bool findPair(int arr[], int size, int n) {
   sort(arr, arr + size);
   if (n == 0) {
     for (int i = 0; i < size - 1; ++i) {
-      if (arr[i] == arr[i + 1]) return true;
+      if (arr[i] == arr[i + 1])
+        return true;
     }
     return false;
   }
   for (int i = 0; i < size; ++i) {
-    if (binary_search(arr, arr + size, n + arr[i])) return true;
+    if (binary_search(arr, arr + size, n + arr[i]))
+      return true;
   }
   return false;
 }

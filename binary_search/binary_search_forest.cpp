@@ -12,7 +12,7 @@ class Solution {
     return sum - k;
   }
 
- public:
+public:
   int find_height(int tree[], int n, int k) {
     // code here
     int lo = 0, hi = *max_element(tree, tree + n);
@@ -41,7 +41,8 @@ int main() {
     cin >> n;
 
     int tree[n];
-    for (int i = 0; i < n; i++) cin >> tree[i];
+    for (int i = 0; i < n; i++)
+      cin >> tree[i];
     cin >> k;
     Solution ob;
     cout << ob.find_height(tree, n, k) << endl;

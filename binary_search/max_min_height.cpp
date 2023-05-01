@@ -11,10 +11,12 @@ class Solution {
   bool ok(const vector<int> &a, int k, int w, int mi, int n) {
     vector<int> b(n);
     for (int i = 0; i < n; ++i) {
-      if (i > 0) b[i] += b[i - 1];
+      if (i > 0)
+        b[i] += b[i - 1];
       if (a[i] + b[i] < mi) {
         k -= mi - a[i] - b[i];
-        if (k < 0) return false;
+        if (k < 0)
+          return false;
         if (i + w < n) {
           b[i + w] -= mi - a[i] - b[i];
         }
@@ -24,7 +26,7 @@ class Solution {
     return true;
   }
 
- public:
+public:
   long long int maximizeMinHeight(int n, int k, int w, vector<int> &a) {
     // code here
     long long lo = *min_element(a.begin(), a.end());
@@ -53,7 +55,8 @@ int main() {
     int n, k, w;
     cin >> n >> k >> w;
     vector<int> a(n);
-    for (auto &j : a) cin >> j;
+    for (auto &j : a)
+      cin >> j;
     Solution s;
     cout << s.maximizeMinHeight(n, k, w, a) << endl;
   }

@@ -11,7 +11,8 @@ class Solution {
   int ok(int k, int A[], int N, int M) {
     int t = 0;
     for (int i = 0; i < N; ++i) {
-      if (A[i] > k) return 0;
+      if (A[i] > k)
+        return 0;
     }
     int num = 0;
     for (int i = 0; i < N; ++i) {
@@ -22,15 +23,17 @@ class Solution {
       }
     }
     ++num;
-    if (num <= M) return 1;
+    if (num <= M)
+      return 1;
     return 0;
   }
 
- public:
+public:
   // Function to find minimum number of pages.
   int findPages(int A[], int N, int M) {
     // code here
-    if (M > N) return -1;
+    if (M > N)
+      return -1;
     long long lo = *max_element(A, A + N), hi = accumulate(A, A + N, 0LL);
     // cout << lo << ' ' << hi << endl;
     int ans = -1;

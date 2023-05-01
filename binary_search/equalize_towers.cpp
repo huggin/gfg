@@ -13,7 +13,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   long long int Bsearch(int n, int h[], int cost[]) {
     // Your code goes here
     auto it = minmax_element(h, h + n);
@@ -48,9 +48,11 @@ int main() {
     cin >> n;
 
     int h[n], c[n];
-    for (int i = 0; i < n; i++) cin >> h[i];
+    for (int i = 0; i < n; i++)
+      cin >> h[i];
 
-    for (int i = 0; i < n; i++) cin >> c[i];
+    for (int i = 0; i < n; i++)
+      cin >> c[i];
 
     Solution ob;
     cout << ob.Bsearch(n, h, c);

@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   // Function to find element in sorted array
   // arr: input array
   // N: size of array
@@ -16,7 +16,8 @@ class Solution {
     while (lo <= hi) {
       int mid1 = lo + (hi - lo) / 3;
       int mid2 = hi - (hi - lo) / 3;
-      if (arr[mid1] == K || arr[mid2] == K) return 1;
+      if (arr[mid1] == K || arr[mid2] == K)
+        return 1;
       if (arr[mid1] > K)
         hi = mid1 - 1;
       else if (arr[mid2] < K)

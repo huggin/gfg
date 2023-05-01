@@ -10,10 +10,11 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   int findMidSum(int ar1[], int ar2[], int n) {
     // code here
-    if (n == 1) return ar1[0] + ar2[0];
+    if (n == 1)
+      return ar1[0] + ar2[0];
     int l1 = 0, h1 = n - 1, l2 = 0, h2 = n - 1;
     while (l1 <= h1 && l2 <= h2) {
       if (l1 + 1 == h1 && l2 + 1 == h2) {
@@ -21,9 +22,11 @@ class Solution {
       }
       int m1 = l1 + (h1 - l1) / 2;
       int m2 = l2 + (h2 - l2) / 2;
-      if ((h2 - l2) % 2 == 1) ++m2;
+      if ((h2 - l2) % 2 == 1)
+        ++m2;
 
-      if (ar1[m1] == ar2[m2]) return ar1[m1] + ar2[m2];
+      if (ar1[m1] == ar2[m2])
+        return ar1[m1] + ar2[m2];
       if (ar1[m1] < ar2[m2]) {
         l1 = m1;
         h2 = m2;

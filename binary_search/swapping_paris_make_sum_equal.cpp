@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int findSwapValues(int A[], int n, int B[], int m) {
     // Your code goes here
     sort(A, A + n);
@@ -12,12 +12,14 @@ class Solution {
     int ta = accumulate(A, A + n, 0);
     int tb = accumulate(B, B + m, 0);
     // cout << ta << ' ' << tb << endl;
-    if ((abs(ta - tb)) % 2 == 1) return -1;
+    if ((abs(ta - tb)) % 2 == 1)
+      return -1;
     int t = (ta - tb) / 2;
 
     for (int i = 0; i < n; ++i) {
       // cout << i << ' ' << A[i] - t << endl;
-      if (binary_search(B, B + m, A[i] - t)) return 1;
+      if (binary_search(B, B + m, A[i] - t))
+        return 1;
     }
     return -1;
   }
@@ -33,8 +35,10 @@ int main() {
     cin >> n >> m;
     int a[n];
     int b[m];
-    for (int i = 0; i < n; i++) cin >> a[i];
-    for (int i = 0; i < m; i++) cin >> b[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
+    for (int i = 0; i < m; i++)
+      cin >> b[i];
 
     Solution ob;
     cout << ob.findSwapValues(a, n, b, m);

@@ -18,11 +18,12 @@ class Solution {
         total = arr[i];
       }
     }
-    if (used + 1 > k) return false;
+    if (used + 1 > k)
+      return false;
     return true;
   }
 
- public:
+public:
   long long minTime(int arr[], int n, int k) {
     // code here
     long long lo = arr[0], hi = arr[0];
@@ -57,7 +58,8 @@ int main() {
     cin >> k >> n;
 
     int arr[n];
-    for (int i = 0; i < n; i++) cin >> arr[i];
+    for (int i = 0; i < n; i++)
+      cin >> arr[i];
     Solution obj;
     cout << obj.minTime(arr, n, k) << endl;
   }
