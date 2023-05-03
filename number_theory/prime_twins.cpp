@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 // User function Template for C++
 class Solution {
- public:
+public:
   vector<int> primeTwins(int L, int R) {
     // code here
     vector<bool> prime(R + 1, true);
@@ -36,7 +36,8 @@ int main() {
     cin >> L >> R;
     Solution ob;
     vector<int> ans = ob.primeTwins(L, R);
-    for (int i = 0; i < ans.size(); i++) cout << ans[i] << " ";
+    for (int i = 0; i < ans.size(); i++)
+      cout << ans[i] << " ";
     cout << endl;
   }
   return 0;

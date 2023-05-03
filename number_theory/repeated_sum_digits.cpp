@@ -4,10 +4,11 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int repeatedSumOfDigits(int N) {
     // code here
-    if (N < 10) return N;
+    if (N < 10)
+      return N;
     int n = 0;
     while (N) {
       n += N % 10;

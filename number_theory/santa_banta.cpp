@@ -3,7 +3,7 @@
 using namespace std;
 
 void precompute();
-int helpSanta(int n, int m, vector<vector<int>>& g);
+int helpSanta(int n, int m, vector<vector<int>> &g);
 
 int main() {
   int t;
@@ -29,11 +29,12 @@ int main() {
 vector<int> prime;
 const int MAX = 1000005;
 
-void dfs(vector<vector<int>>& g, int k, vector<int>& marked, int& count) {
+void dfs(vector<vector<int>> &g, int k, vector<int> &marked, int &count) {
   ++count;
   marked[k] = 1;
   for (int w : g[k]) {
-    if (!marked[w]) dfs(g, w, marked, count);
+    if (!marked[w])
+      dfs(g, w, marked, count);
   }
 }
 
@@ -44,13 +45,15 @@ void precompute() {
   for (long long i = 2; i <= MAX; ++i) {
     if (vb[i]) {
       prime.push_back(i);
-      for (long long j = i * i; j <= MAX; j += i) vb[j] = false;
+      for (long long j = i * i; j <= MAX; j += i)
+        vb[j] = false;
     }
   }
 }
-int helpSanta(int n, int m, vector<vector<int>>& g) {
+int helpSanta(int n, int m, vector<vector<int>> &g) {
   // Code here
-  if (m == 0) return -1;
+  if (m == 0)
+    return -1;
   int rank = 1;
   vector<int> marked(n + 1);
   for (int i = 1; i <= n; ++i) {

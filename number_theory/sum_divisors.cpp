@@ -6,14 +6,15 @@ using namespace std;
 // } Driver Code Ends
 // User function Template for C++
 class Solution {
- public:
+public:
   long long int divSum(long long int n) {
     // code here
     long long ans = 0;
     for (int i = 1; i * i <= n; ++i) {
       if (n % i == 0) {
         ans += i;
-        if (i * i != n && n / i != n) ans += n / i;
+        if (i * i != n && n / i != n)
+          ans += n / i;
       }
     }
     return ans;

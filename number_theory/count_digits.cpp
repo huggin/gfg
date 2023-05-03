@@ -4,14 +4,15 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int evenlyDivides(int N) {
     // code here
     int ans = 0;
     int n = N;
     while (n > 0) {
       int r = n % 10;
-      if (r != 0 && N % r == 0) ++ans;
+      if (r != 0 && N % r == 0)
+        ++ans;
       n /= 10;
     }
     return ans;

@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int DivCountSum(int n) {
     // Code here
     vector<int> p(n + 1, 1);

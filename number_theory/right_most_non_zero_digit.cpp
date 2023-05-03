@@ -6,13 +6,14 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   int rightmostNonZeroDigit(int N, int A[]) {
     // code here
     int ans = 1;
     int two = 0, five = 0;
     for (int i = 0; i < N; ++i) {
-      if (A[i] == 0) return -1;
+      if (A[i] == 0)
+        return -1;
       while (A[i] % 5 == 0) {
         ++five;
         A[i] /= 5;
@@ -23,7 +24,8 @@ class Solution {
       }
       ans = (A[i] * ans) % 10;
     }
-    if (five > two) return 5;
+    if (five > two)
+      return 5;
     for (int i = 0; i < two - five; ++i) {
       ans = (ans * 2) % 10;
     }

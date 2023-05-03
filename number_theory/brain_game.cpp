@@ -6,7 +6,8 @@ using namespace std;
 class Solution {
   bool prime(int n) {
     for (int i = 2; i * i <= n; ++i) {
-      if (n % i == 0) return false;
+      if (n % i == 0)
+        return false;
     }
     return true;
   }
@@ -22,12 +23,13 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   bool brainGame(vector<int> nums) {
     // Code here.
     int ans = 0;
     for (int n : nums) {
-      if (!prime(n)) ans ^= primeFactor(n) - 1;
+      if (!prime(n))
+        ans ^= primeFactor(n) - 1;
       // cout << n << ' ' << primeFactor(n) << endl;
     }
     return ans;
@@ -42,7 +44,8 @@ int main() {
     int n;
     cin >> n;
     vector<int> nums(n);
-    for (int i = 0; i < n; i++) cin >> nums[i];
+    for (int i = 0; i < n; i++)
+      cin >> nums[i];
     Solution ob;
     bool ans = ob.brainGame(nums);
     if (ans)

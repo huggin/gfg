@@ -15,11 +15,12 @@ class Solution {
   long long mod = 1000000007;
 
   int gcd(int a, int b) {
-    if (b == 0) return a;
+    if (b == 0)
+      return a;
     return gcd(b, a % b);
   }
 
-  void dfs(int k, vector<int>& g, vector<int>& marked) {
+  void dfs(int k, vector<int> &g, vector<int> &marked) {
     // cout << k << ' ' << count << endl;
     marked[k] = 1;
     ++count;
@@ -39,7 +40,7 @@ class Solution {
     return true;
   }
 
-  void calc(int num, vector<int>& res, const vector<int>& p) {
+  void calc(int num, vector<int> &res, const vector<int> &p) {
     int prev = -1;
     for (int i = 0; i < p.size(); ++i) {
       if (i != prev) {
@@ -59,15 +60,18 @@ class Solution {
   }
 
   long long binPow(int b, int e) {
-    if (e == 0) return 1;
-    if (b == 1) return 1;
+    if (e == 0)
+      return 1;
+    if (b == 1)
+      return 1;
     long long t = binPow(b, e / 2);
     t = t * t % mod;
-    if (e % 2 == 1) t = t * b % mod;
+    if (e % 2 == 1)
+      t = t * b % mod;
     return t;
   }
 
- public:
+public:
   int rearrange_array(vector<int> arr) {
     // code here
     partition.clear();
@@ -105,7 +109,8 @@ class Solution {
       }
     }
     for (int i = 0; i < longest; ++i) {
-      if (co[i] == 0) continue;
+      if (co[i] == 0)
+        continue;
       if (co[i] == 1)
         ans = ans * prime[i] % mod;
       else {
@@ -116,7 +121,8 @@ class Solution {
         }
       }
     }
-    if (ans == 761158374) return 368034914;
+    if (ans == 761158374)
+      return 368034914;
     return ans;
   }
 };

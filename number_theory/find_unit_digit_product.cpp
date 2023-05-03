@@ -16,7 +16,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   int theLastDigit(int a, int b, int c, int d, int e, int f) {
     // code here
     a %= 10;

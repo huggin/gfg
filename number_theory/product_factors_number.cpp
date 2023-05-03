@@ -8,7 +8,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   int factorProduct(int N) {
     // code here
     const int M = 1e9 + 7;
@@ -16,7 +16,8 @@ class Solution {
     for (int i = 1; i * i <= N; ++i) {
       if (N % i == 0) {
         ans = ans * i % M;
-        if (i * i != N) ans = ans * (N / i) % M;
+        if (i * i != N)
+          ans = ans * (N / i) % M;
       }
     }
     return ans;

@@ -7,7 +7,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   int checkSemiprime(int N) {
     // code here
     int ans = 0;
@@ -17,7 +17,8 @@ class Solution {
         N /= i;
       }
     }
-    if (N != 1) ++ans;
+    if (N != 1)
+      ++ans;
     return ans == 2 ? 1 : 0;
   }
 };

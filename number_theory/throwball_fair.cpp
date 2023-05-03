@@ -6,7 +6,7 @@ using namespace std;
 class Solution {
   vector<long long> fact;
 
- public:
+public:
   long long int count(long long int N, long long int K, long long int M) {
     // code here
     long long n = N - 1;
@@ -14,10 +14,12 @@ class Solution {
     k = min(k, n - k);
     long long ans = 1;
     fact.assign(M + 1, 1);
-    for (int i = 1; i <= M; ++i) fact[i] = fact[i - 1] * i % M;
+    for (int i = 1; i <= M; ++i)
+      fact[i] = fact[i - 1] * i % M;
 
     while (n) {
-      if (n % M < k % M) return 0;
+      if (n % M < k % M)
+        return 0;
       ans = ans * fact[n % M] * inv(fact[k % M] * fact[(n - k) % M], M) % M;
       n /= M;
       k /= M;
@@ -29,7 +31,8 @@ class Solution {
     long long ans = 1;
     int b = m - 2;
     while (b) {
-      if (b & 1) ans = ans * d % m;
+      if (b & 1)
+        ans = ans * d % m;
       d = (d % m) * (d % m) % m;
       b >>= 1;
     }

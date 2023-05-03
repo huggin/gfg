@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   vector<int> primeRange(int N, int Q, vector<int> A,
                          vector<pair<int, int>> R) {
     // code here
@@ -17,7 +17,8 @@ class Solution {
     prime[0] = prime[1] = false;
     for (int i = 2; i * i <= ma; ++i) {
       if (prime[i]) {
-        for (int j = i * i; j <= ma; j += i) prime[j] = false;
+        for (int j = i * i; j <= ma; j += i)
+          prime[j] = false;
       }
     }
 
@@ -52,11 +53,14 @@ int main() {
     cin >> N >> Q;
     vector<int> A(N);
     vector<pair<int, int>> R(Q);
-    for (int i = 0; i < N; i++) cin >> A[i];
-    for (int i = 0; i < Q; i++) cin >> R[i].first >> R[i].second;
+    for (int i = 0; i < N; i++)
+      cin >> A[i];
+    for (int i = 0; i < Q; i++)
+      cin >> R[i].first >> R[i].second;
     Solution ob;
     vector<int> ans = ob.primeRange(N, Q, A, R);
-    for (auto u : ans) cout << u << " ";
+    for (auto u : ans)
+      cout << u << " ";
     cout << "\n";
   }
 }

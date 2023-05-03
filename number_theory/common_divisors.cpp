@@ -6,16 +6,19 @@ using namespace std;
 // } Driver Code Ends
 // User function Template for C++
 class Solution {
- public:
+public:
   long long int commDiv(long long int a, long long int b) {
     // code here
     long long ans = 0;
-    if (a > b) swap(a, b);
+    if (a > b)
+      swap(a, b);
     for (int i = 1; i * i <= a; ++i) {
       if (a % i == 0) {
-        if (b % i == 0) ++ans;
+        if (b % i == 0)
+          ++ans;
         int t = a / i;
-        if (i * i != a && b % t == 0) ++ans;
+        if (i * i != a && b % t == 0)
+          ++ans;
       }
     }
     return ans;

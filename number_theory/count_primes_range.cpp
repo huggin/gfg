@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int countPrimes(int L, int R) {
     // code here
     vector<int> prime(R + 1, 1);

@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int isSphenicNo(int N) {
     // Code here
     int ans = 0;
@@ -14,7 +14,8 @@ class Solution {
       if (N % i == 0) {
         ++ans;
         N /= i;
-        if (N % i == 0) return 0;
+        if (N % i == 0)
+          return 0;
       }
     }
     return ans == 3 ? 1 : 0;

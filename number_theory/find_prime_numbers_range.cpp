@@ -6,20 +6,24 @@ using namespace std;
 class Solution {
   bool prime(int n) {
     for (int i = 2; i <= sqrt(n); ++i) {
-      if (n % i == 0) return false;
+      if (n % i == 0)
+        return false;
     }
     return true;
   }
 
- public:
+public:
   long long int largestPrimeFactor(int N) {
     // code here
-    if (prime(N)) return N;
+    if (prime(N))
+      return N;
     int ans = 0;
     for (int i = sqrt(N); i >= 2; --i) {
       if (N % i == 0) {
-        if (prime(i)) ans = max(ans, i);
-        if (prime(N / i)) ans = max(ans, N / i);
+        if (prime(i))
+          ans = max(ans, i);
+        if (prime(N / i))
+          ans = max(ans, N / i);
       }
     }
     return ans;

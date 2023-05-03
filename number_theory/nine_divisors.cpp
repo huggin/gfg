@@ -20,7 +20,7 @@ class Solution {
     }
   }
 
- public:
+public:
   long long int nineDivisors(long long int N) {
     // Code Here
     sieve(N);
@@ -31,7 +31,8 @@ class Solution {
       long long k = 1;
       for (int j = 0; j < 8; ++j) {
         k *= prime[i];
-        if (k > N) break;
+        if (k > N)
+          break;
       }
       if (k <= N) {
         ++ans;

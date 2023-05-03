@@ -27,17 +27,20 @@ class Solution {
   }
 
   bool prime(int n) {
-    if (n == 0 || n == 1) return false;
+    if (n == 0 || n == 1)
+      return false;
     for (int i = 2; i * i <= n; ++i) {
-      if (n % i == 0) return false;
+      if (n % i == 0)
+        return false;
     }
     return true;
   }
 
- public:
+public:
   int smithNum(int n) {
     // code here
-    if (prime(n)) return 0;
+    if (prime(n))
+      return 0;
 
     int a = sumOfDigits(n);
     int b = factor(n);

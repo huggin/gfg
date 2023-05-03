@@ -8,7 +8,8 @@ class Solution {
     long long b = m - 2;
     long long ans = 1;
     while (b) {
-      if (b & 1) ans = ans * a % m;
+      if (b & 1)
+        ans = ans * a % m;
       a = a * a % m;
       b >>= 1;
     }
@@ -16,10 +17,11 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   int totalWays(int N, int K) {
     // Code here.
-    if (K > N) return 0;
+    if (K > N)
+      return 0;
     const int M = 1e9 + 7;
     vector<long long> dp(N + 1);
     dp[0] = 1;

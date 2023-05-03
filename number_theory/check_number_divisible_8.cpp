@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int DivisibleByEight(string S) {
     // code here
     int n = 0;

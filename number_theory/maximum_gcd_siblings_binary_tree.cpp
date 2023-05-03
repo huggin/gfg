@@ -6,7 +6,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int maxBinTreeGCD(vector<vector<int>> arr, int N) {
     // code here
     unordered_map<int, int> m;

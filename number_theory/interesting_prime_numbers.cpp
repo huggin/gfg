@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int CountInterestingPrimeNo(int N) {
     // Code here.
     unordered_set<int> s;
@@ -25,8 +25,10 @@ class Solution {
 
     for (long long i = 2; i <= N; ++i) {
       if (p[i]) {
-        if (s.find(i) != s.end()) ++ans;
-        for (long long j = i * i; j <= N; j += i) p[j] = 0;
+        if (s.find(i) != s.end())
+          ++ans;
+        for (long long j = i * i; j <= N; j += i)
+          p[j] = 0;
       }
     }
 
