@@ -8,13 +8,14 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int geekNumber(int N) {
     // code here
     for (int i = 2; i * i <= N; ++i) {
       if (N % i == 0) {
         N /= i;
-        if (N % i == 0) return 0;
+        if (N % i == 0)
+          return 0;
       }
     }
     return 1;

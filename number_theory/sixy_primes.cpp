@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 // User function Template for C++
 class Solution {
- public:
+public:
   vector<int> sixyPrime(int L, int R) {
     // code here
     vector<char> is_prime(R + 1, 1);
@@ -14,8 +14,10 @@ class Solution {
     vector<int> prime;
     for (int i = 2; i <= R; ++i) {
       if (is_prime[i]) {
-        if (i >= L) prime.push_back(i);
-        for (int j = i * i; j <= R; j += i) is_prime[j] = 0;
+        if (i >= L)
+          prime.push_back(i);
+        for (int j = i * i; j <= R; j += i)
+          is_prime[j] = 0;
       }
     }
     vector<int> ans;
@@ -28,7 +30,8 @@ class Solution {
         }
       }
     }
-    if (ans.empty()) return vector<int>{-1};
+    if (ans.empty())
+      return vector<int>{-1};
     return ans;
   }
 };
@@ -42,7 +45,8 @@ int main() {
     cin >> L >> R;
     Solution ob;
     vector<int> ans = ob.sixyPrime(L, R);
-    for (int i = 0; i < ans.size(); i++) cout << ans[i] << " ";
+    for (int i = 0; i < ans.size(); i++)
+      cout << ans[i] << " ";
     cout << endl;
   }
   return 0;

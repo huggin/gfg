@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   vector<int> FindSequenece(int N) {
     vector<int> ans{1};
     for (int i = 2; i * i <= N; ++i) {
@@ -13,7 +13,8 @@ class Solution {
         N /= i;
       }
     }
-    if (N != 1) ans.push_back(N);
+    if (N != 1)
+      ans.push_back(N);
     for (int i = 1; i < ans.size(); ++i) {
       ans[i] *= ans[i - 1];
     }
@@ -39,7 +40,8 @@ int main() {
         break;
       }
 
-    if (ans.back() != N) x = 0;
+    if (ans.back() != N)
+      x = 0;
 
     cout << ans.size() << " " << x << "\n";
   }

@@ -4,14 +4,15 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   long long int primeProduct(int N) {
     // code here
     long long ans = 1;
     for (int i = 2; i <= N; ++i) {
       if (N % i == 0) {
         ans *= i;
-        while (N % i == 0) N /= i;
+        while (N % i == 0)
+          N /= i;
       }
     }
     return ans;

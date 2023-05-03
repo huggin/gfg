@@ -9,7 +9,8 @@ using namespace std;
 class Solution {
   bool prime(int k) {
     for (int i = 2; i * i <= k; ++i) {
-      if (k % i == 0) return false;
+      if (k % i == 0)
+        return false;
     }
     return true;
   }
@@ -20,7 +21,8 @@ class Solution {
     for (int i = 0; i < 4; ++i) {
       int k1 = a % 10;
       int k2 = b % 10;
-      if (k1 != k2) ++ans;
+      if (k1 != k2)
+        ++ans;
       a = a / 10;
       b = b / 10;
     }
@@ -28,7 +30,7 @@ class Solution {
     return ans == 1;
   }
 
- public:
+public:
   int solve(int Num1, int Num2) {
     // code here
     vector<int> a;
@@ -36,8 +38,10 @@ class Solution {
     for (int i = 1000; i <= 9999; ++i) {
       if (prime(i)) {
         a.push_back(i);
-        if (i == Num1) src = a.size() - 1;
-        if (i == Num2) des = a.size() - 1;
+        if (i == Num1)
+          src = a.size() - 1;
+        if (i == Num2)
+          des = a.size() - 1;
         // cout << i << endl;
       }
     }
@@ -64,7 +68,8 @@ class Solution {
         }
       }
     }
-    if (!dist[des]) return -1;
+    if (!dist[des])
+      return -1;
     return dist[des];
   }
 };

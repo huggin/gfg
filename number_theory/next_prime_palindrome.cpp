@@ -5,9 +5,11 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
   bool prime(int n) {
-    if (n == 1) return false;
+    if (n == 1)
+      return false;
     for (int i = 2; i * i <= n; ++i) {
-      if (n % i == 0) return false;
+      if (n % i == 0)
+        return false;
     }
     return true;
   }
@@ -16,19 +18,23 @@ class Solution {
     string s = to_string(n);
     n = s.size();
     for (int i = 0; i < n / 2; ++i) {
-      if (s[i] != s[n - 1 - i]) return false;
+      if (s[i] != s[n - 1 - i])
+        return false;
     }
     return true;
   }
 
- public:
+public:
   int PrimePalindrome(int N) {
     // Code here
-    if (N == 1 || N == 2) return 2;
+    if (N == 1 || N == 2)
+      return 2;
     int i = N;
-    if (N % 2 == 0) ++i;
+    if (N % 2 == 0)
+      ++i;
     for (;; i += 2) {
-      if (palindrome(i) && prime(i)) return i;
+      if (palindrome(i) && prime(i))
+        return i;
     }
     return -1;
   }

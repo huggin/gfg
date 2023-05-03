@@ -8,17 +8,19 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int rectangleCount(int A) {
     // code here
     int ans = 0;
     for (int i = 1; i * i <= A; ++i) {
       if (A % i == 0) {
-        if (i % 2 == 1 || A / i % 2 == 1) ++ans;
+        if (i % 2 == 1 || A / i % 2 == 1)
+          ++ans;
       }
     }
     int k = sqrt(A);
-    if (k * k == A && k % 2 == 0) ++ans;
+    if (k * k == A && k % 2 == 0)
+      ++ans;
     return ans;
   }
 };

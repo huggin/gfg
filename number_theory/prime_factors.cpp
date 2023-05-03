@@ -14,12 +14,13 @@ class Solution {
     for (int i = 2; i <= n; ++i) {
       if (ok[i]) {
         prime.push_back(i);
-        for (int j = i * i; j <= n; j += i) ok[j] = 0;
+        for (int j = i * i; j <= n; j += i)
+          ok[j] = 0;
       }
     }
   }
 
- public:
+public:
   vector<int> AllPrimeFactors(int N) {
     // Code here
     sieve(N);
@@ -27,7 +28,8 @@ class Solution {
     for (int i = 0; i < prime.size(); ++i) {
       if (N % prime[i] == 0) {
         ans.push_back(prime[i]);
-        while (N % prime[i] == 0) N /= prime[i];
+        while (N % prime[i] == 0)
+          N /= prime[i];
       }
     }
     return ans;
@@ -43,7 +45,8 @@ int main() {
     cin >> N;
     Solution ob;
     vector<int> ans = ob.AllPrimeFactors(N);
-    for (auto i : ans) cout << i << " ";
+    for (auto i : ans)
+      cout << i << " ";
     cout << "\n";
   }
   return 0;

@@ -8,7 +8,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   long long sumOfFifthPowers(long long N) {
     // code here
     long long ans = 0;

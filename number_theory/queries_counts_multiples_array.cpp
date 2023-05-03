@@ -14,10 +14,12 @@ int main() {
     for (i = 0; i < n; i++) {
       cin >> arr[i];
     }
-    for (i = 0; i < m; i++) cin >> q[i];
+    for (i = 0; i < m; i++)
+      cin >> q[i];
 
     vector<int> answering = countMultiples(arr, q, n, m);
-    for (auto it : answering) cout << it << " ";
+    for (auto it : answering)
+      cout << it << " ";
     cout << "\n";
   }
   return 0;

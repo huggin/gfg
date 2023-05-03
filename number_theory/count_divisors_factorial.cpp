@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   long long totalDivisors(int N) {
     // code here
     vector<int> p(N + 1, 1);

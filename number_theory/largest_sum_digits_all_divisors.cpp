@@ -13,7 +13,7 @@ class Solution {
     return cnt;
   }
 
- public:
+public:
   int getLargest(int n) {
     // code here
     int ans = 0;

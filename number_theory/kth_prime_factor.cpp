@@ -8,12 +8,13 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int kthPrime(int n, int k) {
     // code here
     for (int i = 2; i <= n; ++i) {
       while (n % i == 0) {
-        if (--k == 0) return i;
+        if (--k == 0)
+          return i;
         n /= i;
       }
     }

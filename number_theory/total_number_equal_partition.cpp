@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   long long partitions(int l, int r) {
     // code here
     long long ans = 0;
@@ -17,7 +17,8 @@ class Solution {
       l = 2;
     }
     for (int i = 2; i <= r; ++i) {
-      if (l <= i && i <= r) ans += i + 1;
+      if (l <= i && i <= r)
+        ans += i + 1;
 
       for (int j = max((l + i - 1) / i * i, i + i); j <= r; j += i) {
         ans += j / i;

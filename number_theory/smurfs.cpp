@@ -8,17 +8,22 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int findMin(int n, char a[]) {
     // code here
     int r = 0, g = 0, b = 0;
     for (int i = 0; i < n; ++i) {
-      if (a[i] == 'R') ++r;
-      if (a[i] == 'G') ++g;
-      if (a[i] == 'B') ++b;
+      if (a[i] == 'R')
+        ++r;
+      if (a[i] == 'G')
+        ++g;
+      if (a[i] == 'B')
+        ++b;
     }
-    if (r == n || g == n || b == n) return n;
-    if (r % 2 == b % 2 && r % 2 == g % 2) return 2;
+    if (r == n || g == n || b == n)
+      return n;
+    if (r % 2 == b % 2 && r % 2 == g % 2)
+      return 2;
     return 1;
   }
 };
@@ -32,7 +37,8 @@ int main() {
     int n;
     cin >> n;
     char a[n];
-    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
 
     Solution ob;
     cout << ob.findMin(n, a) << "\n";

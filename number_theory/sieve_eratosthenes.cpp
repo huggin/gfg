@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 // User function Template for C++
 class Solution {
- public:
+public:
   vector<int> sieveOfEratosthenes(int N) {
     // Write Your Code here
     vector<int> dp(N + 1, 1);

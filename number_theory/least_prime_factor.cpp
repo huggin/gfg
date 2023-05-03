@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 // User function Template for C++
 class Solution {
- public:
+public:
   vector<int> leastPrimeFactor(int n) {
     // code here
     vector<int> ans(n + 1, 1);
@@ -31,7 +31,8 @@ int main() {
     cin >> n;
     Solution ob;
     vector<int> ans = ob.leastPrimeFactor(n);
-    for (int i = 1; i <= n; i++) cout << ans[i] << " ";
+    for (int i = 1; i <= n; i++)
+      cout << ans[i] << " ";
     cout << endl;
   }
   return 0;

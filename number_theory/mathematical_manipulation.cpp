@@ -6,12 +6,13 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int CommonFactor(int n) {
     // Code here
     int ans = 0;
     for (int i = 2; i <= n; ++i) {
-      if (__gcd(i, n) != 1) ++ans;
+      if (__gcd(i, n) != 1)
+        ++ans;
     }
     return ans;
   }

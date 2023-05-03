@@ -14,22 +14,25 @@ class Solution {
     for (int i = 2; i <= n; ++i) {
       if (ok[i]) {
         prime.push_back(i);
-        for (int j = i * i; j <= n; j += i) ok[j] = 0;
+        for (int j = i * i; j <= n; j += i)
+          ok[j] = 0;
       }
     }
   }
 
- public:
+public:
   int sumOfAll(int l, int r) {
     sieve(r);
     int ans = 0;
     for (int j = l; j <= r; ++j) {
       for (int i = 0; i < prime.size(); ++i) {
-        if (prime[i] > j) break;
+        if (prime[i] > j)
+          break;
         int k = j;
         if (k % prime[i] == 0) {
           ans += prime[i];
-          while (k % prime[i] == 0) k /= prime[i];
+          while (k % prime[i] == 0)
+            k /= prime[i];
         }
       }
     }

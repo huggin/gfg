@@ -23,8 +23,9 @@ class Solution {
     }
   }
 
-  void dfs(int k, long long& c, int& current) {
-    if (c * c > n) return;
+  void dfs(int k, long long &c, int &current) {
+    if (c * c > n)
+      return;
     if (k == prime.size() || c * c * prime[k] * prime[k] > n) {
       int flag = (current % 2 == 0) ? -1 : 1;
       ans += flag * m[c];
@@ -38,7 +39,7 @@ class Solution {
     dfs(k + 1, c, current);
   }
 
- public:
+public:
   long long sqNum(long long N) {
     // code here
     n = N;

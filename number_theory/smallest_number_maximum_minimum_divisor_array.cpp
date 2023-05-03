@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int getNum(int arr[], int N) {
     // code here
     auto mm = minmax_element(arr, arr + N);
@@ -25,7 +25,8 @@ int main() {
     cin >> N;
     int arr[N];
 
-    for (int i = 0; i < N; i++) cin >> arr[i];
+    for (int i = 0; i < N; i++)
+      cin >> arr[i];
 
     Solution ob;
     cout << ob.getNum(arr, N) << endl;

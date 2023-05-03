@@ -6,7 +6,8 @@ void sieve() {
   memset(prime, true, sizeof(prime));
   for (int p = 2; p * p <= 1499999; p++) {
     if (prime[p] == true) {
-      for (int i = p * 2; i <= 1499999; i += p) prime[i] = false;
+      for (int i = p * 2; i <= 1499999; i += p)
+        prime[i] = false;
     }
   }
 }
@@ -50,7 +51,8 @@ vector<long> range(int n) {
   vector<long> ans;
   ans.reserve(n);
   for (long i = 4;; ++i) {
-    if (ans.size() == n) break;
+    if (ans.size() == n)
+      break;
     if (!prime[i]) {
       ans.push_back(i);
     } else {

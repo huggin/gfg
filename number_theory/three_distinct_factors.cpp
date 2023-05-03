@@ -4,12 +4,14 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int hasThreePrimeFac(long long N) {
     // code here
-    if (N <= 3) return 0;
+    if (N <= 3)
+      return 0;
     for (int i = 2; i * i <= N; ++i) {
-      if (N % i == 0 && N / i != i) return 0;
+      if (N % i == 0 && N / i != i)
+        return 0;
     }
     return 1;
   }

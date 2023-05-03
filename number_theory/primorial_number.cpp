@@ -10,7 +10,7 @@ class Solution {
   const int ma = 1e5;
   vector<int> p;
 
- public:
+public:
   void precompute() {
     // Code Here
     p.assign(100001, 1);
@@ -19,7 +19,8 @@ class Solution {
     for (int i = 2; i <= ma; ++i) {
       if (is_prime[i]) {
         p[i] = p[i - 1] * i % M;
-        for (int j = i * i; j <= ma; j += i) is_prime[j] = 0;
+        for (int j = i * i; j <= ma; j += i)
+          is_prime[j] = 0;
       } else {
         p[i] = p[i - 1];
       }
@@ -46,4 +47,3 @@ int main() {
   return 0;
 }
 // } Driver Code Ends
-

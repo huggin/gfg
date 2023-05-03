@@ -4,14 +4,16 @@ using namespace std;
 class Solution {
   // } Driver Code Ends
   bool prime(int n) {
-    if (n == 0 || n == 1) return false;
+    if (n == 0 || n == 1)
+      return false;
     for (int i = 2; i * i <= n; ++i) {
-      if (n % i == 0) return false;
+      if (n % i == 0)
+        return false;
     }
     return true;
   }
 
- public:
+public:
   int isCircularPrime(int n) {
     // Code here
     int k = n;
@@ -22,7 +24,8 @@ class Solution {
     }
     k = n;
     do {
-      if (!prime(k)) return 0;
+      if (!prime(k))
+        return 0;
       k = pow(10, len - 1) * (k % 10) + k / 10;
     } while (k != n);
     return 1;

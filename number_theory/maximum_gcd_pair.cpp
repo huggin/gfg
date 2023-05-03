@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int MaxGcd(int n, int a[]) {
     // complete the function here
     int ma = *max_element(a, a + n);
@@ -16,7 +16,8 @@ class Solution {
 
     int ans = 1;
     for (int i = 0; i < n; ++i) {
-      if (++dp[a[i]] > 1) ans = max(ans, a[i]);
+      if (++dp[a[i]] > 1)
+        ans = max(ans, a[i]);
     }
 
     for (int i = 2; i <= n; ++i) {
@@ -41,7 +42,8 @@ int main() {
     int n;
     cin >> n;
     int a[n];
-    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
     Solution ob;
     cout << ob.MaxGcd(n, a) << endl;
   }

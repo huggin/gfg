@@ -13,14 +13,16 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   int countZeroes(int n) {
     // Code here
     int ans = 0;
     for (int i = 1;; ++i) {
       int d = fact(i);
-      if (d == n) ++ans;
-      if (d > n) break;
+      if (d == n)
+        ++ans;
+      if (d > n)
+        break;
     }
     return ans;
   }

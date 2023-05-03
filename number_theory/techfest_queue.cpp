@@ -14,7 +14,8 @@ class Solution {
   ll count(ll n) {
     ll ans = 0;
     for (int i = 0; i < prime.size(); ++i) {
-      if (n < prime[i]) break;
+      if (n < prime[i])
+        break;
       while (n % prime[i] == 0) {
         ++ans;
         n /= prime[i];
@@ -50,11 +51,12 @@ class Solution {
       }
     }
     for (ll i = a; i <= b; ++i) {
-      if (factorial[i - a] > 1) cnt[i - a]++;
+      if (factorial[i - a] > 1)
+        cnt[i - a]++;
     }
   }
 
- public:
+public:
   long long int Sum(long long int n, long long int a, long long int b) {
     // Code here
     prime.clear();

@@ -13,15 +13,17 @@ class Solution {
     prime[0] = prime[1] = 0;
     for (int i = 2; i * i <= n; ++i)
       if (prime[i])
-        for (int j = i * i; j <= n; j += i) prime[j] = 0;
+        for (int j = i * i; j <= n; j += i)
+          prime[j] = 0;
   }
 
- public:
+public:
   int count3DivNums(long long L, long long R) {
     // code here
     int n = sqrt(R);
     int l = sqrt(L);
-    if (l * l != L) ++l;
+    if (l * l != L)
+      ++l;
     sieve(n);
     return count(prime.begin() + l, prime.begin() + n + 1, 1);
   }

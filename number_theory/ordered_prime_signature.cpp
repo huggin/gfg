@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   vector<int> orderedPrime(int n) {
     // code here
     vector<int> order(n + 1);
@@ -45,7 +45,8 @@ int main() {
 
     Solution ob;
     vector<int> ans = ob.orderedPrime(n);
-    for (int i = 0; i < ans.size() - 1; i++) cout << ans[i] << " ";
+    for (int i = 0; i < ans.size() - 1; i++)
+      cout << ans[i] << " ";
     cout << endl;
     cout << ans[ans.size() - 1] << "\n";
   }

@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 // User function Template for C++
 class Solution {
- public:
+public:
   long long nthMysterious(long long N) {
     // code here
     vector<long long> p;
@@ -16,7 +16,8 @@ class Solution {
     for (int i = 2; i < 10000; ++i) {
       if (prime[i]) {
         p.push_back(i);
-        for (int j = i * i; j < 10000; j += i) prime[j] = 0;
+        for (int j = i * i; j < 10000; j += i)
+          prime[j] = 0;
       }
     }
 

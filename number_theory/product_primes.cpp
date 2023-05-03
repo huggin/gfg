@@ -9,19 +9,22 @@ using namespace std;
 
 class Solution {
   bool is_prime(int n) {
-    if (n < 3) return true;
+    if (n < 3)
+      return true;
     for (int i = 2; i * i <= n; ++i)
-      if (n % i == 0) return false;
+      if (n % i == 0)
+        return false;
     return true;
   }
 
- public:
+public:
   long long primeProduct(long long L, long long R) {
     // code here
     const int M = 1e9 + 7;
     long long ans = 1;
     for (auto i = L; i <= R; ++i) {
-      if (is_prime(i)) ans = (ans * i) % M;
+      if (is_prime(i))
+        ans = (ans * i) % M;
     }
     return ans;
   }

@@ -5,17 +5,20 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
   bool prime(int n) {
-    if (n < 2) return false;
+    if (n < 2)
+      return false;
     for (int i = 2; i * i <= n; ++i) {
-      if (n % i == 0) return false;
+      if (n % i == 0)
+        return false;
     }
     return true;
   }
 
- public:
+public:
   bool isSumOfKprimes(int N, int K) {
     // Code Here
-    if (K == 1) return prime(N);
+    if (K == 1)
+      return prime(N);
     if (K == 2) {
       if (N % 2 == 0) {
         if (N > 2)
@@ -26,7 +29,8 @@ class Solution {
         return prime(N - 2);
       }
     }
-    if (N >= 2 * K) return true;
+    if (N >= 2 * K)
+      return true;
     return false;
   }
 };

@@ -5,7 +5,7 @@
 using namespace std;
 
 class Node {
- public:
+public:
   int val;
   Node *next;
   Node(int num) {
@@ -39,7 +39,8 @@ class Solution {
 
     for (int i = 2; i <= 10100; ++i) {
       if (isPrime[i] == 1) {
-        for (int j = 2 * i; j <= 10100; j += i) isPrime[j] = 0;
+        for (int j = 2 * i; j <= 10100; j += i)
+          isPrime[j] = 0;
       }
     }
   }
@@ -56,7 +57,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   Node *primeList(Node *head) {
     isPrime.assign(10101, 1);
     seive();

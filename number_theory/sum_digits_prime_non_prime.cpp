@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int digitPrime(int N) {
     // code here
     while (N > 10) {

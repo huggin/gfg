@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int countNumberswith4(int N) {
     // code here
     int ans = 0;

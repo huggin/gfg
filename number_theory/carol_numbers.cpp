@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   long long nthCarolNumber(long long n) {
     // code here
     const int M = 1e9 + 7;

@@ -17,7 +17,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   long long int minNumber(int X, int Y, int Z, int N) {
     // code here
     vector<int> prime(1001);
@@ -54,7 +54,8 @@ class Solution {
 
     long long l = powl(10, N - 1);
     long long r = powl(10, N);
-    if (ans >= r) return -1;
+    if (ans >= r)
+      return -1;
     return (l + ans - 1) / ans * ans;
   }
 };

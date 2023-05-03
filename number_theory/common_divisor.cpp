@@ -20,12 +20,15 @@ int main() {
 
 int common_divisor(int a, int b) {
   // Complete the function
-  if (a > b) swap(a, b);
+  if (a > b)
+    swap(a, b);
   int ans = 0;
   for (int i = 1; i * i <= a; ++i) {
     if (a % i == 0) {
-      if (b % i == 0) ++ans;
-      if (i * i != a && b % (a / i) == 0) ++ans;
+      if (b % i == 0)
+        ++ans;
+      if (i * i != a && b % (a / i) == 0)
+        ++ans;
     }
   }
   return ans;

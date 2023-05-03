@@ -22,7 +22,7 @@ class Solution {
     }
   }
 
- public:
+public:
   int nthTerm(int n) {
     // code here
     sieve();
