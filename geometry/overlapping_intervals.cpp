@@ -4,15 +4,15 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
-  int in(vector<int>& v1, vector<int>& v2) {
+  int in(vector<int> &v1, vector<int> &v2) {
     if (v1[0] >= v2[0] && v1[0] <= v2[1] || v1[1] >= v2[0] && v1[1] <= v2[1] ||
         v2[0] >= v1[0] && v2[0] <= v1[1] || v2[1] >= v1[0] && v2[1] <= v1[1])
       return 1;
     return 0;
   }
 
- public:
-  vector<vector<int>> overlappedInterval(vector<vector<int>>& intervals) {
+public:
+  vector<vector<int>> overlappedInterval(vector<vector<int>> &intervals) {
     // Code here
     vector<vector<int>> ans;
     sort(intervals.begin(), intervals.end());

@@ -7,8 +7,8 @@ using namespace std;
 
 class Solution {
   using ll = long long;
-  ll orientation(const vector<int>& a, const vector<int>& b,
-                 const vector<int>& c) {
+  ll orientation(const vector<int> &a, const vector<int> &b,
+                 const vector<int> &c) {
     ll o = 1LL * a[0] * (b[1] - c[1]) + 1LL * b[0] * (c[1] - a[1]) +
            1LL * c[0] * (a[1] - b[1]);
     return o;
@@ -18,13 +18,13 @@ class Solution {
     return (x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1);
   }
 
- public:
+public:
   vector<vector<int>> FindConvexHull(vector<vector<int>> points_list) {
     // Code here
     vector<vector<int>> ans;
     vector<int> p0 = *min_element(points_list.begin(), points_list.end());
     sort(points_list.begin(), points_list.end(),
-         [&](const vector<int>& l, const vector<int>& r) {
+         [&](const vector<int> &l, const vector<int> &r) {
            ll o = orientation(p0, l, r);
            return o > 0 || o == 0 && dist(p0[0], p0[1], l[0], l[1]) <
                                          dist(p0[0], p0[1], r[0], r[1]);
@@ -39,7 +39,8 @@ class Solution {
       ans.push_back(points_list[i]);
     }
 
-    if (ans.size() < 3) return vector<vector<int>>(1, vector<int>{-1});
+    if (ans.size() < 3)
+      return vector<vector<int>>(1, vector<int>{-1});
     sort(ans.begin(), ans.end());
     return ans;
   }
@@ -66,7 +67,8 @@ int main() {
       cout << ans[0][0] << "\n";
     else {
       for (auto i : ans) {
-        for (auto j : i) cout << j << " ";
+        for (auto j : i)
+          cout << j << " ";
         cout << "\n";
       }
     }
