@@ -1,9 +1,10 @@
-#Back-end complete function Template for Python 3
+# Back-end complete function Template for Python 3
 from collections import Counter
+
 
 class Solution:
     def maxPoints(self, X, Y, N):
-        #code here
+        # code here
         if N == 1:
             return 1
         ans = 0
@@ -17,24 +18,22 @@ class Solution:
                     temp += 1
                 else:
                     cnt[(Y[j] - Y[i]) / (X[j] - X[i])] += 1
-            
+
             ans = max(ans, cnt.most_common(1)[0][1] + 1, temp + 1)
-            
+
         return ans
-                
-                 
 
 
-#{ 
- # Driver Code Starts
-#Initial Template for Python 3
+# {
+# Driver Code Starts
+# Initial Template for Python 3
 
-if __name__ == '__main__': 
-    t = int (input ())
-    for _ in range (t):
-        n=int(input())
-        xarr=[int(x) for x in input().split()]
-        yarr=[int(x) for x in input().split()]
+if __name__ == "__main__":
+    t = int(input())
+    for _ in range(t):
+        n = int(input())
+        xarr = [int(x) for x in input().split()]
+        yarr = [int(x) for x in input().split()]
         ob = Solution()
         ans = ob.maxPoints(xarr, yarr, n)
         print(ans)
