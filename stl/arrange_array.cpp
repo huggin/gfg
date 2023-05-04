@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   vector<int> rearrange(vector<int> &a, int n) {
     // code here
     auto it = partition(a.begin(), a.end(), [](int x) { return x == 1; });
@@ -30,10 +30,12 @@ int main() {
     int n;
     cin >> n;
     vector<int> a(n);
-    for (auto &j : a) cin >> j;
+    for (auto &j : a)
+      cin >> j;
     Solution s;
     vector<int> ans = s.rearrange(a, n);
-    for (auto j : ans) cout << j << " ";
+    for (auto j : ans)
+      cout << j << " ";
     cout << endl;
   }
   return 0;

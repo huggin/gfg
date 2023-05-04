@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   string UncommonChars(string A, string B) {
     // code here
     string ans;
@@ -15,7 +15,8 @@ class Solution {
 
     set_symmetric_difference(A.begin(), A.end(), B.begin(), B.end(),
                              back_inserter(ans));
-    if (ans.empty()) return "-1";
+    if (ans.empty())
+      return "-1";
     return ans;
   }
 };

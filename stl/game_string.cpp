@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int minValue(string s, int k) {
     // code here
     int count[26] = {0};

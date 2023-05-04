@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   // Function to find element in sorted array
   // arr: input array
   // N: size of array

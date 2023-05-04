@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   void segregateElements(int arr[], int n) {
     // Your code goes here
     stable_partition(arr, arr + n, [](int x) { return x > 0; });
@@ -20,11 +20,13 @@ int main() {
     int n;
     cin >> n;
     int a[n];
-    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
     Solution ob;
     ob.segregateElements(a, n);
 
-    for (int i = 0; i < n; i++) cout << a[i] << " ";
+    for (int i = 0; i < n; i++)
+      cout << a[i] << " ";
     cout << endl;
   }
 }

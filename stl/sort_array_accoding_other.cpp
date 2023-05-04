@@ -8,7 +8,7 @@ using namespace std;
 // User function template in C++
 
 class Solution {
- public:
+public:
   // A1[] : the input array-1
   // N : size of the array A1[]
   // A2[] : the input array-2
@@ -57,7 +57,8 @@ int main(int argc, char *argv[]) {
     Solution ob;
     a1 = ob.sortA1ByA2(a1, n, a2, m);
 
-    for (int i = 0; i < n; i++) cout << a1[i] << " ";
+    for (int i = 0; i < n; i++)
+      cout << a1[i] << " ";
 
     cout << endl;
   }

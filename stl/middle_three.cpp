@@ -8,7 +8,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   int middle(int A, int B, int C) {
     // code here//Position this line where user code will be pasted.
     vector<int> ans{A, B, C};

@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   // Function to return the minimum cost of connecting the ropes.
   long long minCost(long long arr[], long long n) {
     // Your code here

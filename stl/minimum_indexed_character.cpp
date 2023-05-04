@@ -8,7 +8,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   // Function to find the minimum indexed character.
   int minIndexChar(string str, string patt) {
     // Your code here
@@ -17,7 +17,8 @@ class Solution {
     patt.resize(it - patt.begin());
     for (int i = 0; i < str.size(); ++i) {
       for (int j = 0; j < patt.size(); ++j) {
-        if (str[i] == patt[j]) return i;
+        if (str[i] == patt[j])
+          return i;
       }
     }
     return -1;

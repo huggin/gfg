@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   pair<long, long> indexes(vector<long long> v, long long x) {
     // code here
     auto it = equal_range(v.begin(), v.end(), x);
