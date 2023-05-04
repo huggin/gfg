@@ -6,10 +6,11 @@ using namespace std;
 // } Driver Code Ends
 // User function Template for C++
 class Solution {
- public:
+public:
   string prevPermutation(string s) {
     // code here
-    if (prev_permutation(s.begin(), s.end())) return s;
+    if (prev_permutation(s.begin(), s.end()))
+      return s;
     return "None";
   }
 };

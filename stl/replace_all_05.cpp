@@ -6,7 +6,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   /*you are required to complete this method*/
   int convertFive(int n) {
     // Your code here

@@ -8,7 +8,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   // arr : given array
   // l : starting index of the array i.e 0
   // r : ending index of the array i.e size-1
@@ -30,7 +30,8 @@ int main() {
     cin >> number_of_elements;
     int a[number_of_elements];
 
-    for (int i = 0; i < number_of_elements; i++) cin >> a[i];
+    for (int i = 0; i < number_of_elements; i++)
+      cin >> a[i];
 
     int k;
     cin >> k;

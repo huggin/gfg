@@ -8,18 +8,18 @@ int main() {
 
   int t;
   cin >> t;
-  while(t--){
+  while (t--) {
     int n;
     cin >> n;
-    int arr[n+1];
+    int arr[n + 1];
 
-    for(int i=0;i<n;i++){
-      cin>> arr[i];
+    for (int i = 0; i < n; i++) {
+      cin >> arr[i];
     }
 
     vector<int> b;
     b = Smallestonleft(arr, n);
-    for(int i=0;i<n;i++)
+    for (int i = 0; i < n; i++)
       cout << b[i] << " ";
 
     cout << endl;
@@ -29,13 +29,11 @@ int main() {
 }
 // } Driver Code Ends
 
-
-vector<int> Smallestonleft(int arr[], int n)
-{
+vector<int> Smallestonleft(int arr[], int n) {
   // Complete the function
   set<int> s;
   vector<int> ans(n);
-  for(int i = 0; i < n; ++i) {
+  for (int i = 0; i < n; ++i) {
     if (s.empty()) {
       ans[i] = -1;
     } else {

@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   string removeConsecutiveCharacter(string S) {
     // code here.
     auto it = unique(S.begin(), S.end());

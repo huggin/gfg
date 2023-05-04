@@ -6,7 +6,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   string isKSortedArray(int arr[], int n, int k) {
     // code here.
     vector<int> a(arr, arr + n);
@@ -27,7 +27,8 @@ int main() {
     int n, k;
     cin >> n;
     int arr[n];
-    for (int i = 0; i < n; i++) cin >> arr[i];
+    for (int i = 0; i < n; i++)
+      cin >> arr[i];
     cin >> k;
     Solution ob;
     cout << ob.isKSortedArray(arr, n, k) << endl;

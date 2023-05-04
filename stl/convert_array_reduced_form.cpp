@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 // User function template for C++
 class Solution {
- public:
+public:
   // Converts arr[0..n-1] to reduced form.
   void convert(int arr[], int n) {
     // code here

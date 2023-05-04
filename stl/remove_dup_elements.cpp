@@ -8,7 +8,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   int remove_duplicate(int a[], int n) {
     // code here
     return unique(a, a + n) - a;
@@ -29,7 +29,8 @@ int main() {
     Solution ob;
     int n = ob.remove_duplicate(a, N);
 
-    for (int i = 0; i < n; i++) cout << a[i] << " ";
+    for (int i = 0; i < n; i++)
+      cout << a[i] << " ";
     cout << endl;
   }
 }

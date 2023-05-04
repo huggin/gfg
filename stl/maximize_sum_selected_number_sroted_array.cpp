@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int maximizeSum(int a[], int n) {
     // Complete the function
     multiset<int> s(a, a + n);
@@ -33,7 +33,8 @@ int main() {
     cin >> n;
     int arr[n];
 
-    for (int i = 0; i < n; i++) cin >> arr[i];
+    for (int i = 0; i < n; i++)
+      cin >> arr[i];
     sort(arr, arr + n);
     Solution ob;
 

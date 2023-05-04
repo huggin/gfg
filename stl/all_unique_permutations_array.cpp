@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   vector<vector<int>> uniquePerms(vector<int> arr, int n) {
     // code here
     vector<vector<int>> ans;
@@ -32,7 +32,8 @@ int main() {
     cin >> n;
     vector<int> arr(n);
 
-    for (int i = 0; i < n; i++) cin >> arr[i];
+    for (int i = 0; i < n; i++)
+      cin >> arr[i];
 
     Solution ob;
     vector<vector<int>> res = ob.uniquePerms(arr, n);

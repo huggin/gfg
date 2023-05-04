@@ -8,8 +8,8 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
-  int removals(vector<int>& arr, int k) {
+public:
+  int removals(vector<int> &arr, int k) {
     // Code here
     sort(arr.begin(), arr.end());
     int ans = 1;

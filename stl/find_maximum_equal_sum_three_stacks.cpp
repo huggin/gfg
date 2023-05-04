@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int maxEqualSum(int N1, int N2, int N3, vector<int> &S1, vector<int> &S2,
                   vector<int> &S3) {
     int t[3] = {0};

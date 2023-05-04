@@ -8,13 +8,13 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
-  long long findMinSum(vector<int>& A, vector<int>& B, int N) {
+public:
+  long long findMinSum(vector<int> &A, vector<int> &B, int N) {
     sort(A.begin(), A.end());
     sort(B.begin(), B.end());
     int ans =
         transform_reduce(begin(A), end(A), begin(B), 0, std::plus<>{},
-                         [](const int& a, const int& b) { return abs(a - b); });
+                         [](const int &a, const int &b) { return abs(a - b); });
     return ans;
   }
 };

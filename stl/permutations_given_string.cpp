@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   vector<string> find_permutation(string S) {
     // Code here there
     sort(S.begin(), S.end());

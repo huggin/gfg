@@ -8,8 +8,8 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
-  int MissingNumber(vector<int>& array, int n) {
+public:
+  int MissingNumber(vector<int> &array, int n) {
     // Your code goes here
     long long total = n * (n + 1) / 2;
     return total - accumulate(array.begin(), array.end(), 0LL);
@@ -26,7 +26,8 @@ int main() {
     cin >> n;
 
     vector<int> array(n - 1);
-    for (int i = 0; i < n - 1; ++i) cin >> array[i];
+    for (int i = 0; i < n - 1; ++i)
+      cin >> array[i];
     Solution obj;
     cout << obj.MissingNumber(array, n) << "\n";
   }

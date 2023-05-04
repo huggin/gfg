@@ -22,7 +22,8 @@ int main() {
     int n, x;
     cin >> n >> x;
     int arr[n], i;
-    for (i = 0; i < n; i++) cin >> arr[i];
+    for (i = 0; i < n; i++)
+      cin >> arr[i];
     vector<int> ans;
     ans = find(arr, n, x);
     cout << ans[0] << " " << ans[1] << endl;

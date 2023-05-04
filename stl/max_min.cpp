@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int findSum(int A[], int N) {
     // code here.
     auto a = minmax_element(A, A + N);
@@ -24,7 +24,8 @@ int main() {
     int n;
     cin >> n;
     int arr[n];
-    for (int i = 0; i < n; i++) cin >> arr[i];
+    for (int i = 0; i < n; i++)
+      cin >> arr[i];
     Solution ob;
     int ans = ob.findSum(arr, n);
     cout << ans;

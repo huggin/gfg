@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int kthLargest(vector<int> &Arr, int N, int K) {
     int dp[101][101];
     multiset<int> s;
