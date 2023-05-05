@@ -12,15 +12,19 @@ class Solution {
   vector<int> a;
 
   int solve(int i) {
-    if (i >= n) return 1;
-    if (dp[i] != -1) return dp[i];
+    if (i >= n)
+      return 1;
+    if (dp[i] != -1)
+      return dp[i];
 
     dp[i] = 0;
-    if (i + k - 1 >= n || a[i + k - 1] - a[i] > m) return dp[i];
+    if (i + k - 1 >= n || a[i + k - 1] - a[i] > m)
+      return dp[i];
     for (int j = i + k - 1; j < n; ++j) {
       if (a[j] - a[i] <= m) {
         dp[i] |= solve(j + 1);
-        if (dp[i]) return dp[i];
+        if (dp[i])
+          return dp[i];
       } else {
         break;
       }
@@ -28,7 +32,7 @@ class Solution {
     return dp[i];
   }
 
- public:
+public:
   bool partitionArray(int N, int K, int M, vector<int> &A) {
     // code here
     dp.assign(N, -1);

@@ -10,9 +10,12 @@ class Solution {
   int n;
 
   int solve(int i, int j) {
-    if (i > j) return 0;
-    if (i == j) return dp[i][j] = a[i - 1] * a[i] * a[j + 1];
-    if (dp[i][j] != -1) return dp[i][j];
+    if (i > j)
+      return 0;
+    if (i == j)
+      return dp[i][j] = a[i - 1] * a[i] * a[j + 1];
+    if (dp[i][j] != -1)
+      return dp[i][j];
     for (int k = i; k <= j; ++k) {
       dp[i][j] = max(dp[i][j], a[i - 1] * a[k] * a[j + 1] + solve(i, k - 1) +
                                    solve(k + 1, j));
@@ -20,7 +23,7 @@ class Solution {
     return dp[i][j];
   }
 
- public:
+public:
   int maxCoins(int N, vector<int> &arr) {
     // code here
     memset(dp, -1, sizeof(dp));
@@ -43,7 +46,8 @@ int main() {
     cin >> N;
 
     vector<int> arr(N);
-    for (int i = 0; i < N; i++) cin >> arr[i];
+    for (int i = 0; i < N; i++)
+      cin >> arr[i];
 
     Solution obj;
     cout << obj.maxCoins(N, arr) << endl;

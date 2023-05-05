@@ -8,10 +8,11 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int minHours(int N) {
     // code here
-    if (N % 2 == 1 || N < 10) return -1;
+    if (N % 2 == 1 || N < 10)
+      return -1;
     vector<int> dp(N + 1, -1);
     dp[0] = 0;
     for (int i = 1; i <= N; ++i) {
@@ -23,7 +24,8 @@ class Solution {
         dp[i] = min(dp[i], dp[i - 10] + 1);
       }
       // cout << i << ' ' << dp[i] << endl;
-      if (dp[i] == 1000000) dp[i] = -1;
+      if (dp[i] == 1000000)
+        dp[i] = -1;
     }
     return dp[N];
   }

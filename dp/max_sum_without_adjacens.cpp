@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 // User function template for C++
 class Solution {
- public:
+public:
   // calculate the maximum sum with out adjacent
   int findMaxSum(int *arr, int n) {
     // code here

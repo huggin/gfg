@@ -11,9 +11,12 @@ class Solution {
   string x, y;
 
   int solve(int i, int j) {
-    if (i == n) return (m - j) * cy;
-    if (j == m) return (n - i) * cx;
-    if (dp[i][j] != -1) return dp[i][j];
+    if (i == n)
+      return (m - j) * cy;
+    if (j == m)
+      return (n - i) * cx;
+    if (dp[i][j] != -1)
+      return dp[i][j];
     if (x[i] == y[j]) {
       // cout << i << ' ' << j << ' ' << solve(i+1, j+1) << endl;
       return dp[i][j] = solve(i + 1, j + 1);
@@ -24,7 +27,7 @@ class Solution {
     return dp[i][j];
   }
 
- public:
+public:
   int findMinCost(string X, string Y, int costX, int costY) {
     // Your code goes here
     n = X.size();

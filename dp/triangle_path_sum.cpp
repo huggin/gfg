@@ -5,10 +5,11 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
-  int minimizeSum(int n, vector<vector<int>>& triangle) {
+public:
+  int minimizeSum(int n, vector<vector<int>> &triangle) {
     // Code here
-    if (n == 1) return triangle[0][0];
+    if (n == 1)
+      return triangle[0][0];
     vector<vector<int>> dp(n + 1, vector<int>(n + 1));
     dp[0][0] = triangle[0][0];
     int ans = INT_MAX;

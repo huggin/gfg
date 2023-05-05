@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   // Function to return the total number of possible unique BST.
   int numTrees(int N) {
     // Your code here

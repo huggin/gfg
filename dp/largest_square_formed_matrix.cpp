@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int maxSquare(int n, int m, vector<vector<int>> mat) {
     // code here
     int dp[51][51] = {0};
@@ -58,7 +58,8 @@ int main() {
     int n, m;
     cin >> n >> m;
     vector<vector<int>> mat(n, vector<int>(m, 0));
-    for (int i = 0; i < n * m; i++) cin >> mat[i / m][i % m];
+    for (int i = 0; i < n * m; i++)
+      cin >> mat[i / m][i % m];
 
     Solution ob;
     cout << ob.maxSquare(n, m, mat) << "\n";

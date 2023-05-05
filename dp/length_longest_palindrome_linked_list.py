@@ -1,11 +1,11 @@
 # your task is to complete this function
 # function should return an integer
-'''
+"""
 class node:
     def __init__(self):
         self.data = None
         self.next = Non
-'''
+"""
 
 
 class Solution:
@@ -25,24 +25,25 @@ class Solution:
         for i in range(n):
             dp[i][i] = 1
 
-        for i in range(n-1):
-            if d[i] == d[i+1]:
-                dp[i][i+1] = 1
+        for i in range(n - 1):
+            if d[i] == d[i + 1]:
+                dp[i][i + 1] = 1
                 ans = 2
 
         for k in range(2, n):
-            for i in range(0, n-k):
+            for i in range(0, n - k):
                 j = i + k
-                if d[i] == d[j] and dp[i+1][j-1] == 1:
+                if d[i] == d[j] and dp[i + 1][j - 1] == 1:
                     dp[i][j] = 1
-                    ans = max(ans, j-i+1)
+                    ans = max(ans, j - i + 1)
 
         return ans
 
         return ans
+
 
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Node Class
 
 
@@ -50,6 +51,7 @@ class node:
     def __init__(self):
         self.data = None
         self.next = None
+
 
 # Linked List Class
 
@@ -67,13 +69,13 @@ class Linked_List:
             new_node.data = data
             new_node.next = None
             temp = self.head
-            while (temp.next):
+            while temp.next:
                 temp = temp.next
             temp.next = new_node
 
 
 # Driver Program
-if __name__ == '__main__':
+if __name__ == "__main__":
     t = int(input())
     for i in range(t):
         list1 = Linked_List()

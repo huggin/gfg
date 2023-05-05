@@ -13,13 +13,16 @@ class Solution {
   int dp[200][200][2];
 
   int solve(int i, int j, int v) {
-    if (dp[i][j][v] != -1) return dp[i][j][v];
+    if (dp[i][j][v] != -1)
+      return dp[i][j][v];
     if (i == j) {
       if (s[i] == 'T') {
-        if (v == 1) return 1;
+        if (v == 1)
+          return 1;
         return 0;
       } else {
-        if (v == 1) return 0;
+        if (v == 1)
+          return 0;
         return 1;
       }
     }
@@ -61,7 +64,7 @@ class Solution {
     return ans = ans % 1003;
   }
 
- public:
+public:
   int countWays(int N, string S) {
     // code here
     n = N;

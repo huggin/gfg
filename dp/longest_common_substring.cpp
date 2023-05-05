@@ -4,18 +4,20 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int longestCommonSubstr(string S1, string S2, int n, int m) {
     // your code here
     int ans = 0;
     vector<vector<int>> dp(n, vector<int>(m));
     for (int i = 0; i < n; ++i) {
-      if (S1[i] == S2[0]) dp[i][0] = 1;
+      if (S1[i] == S2[0])
+        dp[i][0] = 1;
       ans = max(ans, dp[i][0]);
     }
 
     for (int j = 0; j < m; ++j) {
-      if (S1[0] == S2[j]) dp[0][j] = 1;
+      if (S1[0] == S2[j])
+        dp[0][j] = 1;
       ans = max(ans, dp[0][j]);
     }
 

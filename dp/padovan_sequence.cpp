@@ -5,10 +5,11 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int padovanSequence(int n) {
     // code here
-    if (n < 3) return 1;
+    if (n < 3)
+      return 1;
     int p0 = 1, p1 = 1, p2 = 1;
     int p3;
     for (int i = 3; i <= n; ++i) {

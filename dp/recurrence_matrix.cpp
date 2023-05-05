@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   vector<int> CountOnes(vector<int> Queries) {
     // Code heret
     vector<int> C(100);
@@ -46,10 +46,12 @@ int main() {
     int q;
     cin >> q;
     vector<int> Queries(q);
-    for (int i = 0; i < q; i++) cin >> Queries[i];
+    for (int i = 0; i < q; i++)
+      cin >> Queries[i];
     Solution obj;
     vector<int> ans = obj.CountOnes(Queries);
-    for (auto i : ans) cout << i << "\n";
+    for (auto i : ans)
+      cout << i << "\n";
   }
   return 0;
 }

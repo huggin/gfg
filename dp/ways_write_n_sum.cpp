@@ -7,7 +7,7 @@ using namespace std;
 class Solution {
   int const mod = 1000000007;
 
- public:
+public:
   // Function to count the number of different ways in which n can be
   // written as a sum of two or more positive integers.
   int countWays(int n) {

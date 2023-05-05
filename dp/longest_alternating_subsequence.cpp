@@ -5,8 +5,8 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
-  int AlternatingaMaxLength(vector<int>& nums) {
+public:
+  int AlternatingaMaxLength(vector<int> &nums) {
     // Code here
     int n = nums.size();
     vector<int> dp(n, 1), dp2(n, 1);
@@ -39,7 +39,8 @@ int main() {
     int n;
     cin >> n;
     vector<int> nums(n);
-    for (int i = 0; i < n; i++) cin >> nums[i];
+    for (int i = 0; i < n; i++)
+      cin >> nums[i];
     Solution obj;
     int ans = obj.AlternatingaMaxLength(nums);
     cout << ans << "\n";

@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   long long int luckyPermutations(int N, int M, vector<int> arr,
                                   vector<vector<int>> graph) {
     // Code here
@@ -26,9 +26,11 @@ class Solution {
     for (int mask = 0; mask < (1 << N); ++mask) {
       for (int j = 0; j < N; ++j) {
         for (int i = 0; i < N; ++i) {
-          if (!g[arr[i] - 1][arr[j] - 1]) continue;
+          if (!g[arr[i] - 1][arr[j] - 1])
+            continue;
 
-          if (dp[i][mask] == 0) continue;
+          if (dp[i][mask] == 0)
+            continue;
           if ((mask & (1 << j)) == 0) {
             dp[j][mask | (1 << j)] += dp[i][mask];
           }

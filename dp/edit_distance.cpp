@@ -6,7 +6,7 @@ using namespace std;
 class Solution {
   int mem[101][101];
 
-  int dp(const string& s, const string& t, int i, int j) {
+  int dp(const string &s, const string &t, int i, int j) {
     if (i == s.size()) {
       return t.size() - j;
     }
@@ -16,7 +16,7 @@ class Solution {
     if (mem[i][j] != -1) {
       return mem[i][j];
     }
-    int& ans = mem[i][j];
+    int &ans = mem[i][j];
     if (s[i] == t[j]) {
       ans = dp(s, t, i + 1, j + 1);
     } else {
@@ -27,7 +27,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   int editDistance(string s, string t) {
     // Code here
     memset(mem, -1, sizeof(mem));

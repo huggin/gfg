@@ -14,8 +14,9 @@ class Solution {
   int dy[4] = {0, 1, -1, 0};
 
   int solve(int i, int j) {
-    if (dp[i][j] != -1) return dp[i][j];
-    int& ans = dp[i][j];
+    if (dp[i][j] != -1)
+      return dp[i][j];
+    int &ans = dp[i][j];
     ans = 1;
     for (int k = 0; k < 4; ++k) {
       int ni = i + dx[k];
@@ -27,8 +28,8 @@ class Solution {
     return ans;
   }
 
- public:
-  int longestIncreasingPath(vector<vector<int>>& matrix, int n, int m) {
+public:
+  int longestIncreasingPath(vector<vector<int>> &matrix, int n, int m) {
     // Code here
     dp.assign(n, vector<int>(m, -1));
     mat = matrix;

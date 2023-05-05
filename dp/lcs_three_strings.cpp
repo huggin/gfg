@@ -23,11 +23,13 @@ int na, nb, nc;
 string a, b, c;
 
 int solve(int i, int j, int k) {
-  if (i == na || j == nb || k == nc) return 0;
-  if (dp[i][j][k] != -1) return dp[i][j][k];
+  if (i == na || j == nb || k == nc)
+    return 0;
+  if (dp[i][j][k] != -1)
+    return dp[i][j][k];
   if (a[i] == b[j] && a[i] == c[k])
     return dp[i][j][k] = solve(i + 1, j + 1, k + 1) + 1;
-  int& ans = dp[i][j][k];
+  int &ans = dp[i][j][k];
   ans = solve(i + 1, j, k);
   ans = max(ans, solve(i, j + 1, k));
   ans = max(ans, solve(i, j, k + 1));

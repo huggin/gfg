@@ -12,9 +12,11 @@ class Solution {
   set<string> us;
 
   int solve(int i, int j) {
-    if (i == n || j == m) return 0;
-    if (dp[i][j] != -1) return dp[i][j];
-    int& ans = dp[i][j];
+    if (i == n || j == m)
+      return 0;
+    if (dp[i][j] != -1)
+      return dp[i][j];
+    int &ans = dp[i][j];
     if (S[i] == T[j]) {
       ans = 1 + solve(i + 1, j + 1);
     } else {
@@ -41,7 +43,7 @@ class Solution {
     }
   }
 
- public:
+public:
   vector<string> all_longest_common_subsequences(string s, string t) {
     // Code here
     n = s.size();
@@ -68,7 +70,8 @@ int main() {
     cin >> s >> t;
     Solution ob;
     vector<string> ans = ob.all_longest_common_subsequences(s, t);
-    for (auto i : ans) cout << i << " ";
+    for (auto i : ans)
+      cout << i << " ";
     cout << "\n";
   }
   return 0;

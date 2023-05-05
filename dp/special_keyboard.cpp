@@ -10,7 +10,7 @@ using namespace std;
 class Solution {
   using ll = long long;
 
- public:
+public:
   long long int optimalKeys(int N) {
     // code here
     vector<ll> dp(77);

@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   double waterOverflow(int K, int R, int C) {
     // code here
     double dp[501][501] = {0};

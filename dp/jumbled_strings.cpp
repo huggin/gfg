@@ -13,10 +13,13 @@ class Solution {
   int mod = 1000000007;
 
   long long solve(int i, int j) {
-    if (j == 5) return 1;
-    if (i == n) return 0;
-    if (dp[j][i] != -1) return dp[j][i];
-    long long& ans = dp[j][i];
+    if (j == 5)
+      return 1;
+    if (i == n)
+      return 0;
+    if (dp[j][i] != -1)
+      return dp[j][i];
+    long long &ans = dp[j][i];
     ans = solve(i + 1, j);
     ans %= mod;
     if (s[i] == p[j]) {
@@ -26,7 +29,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   int TotalWays(string str) {
     // Code here
     memset(dp, -1, sizeof(dp));

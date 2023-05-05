@@ -15,8 +15,9 @@ class Solution {
       else
         return 100000000;
     }
-    if (dp[k][w] != -1) return dp[k][w];
-    int& ans = dp[k][w];
+    if (dp[k][w] != -1)
+      return dp[k][w];
+    int &ans = dp[k][w];
     ans = solve(c, k + 1, w);
     if (w >= k + 1 && c[k] > 0) {
       ans = min(ans, c[k] + solve(c, k, w - (k + 1)));
@@ -25,13 +26,14 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   int minimumCost(int cost[], int N, int W) {
     // Your code goes here
     dp.assign(N, vector<int>(W + 1, -1));
     n = N;
     int ans = solve(cost, 0, W);
-    if (ans >= 10000000) return -1;
+    if (ans >= 10000000)
+      return -1;
     return ans;
   }
 };
@@ -46,7 +48,8 @@ int main() {
 
     int a[n];
 
-    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
 
     Solution ob;
     cout << ob.minimumCost(a, n, w) << "\n";

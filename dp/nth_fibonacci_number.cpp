@@ -7,7 +7,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   long long int nthFibonacci(long long int n) {
     // code here
     vector<long long> v(n + 1);

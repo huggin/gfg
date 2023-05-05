@@ -9,10 +9,12 @@ using namespace std;
 
 class Solution {
   int dp[1001][1001];
-  int solve(const string& s, int i, int j) {
+  int solve(const string &s, int i, int j) {
     // if (i == j) return 1;
-    if (i >= j) return 0;
-    if (dp[i][j] != -1) return dp[i][j];
+    if (i >= j)
+      return 0;
+    if (dp[i][j] != -1)
+      return dp[i][j];
     if (s[i] == s[j]) {
       return dp[i][j] = solve(s, i + 1, j - 1);
     }
@@ -21,7 +23,7 @@ class Solution {
     return dp[i][j];
   }
 
- public:
+public:
   int countMin(string str) {
     // complete the function here
     memset(dp, -1, sizeof(dp));

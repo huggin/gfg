@@ -8,18 +8,19 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   long long maxProduct(int n) {
     // code here
-    if (n == 1) return 0;
+    if (n == 1)
+      return 0;
     vector<long long> dp(n + 1);
     dp[1] = 0;
     dp[2] = 1;
     for (int i = 2; i <= n; ++i) {
       dp[i] = 0;
       for (int j = 1; j < i; ++j) {
-        dp[i] = max(
-            dp[i], max((long long)j, dp[j]) * max((long long)i - j, dp[i - j]));
+        dp[i] = max(dp[i], max((long long)j, dp[j]) *
+                               max((long long)i - j, dp[i - j]));
       }
     }
     return dp[n];

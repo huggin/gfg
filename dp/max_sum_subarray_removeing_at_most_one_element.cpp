@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   // Function to return maximum sum subarray by removing at most one element.
   int maxSumSubarray(int A[], int n) {
     // Your code here
@@ -47,7 +47,8 @@ int main() {
     int a[n];
 
     // inserting elements in the array
-    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
 
     // calling method maxSumSubarray()
     Solution obj;

@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 // User function Template for C++
 
-int maxProfit(vector<int>& price) {
+int maxProfit(vector<int> &price) {
   // Write your code here..
   int n = price.size();
 
@@ -46,7 +46,8 @@ int main() {
     int n;
     cin >> n;
     vector<int> price(n);
-    for (int i = 0; i < n; i++) cin >> price[i];
+    for (int i = 0; i < n; i++)
+      cin >> price[i];
     cout << maxProfit(price) << endl;
   }
 }

@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int sumOfDigits(int N) {
     // code here
     vector<int> dp(1000001);

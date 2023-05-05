@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   // Function to count the number of ways in which frog can reach the top.
   long long countWays(int n) {
     // your code here
@@ -15,7 +15,8 @@ class Solution {
     dp[1] = 1;
     for (int i = 2; i <= n; ++i) {
       dp[i] = (dp[i - 2] + dp[i - 1]) % M;
-      if (i - 3 >= 0) dp[i] = (dp[i] + dp[i - 3]) % M;
+      if (i - 3 >= 0)
+        dp[i] = (dp[i] + dp[i - 3]) % M;
     }
     return dp[n];
   }

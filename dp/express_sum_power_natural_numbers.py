@@ -17,15 +17,15 @@ class Solution:
         for a in p:
             for i in range(n, -1, -1):
                 if i - a >= 0:
-                    dp[i] = (dp[i-a] + dp[i]) % M
+                    dp[i] = (dp[i - a] + dp[i]) % M
 
         return dp[n]
 
 
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
-if __name__ == '__main__':
+if __name__ == "__main__":
     T = int(input())
     for i in range(T):
         n, x = input().split()

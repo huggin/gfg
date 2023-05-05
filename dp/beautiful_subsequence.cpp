@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int longest_Subsequence(int a[], int n) {
     // Complete the function
     sort(a, a + n);

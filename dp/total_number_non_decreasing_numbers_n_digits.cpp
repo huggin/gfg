@@ -12,9 +12,11 @@ class Solution {
   int n;
 
   long long solve(int k, int d) {
-    if (k == n) return 1;
-    if (dp[k][d] != -1) return dp[k][d];
-    long long& ans = dp[k][d];
+    if (k == n)
+      return 1;
+    if (dp[k][d] != -1)
+      return dp[k][d];
+    long long &ans = dp[k][d];
     ans = 0;
     for (int i = d; i <= 9; ++i) {
       ans += solve(k + 1, i);
@@ -22,10 +24,11 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   long long int count(int N) {
     // code
-    if (N == 1) return 10;
+    if (N == 1)
+      return 10;
     n = N;
     memset(dp, -1, sizeof(dp));
     long long ans = 0;

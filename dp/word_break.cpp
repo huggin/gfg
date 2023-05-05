@@ -14,17 +14,21 @@ class Solution {
   string a;
   int dp[1101];
 
-  bool start(int k, const string& s) {
-    if (a.size() - k < s.size()) return false;
+  bool start(int k, const string &s) {
+    if (a.size() - k < s.size())
+      return false;
     for (int i = 0; i < s.size(); ++i) {
-      if (s[i] != a[k + i]) return false;
+      if (s[i] != a[k + i])
+        return false;
     }
     return true;
   }
-  int solve(int k, vector<string>& b) {
+  int solve(int k, vector<string> &b) {
     // cout << "k = " << k << endl;
-    if (k == a.size()) return 1;
-    if (dp[k] != -1) return dp[k];
+    if (k == a.size())
+      return 1;
+    if (dp[k] != -1)
+      return dp[k];
     dp[k] = 0;
     for (int i = 0; i < b.size(); ++i) {
       if (start(k, b[i])) {
@@ -35,8 +39,8 @@ class Solution {
     return dp[k];
   }
 
- public:
-  int wordBreak(string A, vector<string>& B) {
+public:
+  int wordBreak(string A, vector<string> &B) {
     // code here
     memset(dp, -1, sizeof(dp));
     a = A;

@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   long long countDivisibleSubstring(string s) {
     // Your code goes here
     int n = s.size();

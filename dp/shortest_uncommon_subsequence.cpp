@@ -8,7 +8,7 @@ class Solution {
   vector<vector<int>> dp;
   int n, m;
 
-  int solve(const string& s, const string& t, int i, int j) {
+  int solve(const string &s, const string &t, int i, int j) {
     if (i >= n) {
       return 1000;
     }
@@ -23,7 +23,7 @@ class Solution {
     return dp[i][j];
   }
 
- public:
+public:
   int shortestUnSub(string S, string T) {
     // code here
     n = S.size();

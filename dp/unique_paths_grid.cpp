@@ -6,10 +6,11 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int uniquePaths(int n, int m, vector<vector<int>> grid) {
     // code here
-    if (grid[0][0] == 0 || grid[n - 1][m - 1] == 0) return 0;
+    if (grid[0][0] == 0 || grid[n - 1][m - 1] == 0)
+      return 0;
     const int M = 1e9 + 7;
     vector<vector<int>> dp(n, vector<int>(m, 0));
     dp[0][0] = 1;

@@ -14,8 +14,9 @@ class Solution {
       return 0;
     }
 
-    if (dp[i][j] != -1) return dp[i][j];
-    int& ans = dp[i][j];
+    if (dp[i][j] != -1)
+      return dp[i][j];
+    int &ans = dp[i][j];
     ans = INT_MAX;
     for (int k = i; k < j; k += K - 1) {
       ans = min(ans, solve(i, k) + solve(k + 1, j));
@@ -26,10 +27,11 @@ class Solution {
     return ans;
   }
 
- public:
-  int mergeStones(vector<int>& stones, int N, int K) {
+public:
+  int mergeStones(vector<int> &stones, int N, int K) {
     // code here
-    if ((N - 1) % (K - 1) != 0) return -1;
+    if ((N - 1) % (K - 1) != 0)
+      return -1;
 
     sum.assign(N + 1, 0);
     for (int i = 1; i <= N; ++i) {

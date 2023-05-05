@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int countWays(int n, int m) {
     // Code here.
     const int mod = 1000000007;
@@ -15,7 +15,8 @@ class Solution {
     for (int i = 1; i <= n && i < m; ++i) {
       dp[i] = 1;
     }
-    if (n < m) return 1;
+    if (n < m)
+      return 1;
     dp[m] = 2;
     for (int i = m + 1; i <= n; ++i) {
       dp[i] = (dp[i - 1] + dp[i - m]) % mod;

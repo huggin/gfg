@@ -8,9 +8,11 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
-  string construct(const vector<vector<int>>& dp, int i, int j) {
-    if (i + 2 > j) return "";
-    if (i + 2 == j) return "(**)";
+  string construct(const vector<vector<int>> &dp, int i, int j) {
+    if (i + 2 > j)
+      return "";
+    if (i + 2 == j)
+      return "(**)";
     int k = dp[i][j];
     if (k == j - 1) {
       return "(" + construct(dp, i, dp[i][j]) + "*)";
@@ -21,10 +23,11 @@ class Solution {
     return "(" + construct(dp, i, dp[i][j]) + construct(dp, dp[i][j], j) + ")";
   }
 
- public:
+public:
   string matrixChainOrder(int p[], int n) {
     // code here
-    if (n == 2) return "A";
+    if (n == 2)
+      return "A";
     int dp[30][30] = {0};
     vector<vector<int>> dp2(n, vector<int>(n));
     for (int k = 2; k < n; ++k) {
@@ -62,7 +65,8 @@ int main() {
     int n;
     cin >> n;
     int p[n];
-    for (int i = 0; i < n; i++) cin >> p[i];
+    for (int i = 0; i < n; i++)
+      cin >> p[i];
 
     Solution ob;
     cout << ob.matrixChainOrder(p, n) << "\n";

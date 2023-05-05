@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   long long telephoneNum(long long n) {
     // code here
     int const mod = 1e9 + 7;

@@ -7,12 +7,17 @@ using namespace std;
 class Solution {
   long long dp[51][51];
   long long solve(int M, int N, int X) {
-    if (X == 0 && N == 0) return 1;
-    if (X < 0) return 0;
-    if (N > 0 && X <= 0) return 0;
-    if (N <= 0 && X > 0) return 0;
-    if (dp[N][X] != -1) return dp[N][X];
-    long long& ans = dp[N][X];
+    if (X == 0 && N == 0)
+      return 1;
+    if (X < 0)
+      return 0;
+    if (N > 0 && X <= 0)
+      return 0;
+    if (N <= 0 && X > 0)
+      return 0;
+    if (dp[N][X] != -1)
+      return dp[N][X];
+    long long &ans = dp[N][X];
     ans = 0;
     for (int i = 1; i <= M; ++i) {
       ans += solve(M, N - 1, X - i);
@@ -21,7 +26,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   long long noOfWays(int M, int N, int X) {
     // code here
     memset(dp, -1, sizeof(dp));

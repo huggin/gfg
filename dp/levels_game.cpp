@@ -11,9 +11,11 @@ class Solution {
   int dp[1000][1000][2];
 
   int solve(int h, int m, int t) {
-    if (dp[h][m][t] != -1) return dp[h][m][t];
-    if (t == 1 && (h <= 20 && (h <= 5 || m <= 10))) return 0;
-    int& ans = dp[h][m][t];
+    if (dp[h][m][t] != -1)
+      return dp[h][m][t];
+    if (t == 1 && (h <= 20 && (h <= 5 || m <= 10)))
+      return 0;
+    int &ans = dp[h][m][t];
     if (t == 0) {
       ans = solve(h + 3, m + 2, 1) + 1;
     }
@@ -26,7 +28,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   int maxLevel(int h, int m) {
     // code here
     memset(dp, -1, sizeof(dp));

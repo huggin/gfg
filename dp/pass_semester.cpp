@@ -35,7 +35,8 @@ vector<vector<int>> a;
 pair<int, int> dp[1001][1001];
 
 pair<int, int> solve(int k, int w) {
-  if (k < 0 || w <= 0) return {0, 0};
+  if (k < 0 || w <= 0)
+    return {0, 0};
   if (dp[k][w].first != -1) {
     return dp[k][w];
   }
@@ -58,6 +59,7 @@ int Ispossible(vector<vector<int>> &arr, int n, int w, int p) {
   a = arr;
   memset(dp, -1, sizeof(dp));
   auto ans = solve(n - 1, w);
-  if (ans.first < p) return -1;
+  if (ans.first < p)
+    return -1;
   return ans.second;
 }

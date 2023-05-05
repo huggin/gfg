@@ -10,9 +10,11 @@ using namespace std;
 class Solution {
   vector<long long> dp;
   long long solve(int k, long long A, long long B) {
-    if (dp[k] != -1) return dp[k];
+    if (dp[k] != -1)
+      return dp[k];
     dp[k] = LLONG_MAX;
-    if (k > 0) dp[k] = min(dp[k], solve(k - 1, A, B) + A);
+    if (k > 0)
+      dp[k] = min(dp[k], solve(k - 1, A, B) + A);
     // if (k < dp.size())
     // dp[k] = min(dp[k], solve(k+1, A, B)+A);
     if (k % 2 == 0) {
@@ -23,7 +25,7 @@ class Solution {
     return dp[k];
   }
 
- public:
+public:
   long long optimalWalk(long long N, long long A, long long B) {
     // code here
     dp.assign(2 * N, -1);

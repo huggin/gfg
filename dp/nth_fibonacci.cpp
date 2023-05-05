@@ -4,11 +4,13 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int fib(int N) {
     // code here
-    if (N == 0) return 0;
-    if (N == 1) return 1;
+    if (N == 0)
+      return 0;
+    if (N == 1)
+      return 1;
     int a = 0, b = 1;
     for (int i = 2; i <= N; ++i) {
       int t = a + b;

@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int mem[1001][1001];
   int len;
 
@@ -16,7 +16,7 @@ class Solution {
     if (mem[w][k] != -1) {
       return mem[w][k];
     }
-    int& ans = mem[w][k];
+    int &ans = mem[w][k];
     ans = dp(w, wt, val, k + 1);
     if (w >= wt[k]) {
       ans = max(ans, dp(w - wt[k], wt, val, k + 1) + val[k]);
@@ -47,10 +47,12 @@ int main() {
     int wt[n];
 
     // inserting the values
-    for (int i = 0; i < n; i++) cin >> val[i];
+    for (int i = 0; i < n; i++)
+      cin >> val[i];
 
     // inserting the weights
-    for (int i = 0; i < n; i++) cin >> wt[i];
+    for (int i = 0; i < n; i++)
+      cin >> wt[i];
     Solution ob;
     // calling method knapSack()
     cout << ob.knapSack(w, wt, val, n) << endl;

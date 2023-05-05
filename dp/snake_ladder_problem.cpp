@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int minThrow(int N, int arr[]) {
     // code here
     int ladder[31] = {0};
@@ -48,7 +48,8 @@ int main() {
     int N;
     cin >> N;
     int arr[2 * N];
-    for (int i = 0; i < 2 * N; i++) cin >> arr[i];
+    for (int i = 0; i < 2 * N; i++)
+      cin >> arr[i];
 
     Solution ob;
     cout << ob.minThrow(N, arr) << "\n";

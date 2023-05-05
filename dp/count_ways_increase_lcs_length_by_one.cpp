@@ -10,10 +10,12 @@ class Solution {
   int dp2[102][102];
   int n1, n2;
 
-  int solve(const string& s1, const string& s2, int i, int j) {
-    if (i < 0 || j < 0) return 0;
-    if (dp[i][j] != -1) return dp[i][j];
-    int& ans = dp[i][j];
+  int solve(const string &s1, const string &s2, int i, int j) {
+    if (i < 0 || j < 0)
+      return 0;
+    if (dp[i][j] != -1)
+      return dp[i][j];
+    int &ans = dp[i][j];
     if (s1[i] == s2[j]) {
       ans = 1 + solve(s1, s2, i - 1, j - 1);
     } else {
@@ -22,10 +24,12 @@ class Solution {
     return ans;
   }
 
-  int solve2(const string& s1, const string& s2, int i, int j) {
-    if (i == n1 || j == n2) return 0;
-    if (dp2[i][j] != -1) return dp2[i][j];
-    int& ans = dp2[i][j];
+  int solve2(const string &s1, const string &s2, int i, int j) {
+    if (i == n1 || j == n2)
+      return 0;
+    if (dp2[i][j] != -1)
+      return dp2[i][j];
+    int &ans = dp2[i][j];
     if (s1[i] == s2[j]) {
       ans = 1 + solve2(s1, s2, i + 1, j + 1);
     } else {
@@ -34,7 +38,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   int waysToIncreaseLCSBy1(int N1, string S1, int N2, string S2) {
     // code here
     memset(dp, -1, sizeof(dp));
@@ -47,7 +51,8 @@ class Solution {
     set<pair<int, char>> s;
     for (int j = 0; j < N2; ++j) {
       for (char c = 'a'; c <= 'z'; ++c) {
-        if (S2[j] != c) continue;
+        if (S2[j] != c)
+          continue;
         for (int i = 0; i <= N1; ++i) {
           if (solve(S1, S2, i - 1, j - 1) + solve2(S1, S2, i, j + 1) == lcs) {
             // cout << c << ' ' << j << ' ' << i << endl;

@@ -8,7 +8,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   string longestPalindrome(string S) {
     // code here
     int n = S.size();
@@ -21,7 +21,8 @@ class Solution {
     for (int k = 1; k < n; ++k) {
       for (int i = 0; i < n; ++i) {
         int j = i + k;
-        if (j >= n) continue;
+        if (j >= n)
+          continue;
         if (j == i + 1 && S[j] == S[i]) {
           if (max_len < j - i + 1) {
             left = i;

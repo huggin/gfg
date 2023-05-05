@@ -7,12 +7,14 @@ using namespace std;
 class Solution {
   vector<int> dp[2];
   int n;
-  int* a;
+  int *a;
 
   int solve(int k, int ma) {
-    if (k >= n - 1) return 0;
-    if (dp[ma][k] != -1) return dp[ma][k];
-    int& ans = dp[ma][k];
+    if (k >= n - 1)
+      return 0;
+    if (dp[ma][k] != -1)
+      return dp[ma][k];
+    int &ans = dp[ma][k];
     if (ma == 0) {
       ans = max(solve(k + 1, 0), solve(k + 1, 1) + abs(a[k + 1] - 1));
     } else {
@@ -23,7 +25,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   int maximumDifferenceSum(int arr[], int N) {
     // Your code goes here
     dp[0].assign(N, -1);
@@ -43,7 +45,8 @@ int main() {
     cin >> n;
 
     int a[n];
-    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
 
     Solution ob;
     cout << ob.maximumDifferenceSum(a, n) << "\n";

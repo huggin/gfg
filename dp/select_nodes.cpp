@@ -11,11 +11,13 @@ class Solution {
   vector<int> dp[2];
 
   int solve(vector<int> adj[], int v, int used, int prev) {
-    if (dp[used][v] != -1) return dp[used][v];
-    int& ans = dp[used][v];
+    if (dp[used][v] != -1)
+      return dp[used][v];
+    int &ans = dp[used][v];
     ans = 0;
     for (auto w : adj[v]) {
-      if (w == prev) continue;
+      if (w == prev)
+        continue;
       if (!used)
         ans += 1 + solve(adj, w, 1, v);
       else
@@ -25,11 +27,11 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   int countVertex(int N, vector<vector<int>> edges) {
     // code here
     vector<int> adj[N];
-    for (auto& e : edges) {
+    for (auto &e : edges) {
       adj[e[0] - 1].push_back(e[1] - 1);
       adj[e[1] - 1].push_back(e[0] - 1);
     }

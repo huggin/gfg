@@ -6,15 +6,16 @@ using namespace std;
 
 class Solution {
   vector<map<int, map<int, int>>> dp;
-  int* a;
+  int *a;
 
   int solve(int k, int mi, int ma) {
-    if (k < 0) return 0;
+    if (k < 0)
+      return 0;
     if (dp[k].find(mi) != dp[k].end() &&
         dp[k][mi].find(ma) != dp[k][mi].end()) {
       return dp[k][mi][ma];
     }
-    int& ans = dp[k][mi][ma];
+    int &ans = dp[k][mi][ma];
     ans = solve(k - 1, mi, ma) + 1;
     if (a[k] < ma) {
       ans = min(ans, solve(k - 1, mi, a[k]));
@@ -25,7 +26,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   int minCount(int arr[], int N) {
     // Your code goes here
     a = arr;
@@ -34,7 +35,8 @@ class Solution {
 
     return min({solve(N - 2, INT_MIN, arr[N - 1]),
                 solve(N - 2, arr[N - 1], INT_MAX),
-                1 + solve(N - 2, INT_MIN, INT_MAX)});
+                1 + solve(N - 2
+       INT_MIN, INT_MAX)});
   }
 };
 
@@ -48,7 +50,8 @@ int main() {
 
     int a[n];
 
-    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
 
     Solution ob;
     cout << ob.minCount(a, n) << "\n";

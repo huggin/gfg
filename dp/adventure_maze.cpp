@@ -6,8 +6,8 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
-  vector<int> FindWays(vector<vector<int>>& matrix) {
+public:
+  vector<int> FindWays(vector<vector<int>> &matrix) {
     // Code here
     const int M = 1e9 + 7;
     int n = matrix.size();
@@ -54,11 +54,13 @@ int main() {
     cin >> n;
     vector<vector<int>> matrix(n, vector<int>(n, 0));
     for (int i = 0; i < n; i++) {
-      for (int j = 0; j < n; j++) cin >> matrix[i][j];
+      for (int j = 0; j < n; j++)
+        cin >> matrix[i][j];
     }
     Solution obj;
     vector<int> ans = obj.FindWays(matrix);
-    for (auto i : ans) cout << i << " ";
+    for (auto i : ans)
+      cout << i << " ";
     cout << "\n";
   }
   return 0;

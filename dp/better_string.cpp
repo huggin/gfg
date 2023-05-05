@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
-  int solve(const string& s) {
+  int solve(const string &s) {
     int n = s.size();
     vector<int> dp(n + 1);
     dp[0] = 1;
@@ -23,13 +23,14 @@ class Solution {
     return dp[n];
   }
 
- public:
+public:
   string betterString(string str1, string str2) {
     // code here
     int n1 = solve(str1);
     int n2 = solve(str2);
     // cout << n1 << ' ' << n2 << endl;
-    if (n1 >= n2) return str1;
+    if (n1 >= n2)
+      return str1;
     return str2;
   }
 };

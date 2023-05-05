@@ -3,13 +3,13 @@
 #include <cstdio>
 #include <iostream>
 #include <vector>
-//#include<Windows.h>
+// #include<Windows.h>
 using namespace std;
 
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   /*You are requried to complete this method */
   int max_Books(int a[], int n, int k) {
     // Your code here

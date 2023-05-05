@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   unsigned long long int countSub(int arr[], int n) {
     // Your code goes here
     vector<long long> dp(n, 1);
@@ -31,7 +31,8 @@ int main() {
     int n;
     cin >> n;
     int a[n + 1];
-    for (unsigned long long int i = 0; i < n; i++) cin >> a[i];
+    for (unsigned long long int i = 0; i < n; i++)
+      cin >> a[i];
     Solution ob;
     cout << ob.countSub(a, n) << endl;
   }

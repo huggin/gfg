@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int pyramidForm(int a[], int N) {
     // code here
     vector<int> dp(N, 1), dp2(N, 1);
@@ -55,7 +55,8 @@ int main() {
     cin >> N;
     int a[N];
 
-    for (int i = 0; i < N; i++) cin >> a[i];
+    for (int i = 0; i < N; i++)
+      cin >> a[i];
 
     Solution ob;
     cout << ob.pyramidForm(a, N) << endl;

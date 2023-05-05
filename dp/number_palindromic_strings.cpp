@@ -7,7 +7,7 @@ using namespace std;
 
 // User function template for C++
 class Solution {
- public:
+public:
   int palindromicStrings(int N, int K) {
     // Your code goes here
     const int mod = 1e9 + 7;

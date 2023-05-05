@@ -5,12 +5,13 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int DivisibleByM(vector<int> nums, int m) {
     // Code here
     int total = 0;
-    for (auto& a : nums) {
-      if (a % m == 0) return 1;
+    for (auto &a : nums) {
+      if (a % m == 0)
+        return 1;
       a %= m;
       total += a;
     }
@@ -20,7 +21,8 @@ class Solution {
       for (int j = total; j - nums[i] >= 0; --j) {
         if (dp[j - nums[i]] == 1) {
           dp[j] = 1;
-          if (j % m == 0) return 1;
+          if (j % m == 0)
+            return 1;
         }
       }
     }
@@ -36,7 +38,8 @@ int main() {
     int n, m;
     cin >> n >> m;
     vector<int> nums(n);
-    for (int i = 0; i < n; i++) cin >> nums[i];
+    for (int i = 0; i < n; i++)
+      cin >> nums[i];
     Solution ob;
     int ans = ob.DivisibleByM(nums, m);
     cout << ans << "\n";

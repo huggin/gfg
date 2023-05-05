@@ -10,34 +10,38 @@ using namespace std;
 class Solution {
   int dp[1001][1001];
   int dp2[1001][1001];
-  int* a;
+  int *a;
   int solve(int i, int j) {
     if (i == j) {
       return a[i];
     }
-    if (dp[i][j] != -1) return dp[i][j];
-    int& ans = dp[i][j];
+    if (dp[i][j] != -1)
+      return dp[i][j];
+    int &ans = dp[i][j];
     ans = max(a[i] - solve2(i + 1, j), a[j] - solve2(i, j - 1));
     return ans;
   }
 
   int solve2(int i, int j) {
-    if (i == j) return a[i];
-    if (dp2[i][j] != -1) return dp2[i][j];
-    int& ans = dp2[i][j];
+    if (i == j)
+      return a[i];
+    if (dp2[i][j] != -1)
+      return dp2[i][j];
+    int &ans = dp2[i][j];
     ans = max(a[i] - solve(i + 1, j), a[j] - solve(i, j - 1));
 
     return ans;
   }
 
- public:
+public:
   bool is1winner(int N, int arr[]) {
     // code here
     memset(dp, -1, sizeof(dp));
     memset(dp2, -1, sizeof(dp2));
     a = arr;
     int ans = solve(0, N - 1);
-    if (ans > 0) return 1;
+    if (ans > 0)
+      return 1;
     return 0;
   }
 };

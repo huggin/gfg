@@ -9,24 +9,28 @@ long long dp2[1001][1001];
 
 // Function to find the maximum possible amount of money we can win.
 class Solution {
-  int* a;
+  int *a;
   long long solve(int i, int j) {
-    if (i > j) return 0;
-    if (dp[i][j] != -1) return dp[i][j];
-    long long& ans = dp[i][j];
+    if (i > j)
+      return 0;
+    if (dp[i][j] != -1)
+      return dp[i][j];
+    long long &ans = dp[i][j];
     ans = max(a[i] - solve2(i + 1, j), a[j] - solve2(i, j - 1));
     return ans;
   }
 
   long long solve2(int i, int j) {
-    if (i == j) return a[i];
-    if (dp[i][j] != -1) return dp[i][j];
-    long long& ans = dp[i][j];
+    if (i == j)
+      return a[i];
+    if (dp[i][j] != -1)
+      return dp[i][j];
+    long long &ans = dp[i][j];
     ans = max(a[i] - solve(i + 1, j), a[j] - solve(i, j - 1));
     return ans;
   }
 
- public:
+public:
   long long maximumAmount(int arr[], int n) {
     // Your code here
     memset(dp, -1, sizeof(dp));
@@ -47,7 +51,8 @@ int main() {
     int n;
     cin >> n;
     int a[n];
-    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
     Solution ob;
     cout << ob.maximumAmount(a, n) << endl;
   }

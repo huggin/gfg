@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int zigzagSequence(int n, vector<vector<int>> M) {
     // code here
     vector<vector<int>> dp(n, vector<int>(n));
@@ -18,7 +18,8 @@ class Solution {
       for (int j = 0; j < n; ++j) {
         dp[i][j] = INT_MIN;
         for (int k = 0; k < n; ++k) {
-          if (j == k) continue;
+          if (j == k)
+            continue;
           dp[i][j] = max(dp[i][j], M[i][j] + dp[i - 1][k]);
         }
       }
@@ -36,7 +37,8 @@ int main() {
     int n;
     cin >> n;
     vector<vector<int>> M(n, vector<int>(n, -1));
-    for (int i = 0; i < n * n; i++) cin >> M[i / n][i % n];
+    for (int i = 0; i < n * n; i++)
+      cin >> M[i / n][i % n];
 
     Solution ob;
     cout << ob.zigzagSequence(n, M) << endl;

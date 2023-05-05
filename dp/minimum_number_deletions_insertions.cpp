@@ -9,16 +9,21 @@ class Solution {
   string s1, s2;
 
   int solve(int i, int j) {
-    if (i < 0 && j < 0) return 0;
-    if (i < 0 && j >= 0) return j + 1;
-    if (i >= 0 && j < 0) return i + 1;
-    if (dp[i][j] != -1) return dp[i][j];
-    short& ans = dp[i][j];
-    if (s1[i] == s2[j]) return solve(i - 1, j - 1);
+    if (i < 0 && j < 0)
+      return 0;
+    if (i < 0 && j >= 0)
+      return j + 1;
+    if (i >= 0 && j < 0)
+      return i + 1;
+    if (dp[i][j] != -1)
+      return dp[i][j];
+    short &ans = dp[i][j];
+    if (s1[i] == s2[j])
+      return solve(i - 1, j - 1);
     return ans = min(solve(i - 1, j), solve(i, j - 1)) + 1;
   }
 
- public:
+public:
   int minOperations(string str1, string str2) {
     // Your code goes here
     memset(dp, -1, sizeof(dp));

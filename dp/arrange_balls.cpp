@@ -11,14 +11,19 @@ class Solution {
   const int mod = 1000000007;
 
   long long solve(int i, int j, int k, int p) {
-    if (dp[i][j][k][p] != -1) return dp[i][j][k][p];
+    if (dp[i][j][k][p] != -1)
+      return dp[i][j][k][p];
 
-    long long& ans = dp[i][j][k][p];
+    long long &ans = dp[i][j][k][p];
 
-    if (i == 0 && j == 0 && k == 0) return ans = 1;
-    if (i == 0 && j == 0 && k >= 2) return ans = 0;
-    if (i >= 2 && j == 0 && k == 0) return ans = 0;
-    if (i == 0 && j >= 2 && k == 0) return ans = 0;
+    if (i == 0 && j == 0 && k == 0)
+      return ans = 1;
+    if (i == 0 && j == 0 && k >= 2)
+      return ans = 0;
+    if (i >= 2 && j == 0 && k == 0)
+      return ans = 0;
+    if (i == 0 && j >= 2 && k == 0)
+      return ans = 0;
     ans = 0;
     if (p == 0) {
       if (j > 0) {
@@ -50,7 +55,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   int CountWays(int p, int q, int r) {
     // Code here
     memset(dp, -1, sizeof(dp));

@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   double AverageOfAllSubsets(vector<int> nums) {
     // Code here
     int c[501][501];
@@ -41,7 +41,8 @@ int main() {
     int n;
     cin >> n;
     vector<int> nums(n);
-    for (int i = 0; i < n; i++) cin >> nums[i];
+    for (int i = 0; i < n; i++)
+      cin >> nums[i];
     Solution ob;
     double ans = ob.AverageOfAllSubsets(nums);
     cout << fixed << setprecision(6) << ans << "\n";

@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   vector<int> DistinctSum(vector<int> nums) {
     // Code here
     int sum = accumulate(nums.begin(), nums.end(), 0);
@@ -20,7 +20,8 @@ class Solution {
     }
     vector<int> ans;
     for (int i = 0; i <= sum; ++i) {
-      if (dp[i]) ans.push_back(i);
+      if (dp[i])
+        ans.push_back(i);
     }
     return ans;
   }
@@ -34,10 +35,12 @@ int main() {
     int n;
     cin >> n;
     vector<int> nums(n);
-    for (int i = 0; i < n; i++) cin >> nums[i];
+    for (int i = 0; i < n; i++)
+      cin >> nums[i];
     Solution obj;
     vector<int> ans = obj.DistinctSum(nums);
-    for (auto i : ans) cout << i << " ";
+    for (auto i : ans)
+      cout << i << " ";
     cout << "\n";
   }
   return 0;

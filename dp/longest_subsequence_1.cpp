@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int longestSubsequence(int N, int A[]) {
     // code here
     int dp[N] = {1};
@@ -35,7 +35,8 @@ int main() {
     int N;
     cin >> N;
     int A[N];
-    for (int i = 0; i < N; i++) cin >> A[i];
+    for (int i = 0; i < N; i++)
+      cin >> A[i];
 
     Solution ob;
     cout << ob.longestSubsequence(N, A) << endl;

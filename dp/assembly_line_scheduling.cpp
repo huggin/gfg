@@ -8,9 +8,9 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
-  int carAssembly(vector<vector<int>>& a, vector<vector<int>>& T,
-                  vector<int>& e, vector<int>& x) {
+public:
+  int carAssembly(vector<vector<int>> &a, vector<vector<int>> &T,
+                  vector<int> &e, vector<int> &x) {
     // Code Here
     int n = a[0].size();
 

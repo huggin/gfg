@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   long long getCount(int N) {
     // Your code goes here
     vector<int> d[10] = {{0, 8},       {1, 2, 4},    {1, 2, 3, 5},

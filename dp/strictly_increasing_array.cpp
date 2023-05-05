@@ -8,10 +8,12 @@ class Solution {
   vector<int> n;
   vector<unordered_map<int, int>> dp;
   int solve(int k, int prev) {
-    if (k == n.size()) return 0;
-    if (dp[k].find(prev) != dp[k].end()) return dp[k][prev];
+    if (k == n.size())
+      return 0;
+    if (dp[k].find(prev) != dp[k].end())
+      return dp[k][prev];
 
-    int& ans = dp[k][prev];
+    int &ans = dp[k][prev];
     int l = INT_MAX, r = INT_MAX;
 
     l = min(l, 1 + solve(k + 1, prev + 1));
@@ -25,7 +27,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   int min_operations(vector<int> nums) {
     // Code here
     n = nums;
@@ -44,7 +46,8 @@ int main() {
     int n;
     cin >> n;
     vector<int> nums(n);
-    for (int i = 0; i < n; i++) cin >> nums[i];
+    for (int i = 0; i < n; i++)
+      cin >> nums[i];
     Solution ob;
     int ans = ob.min_operations(nums);
     cout << ans << "\n";

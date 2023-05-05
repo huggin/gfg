@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   long long countWays(int N) {
     // code here
     int mod = 1000000007;

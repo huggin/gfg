@@ -5,8 +5,8 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
-  int ZigZagMaxLength(vector<int>& nums) {
+public:
+  int ZigZagMaxLength(vector<int> &nums) {
     vector<int> dp[2];
     int n = nums.size();
     dp[0].resize(n);
@@ -37,7 +37,8 @@ int main() {
     int n;
     cin >> n;
     vector<int> nums(n);
-    for (int i = 0; i < n; i++) cin >> nums[i];
+    for (int i = 0; i < n; i++)
+      cin >> nums[i];
     Solution obj;
     int ans = obj.ZigZagMaxLength(nums);
     cout << ans << "\n";

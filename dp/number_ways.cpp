@@ -8,10 +8,11 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   long long int arrangeTiles(int N) {
     // code here
-    if (N < 4) return 1;
+    if (N < 4)
+      return 1;
     vector<long long> dp(N + 1);
     dp[1] = 1;
     dp[2] = 1;

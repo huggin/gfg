@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int minInsertions(int arr[], int N) {
     // Your code goes here
     int dp[N];
@@ -34,7 +34,8 @@ int main() {
     cin >> n;
 
     int arr[n];
-    for (int i = 0; i < n; i++) cin >> arr[i];
+    for (int i = 0; i < n; i++)
+      cin >> arr[i];
 
     Solution ob;
     cout << ob.minInsertions(arr, n) << "\n";

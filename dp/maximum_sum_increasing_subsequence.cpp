@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int maxSumIS(int arr[], int n) {
     // Your code goes here
     vector<int> dp(1001);
@@ -33,7 +33,8 @@ int main() {
 
     int a[n];
 
-    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
 
     Solution ob;
     cout << ob.maxSumIS(a, n) << "\n";

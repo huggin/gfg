@@ -8,11 +8,14 @@ class Solution {
   vector<int> dp;
   int n;
 
-  int solve(const string& s, int k) {
-    if (k == n) return 0;
-    if (k == n - 1) return 1;
-    if (dp[k] != -1) return dp[k];
-    int& ans = dp[k];
+  int solve(const string &s, int k) {
+    if (k == n)
+      return 0;
+    if (k == n - 1)
+      return 1;
+    if (dp[k] != -1)
+      return dp[k];
+    int &ans = dp[k];
 
     ans = 1 + solve(s, k + 1);
     if (s[k] == s[k + 1]) {
@@ -23,7 +26,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   int getMaxWeight(string s) {
     // Your code goes here
     n = s.size();

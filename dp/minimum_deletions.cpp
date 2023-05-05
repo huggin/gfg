@@ -7,10 +7,12 @@ using namespace std;
 
 class Solution {
   int dp[1001][1001];
-  int go(const string& s, int i, int j) {
-    if (i >= j) return 0;
-    if (dp[i][j] != -1) return dp[i][j];
-    int& ans = dp[i][j];
+  int go(const string &s, int i, int j) {
+    if (i >= j)
+      return 0;
+    if (dp[i][j] != -1)
+      return dp[i][j];
+    int &ans = dp[i][j];
     if (s[i] == s[j]) {
       ans = go(s, i + 1, j - 1);
     } else {
@@ -20,7 +22,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   int minimumNumberOfDeletions(string S) {
     // code here
     memset(dp, -1, sizeof(dp));

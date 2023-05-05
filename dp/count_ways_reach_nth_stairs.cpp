@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   // Function to count number of ways to reach the nth stair.
   int countWays(int n) {
     // your code here
@@ -36,7 +36,7 @@ int main() {
     cin >> m;
     Solution ob;
     cout << ob.countWays(m)
-         << endl;  // Print the output from our pre computed array
+         << endl; // Print the output from our pre computed array
   }
   return 0;
 }

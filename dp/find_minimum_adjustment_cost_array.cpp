@@ -7,9 +7,9 @@ using namespace std;
 class Solution {
   vector<vector<int>> dp;
   int N;
-  int* a;
+  int *a;
 
- public:
+public:
   int minAdjustmentCost(int A[], int n, int target) {
     // Your code goes here
     dp.assign(n, vector<int>(101, -1));
@@ -23,9 +23,11 @@ class Solution {
   }
 
   int solve(int k, int v, int target) {
-    if (k == N) return 0;
-    if (dp[k][v] != -1) return dp[k][v];
-    int& ans = dp[k][v];
+    if (k == N)
+      return 0;
+    if (dp[k][v] != -1)
+      return dp[k][v];
+    int &ans = dp[k][v];
     ans = abs(a[k] - v);
     int mi = INT_MAX;
     for (int i = 0; i <= 100; ++i) {

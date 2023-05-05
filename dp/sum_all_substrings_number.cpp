@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   // Function to find sum of all possible substrings of the given string.
   long long sumSubstrings(string s) {
     // your code here

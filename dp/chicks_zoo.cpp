@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   long long int NoOfChicks(int n) {
     // Code here
     vector<long long> ans(n + 1);

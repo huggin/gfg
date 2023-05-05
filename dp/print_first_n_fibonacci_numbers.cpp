@@ -8,11 +8,12 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   // Function to return list containing first n fibonacci numbers.
   vector<long long> printFibb(int n) {
     // code here
-    if (n == 1) return vector<long long>{1};
+    if (n == 1)
+      return vector<long long>{1};
     vector<long long> ans{1, 1};
     for (int i = 2; i <= n - 1; ++i) {
       ans.push_back(ans[i - 1] + ans[i - 2]);
@@ -35,7 +36,8 @@ int main() {
     vector<long long> ans = obj.printFibb(n);
 
     // printing the elements of vector
-    for (long long i : ans) cout << i << ' ';
+    for (long long i : ans)
+      cout << i << ' ';
     cout << endl;
   }
   return 0;

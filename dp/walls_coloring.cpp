@@ -8,11 +8,12 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int minCost(vector<vector<int>> &colors, int N) {
     // Write your code here.
     int dp[N][3];
-    for (int i = 0; i < 3; ++i) dp[0][i] = colors[0][i];
+    for (int i = 0; i < 3; ++i)
+      dp[0][i] = colors[0][i];
 
     for (int i = 1; i < N; ++i) {
       for (int j = 0; j < 3; ++j) {

@@ -7,7 +7,7 @@ using namespace std;
 class Solution {
   int dp[1000][1000];
 
- public:
+public:
   int getLongestSubsequence(string A, string B) {
     // code here
     int n = A.size(), m = B.size();

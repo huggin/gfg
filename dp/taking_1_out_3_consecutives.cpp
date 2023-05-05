@@ -5,10 +5,11 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int minSum(int a[], int n) {
     // Write your code here
-    if (n < 3) return 0;
+    if (n < 3)
+      return 0;
     vector<int> dp(n);
     dp[0] = a[0];
     dp[1] = a[1];
@@ -28,7 +29,8 @@ int main() {
     int n;
     cin >> n;
     int a[n + 5];
-    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
     Solution ob;
     cout << ob.minSum(a, n) << endl;
   }
