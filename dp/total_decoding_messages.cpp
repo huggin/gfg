@@ -5,17 +5,19 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int CountWays(string str) {
     const int M = 1e9 + 7;
     int n = str.size();
     vector<long long> dp(n + 1);
     dp[0] = 1;
-    if (str[0] == '0') return 0;
+    if (str[0] == '0')
+      return 0;
     dp[1] = 1;
     for (int i = 1; i < n; ++i) {
       if (str[i] == '0') {
-        if (str[i - 1] != '1' && str[i - 1] != '2') return 0;
+        if (str[i - 1] != '1' && str[i - 1] != '2')
+          return 0;
         dp[i + 1] += dp[i - 1];
         dp[i + 1] %= M;
       } else {

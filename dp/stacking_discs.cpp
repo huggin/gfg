@@ -11,7 +11,7 @@ class Solution {
   vector<pair<int, int>> v;
   vector<int> dp;
 
- public:
+public:
   int StackingUpDiscs(int N, int R[], int H[]) {
     // code here
     for (int i = 0; i < N; ++i) {
@@ -42,7 +42,8 @@ int main() {
     int N;
     cin >> N;
     int R[N], H[N];
-    for (int i = 0; i < N; i++) cin >> R[i] >> H[i];
+    for (int i = 0; i < N; i++)
+      cin >> R[i] >> H[i];
 
     Solution ob;
     cout << ob.StackingUpDiscs(N, R, H) << endl;

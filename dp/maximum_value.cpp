@@ -8,7 +8,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   long long int findMaxValue(long long int arr[], int n) {
     // code here
     vector<long long> dp(n), dp2(n);
@@ -28,7 +28,8 @@ class Solution {
     for (int i = 1; i < n - 2; ++i) {
       ans = max(ans, dp[i] + dp2[i + 1]);
     }
-    if (ans == INT_MIN) return -1;
+    if (ans == INT_MIN)
+      return -1;
     return ans;
   }
 };

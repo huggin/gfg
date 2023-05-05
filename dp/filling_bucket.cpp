@@ -8,11 +8,14 @@ class Solution {
   int const M = 1E8;
   int m[100001];
 
- public:
+public:
   int go(int N) {
-    if (N == 1) return 1;
-    if (N == 0) return 1;
-    if (m[N] != -1) return m[N];
+    if (N == 1)
+      return 1;
+    if (N == 0)
+      return 1;
+    if (m[N] != -1)
+      return m[N];
     return m[N] = (go(N - 1) + go(N - 2)) % M;
   }
 

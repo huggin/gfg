@@ -16,8 +16,9 @@ class Solution {
         return 0;
     }
 
-    if (dp[k][sum] != -1) return dp[k][sum];
-    int& ans = dp[k][sum];
+    if (dp[k][sum] != -1)
+      return dp[k][sum];
+    int &ans = dp[k][sum];
     ans = solve(a, k - 1, sum);
     if (sum >= a[k]) {
       ans = (ans + solve(a, k - 1, sum - a[k])) % M;
@@ -25,7 +26,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   int perfectSum(int arr[], int n, int sum) {
     // Your code goes here
     dp.assign(n, vector<int>(sum + 1, -1));
@@ -43,7 +44,8 @@ int main() {
     cin >> n >> sum;
 
     int a[n];
-    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
 
     Solution ob;
     cout << ob.perfectSum(a, n, sum) << "\n";

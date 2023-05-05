@@ -42,7 +42,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   int maxProfit(int K, int N, int A[]) {
     // code here
     memset(mem, -1, sizeof(mem));
@@ -62,7 +62,8 @@ int main() {
     cin >> K;
     cin >> N;
     int A[N];
-    for (int i = 0; i < N; i++) cin >> A[i];
+    for (int i = 0; i < N; i++)
+      cin >> A[i];
 
     Solution ob;
     cout << ob.maxProfit(K, N, A) << endl;

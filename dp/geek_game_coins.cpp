@@ -5,9 +5,10 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int findWinner(int N, int X, int Y) {
-    if (X > Y) swap(X, Y);
+    if (X > Y)
+      swap(X, Y);
     // Your code goes here
     vector<int> dp(N + 1);
     dp[0] = 0;

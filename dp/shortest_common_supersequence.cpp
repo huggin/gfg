@@ -13,9 +13,12 @@ class Solution {
   string x, y;
 
   int solve(int i, int j) {
-    if (i == M) return N - j;
-    if (j == N) return M - i;
-    if (dp[i][j] != -1) return dp[i][j];
+    if (i == M)
+      return N - j;
+    if (j == N)
+      return M - i;
+    if (dp[i][j] != -1)
+      return dp[i][j];
     if (x[i] != y[j]) {
       dp[i][j] = min(solve(i + 1, j), solve(i, j + 1)) + 1;
     } else {
@@ -24,7 +27,7 @@ class Solution {
     return dp[i][j];
   }
 
- public:
+public:
   // Function to find length of shortest common supersequence of two strings.
   int shortestCommonSupersequence(string X, string Y, int m, int n) {
     // code here

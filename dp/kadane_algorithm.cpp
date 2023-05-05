@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   // arr: input array
   // n: size of array
   // Function to find the sum of contiguous subarray with maximum sum.
@@ -17,7 +17,8 @@ class Solution {
         pre += arr[i];
       else
         pre = 0;
-      if (pre > 0) ans = max(ans, pre);
+      if (pre > 0)
+        ans = max(ans, pre);
     }
     return ans;
   }
@@ -28,14 +29,15 @@ class Solution {
 int main() {
   int t, n;
 
-  cin >> t;    // input testcases
-  while (t--)  // while testcases exist
+  cin >> t;   // input testcases
+  while (t--) // while testcases exist
   {
-    cin >> n;  // input size of array
+    cin >> n; // input size of array
 
     int a[n];
 
-    for (int i = 0; i < n; i++) cin >> a[i];  // inputting elements of array
+    for (int i = 0; i < n; i++)
+      cin >> a[i]; // inputting elements of array
 
     Solution ob;
 

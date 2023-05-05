@@ -8,10 +8,11 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   vector<int> optimalArray(int n, vector<int> &a) {
     // Code here
-    if (n == 1) return vector<int>{0};
+    if (n == 1)
+      return vector<int>{0};
     vector<int> ans(n);
     ans[1] = a[1] - a[0];
 

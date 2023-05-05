@@ -18,8 +18,9 @@ class Solution {
         return 0;
     }
 
-    if (dp[i][j][k] != -1) return dp[i][j][k];
-    long long& ans = dp[i][j][k];
+    if (dp[i][j][k] != -1)
+      return dp[i][j][k];
+    long long &ans = dp[i][j][k];
     ans = 0;
     if (j + 1 < N) {
       ans += solve(i, j + 1, k - a[i][j]);
@@ -31,7 +32,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   long long numberOfPath(int n, int k, vector<vector<int>> arr) {
     // Code Here
     a = arr;
@@ -51,7 +52,8 @@ int main() {
     cin >> k >> n;
     vector<vector<int>> v(n + 1, vector<int>(n + 1, 0));
     for (i = 0; i < n; i++)
-      for (j = 0; j < n; j++) cin >> v[i][j];
+      for (j = 0; j < n; j++)
+        cin >> v[i][j];
     cout << obj.numberOfPath(n, k, v) << endl;
   }
 }

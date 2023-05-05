@@ -1,5 +1,6 @@
 # User function Template for python3
 
+
 class Solution:
     def findTargetSumWays(self, arr, N, target):
         # code here
@@ -8,21 +9,21 @@ class Solution:
             return 0
 
         t = (s + target) // 2
-        dp = [0 for _ in range(t+1)]
+        dp = [0 for _ in range(t + 1)]
         dp[0] = 1
         for a in arr:
             for i in range(t, -1, -1):
                 if i - a >= 0:
-                    dp[i] += dp[i-a]
+                    dp[i] += dp[i - a]
 
         return dp[t]
 
 
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     t = int(input())
     for _ in range(t):
         N = int(input())

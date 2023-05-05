@@ -8,10 +8,11 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   int pickValues(int arr[], int n) {
     // code here
-    if (n <= 4) return *min_element(arr, arr + n);
+    if (n <= 4)
+      return *min_element(arr, arr + n);
     vector<int> dp(n);
     for (int i = 0; i < 4 && i < n; ++i) {
       dp[i] = arr[i];

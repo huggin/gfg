@@ -8,12 +8,13 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int minCost(vector<vector<int>> &costs) {
     // write your code here
     int n = costs.size();
     int k = costs[0].size();
-    if (n > k && k == 1) return -1;
+    if (n > k && k == 1)
+      return -1;
 
     vector<vector<int>> dp(n, vector<int>(k));
     for (int i = 0; i < k; ++i) {
@@ -29,7 +30,8 @@ class Solution {
         } else {
           int m2 = INT_MAX;
           for (int j2 = 0; j2 < k; ++j2) {
-            if (j2 == j || j2 == j1) continue;
+            if (j2 == j || j2 == j1)
+              continue;
             m2 = min(m2, dp[i - 1][j2]);
           }
           dp[i][j] = m2 + costs[i][j];
@@ -51,7 +53,8 @@ int main() {
     cin >> n >> k;
     vector<vector<int>> costs(n, vector<int>(k));
     for (int i = 0; i < n; i++) {
-      for (int j = 0; j < k; j++) cin >> costs[i][j];
+      for (int j = 0; j < k; j++)
+        cin >> costs[i][j];
     }
     Solution obj;
     cout << obj.minCost(costs) << endl;

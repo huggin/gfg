@@ -6,7 +6,7 @@ using namespace std;
 /*You are required to complete below method */
 
 class Solution {
- public:
+public:
   int minSum(int arr[], int n) {
     // Write your code here
     if (n <= 4) {
@@ -32,7 +32,8 @@ int main() {
     int n;
     cin >> n;
     int a[n];
-    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
     Solution ob;
     cout << ob.minSum(a, n) << endl;
   }

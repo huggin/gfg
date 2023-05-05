@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int ways(int x, int y) {
     // code here.
     vector<vector<int>> dp(x + 1, vector<int>(y + 1, 0));

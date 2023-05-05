@@ -7,7 +7,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   int minSteps(string S) {
     // Your code goes here
     int n = S.size();

@@ -5,10 +5,11 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int moves(int n, int p, int q) {
     // Your code goes here
-    if (n == 1) return 1;
+    if (n == 1)
+      return 1;
     int dp[n + 1];
     fill(dp, dp + n + 1, 10000000);
     dp[0] = 0;

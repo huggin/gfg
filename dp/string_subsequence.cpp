@@ -13,10 +13,13 @@ class Solution {
   int n, m;
 
   int solve(int i, int j) {
-    if (j == m) return 1;
-    if (i == n) return 0;
-    if (dp[i][j] != -1) return dp[i][j];
-    int& ans = dp[i][j];
+    if (j == m)
+      return 1;
+    if (i == n)
+      return 0;
+    if (dp[i][j] != -1)
+      return dp[i][j];
+    int &ans = dp[i][j];
 
     ans = solve(i + 1, j);
     if (s1[i] == s2[j]) {
@@ -25,7 +28,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   int countWays(string S1, string S2) {
     // code here
     memset(dp, -1, sizeof(dp));

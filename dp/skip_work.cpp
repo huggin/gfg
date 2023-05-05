@@ -5,10 +5,11 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int minAmount(int A[], int N) {
     // code here.
-    if (N == 1) return 0;
+    if (N == 1)
+      return 0;
     int dp1[N] = {0};
     int dp2[N] = {0};
     dp2[0] = A[0];
@@ -28,7 +29,8 @@ int main() {
     int n;
     cin >> n;
     int arr[n];
-    for (int i = 0; i < n; i++) cin >> arr[i];
+    for (int i = 0; i < n; i++)
+      cin >> arr[i];
     Solution ob;
     cout << ob.minAmount(arr, n) << endl;
   }

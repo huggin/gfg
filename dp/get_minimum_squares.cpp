@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int MinSquares(int n) {
     // Code here
     vector<int> v(n + 1, INT_MAX);

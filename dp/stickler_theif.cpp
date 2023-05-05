@@ -5,12 +5,14 @@ typedef long long int ll;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   // Function to find the maximum money the thief can get.
   int FindMaxSum(int arr[], int n) {
     // Your code here
-    if (n == 0) return 0;
-    if (n == 1) return arr[0];
+    if (n == 0)
+      return 0;
+    if (n == 1)
+      return arr[0];
     int dp[n];
     dp[0] = arr[0];
     dp[1] = arr[1];
@@ -36,7 +38,8 @@ int main() {
     int a[n];
 
     // inserting money of each house in the array
-    for (int i = 0; i < n; ++i) cin >> a[i];
+    for (int i = 0; i < n; ++i)
+      cin >> a[i];
     Solution ob;
     // calling function FindMaxSum()
     cout << ob.FindMaxSum(a, n) << endl;

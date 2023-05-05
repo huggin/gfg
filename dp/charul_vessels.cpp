@@ -13,7 +13,8 @@ int main() {
     cin >> n >> k;
     int a[n + 1];
 
-    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
 
     if (vessel(a, n, k)) {
       cout << 1 << endl;
@@ -32,7 +33,8 @@ bool vessel(int a[], int n, int k) {
   dp[0] = 1;
   for (int i = 0; i < n; ++i) {
     for (int j = 0; j <= k; ++j) {
-      if (j - a[i] >= 0) dp[j] |= dp[j - a[i]];
+      if (j - a[i] >= 0)
+        dp[j] |= dp[j - a[i]];
     }
   }
   return dp[k];

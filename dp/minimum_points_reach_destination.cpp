@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int minPoints(vector<vector<int>> points, int M, int N) {
     // Your code goes here
     vector<vector<int>> dp(M, vector<int>(N));
@@ -45,7 +45,8 @@ int main() {
     vector<vector<int>> a(m, vector<int>(n));
 
     for (int i = 0; i < m; i++)
-      for (int j = 0; j < n; j++) cin >> a[i][j];
+      for (int j = 0; j < n; j++)
+        cin >> a[i][j];
 
     Solution ob;
     cout << ob.minPoints(a, m, n) << "\n";

@@ -27,10 +27,12 @@ int subsetPairNotDivisibleByK(int arr[], int N, int K) {
     dp[arr[i] % K]++;
   }
   int ans = 0;
-  if (dp[0]) ans++;
+  if (dp[0])
+    ans++;
   for (int i = 1; i <= K / 2; ++i) {
     if (i == K - i) {
-      if (dp[i]) ++ans;
+      if (dp[i])
+        ++ans;
     } else {
       ans += max(dp[i], dp[K - i]);
     }

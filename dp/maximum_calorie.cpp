@@ -9,9 +9,11 @@ class Solution {
   int N;
 
   int solve(int a[], int k, int u) {
-    if (k == N) return 0;
-    if (dp[u][k] != -1) return dp[u][k];
-    int& ans = dp[u][k];
+    if (k == N)
+      return 0;
+    if (dp[u][k] != -1)
+      return dp[u][k];
+    int &ans = dp[u][k];
     if (u == 2) {
       ans = solve(a, k + 1, 0);
     } else {
@@ -20,7 +22,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   int maxCalories(int arr[], int n) {
     // Your code goes here
     N = n;
@@ -41,7 +43,8 @@ int main() {
     cin >> n;
 
     int a[n];
-    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
 
     Solution ob;
     cout << ob.maxCalories(a, n) << "\n";

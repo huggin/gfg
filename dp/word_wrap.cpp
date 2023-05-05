@@ -14,11 +14,14 @@ class Solution {
   int n;
 
   int solve(int k) {
-    if (k == n) return 0;
-    if (dp[k] != -1) return dp[k];
-    if (accumulate(a.begin() + k, a.end(), n - k - 1) <= K) return dp[k] = 0;
+    if (k == n)
+      return 0;
+    if (dp[k] != -1)
+      return dp[k];
+    if (accumulate(a.begin() + k, a.end(), n - k - 1) <= K)
+      return dp[k] = 0;
 
-    int& ans = dp[k];
+    int &ans = dp[k];
     ans = INT_MAX;
     int t = 0;
     for (int i = k; i < n; ++i) {
@@ -33,7 +36,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   int solveWordWrap(vector<int> nums, int k) {
     // Code here
     memset(dp, -1, sizeof(dp));
@@ -52,7 +55,8 @@ int main() {
     int n, k;
     cin >> n;
     vector<int> nums(n);
-    for (int i = 0; i < n; i++) cin >> nums[i];
+    for (int i = 0; i < n; i++)
+      cin >> nums[i];
     cin >> k;
     Solution obj;
     cout << obj.solveWordWrap(nums, k) << endl;

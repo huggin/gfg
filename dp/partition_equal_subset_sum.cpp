@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
-  int* a;
+  int *a;
   int n;
   vector<vector<int>> mem;
   int dp(int k, int t) {
@@ -21,12 +21,12 @@ class Solution {
     if (mem[k][t] != -1) {
       return mem[k][t];
     }
-    int& ans = mem[k][t];
+    int &ans = mem[k][t];
     ans = dp(k + 1, t - a[k]) || dp(k + 1, t);
     return ans;
   }
 
- public:
+public:
   int equalPartition(int N, int arr[]) {
     // code here
     int sum = accumulate(arr, arr + N, 0);
@@ -53,7 +53,8 @@ int main() {
     int N;
     cin >> N;
     int arr[N];
-    for (int i = 0; i < N; i++) cin >> arr[i];
+    for (int i = 0; i < N; i++)
+      cin >> arr[i];
 
     Solution ob;
     if (ob.equalPartition(N, arr))

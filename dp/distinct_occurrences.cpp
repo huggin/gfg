@@ -12,14 +12,16 @@ class Solution {
   const int mod = 1000000007;
 
   int solve(int i, int j) {
-    if (i == n) return 0;
+    if (i == n)
+      return 0;
     if (j == m - 1) {
       dp[i][j] = count(s.begin() + i, s.end(), t[j]);
       // cout << i << ' ' << j << ' ' << dp[i][j] << endl;
       return dp[i][j];
     }
-    if (dp[i][j] != -1) return dp[i][j];
-    int& ans = dp[i][j];
+    if (dp[i][j] != -1)
+      return dp[i][j];
+    int &ans = dp[i][j];
     if (s[i] == t[j]) {
       ans = (solve(i + 1, j) % mod + solve(i + 1, j + 1)) % mod;
     } else {
@@ -29,7 +31,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   int subsequenceCount(string S, string T) {
     // Your code here
     n = S.size();

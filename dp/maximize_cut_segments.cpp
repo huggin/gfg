@@ -8,7 +8,7 @@ class Solution {
   int mem[10001][3];
   int oo = 1000000;
 
-  int dp(int n, int k, const vector<int>& v) {
+  int dp(int n, int k, const vector<int> &v) {
     if (n == 0) {
       return 0;
     }
@@ -18,7 +18,7 @@ class Solution {
     if (mem[n][k] != -1) {
       return mem[n][k];
     }
-    int& ans = mem[n][k];
+    int &ans = mem[n][k];
     ans = dp(n, k + 1, v);
 
     if (n >= v[k]) {
@@ -27,7 +27,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   // Function to find the maximum number of cuts.
   int maximizeTheCuts(int n, int x, int y, int z) {
     // Your code here
@@ -35,7 +35,8 @@ class Solution {
     vector<int> v{x, y, z};
 
     int ans = dp(n, 0, v);
-    if (ans < 0) return 0;
+    if (ans < 0)
+      return 0;
     return ans;
   }
 };

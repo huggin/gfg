@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   string longestSubstring(string S, int N) {
     // code here
     vector<vector<int>> dp(N + 1, vector<int>(N + 1));
@@ -14,7 +14,8 @@ class Solution {
       for (int j = i + 1; j < N; ++j) {
         if (S[i] == S[j]) {
           dp[i + 1][j + 1] = 1 + dp[i][j];
-          if (j - i < dp[i + 1][j + 1]) continue;
+          if (j - i < dp[i + 1][j + 1])
+            continue;
 
           if (ma < dp[i + 1][j + 1]) {
             ma = dp[i + 1][j + 1];
@@ -23,7 +24,8 @@ class Solution {
         }
       }
     }
-    if (ma == 0) return "-1";
+    if (ma == 0)
+      return "-1";
     return S.substr(index, ma);
   }
 };

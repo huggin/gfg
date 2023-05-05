@@ -5,11 +5,13 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   long long lucas(int n) {
     // code here.
-    if (n == 0) return 2;
-    if (n == 1) return 1;
+    if (n == 0)
+      return 2;
+    if (n == 1)
+      return 1;
     long long l0 = 2, l1 = 1;
     long long ans = 0;
     for (int i = 2; i <= n; ++i) {

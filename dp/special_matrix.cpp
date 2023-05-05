@@ -5,14 +5,15 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int FindWays(int n, int m, vector<vector<int>> blocked_cells) {
     // Code here
     vector<vector<int>> g(n + 1, vector<int>(m + 1));
-    for (auto& b : blocked_cells) {
+    for (auto &b : blocked_cells) {
       g[b[0]][b[1]] = 1;
     }
-    if (g[1][1] == 1 || g[n][m] == 1) return 0;
+    if (g[1][1] == 1 || g[n][m] == 1)
+      return 0;
     vector<vector<int>> dp(n + 1, vector<int>(m + 1));
     dp[1][1] = 1;
     for (int i = 2; i <= n; ++i) {

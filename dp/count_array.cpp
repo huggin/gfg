@@ -10,9 +10,11 @@ class Solution {
   int mod = 1000000007;
 
   long long solve(int k, int d) {
-    if (k == n - 1) return 1;
-    if (dp[k][d] != -1) return dp[k][d];
-    long long& ans = dp[k][d];
+    if (k == n - 1)
+      return 1;
+    if (dp[k][d] != -1)
+      return dp[k][d];
+    long long &ans = dp[k][d];
     ans = 0;
     for (int i = 1; i <= m; ++i) {
       if (d % i == 0 || i % d == 0) {
@@ -22,7 +24,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   long long count(long long N, long long M) {
     // code here
     dp.assign(N + 1, vector<long long>(M + 1, -1));

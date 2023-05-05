@@ -8,9 +8,11 @@ class Solution {
   vector<vector<int>> dp;
   int n;
 
-  int solve(const string& s, int i, int j) {
-    if (i >= j) return 0;
-    if (dp[i][j] != -1) return dp[i][j];
+  int solve(const string &s, int i, int j) {
+    if (i >= j)
+      return 0;
+    if (dp[i][j] != -1)
+      return dp[i][j];
     if (s[i] == s[j]) {
       dp[i][j] = solve(s, i + 1, j - 1);
     } else {
@@ -19,7 +21,7 @@ class Solution {
     return dp[i][j];
   }
 
- public:
+public:
   int isPossiblePalindrome(string s, int K) {
     // Your code goes here
     n = s.size();

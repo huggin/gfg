@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int minTimeForWritingChars(int N, int I, int D, int C) {
     // Your code goes here
     vector<int> dp(N + 1, INT_MAX);

@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int minCoins(int coins[], int M, int V) {
     // Your code goes here
     vector<int> dp(V + 1);
@@ -16,7 +16,8 @@ class Solution {
         }
       }
     }
-    if (dp[V] >= 1000000) return -1;
+    if (dp[V] >= 1000000)
+      return -1;
     return dp[V];
   }
 };
@@ -30,7 +31,8 @@ int main() {
     cin >> v >> m;
 
     int coins[m];
-    for (int i = 0; i < m; i++) cin >> coins[i];
+    for (int i = 0; i < m; i++)
+      cin >> coins[i];
 
     Solution ob;
     cout << ob.minCoins(coins, m, v) << "\n";

@@ -6,7 +6,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int removeStudents(int H[], int N) {
     // code here
     vector<int> ans;
@@ -15,7 +15,8 @@ class Solution {
         ans.push_back(H[i]);
       } else {
         auto it = lower_bound(ans.begin(), ans.end(), H[i]);
-        if (it != ans.end()) *it = H[i];
+        if (it != ans.end())
+          *it = H[i];
       }
     }
     return N - ans.size();
@@ -32,7 +33,8 @@ int main() {
     cin >> N;
 
     int H[N];
-    for (int i = 0; i < N; i++) cin >> H[i];
+    for (int i = 0; i < N; i++)
+      cin >> H[i];
 
     Solution ob;
     cout << ob.removeStudents(H, N) << endl;

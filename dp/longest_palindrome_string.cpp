@@ -4,13 +4,14 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   string longestPalin(string S) {
     // code here
     string ans;
     int len = INT_MIN;
     vector<vector<int>> dp(S.size(), vector<int>(S.size()));
-    for (int i = 0; i < S.size(); ++i) dp[i][i] = 1;
+    for (int i = 0; i < S.size(); ++i)
+      dp[i][i] = 1;
     for (int j = 1; j < S.size(); ++j) {
       if (S[j] == S[j - 1]) {
         dp[j - 1][j] = 1;

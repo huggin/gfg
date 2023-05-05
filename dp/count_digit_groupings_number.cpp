@@ -9,9 +9,11 @@ class Solution {
   string s;
 
   int solve(int k, int sum) {
-    if (k == s.size()) return 1;
-    if (dp[k][sum] != -1) return dp[k][sum];
-    int& ans = dp[k][sum];
+    if (k == s.size())
+      return 1;
+    if (dp[k][sum] != -1)
+      return dp[k][sum];
+    int &ans = dp[k][sum];
     ans = 0;
     int t = 0;
     for (int i = k; i < s.size(); ++i) {
@@ -23,7 +25,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   int TotalCount(string str) {
     // Code here
     memset(dp, -1, sizeof(dp));

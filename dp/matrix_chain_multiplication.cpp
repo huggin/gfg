@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int matrixMultiplication(int N, int arr[]) {
     // code here
     vector<vector<int>> dp(N, vector<int>(N));
@@ -37,7 +37,8 @@ int main() {
     int N;
     cin >> N;
     int arr[N];
-    for (int i = 0; i < N; i++) cin >> arr[i];
+    for (int i = 0; i < N; i++)
+      cin >> arr[i];
 
     Solution ob;
     cout << ob.matrixMultiplication(N, arr) << endl;

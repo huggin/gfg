@@ -7,7 +7,7 @@ using namespace std;
 // User function template in C++
 
 class Solution {
- public:
+public:
   // Function to find total number of unique paths.
   int NumberOfPath(int a, int b) {
     // code here

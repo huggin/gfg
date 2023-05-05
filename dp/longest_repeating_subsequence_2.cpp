@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int LongestRepeatingSubsequence(string str) {
     // Code here
     int n = str.size();

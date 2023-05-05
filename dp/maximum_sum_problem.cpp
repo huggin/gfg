@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int maxSum(int n) {
     // code here.
     vector<int> dp(n + 1);

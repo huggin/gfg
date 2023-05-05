@@ -8,11 +8,12 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   long long int distinctColoring(int N, int r[], int g[], int b[]) {
     // code here
     vector<long long> dp[3];
-    for (int i = 0; i < 3; ++i) dp[i].assign(N, 0);
+    for (int i = 0; i < 3; ++i)
+      dp[i].assign(N, 0);
 
     dp[0][0] = r[0], dp[1][0] = g[0], dp[2][0] = b[0];
     for (int i = 1; i < N; ++i) {
@@ -32,9 +33,12 @@ int main() {
     int N;
     cin >> N;
     int r[N], g[N], b[N];
-    for (int i = 0; i < N; i++) cin >> r[i];
-    for (int i = 0; i < N; i++) cin >> g[i];
-    for (int i = 0; i < N; i++) cin >> b[i];
+    for (int i = 0; i < N; i++)
+      cin >> r[i];
+    for (int i = 0; i < N; i++)
+      cin >> g[i];
+    for (int i = 0; i < N; i++)
+      cin >> b[i];
 
     Solution ob;
     cout << ob.distinctColoring(N, r, g, b) << endl;

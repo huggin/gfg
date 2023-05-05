@@ -22,13 +22,16 @@ vector<int> dp;
 int n;
 
 int ok(int i, int j) {
-  if (S[i] == '0') return 0;
+  if (S[i] == '0')
+    return 0;
   long long t = 0;
   for (int k = i; k <= j; ++k) {
     t = t * 2 + (S[k] - '0');
   }
-  if (t == 1) return 1;
-  if (t % 5 != 0) return 0;
+  if (t == 1)
+    return 1;
+  if (t % 5 != 0)
+    return 0;
   while (t % 5 == 0) {
     t /= 5;
   }
@@ -36,9 +39,11 @@ int ok(int i, int j) {
 }
 
 int solve(int k) {
-  if (k == n) return 0;
-  if (dp[k] != -1) return dp[k];
-  int& ans = dp[k];
+  if (k == n)
+    return 0;
+  if (dp[k] != -1)
+    return dp[k];
+  int &ans = dp[k];
   ans = 100;
   for (int i = k; i < n; ++i) {
     if (ok(k, i)) {

@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   long int disarrange(int N) {
     // code here
     const int MOD = 1000000007;

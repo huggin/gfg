@@ -14,15 +14,17 @@ class Solution {
   vector<int> hasUpper;
 
   int solve(int i, int j) {
-    if (i == n) return 0;
+    if (i == n)
+      return 0;
     if (j == m) {
       if (i == n || hasUpper[i] == 0) {
         return 0;
       }
       return -2000;
     }
-    if (dp[i][j] != -1) return dp[i][j];
-    int& ans = dp[i][j];
+    if (dp[i][j] != -1)
+      return dp[i][j];
+    int &ans = dp[i][j];
     ans = -2000;
     if (x[i] == y[j]) {
       ans = 1 + solve(i + 1, j + 1);
@@ -40,14 +42,15 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   int stringConversion(string X, string Y) {
     // Your code goes here
 
     n = X.size();
     m = Y.size();
     for (int i = 0; i < m; ++i) {
-      if (Y[i] >= 'a' && Y[i] <= 'z') return 0;
+      if (Y[i] >= 'a' && Y[i] <= 'z')
+        return 0;
     }
     x = X;
     y = Y;
@@ -61,7 +64,8 @@ class Solution {
       }
     }
     int ans = solve(0, 0);
-    if (ans == m) return 1;
+    if (ans == m)
+      return 1;
     return 0;
   }
 };

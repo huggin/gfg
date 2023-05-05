@@ -10,7 +10,8 @@ int main() {
   while (t--) {
     cin >> n;
     int arr[n];
-    for (int i = 0; i < n; i++) cin >> arr[i];
+    for (int i = 0; i < n; i++)
+      cin >> arr[i];
     cin >> M;
 
     if (validSequence(arr, n, M))
@@ -29,11 +30,13 @@ int n;
 
 int solve(int arr[], int k, int r) {
   if (k == n) {
-    if (r == 0) return 1;
+    if (r == 0)
+      return 1;
     return 0;
   }
-  if (dp[k][r] != -1) return dp[k][r];
-  int& ans = dp[k][r];
+  if (dp[k][r] != -1)
+    return dp[k][r];
+  int &ans = dp[k][r];
   ans = 0;
   ans = solve(arr, k + 1, (r + arr[k]) % m) ||
         solve(arr, k + 1, (r + m - arr[k]) % m);

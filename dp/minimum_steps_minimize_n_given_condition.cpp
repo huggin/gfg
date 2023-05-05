@@ -7,9 +7,11 @@ using namespace std;
 class Solution {
   vector<int> dp;
   int solve(int k) {
-    if (k == 1) return 0;
-    if (dp[k] != -1) return dp[k];
-    int& ans = dp[k];
+    if (k == 1)
+      return 0;
+    if (dp[k] != -1)
+      return dp[k];
+    int &ans = dp[k];
     ans = 1 + solve(k - 1);
     if (k % 2 == 0) {
       ans = min(ans, 1 + solve(k / 2));
@@ -20,7 +22,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   int minSteps(int N) {
     // Your code goes here
     dp.assign(N + 1, -1);

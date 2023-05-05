@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int minDeletions(int arr[], int n) {
     // Your code goes here
     vector<int> dp;
@@ -34,7 +34,8 @@ int main() {
     cin >> n;
 
     int arr[n];
-    for (int i = 0; i < n; i++) cin >> arr[i];
+    for (int i = 0; i < n; i++)
+      cin >> arr[i];
 
     Solution ob;
     cout << ob.minDeletions(arr, n) << "\n";

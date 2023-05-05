@@ -8,16 +8,18 @@ using namespace std;
 
 class Solution {
   int dp[500][500];
-  int solve(vector<int>& a, int i, int j) {
-    if (i > j) return 0;
-    if (dp[i][j] != -1) return dp[i][j];
-    int& ans = dp[i][j];
+  int solve(vector<int> &a, int i, int j) {
+    if (i > j)
+      return 0;
+    if (dp[i][j] != -1)
+      return dp[i][j];
+    int &ans = dp[i][j];
     ans = max(a[i] - solve(a, i + 1, j), a[j] - solve(a, i, j - 1));
     return ans;
   }
 
- public:
-  int maxCoins(vector<int>& A, int n) {
+public:
+  int maxCoins(vector<int> &A, int n) {
     // Write your code here
     memset(dp, -1, sizeof(dp));
     int ans = solve(A, 0, n - 1);

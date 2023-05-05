@@ -5,10 +5,12 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
   int dp[1001][1001];
-  int solve(const string& s, int i, int j) {
-    if (j == s.size()) return 0;
-    if (dp[i][j] != -1) return dp[i][j];
-    int& ans = dp[i][j];
+  int solve(const string &s, int i, int j) {
+    if (j == s.size())
+      return 0;
+    if (dp[i][j] != -1)
+      return dp[i][j];
+    int &ans = dp[i][j];
     ans = 0;
     ans = solve(s, i, j + 1);
     for (int k = i; k < j; ++k) {
@@ -21,7 +23,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   int LongestRepeatingSubsequence(string str) {
     // Code here
     memset(dp, -1, sizeof(dp));

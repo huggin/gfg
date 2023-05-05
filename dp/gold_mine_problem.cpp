@@ -10,7 +10,7 @@ using namespace std;
 class Solution {
   int dp[50][50];
 
- public:
+public:
   int maxGold(int n, int m, vector<vector<int>> M) {
     // code here
     memset(dp, 0, sizeof(dp));
@@ -47,7 +47,8 @@ int main() {
     cin >> n >> m;
     vector<vector<int>> M(n, vector<int>(m, 0));
     for (int i = 0; i < n; i++) {
-      for (int j = 0; j < m; j++) cin >> M[i][j];
+      for (int j = 0; j < m; j++)
+        cin >> M[i][j];
     }
 
     Solution ob;

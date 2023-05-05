@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int knots(int M, int N, int K) {
     // code here
     int mod = 1000000007;

@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   long long int count(int coins[], int N, int sum) {
     // code here.
     long long dp[sum + 1] = {0};
@@ -29,7 +29,8 @@ int main() {
     int sum, N;
     cin >> sum >> N;
     int coins[N];
-    for (int i = 0; i < N; i++) cin >> coins[i];
+    for (int i = 0; i < N; i++)
+      cin >> coins[i];
     Solution ob;
     cout << ob.count(coins, N, sum) << endl;
   }

@@ -10,16 +10,20 @@ class Solution {
   vector<vector<vector<int>>> dp;
 
   int solve(int row, int l, int r) {
-    if (row == N) return 0;
-    if (l < 0 || r >= M) return 0;
-    if (dp[row][l][r] != -1) return dp[row][l][r];
-    int& ans = dp[row][l][r];
+    if (row == N)
+      return 0;
+    if (l < 0 || r >= M)
+      return 0;
+    if (dp[row][l][r] != -1)
+      return dp[row][l][r];
+    int &ans = dp[row][l][r];
     ans = 0;
     for (int i = -1; i <= 1; ++i) {
       for (int j = -1; j <= 1; ++j) {
         int nl = l + i;
         int nr = r + j;
-        if (nl > nr) swap(nl, nr);
+        if (nl > nr)
+          swap(nl, nr);
         ans = max(ans, solve(row + 1, nl, nr));
       }
     }
@@ -30,8 +34,8 @@ class Solution {
     return ans;
   }
 
- public:
-  int solve(int n, int m, vector<vector<int>>& grid) {
+public:
+  int solve(int n, int m, vector<vector<int>> &grid) {
     // code here
     dp.assign(n, vector<vector<int>>(m, vector<int>(m, -1)));
     N = n, M = m;

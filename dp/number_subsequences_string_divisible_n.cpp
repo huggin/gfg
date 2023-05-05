@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int countDivisibleSubseq(string s, int N) {
     // Your code goes here
     int mod = 1000000007;
@@ -18,7 +18,7 @@ class Solution {
       for (int j = 0; j < N; ++j) {
         dp[i][j] = (dp[i][j] + dp[i - 1][j]) % mod;
         dp[i][(j * 10 + t) % N] += dp[i - 1][j];
-        dp[i][(j * 10 + t) % N] % mod;
+        dp[i][(j * 10 + t) % N] %= mod;
       }
     }
 

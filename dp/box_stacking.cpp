@@ -9,7 +9,7 @@ class Solution {
   vector<tuple<int, int, int>> v;
   int dp[601];
 
- public:
+public:
   /*The function takes an array of heights, width and
   length as its 3 arguments where each index i value
   determines the height, width, length of the ith box.
@@ -55,9 +55,12 @@ int main() {
     cin >> n;
 
     int A[105], B[105], C[105];
-    for (int i = 0; i < n; i++) cin >> A[i];
-    for (int j = 0; j < n; j++) cin >> B[j];
-    for (int k = 0; k < n; k++) cin >> C[k];
+    for (int i = 0; i < n; i++)
+      cin >> A[i];
+    for (int j = 0; j < n; j++)
+      cin >> B[j];
+    for (int k = 0; k < n; k++)
+      cin >> C[k];
     Solution ob;
     cout << ob.maxHeight(A, B, C, n) << endl;
   }

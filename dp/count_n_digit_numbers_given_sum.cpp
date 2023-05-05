@@ -11,12 +11,17 @@ class Solution {
   vector<vector<long long>> dp;
 
   long long solve(int k, int sum) {
-    if (sum < 0) return 0;
-    if (sum == 0) return 1;
-    if (k == 1 && sum <= 9) return 1;
-    if (k == 0 && sum > 0) return 0;
-    if (dp[k][sum] != -1) return dp[k][sum];
-    long long& ans = dp[k][sum];
+    if (sum < 0)
+      return 0;
+    if (sum == 0)
+      return 1;
+    if (k == 1 && sum <= 9)
+      return 1;
+    if (k == 0 && sum > 0)
+      return 0;
+    if (dp[k][sum] != -1)
+      return dp[k][sum];
+    long long &ans = dp[k][sum];
     ans = 0;
     for (int i = 0; i <= 9; ++i) {
       ans += solve(k - 1, sum - i);
@@ -25,7 +30,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   long int countWays(int n, int Sum) {
     // code here
     dp.assign(n + 1, vector<long long>(Sum + 1, -1));

@@ -37,15 +37,16 @@ def circularSubarraySum(arr, n):
 
     ans = max(ans, s - total)
     return ans
+
+
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
 
 
 if __name__ == "__main__":
     T = int(input())
-    while (T > 0):
-
+    while T > 0:
         n = int(input())
 
         arr = [int(x) for x in input().strip().split()]

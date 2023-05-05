@@ -10,15 +10,17 @@ class Solution {
   int s, m, l, cs, cm, cl;
 
   int solve(int x) {
-    if (x <= 0) return 0;
-    if (dp[x] != -1) return dp[x];
+    if (x <= 0)
+      return 0;
+    if (dp[x] != -1)
+      return dp[x];
     dp[x] = cs + solve(x - s);
     dp[x] = min(dp[x], cm + solve(x - m));
     dp[x] = min(dp[x], cl + solve(x - l));
     return dp[x];
   }
 
- public:
+public:
   int getPizza(int X, int S, int M, int L, int CS, int CM, int CL) {
     // code here
     memset(dp, -1, sizeof(dp));

@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int maximumPath(int N, vector<vector<int>> Matrix) {
     vector<vector<int>> dp(N, vector<int>(N));
     copy(Matrix[0].begin(), Matrix[0].end(), dp[0].begin());
@@ -37,7 +37,8 @@ int main() {
     int N;
     cin >> N;
     vector<vector<int>> Matrix(N, vector<int>(N, 0));
-    for (int i = 0; i < N * N; i++) cin >> Matrix[(i / N)][i % N];
+    for (int i = 0; i < N * N; i++)
+      cin >> Matrix[(i / N)][i % N];
 
     Solution ob;
     cout << ob.maximumPath(N, Matrix) << "\n";

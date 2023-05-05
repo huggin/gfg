@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int TotalWays(int N) {
     // Code here
     int const mod = 1000000007;

@@ -10,10 +10,13 @@ class Solution {
   long long dp[1001][1001];
 
   long long solve(int i, int j) {
-    if (i > j) return 0;
-    if (i == j) return 1;
+    if (i > j)
+      return 0;
+    if (i == j)
+      return 1;
 
-    if (dp[i][j] != -1) return dp[i][j];
+    if (dp[i][j] != -1)
+      return dp[i][j];
 
     if (s[i] != s[j]) {
       dp[i][j] = (solve(i + 1, j) + solve(i, j - 1) - solve(i + 1, j - 1) +
@@ -26,7 +29,7 @@ class Solution {
     return dp[i][j];
   }
 
- public:
+public:
   /*You are required to complete below method */
   long long int countPS(string str) {
     // Your code here

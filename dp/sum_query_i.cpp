@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   vector<int> FindQuery(vector<int> nums, vector<vector<int>> Query) {
     // Code here
     int mod = 1000000007;
@@ -21,7 +21,7 @@ class Solution {
     }
     // (l-r) i*i*arr[i] + 2*(1-l) epsilon(l, r) *i*arr[i]; + (1-l)*(l-1)*arr[i];
     vector<int> ans;
-    for (auto& q : Query) {
+    for (auto &q : Query) {
       long long l = q[0];
       long long r = q[1];
       long long temp = 0;
@@ -44,7 +44,8 @@ int main() {
     int n, q;
     cin >> n;
     vector<int> nums(n);
-    for (int i = 0; i < n; i++) cin >> nums[i];
+    for (int i = 0; i < n; i++)
+      cin >> nums[i];
     cin >> q;
     vector<vector<int>> Query;
     for (int i = 0; i < q; i++) {
@@ -54,7 +55,8 @@ int main() {
     }
     Solution obj;
     vector<int> ans = obj.FindQuery(nums, Query);
-    for (auto i : ans) cout << i << "\n";
+    for (auto i : ans)
+      cout << i << "\n";
   }
   return 0;
 }

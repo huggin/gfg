@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 // User function Template for C++
 class Solution {
- public:
+public:
   long long int countBT(int h) {
     // code here
     long long ans[h + 1];

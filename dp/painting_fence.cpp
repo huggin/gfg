@@ -6,10 +6,11 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   long long countWays(int n, int k) {
     // code here
-    if (n == 1) return k;
+    if (n == 1)
+      return k;
     const int mod = 1000000007;
     vector<long long> dp(n + 1);
     dp[0] = 1;

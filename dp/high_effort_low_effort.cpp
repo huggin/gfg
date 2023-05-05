@@ -5,10 +5,11 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int maxAmt(int n, int hi[], int li[]) {
     // code here.
-    if (n == 1) return max(hi[0], li[0]);
+    if (n == 1)
+      return max(hi[0], li[0]);
     int dp[n];
     dp[0] = max(hi[0], li[0]);
     dp[1] = max(dp[0] + li[1], hi[1]);
@@ -27,8 +28,10 @@ int main() {
     int n;
     cin >> n;
     int hi[n], li[n];
-    for (int i = 0; i < n; i++) cin >> hi[i];
-    for (int i = 0; i < n; i++) cin >> li[i];
+    for (int i = 0; i < n; i++)
+      cin >> hi[i];
+    for (int i = 0; i < n; i++)
+      cin >> li[i];
     Solution ob;
     cout << ob.maxAmt(n, hi, li) << endl;
   }

@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int NthTerm(int n) {
     // Code  here
     const int M = 1e9 + 7;

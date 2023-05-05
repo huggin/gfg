@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int offerings(int N, int arr[]) {
     // code here
     vector<int> dp(N), dp2(N);
@@ -46,7 +46,8 @@ int main() {
     int N;
     cin >> N;
     int arr[N];
-    for (int i = 0; i < N; i++) cin >> arr[i];
+    for (int i = 0; i < N; i++)
+      cin >> arr[i];
 
     Solution ob;
     cout << ob.offerings(N, arr) << "\n";

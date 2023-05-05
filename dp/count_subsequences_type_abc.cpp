@@ -15,14 +15,16 @@ class Solution {
   int last_c = -1;
 
   int solve(int k, int u) {
-    if (k > last_c) return 0;
+    if (k > last_c)
+      return 0;
     if (k == last_c) {
       if (u == 2)
         return 1;
       else
         return 0;
     }
-    if (dp[k][u] != -1) return dp[k][u];
+    if (dp[k][u] != -1)
+      return dp[k][u];
     if (u == 0) {
       if (S[k] == 'a') {
         dp[k][u] = ((solve(k + 1, u) * 2) % mod + solve(k + 1, u + 1)) % mod;
@@ -37,8 +39,10 @@ class Solution {
       }
     } else {
       if (S[k] == 'c') {
-        if (k == last_c) return dp[k][u] = 1;
-        if (k > last_c) return dp[k][u] = 0;
+        if (k == last_c)
+          return dp[k][u] = 1;
+        if (k > last_c)
+          return dp[k][u] = 0;
         dp[k][u] = (2 * solve(k + 1, u) + 1) % mod;
       } else {
         dp[k][u] = solve(k + 1, u) % mod;
@@ -47,7 +51,7 @@ class Solution {
     return dp[k][u];
   }
 
- public:
+public:
   // s : given string
   // return the expected answer
   int fun(string &s) {
@@ -62,7 +66,8 @@ class Solution {
         break;
       }
     }
-    if (last_c == -1) return 0;
+    if (last_c == -1)
+      return 0;
 
     return solve(0, 0);
   }

@@ -7,7 +7,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int collatzLength(int N) {
     // code here
     vector<int> dp(N + 1);

@@ -11,8 +11,10 @@ class Solution {
   string a, b, c;
   int dp[101][101];
   int solve(int i, int j, int k) {
-    if (i == a.size() && j == b.size()) return 1;
-    if (dp[i][j] != -1) return dp[i][j];
+    if (i == a.size() && j == b.size())
+      return 1;
+    if (dp[i][j] != -1)
+      return dp[i][j];
     if (i == a.size()) {
       if (b[j] != c[k])
         return 0;
@@ -29,16 +31,18 @@ class Solution {
     }
     if (a[i] == c[k]) {
       int t = solve(i + 1, j, k + 1);
-      if (t == 1) return dp[i][j] = 1;
+      if (t == 1)
+        return dp[i][j] = 1;
     }
     if (b[j] == c[k]) {
       int t = solve(i, j + 1, k + 1);
-      if (t == 1) return dp[i][j] = 1;
+      if (t == 1)
+        return dp[i][j] = 1;
     }
     return dp[i][j] = 0;
   }
 
- public:
+public:
   /*You are required to complete this method */
   bool isInterleave(string A, string B, string C) {
     // Your code here
