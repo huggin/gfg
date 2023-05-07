@@ -8,8 +8,8 @@ using namespace std;
 // Back-end complete function Template for C++
 
 class Solution {
- public:
-  vector<pair<int, int>> win(vector<int>& power, int n, vector<int>& Q, int q) {
+public:
+  vector<pair<int, int>> win(vector<int> &power, int n, vector<int> &Q, int q) {
     // Write your code here
     sort(power.begin(), power.end());
     vector<pair<int, int>> ans;

@@ -6,9 +6,9 @@ using namespace std;
 
 // A structure to represent a job
 struct Job {
-  int id;      // Job Id
-  int dead;    // Deadline of job
-  int profit;  // Profit if job is over before or on deadline
+  int id;     // Job Id
+  int dead;   // Deadline of job
+  int profit; // Profit if job is over before or on deadline
 };
 
 // } Driver Code Ends
@@ -22,14 +22,17 @@ struct Job
 */
 
 class Solution {
- public:
+public:
   // Function to find the maximum profit and the number of jobs done.
   vector<int> JobScheduling(Job arr[], int n) {
     // your code here
     sort(arr, arr + n, [](Job l, Job r) {
-      if (l.profit > r.profit) return true;
-      if (l.profit < r.profit) return false;
-      if (l.dead < r.dead) return true;
+      if (l.profit > r.profit)
+        return true;
+      if (l.profit < r.profit)
+        return false;
+      if (l.dead < r.dead)
+        return true;
       return false;
     });
 

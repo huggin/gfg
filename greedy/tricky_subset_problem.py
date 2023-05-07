@@ -1,5 +1,6 @@
 # User function Template for python3
 
+
 class Solution:
     def isPossible(self, S, N, X, A):
         # code here
@@ -19,9 +20,9 @@ class Solution:
 
 
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
-if __name__ == '__main__':
+if __name__ == "__main__":
     t = int(input())
     for _ in range(t):
         S, N, X = [int(y) for y in input().split()]

@@ -3,9 +3,8 @@
 using namespace std;
 
 class Matrix {
- public:
-  template <class T>
-  static void input(vector<vector<T>> &A, int n, int m) {
+public:
+  template <class T> static void input(vector<vector<T>> &A, int n, int m) {
     for (int i = 0; i < n; i++) {
       for (int j = 0; j < m; j++) {
         scanf("%d ", &A[i][j]);
@@ -13,8 +12,7 @@ class Matrix {
     }
   }
 
-  template <class T>
-  static void print(vector<vector<T>> &A) {
+  template <class T> static void print(vector<vector<T>> &A) {
     for (int i = 0; i < A.size(); i++) {
       for (int j = 0; j < A[i].size(); j++) {
         cout << A[i][j] << " ";
@@ -27,7 +25,7 @@ class Matrix {
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int maxStop(int n, int m, vector<vector<int>> &t) {
     // code here
     vector<int> plat(n + 1, 0);

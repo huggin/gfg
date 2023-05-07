@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int minimumCostOfBreaking(vector<int> X, vector<int> Y, int M, int N) {
     // Write your code here
     sort(X.begin(), X.end(), greater<int>());
