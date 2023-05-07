@@ -8,9 +8,10 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
-  void doit(int i, int j, int i2, int j2, vector<vector<int>>& Mat) {
-    if (i + 1 > i2 || j + 1 > j2) return;
+public:
+  void doit(int i, int j, int i2, int j2, vector<vector<int>> &Mat) {
+    if (i + 1 > i2 || j + 1 > j2)
+      return;
     int temp = Mat[i][j];
     for (int k = i + 1; k <= i2; ++k) {
       Mat[k - 1][j] = Mat[k][j];
@@ -27,7 +28,7 @@ class Solution {
     Mat[i][j + 1] = temp;
   }
 
- public:
+public:
   vector<vector<int>> rotateMatrix(int M, int N, vector<vector<int>> Mat) {
     // code here
     for (int i = 0, j = 0; i < M / 2 && j < N / 2; ++i, ++j) {
@@ -47,11 +48,13 @@ int main() {
     cin >> N >> M;
     vector<vector<int>> Mat(N, vector<int>(M));
     for (i = 0; i < N; i++)
-      for (j = 0; j < M; j++) cin >> Mat[i][j];
+      for (j = 0; j < M; j++)
+        cin >> Mat[i][j];
     Solution ob;
     vector<vector<int>> ans = ob.rotateMatrix(N, M, Mat);
     for (i = 0; i < N; i++) {
-      for (j = 0; j < M; j++) cout << ans[i][j] << " ";
+      for (j = 0; j < M; j++)
+        cout << ans[i][j] << " ";
       cout << "\n";
     }
   }

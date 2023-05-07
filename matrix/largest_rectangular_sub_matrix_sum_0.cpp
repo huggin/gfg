@@ -9,7 +9,7 @@ using namespace std;
 
 class Solution {
   int n, m;
-  pair<int, int> solve(vector<int>& v) {
+  pair<int, int> solve(vector<int> &v) {
     unordered_map<int, int> s;
     int t = 0;
     int left = -1, right = -1;
@@ -30,7 +30,7 @@ class Solution {
     return make_pair(left, right);
   }
 
- public:
+public:
   vector<vector<int>> sumZeroMatrix(vector<vector<int>> a) {
     // Code Here
     n = a.size();
@@ -42,7 +42,8 @@ class Solution {
 
     for (int i = 0; i < n; ++i) {
       auto c = solve(v[i]);
-      if (c.first == -1) continue;
+      if (c.first == -1)
+        continue;
       if (area == -1 || area < (c.second - c.first + 1) ||
           area == c.second - c.first + 1 && c.first < left) {
         area = c.second - c.first + 1;
@@ -58,7 +59,8 @@ class Solution {
           v[j][i] += a[j + k][i];
         }
         auto c = solve(v[j]);
-        if (c.first == -1) continue;
+        if (c.first == -1)
+          continue;
         if (area == -1 || area < (k + 1) * (c.second - c.first + 1) ||
             (area == (k + 1) * (c.second - c.first + 1) && c.first < left) ||
             (area == (k + 1) * (c.second - c.first + 1) && c.first < left &&
@@ -73,7 +75,8 @@ class Solution {
       }
     }
     // cout << area << endl;
-    if (area == -1) return vector<vector<int>>{};
+    if (area == -1)
+      return vector<vector<int>>{};
     vector<vector<int>> ans(down - up + 1);
     for (int i = up; i <= down; ++i) {
       for (int j = left; j <= right; ++j) {

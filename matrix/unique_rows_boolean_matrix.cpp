@@ -13,7 +13,8 @@ int main() {
     cin >> n >> m;
     int a[MAX][MAX];
     for (int i = 0; i < n; i++)
-      for (int j = 0; j < m; j++) cin >> a[i][j];
+      for (int j = 0; j < m; j++)
+        cin >> a[i][j];
     vector<vector<int>> vec = uniqueRow(a, n, m);
     for (int i = 0; i < vec.size(); i++) {
       for (int x : vec[i]) {

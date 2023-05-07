@@ -5,8 +5,8 @@ using namespace std;
 // } Driver Code Ends
 // User function template for C++
 class Solution {
- public:
-  int rowWithMax1s(vector<vector<int> > arr, int n, int m) {
+public:
+  int rowWithMax1s(vector<vector<int>> arr, int n, int m) {
     // code here
     int i = 0, j = m - 1;
     int ans = -1;
@@ -28,7 +28,7 @@ int main() {
   while (t--) {
     int n, m;
     cin >> n >> m;
-    vector<vector<int> > arr(n, vector<int>(m));
+    vector<vector<int>> arr(n, vector<int>(m));
     for (int i = 0; i < n; i++) {
       for (int j = 0; j < m; j++) {
         cin >> arr[i][j];

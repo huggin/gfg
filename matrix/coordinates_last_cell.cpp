@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   pair<int, int> endPoints(vector<vector<int>> matrix) {
     // code here
     int dx[] = {-1, 0, 1, 0};

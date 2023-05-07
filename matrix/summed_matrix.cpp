@@ -6,12 +6,15 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   long long sumMatrix(long long n, long long q) {
     // code here
-    if (q == n + 1) return n;
-    if (q < n + 1) return q - 1;
-    if (q > 2 * n + 1) return 0;
+    if (q == n + 1)
+      return n;
+    if (q < n + 1)
+      return q - 1;
+    if (q > 2 * n + 1)
+      return 0;
     return (2 * n - q) + 1;
   }
 };
