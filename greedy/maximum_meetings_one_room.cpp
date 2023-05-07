@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   vector<int> maxMeetings(int N, vector<int> &S, vector<int> &F) {
     vector<tuple<int, int, int>> v(N);
     for (int i = 0; i < N; ++i) {

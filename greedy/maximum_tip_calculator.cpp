@@ -9,7 +9,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   long long maxTip(int a[], int b[], int n, int x, int y) {
     // code here
     vector<pair<int, int>> v;

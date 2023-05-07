@@ -1,5 +1,6 @@
 # User function Template for python3
 
+
 class Solution:
     def maxEvents(self, start, end, N):
         # code here
@@ -8,7 +9,7 @@ class Solution:
         events.sort()
         s = {}
 
-        for i in range(N-1, -1, -1):
+        for i in range(N - 1, -1, -1):
             if not events[i][1] in s:
                 s[events[i][1]] = 1
             else:
@@ -21,12 +22,13 @@ class Solution:
 
         return len(s)
 
+
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     t = int(input())
     for _ in range(t):
         N = int(input())

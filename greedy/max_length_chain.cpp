@@ -16,11 +16,11 @@ struct val{
 };*/
 
 class Solution {
- public:
+public:
   /*You are required to complete this method*/
   int maxChainLen(struct val p[], int n) {
     // Your code here
-    sort(p, p + n, [](const val& l, const val& r) {
+    sort(p, p + n, [](const val &l, const val &r) {
       return l.second < r.second || l.second == r.second && l.first < r.first;
     });
     int ans = 0;

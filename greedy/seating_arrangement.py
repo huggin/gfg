@@ -14,7 +14,7 @@ class Solution:
                 seats[i] = 1
                 ans += 1
 
-        return ans >= n 
+        return ans >= n
 
 
 # {
