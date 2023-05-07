@@ -11,8 +11,8 @@ class Solution {
   int N;
   int K;
 
- public:
-  int selectKcities(int n, int k, vector<vector<int>>& mat) {
+public:
+  int selectKcities(int n, int k, vector<vector<int>> &mat) {
     // code here
     M = mat;
     N = n;
@@ -26,7 +26,8 @@ class Solution {
           atm.push_back(j);
         }
       }
-      if (atm.size() != k) continue;
+      if (atm.size() != k)
+        continue;
       int temp2 = 0;
       for (int j = 0; j < n; ++j) {
         int temp = INT_MAX;

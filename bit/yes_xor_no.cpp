@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   string yesXorNo(int N, long long A[], long long B[]) {
     // code here
     return "Yes";
@@ -20,8 +20,10 @@ int main() {
 
     cin >> N;
     long long A[N], B[N];
-    for (int i = 0; i < N; i++) cin >> A[i];
-    for (int i = 0; i < N; i++) cin >> B[i];
+    for (int i = 0; i < N; i++)
+      cin >> A[i];
+    for (int i = 0; i < N; i++)
+      cin >> B[i];
 
     Solution ob;
     cout << ob.yesXorNo(N, A, B) << endl;

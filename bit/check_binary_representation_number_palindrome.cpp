@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 // User function template for C++
 class Solution {
- public:
+public:
   int binaryPalin(long long int N) {
     // Your Code Here
     vector<int> v;
@@ -14,7 +14,8 @@ class Solution {
       N /= 2;
     }
     for (int i = 0; i < v.size() / 2; ++i)
-      if (v[i] != v[v.size() - 1 - i]) return false;
+      if (v[i] != v[v.size() - 1 - i])
+        return false;
 
     return true;
   }

@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int swapNibbles(int N) {
     // code here
     int a = N & 0x0f;

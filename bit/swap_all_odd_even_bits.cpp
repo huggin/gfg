@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   // Function to swap odd and even bits.
   unsigned int swapBits(unsigned int n) {
     // Your code here
@@ -21,10 +21,10 @@ class Solution {
 // Driver code
 int main() {
   int t;
-  cin >> t;  // testcases
+  cin >> t; // testcases
   while (t--) {
     unsigned int n;
-    cin >> n;  // input n
+    cin >> n; // input n
 
     Solution ob;
     // calling swapBits() method

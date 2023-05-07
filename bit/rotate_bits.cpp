@@ -6,7 +6,7 @@ using namespace std;
 class Solution {
   uint16_t rotl16(uint16_t n, unsigned int c) {
     const unsigned int mask =
-        (CHAR_BIT * sizeof(n) - 1);  // assumes width is a power of 2.
+        (CHAR_BIT * sizeof(n) - 1); // assumes width is a power of 2.
 
     c &= mask;
     return (n << c) | (n >> ((-c) & mask));
@@ -19,7 +19,7 @@ class Solution {
     return (n >> c) | (n << ((-c) & mask));
   }
 
- public:
+public:
   vector<int> rotate(int n, int d) {
     // code here.
     d %= 16;

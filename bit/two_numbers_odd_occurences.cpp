@@ -16,11 +16,12 @@ struct A {
 A a;
 
 class Solution {
- public:
+public:
   vector<long long int> twoOddNum(long long int Arr[], long long int N) {
     // code here
     long long a = 0;
-    for (int i = 0; i < N; ++i) a ^= Arr[i];
+    for (int i = 0; i < N; ++i)
+      a ^= Arr[i];
 
     long long b = a & -a;
     long long x = 0, y = 0;
@@ -30,7 +31,8 @@ class Solution {
       else
         y ^= Arr[i];
 
-    if (x < y) swap(x, y);
+    if (x < y)
+      swap(x, y);
     return {x, y};
   }
 };
@@ -43,10 +45,12 @@ int main() {
     long long int N;
     cin >> N;
     long long int Arr[N];
-    for (long int i = 0; i < N; i++) cin >> Arr[i];
+    for (long int i = 0; i < N; i++)
+      cin >> Arr[i];
     Solution ob;
     vector<long long int> ans = ob.twoOddNum(Arr, N);
-    for (long long int i = 0; i < ans.size(); i++) cout << ans[i] << " ";
+    for (long long int i = 0; i < ans.size(); i++)
+      cout << ans[i] << " ";
     cout << endl;
   }
   return 0;

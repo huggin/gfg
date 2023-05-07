@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   // function to convert a given Gray equivalent n to Binary equivalent.
   int grayToBinary(int n) {
     int ans = 0;
@@ -25,9 +25,9 @@ class Solution {
 // Driver code
 int main() {
   int t, n;
-  cin >> t;  // testcases
+  cin >> t; // testcases
   while (t--) {
-    cin >> n;  // initializing n
+    cin >> n; // initializing n
 
     Solution ob;
     // calling function grayToBinary()

@@ -8,11 +8,12 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   int getOddOccurrence(int arr[], int n) {
     // code here
     int ans = 0;
-    for (int i = 0; i < n; ++i) ans ^= arr[i];
+    for (int i = 0; i < n; ++i)
+      ans ^= arr[i];
     return ans;
   }
 };

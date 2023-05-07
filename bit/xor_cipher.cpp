@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   string deCypher(string S) {
     // Code Here
     int n = S.size();

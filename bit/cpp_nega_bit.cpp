@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int negaBit(int F, int S) {
     // code here
     for (int i = 0; i < 31; ++i) {

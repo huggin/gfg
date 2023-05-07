@@ -23,7 +23,8 @@ public:
       ++k;
     }
     int i = 1;
-    for (; i * 2 <= n; i *= 2);
+    for (; i * 2 <= n; i *= 2)
+      ;
     // cout << "i = " << i << endl;
     int ans = 0;
     for (int j = i; j > 0; j /= 2) {

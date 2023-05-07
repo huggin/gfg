@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   long long reversedBits(long long X) {
     // code here
     long long ans = 0;

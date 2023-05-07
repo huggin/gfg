@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int DifferOne(long int a, long int b) {
     // complete the function here
     int n = a ^ b;

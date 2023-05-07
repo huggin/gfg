@@ -5,10 +5,11 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int isBitSet(int N) {
     // code here
-    if (N == 0) return 0;
+    if (N == 0)
+      return 0;
     return !(N & (N + 1));
   }
 };

@@ -17,7 +17,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   // Function to find number of bits needed to be flipped to convert A to B
   int countBitsFlip(int a, int b) {
     // Your logic here
@@ -30,11 +30,11 @@ class Solution {
 // Driver Code
 int main() {
   int t;
-  cin >> t;    // input the testcases
-  while (t--)  // while testcases exist
+  cin >> t;   // input the testcases
+  while (t--) // while testcases exist
   {
     int a, b;
-    cin >> a >> b;  // input a and b
+    cin >> a >> b; // input a and b
 
     Solution ob;
     cout << ob.countBitsFlip(a, b) << endl;

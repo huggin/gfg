@@ -8,14 +8,16 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   vector<int> changeBits(int N) {
     // code here
     int n = N;
     bool start = false;
     for (int i = 31; i >= 0; --i) {
-      if (N & (1 << i)) start = true;
-      if (start && (N ^ (1 << i))) n |= (1 << i);
+      if (N & (1 << i))
+        start = true;
+      if (start && (N ^ (1 << i)))
+        n |= (1 << i);
     }
     return vector<int>{n - N, n};
   }
