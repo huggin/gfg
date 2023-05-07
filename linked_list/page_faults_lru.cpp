@@ -9,28 +9,29 @@ using namespace std;
 
 struct Node {
   int data;
-  Node* prev;
-  Node* next;
+  Node *prev;
+  Node *next;
   Node(int d) : data(d), prev(NULL), next(NULL) {}
 };
 
 class Solution {
-  Node* find(Node* p, int v) {
+  Node *find(Node *p, int v) {
     while (p) {
-      if (p->data == v) return p;
+      if (p->data == v)
+        return p;
       p = p->next;
     }
     return NULL;
   }
 
- public:
+public:
   int pageFaults(int N, int C, int pages[]) {
     // code here
     Node *head = new Node(-1), *last = NULL;
     int n = 0;
     int ans = 0;
     for (int i = 0; i < N; ++i) {
-      Node* p = find(head->next, pages[i]);
+      Node *p = find(head->next, pages[i]);
       if (p) {
         if (p->next != NULL) {
           p->next->prev = p->prev;
@@ -45,7 +46,8 @@ class Solution {
         p->next = head->next;
         p->prev = head;
         head->next = p;
-        if (last == head) last = p;
+        if (last == head)
+          last = p;
       } else {
         ++ans;
 
@@ -78,7 +80,8 @@ int main() {
     int N, C;
     cin >> N;
     int pages[N];
-    for (int i = 0; i < N; i++) cin >> pages[i];
+    for (int i = 0; i < N; i++)
+      cin >> pages[i];
     cin >> C;
 
     Solution ob;

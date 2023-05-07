@@ -2,11 +2,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int fractional_node(struct Node* head, int k);
+int fractional_node(struct Node *head, int k);
 
 struct Node {
   int data;
-  struct Node* next;
+  struct Node *next;
 
   Node(int x) {
     data = x;
@@ -59,10 +59,10 @@ struct Node
 
 };
 */
-int fractional_node(struct Node* head, int k) {
+int fractional_node(struct Node *head, int k) {
   // your code here
   int t = 0;
-  Node* p = head;
+  Node *p = head;
   while (p) {
     ++t;
     p = p->next;

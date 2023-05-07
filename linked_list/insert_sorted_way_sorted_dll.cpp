@@ -7,24 +7,24 @@ struct Node {
   struct Node *prev, *next;
 };
 
-struct Node* getNode(int data) {
-  struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+struct Node *getNode(int data) {
+  struct Node *newNode = (struct Node *)malloc(sizeof(struct Node));
   newNode->data = data;
   newNode->prev = newNode->next = NULL;
   return newNode;
 }
 
-void printList(struct Node* head) {
+void printList(struct Node *head) {
   while (head != NULL) {
     cout << head->data << " ";
     head = head->next;
   }
 }
 
-bool isChecked(Node* head) {
+bool isChecked(Node *head) {
   int lengthF = 0;
   int lengthB = 0;
-  Node* temp = head;
+  Node *temp = head;
   while (temp->next) {
     temp = temp->next;
     lengthF++;
@@ -38,13 +38,13 @@ bool isChecked(Node* head) {
   return lengthF == lengthB;
 }
 
-Node* sortedInsert(Node* head, int x);
+Node *sortedInsert(Node *head, int x);
 
 int main() {
   int t;
   cin >> t;
   while (t--) {
-    struct Node* new_node = NULL;
+    struct Node *new_node = NULL;
     int n, tmp, x;
     cin >> n;
     Node *head = NULL, *tail = NULL;
@@ -54,7 +54,7 @@ int main() {
 
     for (int i = 0; i < n - 1; i++) {
       cin >> x;
-      Node* temp = getNode(x);
+      Node *temp = getNode(x);
       tail->next = temp;
       temp->prev = tail;
       tail = temp;
@@ -83,18 +83,19 @@ struct Node {
 // function should insert a new node in sorted way in
 // a sorted doubly linked list
 // Return the head after insertion
-Node* sortedInsert(Node* head, int x) {
+Node *sortedInsert(Node *head, int x) {
   // Code here
-  Node* p = getNode(x);
-  if (head == NULL) return p;
+  Node *p = getNode(x);
+  if (head == NULL)
+    return p;
   if (x <= head->data) {
     p->next = head;
     head->prev = p;
     return p;
   }
 
-  Node* q = head;
-  Node* pre = NULL;
+  Node *q = head;
+  Node *pre = NULL;
   while (q && x >= q->data) {
     pre = q;
     q = q->next;
@@ -102,6 +103,7 @@ Node* sortedInsert(Node* head, int x) {
   pre->next = p;
   p->next = q;
   p->prev = pre;
-  if (q) q->prev = p;
+  if (q)
+    q->prev = p;
   return head;
 }

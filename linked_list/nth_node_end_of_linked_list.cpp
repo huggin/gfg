@@ -64,7 +64,8 @@ int getNthFromLast(Node *head, int n) {
     ++count;
     c = c->next;
   }
-  if (count < n) return -1;
+  if (count < n)
+    return -1;
 
   count -= n;
   while (count > 0) {

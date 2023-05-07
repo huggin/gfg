@@ -6,7 +6,7 @@ using namespace std;
 
 struct Node {
   int data;
-  struct Node* next;
+  struct Node *next;
 
   Node(int x) {
     data = x;
@@ -14,7 +14,7 @@ struct Node {
   }
 };
 
-void printList(Node* node) {
+void printList(Node *node) {
   while (node != NULL) {
     cout << node->data;
     node = node->next;
@@ -41,7 +41,7 @@ struct Node
 */
 
 class Solution {
-  int add(Node* p) {
+  int add(Node *p) {
     if (!p->next) {
       if (++p->data == 10) {
         p->data = 0;
@@ -51,7 +51,8 @@ class Solution {
       }
     } else {
       int k = add(p->next);
-      if (k == 0) return 0;
+      if (k == 0)
+        return 0;
       if (++p->data == 10) {
         p->data = 0;
         return 1;
@@ -59,12 +60,12 @@ class Solution {
     }
   }
 
- public:
-  Node* addOne(Node* head) {
+public:
+  Node *addOne(Node *head) {
     // Your Code here
     // return head of list after adding one
     if (add(head)) {
-      Node* p = new Node(1);
+      Node *p = new Node(1);
       p->next = head;
       return p;
     }
@@ -81,8 +82,8 @@ int main() {
     string s;
     cin >> s;
 
-    Node* head = new Node(s[0] - '0');
-    Node* tail = head;
+    Node *head = new Node(s[0] - '0');
+    Node *tail = head;
     for (int i = 1; i < s.size(); i++) {
       tail->next = new Node(s[i] - '0');
       tail = tail->next;

@@ -26,7 +26,7 @@ struct Node {
 */
 
 class Solution {
- public:
+public:
   // Function to rotate a linked list.
   Node *rotate(Node *head, int k) {
     // Your code here
@@ -36,7 +36,8 @@ class Solution {
       prev = p;
       p = p->next;
     }
-    if (p == NULL) return head;
+    if (p == NULL)
+      return head;
     prev->next = NULL;
     Node *q = p;
     while (q->next != NULL) {

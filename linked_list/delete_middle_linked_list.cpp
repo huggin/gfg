@@ -4,7 +4,7 @@ using namespace std;
 
 struct Node {
   int data;
-  struct Node* next;
+  struct Node *next;
 
   Node(int x) {
     data = x;
@@ -13,8 +13,8 @@ struct Node {
 };
 
 /* Function to get the middle of the linked list*/
-struct Node* deleteMid(struct Node* head);
-void printList(Node* node) {
+struct Node *deleteMid(struct Node *head);
+void printList(Node *node) {
   while (node != NULL) {
     cout << node->data << " ";
     node = node->next;
@@ -30,8 +30,8 @@ int main() {
 
     int data;
     cin >> data;
-    struct Node* head = new Node(data);
-    struct Node* tail = head;
+    struct Node *head = new Node(data);
+    struct Node *tail = head;
     for (int i = 0; i < n - 1; ++i) {
       cin >> data;
       tail->next = new Node(data);
@@ -61,15 +61,16 @@ struct Node
 */
 
 // Deletes middle of linked list and returns head of the modified list
-Node* deleteMid(Node* head) {
+Node *deleteMid(Node *head) {
   // Your Code Here
   int sz = 0;
-  Node* p = head;
+  Node *p = head;
   while (p) {
     ++sz;
     p = p->next;
   }
-  if (sz == 1) return NULL;
+  if (sz == 1)
+    return NULL;
   p = head;
   sz /= 2;
   while (sz > 1) {

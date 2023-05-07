@@ -4,7 +4,7 @@ using namespace std;
 
 struct Node {
   int data;
-  struct Node* next;
+  struct Node *next;
 
   Node(int x) {
     data = x;
@@ -12,26 +12,27 @@ struct Node {
   }
 };
 
-void append(struct Node** headRef, int newData) {
-  struct Node* new_node = new Node(newData);
-  struct Node* last = *headRef;
+void append(struct Node **headRef, int newData) {
+  struct Node *new_node = new Node(newData);
+  struct Node *last = *headRef;
   if (*headRef == NULL) {
     *headRef = new_node;
     return;
   }
-  while (last->next != NULL) last = last->next;
+  while (last->next != NULL)
+    last = last->next;
   last->next = new_node;
   return;
 }
 
-int modularNode(Node* head, int k);
+int modularNode(Node *head, int k);
 
 // Driver program to test above
 int main() {
   int t;
   cin >> t;
   while (t--) {
-    struct Node* head = NULL;
+    struct Node *head = NULL;
     int n, tmp, k;
     cin >> n;
     while (n--) {
@@ -62,12 +63,13 @@ struct Node {
 // Your task is to complete the function
 // function should return the modular Node
 // if no such node is present then return -1
-int modularNode(Node* head, int k) {
+int modularNode(Node *head, int k) {
   // Code here
   int ans = -1;
   int idx = 1;
   while (head) {
-    if (idx % k == 0) ans = head->data;
+    if (idx % k == 0)
+      ans = head->data;
     head = head->next;
     ++idx;
   }

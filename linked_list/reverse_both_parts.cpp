@@ -23,7 +23,7 @@ void printList(Node *node) {
 }
 
 struct Node *inputList() {
-  int n;  // length of link list
+  int n; // length of link list
   scanf("%d ", &n);
 
   int data;
@@ -57,7 +57,7 @@ struct Node
 */
 
 class Solution {
- public:
+public:
   Node *reverse(Node *head, int k) {
     // code here
     Node *prev = NULL;
@@ -65,7 +65,8 @@ class Solution {
     while (head && k-- > 0) {
       Node *next = head->next;
       head->next = prev;
-      if (prev == NULL) temp = head;
+      if (prev == NULL)
+        temp = head;
       prev = head;
       head = next;
     }

@@ -6,14 +6,14 @@ using namespace std;
 
 struct Node {
   int data;
-  Node* next;
+  Node *next;
   Node(int val) {
     data = val;
     next = NULL;
   }
 };
 
-Node* inputList(int size) {
+Node *inputList(int size) {
   Node *head, *tail;
   int val;
 
@@ -29,14 +29,14 @@ Node* inputList(int size) {
   return head;
 }
 
-void printList(Node* n) {
+void printList(Node *n) {
   while (n) {
     cout << n->data << " ";
     n = n->next;
   }
 }
 
-Node* findIntersection(Node* head1, Node* head2);
+Node *findIntersection(Node *head1, Node *head2);
 
 int main() {
   int t;
@@ -45,10 +45,10 @@ int main() {
     int n, m;
     cin >> n >> m;
 
-    Node* head1 = inputList(n);
-    Node* head2 = inputList(m);
+    Node *head1 = inputList(n);
+    Node *head2 = inputList(m);
 
-    Node* result = findIntersection(head1, head2);
+    Node *result = findIntersection(head1, head2);
 
     printList(result);
     cout << endl;
@@ -73,7 +73,7 @@ struct Node
 
 */
 
-Node* findIntersection(Node* head1, Node* head2) {
+Node *findIntersection(Node *head1, Node *head2) {
   // Your Code Here
   Node *res = nullptr, *pre = nullptr;
   while (head1 && head2) {
@@ -86,7 +86,7 @@ Node* findIntersection(Node* head1, Node* head2) {
         res = new Node(head1->data);
         pre = res;
       } else {
-        Node* t = new Node(head1->data);
+        Node *t = new Node(head1->data);
         pre->next = t;
         pre = t;
       }

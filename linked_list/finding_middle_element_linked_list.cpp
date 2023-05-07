@@ -6,14 +6,14 @@ using namespace std;
 
 struct Node {
   int data;
-  struct Node* next;
+  struct Node *next;
 
   Node(int x) {
     data = x;
     next = NULL;
   }
 };
-void printList(Node* node) {
+void printList(Node *node) {
   while (node != NULL) {
     cout << node->data << " ";
     node = node->next;
@@ -34,14 +34,15 @@ struct Node {
 
 }; */
 class Solution {
- public:
+public:
   /* Should return data of middle node. If linked list is empty, then  -1*/
-  int getMiddle(Node* head) {
+  int getMiddle(Node *head) {
     // Your code here
 
-    if (head == NULL) return -1;
+    if (head == NULL)
+      return -1;
     int count = 0;
-    Node* curr = head;
+    Node *curr = head;
     while (curr) {
       ++count;
       curr = curr->next;
@@ -67,8 +68,8 @@ int main() {
     cin >> N;
     int data;
     cin >> data;
-    struct Node* head = new Node(data);
-    struct Node* tail = head;
+    struct Node *head = new Node(data);
+    struct Node *tail = head;
     for (int i = 0; i < N - 1; ++i) {
       cin >> data;
       tail->next = new Node(data);

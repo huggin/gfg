@@ -7,21 +7,22 @@ using namespace std;
 /* Link list Node */
 struct Node {
   int data;
-  struct Node* next;
+  struct Node *next;
   Node(int x) {
     data = x;
     next = NULL;
   }
 };
 
-Node* inputList(int size) {
-  if (size == 0) return NULL;
+Node *inputList(int size) {
+  if (size == 0)
+    return NULL;
 
   int val;
   cin >> val;
 
-  Node* head = new Node(val);
-  Node* tail = head;
+  Node *head = new Node(val);
+  Node *tail = head;
 
   for (int i = 0; i < size - 1; i++) {
     cin >> val;
@@ -44,11 +45,11 @@ struct Node {
 }; */
 
 class Solution {
- public:
-  int intersectPoint(Node* head1, Node* head2) {
+public:
+  int intersectPoint(Node *head1, Node *head2) {
     // Your Code Here
     int n = 0, m = 0;
-    Node* p = head1;
+    Node *p = head1;
     while (p) {
       ++n;
       p = p->next;
@@ -84,17 +85,21 @@ int main() {
   while (T--) {
     cin >> n1 >> n2 >> n3;
 
-    Node* head1 = inputList(n1);
-    Node* head2 = inputList(n2);
-    Node* common = inputList(n3);
+    Node *head1 = inputList(n1);
+    Node *head2 = inputList(n2);
+    Node *common = inputList(n3);
 
-    Node* temp = head1;
-    while (temp != NULL && temp->next != NULL) temp = temp->next;
-    if (temp != NULL) temp->next = common;
+    Node *temp = head1;
+    while (temp != NULL && temp->next != NULL)
+      temp = temp->next;
+    if (temp != NULL)
+      temp->next = common;
 
     temp = head2;
-    while (temp != NULL && temp->next != NULL) temp = temp->next;
-    if (temp != NULL) temp->next = common;
+    while (temp != NULL && temp->next != NULL)
+      temp = temp->next;
+    if (temp != NULL)
+      temp->next = common;
 
     Solution ob;
     cout << ob.intersectPoint(head1, head2) << endl;

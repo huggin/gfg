@@ -18,10 +18,11 @@ struct Node {
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   Node *copyList(Node *head) {
     // Write your code here
-    if (!head) return NULL;
+    if (!head)
+      return NULL;
     unordered_map<Node *, Node *> m;
     Node *p = head;
     while (p) {
@@ -82,17 +83,21 @@ bool validation(Node *head, Node *res) {
 
   /*if lengths not equal */
 
-  if (len1 != len2) return false;
+  if (len1 != len2)
+    return false;
 
   temp1 = head;
   temp2 = res;
   map<Node *, Node *> a;
   while (temp1 != NULL) {
-    if (temp1 == temp2) return false;
+    if (temp1 == temp2)
+      return false;
 
-    if (temp1->data != temp2->data) return false;
+    if (temp1->data != temp2->data)
+      return false;
     if (temp1->arb != NULL and temp2->arb != NULL) {
-      if (temp1->arb->data != temp2->arb->data) return false;
+      if (temp1->arb->data != temp2->arb->data)
+        return false;
     } else if (temp1->arb != NULL and temp2->arb == NULL)
       return false;
     else if (temp1->arb == NULL and temp2->arb != NULL)
@@ -106,7 +111,8 @@ bool validation(Node *head, Node *res) {
   temp2 = res;
   while (temp1 != NULL) {
     if (temp1->arb != NULL and temp2->arb != NULL) {
-      if (a[temp1->arb] != temp2->arb) return false;
+      if (a[temp1->arb] != temp2->arb)
+        return false;
     }
     temp1 = temp1->next;
     temp2 = temp2->next;
@@ -139,7 +145,8 @@ int main() {
 
       while (tempA != NULL) {
         count++;
-        if (count == a - 1) break;
+        if (count == a - 1)
+          break;
         tempA = tempA->next;
         temp2A = temp2A->next;
       }
@@ -149,7 +156,8 @@ int main() {
 
       while (tempB != NULL) {
         count++;
-        if (count == b - 1) break;
+        if (count == b - 1)
+          break;
         tempB = tempB->next;
         temp2B = temp2B->next;
       }

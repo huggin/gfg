@@ -7,7 +7,7 @@ using namespace std;
 
 struct Node {
   int data;
-  Node* next;
+  Node *next;
 
   Node(int val) {
     data = val;
@@ -15,22 +15,26 @@ struct Node {
   }
 };
 
-void loopHere(Node* head, Node* tail, int position) {
-  if (position == 0) return;
+void loopHere(Node *head, Node *tail, int position) {
+  if (position == 0)
+    return;
 
-  Node* walk = head;
-  for (int i = 1; i < position; i++) walk = walk->next;
+  Node *walk = head;
+  for (int i = 1; i < position; i++)
+    walk = walk->next;
   tail->next = walk;
 }
 
-bool isLoop(Node* head) {
-  if (!head) return false;
+bool isLoop(Node *head) {
+  if (!head)
+    return false;
 
-  Node* fast = head->next;
-  Node* slow = head;
+  Node *fast = head->next;
+  Node *slow = head;
 
   while (fast != slow) {
-    if (!fast || !fast->next) return false;
+    if (!fast || !fast->next)
+      return false;
     fast = fast->next->next;
     slow = slow->next;
   }
@@ -38,7 +42,7 @@ bool isLoop(Node* head) {
   return true;
 }
 
-int length(Node* head) {
+int length(Node *head) {
   int ret = 0;
   while (head) {
     ret++;
@@ -66,14 +70,14 @@ struct Node
 */
 
 class Solution {
- public:
+public:
   // Function to remove a loop in the linked list.
-  void removeLoop(Node* head) {
+  void removeLoop(Node *head) {
     // code here
     // just remove the loop without losing any nodes
-    unordered_map<Node*, int> visited;
-    Node* p = head;
-    Node* pre = nullptr;
+    unordered_map<Node *, int> visited;
+    Node *p = head;
+    Node *pre = nullptr;
     while (p) {
       if (visited[p] == 0) {
         visited[p] = 1;

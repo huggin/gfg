@@ -5,7 +5,7 @@
 using namespace std;
 
 class Node {
- public:
+public:
   int data;
   Node *next, *prev;
   Node(int val) : data(val), next(NULL), prev(NULL) {}
@@ -27,11 +27,12 @@ public:
 */
 
 class Solution {
- public:
+public:
   vector<pair<int, int>> findPairsWithGivenSum(Node *head, int target) {
     // code here
     vector<pair<int, int>> ans;
-    if (!head || !head->next) return ans;
+    if (!head || !head->next)
+      return ans;
     Node *p = head;
     while (p->next != NULL) {
       p = p->next;
