@@ -8,9 +8,9 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   // Function to find if there is a celebrity in the party or not.
-  int celebrity(vector<vector<int> >& M, int n) {
+  int celebrity(vector<vector<int>> &M, int n) {
     // code here
     for (int i = 0; i < n; ++i) {
       if (count(M[i].begin(), M[i].end(), 0) == n) {
@@ -20,7 +20,8 @@ class Solution {
             ++t;
           }
         }
-        if (t == n - 1) return i;
+        if (t == n - 1)
+          return i;
       }
     }
     return -1;
@@ -35,7 +36,7 @@ int main() {
   while (t--) {
     int n;
     cin >> n;
-    vector<vector<int> > M(n, vector<int>(n, 0));
+    vector<vector<int>> M(n, vector<int>(n, 0));
     for (int i = 0; i < n; i++) {
       for (int j = 0; j < n; j++) {
         cin >> M[i][j];

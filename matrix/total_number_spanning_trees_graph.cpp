@@ -46,8 +46,8 @@ int determinantOfMatrix(int matrix[N][N], int n) {
 }
 
 class Solution {
- public:
-  int countSpanningTrees(vector<vector<int>>& graph, int n, int k) {
+public:
+  int countSpanningTrees(vector<vector<int>> &graph, int n, int k) {
     // Write your code here
     memset(g, 0, sizeof(g));
     for (int i = 0; i < graph.size(); ++i) {

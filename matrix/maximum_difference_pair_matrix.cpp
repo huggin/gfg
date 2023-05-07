@@ -7,8 +7,8 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
-  int findMaxValue(vector<vector<int>>& mat, int N) {
+public:
+  int findMaxValue(vector<vector<int>> &mat, int N) {
     // Write your code here
     for (int i = 1; i < N; ++i) {
       mat[i][0] = min(mat[i][0], mat[i - 1][0]);

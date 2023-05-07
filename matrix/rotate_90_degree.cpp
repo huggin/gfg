@@ -5,9 +5,9 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   // Function to rotate matrix anticlockwise by 90 degrees.
-  void rotateby90(vector<vector<int> >& matrix, int n) {
+  void rotateby90(vector<vector<int>> &matrix, int n) {
     // code here
     for (int i = 0; i < n / 2; ++i) {
       for (int j = i; j < n - 1 - i; ++j) {
@@ -29,7 +29,7 @@ int main() {
   while (t--) {
     int n;
     cin >> n;
-    vector<vector<int> > matrix(n);
+    vector<vector<int>> matrix(n);
 
     for (int i = 0; i < n; i++) {
       matrix[i].assign(n, 0);
@@ -41,7 +41,8 @@ int main() {
     Solution ob;
     ob.rotateby90(matrix, n);
     for (int i = 0; i < n; ++i)
-      for (int j = 0; j < n; ++j) cout << matrix[i][j] << " ";
+      for (int j = 0; j < n; ++j)
+        cout << matrix[i][j] << " ";
     cout << endl;
   }
   return 0;

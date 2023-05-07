@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   vector<int> downwardDiagonal(int N, vector<vector<int>> A) {
     // Your code goes here
     vector<int> ans;
@@ -36,12 +36,14 @@ int main() {
     vector<vector<int>> A(n, vector<int>(n));
 
     for (int i = 0; i < n; i++)
-      for (int j = 0; j < n; j++) cin >> A[i][j];
+      for (int j = 0; j < n; j++)
+        cin >> A[i][j];
 
     Solution obj;
     vector<int> ans = obj.downwardDiagonal(n, A);
 
-    for (auto i : ans) cout << i << " ";
+    for (auto i : ans)
+      cout << i << " ";
 
     cout << "\n";
   }

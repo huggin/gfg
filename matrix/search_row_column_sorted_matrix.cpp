@@ -5,9 +5,9 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   // Function to search a given number in row-column sorted matrix.
-  bool search(vector<vector<int> > matrix, int n, int m, int x) {
+  bool search(vector<vector<int>> matrix, int n, int m, int x) {
     // code here
     int i = 0, j = m - 1;
     while (true) {
@@ -17,7 +17,8 @@ class Solution {
         --j;
       else
         return true;
-      if (i < 0 || j < 0 || i >= n || j >= m) return false;
+      if (i < 0 || j < 0 || i >= n || j >= m)
+        return false;
     }
     return false;
   }
@@ -30,7 +31,7 @@ int main() {
   while (t--) {
     int n, m;
     cin >> n >> m;
-    vector<vector<int> > matrix(n);
+    vector<vector<int>> matrix(n);
 
     for (int i = 0; i < n; i++) {
       matrix[i].assign(m, 0);

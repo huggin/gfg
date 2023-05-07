@@ -20,18 +20,22 @@ class Solution {
 
   void power(long long a[2][2], long long b, long long ans[2][2]) {
     while (b) {
-      if (b & 1) multiple(a, ans);
+      if (b & 1)
+        multiple(a, ans);
       multiple(a, a);
       b >>= 1;
     }
   }
 
- public:
+public:
   long long int NthTerm(long long int N) {
     // Code here
-    if (N == 1 || N == 2) return 1;
-    if (N == 3) return 7;
-    if (N == 4) return 19;
+    if (N == 1 || N == 2)
+      return 1;
+    if (N == 3)
+      return 7;
+    if (N == 4)
+      return 19;
 
     long long a[2][2] = {0, 5, 1, 2};
     long long ans[2][2] = {1, 0, 0, 1};

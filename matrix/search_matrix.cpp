@@ -5,12 +5,13 @@ using namespace std;
 // } Driver Code Ends
 // User function template for C++
 class Solution {
- public:
+public:
   int matSearch(vector<vector<int>> &mat, int N, int M, int X) {
     // your code here
     int i = 0, j = M - 1;
     while (i < N && j >= 0) {
-      if (mat[i][j] == X) return 1;
+      if (mat[i][j] == X)
+        return 1;
       if (mat[i][j] < X) {
         ++i;
       } else {
@@ -31,7 +32,8 @@ int main() {
     cin >> n >> m;
     vector<vector<int>> arr(n, vector<int>(m));
     for (int i = 0; i < n; i++)
-      for (int j = 0; j < m; j++) cin >> arr[i][j];
+      for (int j = 0; j < m; j++)
+        cin >> arr[i][j];
 
     int x;
     cin >> x;
