@@ -8,11 +8,12 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   // Function to find position of first set bit in the given number.
   unsigned int getFirstSetBit(int n) {
     // Your code here
-    if (n == 0) return 0;
+    if (n == 0)
+      return 0;
     for (int i = 0; i < 32; ++i) {
       if ((n & (1 << i)) != 0) {
         return i + 1;
@@ -27,12 +28,12 @@ class Solution {
 // Driver code
 int main() {
   int t;
-  cin >> t;  // testcases
+  cin >> t; // testcases
   while (t--) {
     int n;
-    cin >> n;  // input n
+    cin >> n; // input n
     Solution ob;
-    printf("%u\n", ob.getFirstSetBit(n));  // function to get answer
+    printf("%u\n", ob.getFirstSetBit(n)); // function to get answer
   }
   return 0;
 }

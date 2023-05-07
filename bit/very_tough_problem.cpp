@@ -8,18 +8,22 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   string toughProblem(int n, int s, int x) {
     // Code Here
-    if (s < x || (s - x) % 2) return "No";
+    if (s < x || (s - x) % 2)
+      return "No";
 
-    if (n == 1) return s == x ? "Yes" : "No";
-    if (n >= 3) return "Yes";
+    if (n == 1)
+      return s == x ? "Yes" : "No";
+    if (n >= 3)
+      return "Yes";
 
     int j = (s - x) / 2;
     for (int i = 30; i >= 0; --i) {
       if (j & (1 << i)) {
-        if (x & (1 << i)) return "No";
+        if (x & (1 << i))
+          return "No";
       }
     }
     return "Yes";

@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 // User function Template for C++
 class Solution {
- public:
+public:
   int setSetBit(int x, int y, int l, int r) {
     // code here
     return x | (y & ((1LL << r) - (1 << l - 1)));

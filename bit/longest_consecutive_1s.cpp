@@ -11,7 +11,7 @@ using namespace std;
  *   N: given input to calculate the longest consecutive ones
  */
 class Solution {
- public:
+public:
   int maxConsecutiveOnes(int N) {
     // code here
     int ans = 0;
@@ -33,10 +33,10 @@ class Solution {
 // Driver Code
 int main() {
   int t;
-  cin >> t;  // testcases
+  cin >> t; // testcases
   while (t--) {
     int n;
-    cin >> n;  // input n
+    cin >> n; // input n
     Solution obj;
     // calling maxConsecutiveOnes() function
     cout << obj.maxConsecutiveOnes(n) << endl;

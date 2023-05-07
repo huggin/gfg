@@ -7,7 +7,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   // Function for finding maximum AND value.
   int maxAND(int arr[], int N) {
     // Your code here
@@ -36,14 +36,15 @@ class Solution {
 // Driver function
 int main() {
   int t;
-  cin >> t;  // testcases
+  cin >> t; // testcases
   while (t--) {
     int n;
-    cin >> n;  // input n
+    cin >> n; // input n
     int arr[n + 5], i;
 
     // inserting elements
-    for (i = 0; i < n; i++) cin >> arr[i];
+    for (i = 0; i < n; i++)
+      cin >> arr[i];
     Solution obj;
     // calling maxAND() function
     cout << obj.maxAND(arr, n) << endl;

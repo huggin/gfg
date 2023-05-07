@@ -8,8 +8,8 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
-  vector<vector<int>> minDifference(vector<int>& arr, int n) {
+public:
+  vector<vector<int>> minDifference(vector<int> &arr, int n) {
     // Code here
     vector<vector<int>> a(2);
     int ans = INT_MAX;
@@ -56,10 +56,13 @@ int main() {
 
     long long s1 = 0, s2 = 0;
 
-    for (int i = 0; i < ans[0].size(); i++) s1 += ans[0][i];
-    for (int i = 0; i < ans[1].size(); i++) s2 += ans[1][i];
+    for (int i = 0; i < ans[0].size(); i++)
+      s1 += ans[0][i];
+    for (int i = 0; i < ans[1].size(); i++)
+      s2 += ans[1][i];
 
-    if (s1 > s2) swap(s1, s2);
+    if (s1 > s2)
+      swap(s1, s2);
 
     cout << s1 << "\n" << s2 << "\n";
   }

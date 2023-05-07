@@ -12,14 +12,16 @@ class Solution {
   int ans;
 
   void solve(int i, int t) {
-    if (i == n) return;
+    if (i == n)
+      return;
     solve(i + 1, t);
     t ^= a[i];
-    if (t == k) ++ans;
+    if (t == k)
+      ++ans;
     solve(i + 1, t);
   }
 
- public:
+public:
   int subsetXOR(vector<int> arr, int N, int K) {
     // code here
     memset(dp, -1, sizeof(dp));

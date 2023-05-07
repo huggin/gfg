@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   // Function to find the first position with different bits.
   int posOfRightMostDiffBit(int m, int n) {
     // Your code here
@@ -27,10 +27,10 @@ class Solution {
 // Driver Code
 int main() {
   int t;
-  cin >> t;  // input number of testcases
+  cin >> t; // input number of testcases
   while (t--) {
     int m, n;
-    cin >> m >> n;  // input m and n
+    cin >> m >> n; // input m and n
     Solution ob;
     cout << ob.posOfRightMostDiffBit(m, n) << endl;
   }

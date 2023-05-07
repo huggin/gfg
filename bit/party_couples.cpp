@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int findSingle(int N, int arr[]) {
     // code here
     int ans = 0;

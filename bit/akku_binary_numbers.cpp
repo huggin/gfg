@@ -6,7 +6,7 @@ using namespace std;
 class Solution {
   vector<long long> ans;
 
- public:
+public:
   void precompute() {
     // Code Here
     for (int i = 0; i < 63; ++i) {

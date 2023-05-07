@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int toggleBits(int N, int L, int R) {
     // code here
     return N ^ ((1 << R) - (1 << L - 1));

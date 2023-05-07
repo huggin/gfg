@@ -6,13 +6,14 @@ using namespace std;
 // Function to return maximum XOR subset in set[]
 
 class Solution {
- public:
+public:
   int maxSubsetXOR(int arr[], int N) {
     // Your code here
     int ans = 0;
     while (true) {
       int ma = *max_element(arr, arr + N);
-      if (ma == 0) return ans;
+      if (ma == 0)
+        return ans;
       ans = max(ans, ans ^ ma);
       for (int i = 0; i < N; ++i) {
         arr[i] = min(arr[i], arr[i] ^ ma);

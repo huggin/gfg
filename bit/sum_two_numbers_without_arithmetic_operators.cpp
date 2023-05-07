@@ -7,7 +7,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int sum(int a, int b) {
     // code here
     while (b) {

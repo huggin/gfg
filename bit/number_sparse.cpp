@@ -9,7 +9,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   // Function to check if the number is sparse or not.
   bool isSparse(int n) {
     // Your code

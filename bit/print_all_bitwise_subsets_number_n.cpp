@@ -11,11 +11,12 @@ using namespace std;
 // fucntion to find bitwise subsets
 // Efficient approach
 class Solution {
- public:
+public:
   vector<int> printSubsets(int n) {
     // Code here
     set<int> s;
-    for (int i = 0; i <= n; ++i) s.insert(i & n);
+    for (int i = 0; i <= n; ++i)
+      s.insert(i & n);
     vector<int> ans(s.rbegin(), s.rend());
     return ans;
   }
@@ -31,7 +32,8 @@ int main() {
     cin >> n;
     vector<int> v;
     v = ob.printSubsets(n);
-    for (int i : v) cout << i << " ";
+    for (int i : v)
+      cout << i << " ";
     cout << endl;
   }
 

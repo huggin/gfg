@@ -8,8 +8,8 @@ using namespace std;
 // Back-end complete function Template for C++
 
 class Solution {
- public:
-  long long int countSubsets(vector<int>& arr, int n, int l, int r) {
+public:
+  long long int countSubsets(vector<int> &arr, int n, int l, int r) {
     // Write your code here
     long long ans = 0;
     for (int i = 0; i < (1 << n); ++i) {
@@ -19,7 +19,8 @@ class Solution {
           t += arr[j];
         }
       }
-      if (l <= t && t <= r) ++ans;
+      if (l <= t && t <= r)
+        ++ans;
     }
     return ans;
   }
