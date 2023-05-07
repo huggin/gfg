@@ -6,14 +6,14 @@ using namespace std;
 
 struct Node {
   int data;
-  struct Node* next;
+  struct Node *next;
 
   Node(int x) {
     data = x;
     next = NULL;
   }
 };
-void printList(Node* node) {
+void printList(Node *node) {
   while (node != NULL) {
     cout << node->data << " ";
     node = node->next;
@@ -37,22 +37,22 @@ struct Node
 };
 */
 class Solution {
- public:
-  Node* divide(int N, Node* head) {
+public:
+  Node *divide(int N, Node *head) {
     // code here
     Node even(0), odd(0);
-    Node* ans = &even;
-    Node* prev = ans;
-    Node* prev2 = &odd;
-    Node* p = head;
+    Node *ans = &even;
+    Node *prev = ans;
+    Node *prev2 = &odd;
+    Node *p = head;
     while (head) {
       if (head->data % 2 == 0) {
-        Node* next = head->next;
+        Node *next = head->next;
         prev->next = head;
         prev = head;
         head = next;
       } else {
-        Node* next = head->next;
+        Node *next = head->next;
         prev2->next = head;
         prev2 = head;
         head = next;
@@ -75,8 +75,8 @@ int main() {
     cin >> N;
     int data;
     cin >> data;
-    struct Node* head = new Node(data);
-    struct Node* tail = head;
+    struct Node *head = new Node(data);
+    struct Node *tail = head;
     for (int i = 0; i < N - 1; ++i) {
       cin >> data;
       tail->next = new Node(data);
@@ -84,7 +84,7 @@ int main() {
     }
 
     Solution ob;
-    Node* ans = ob.divide(N, head);
+    Node *ans = ob.divide(N, head);
     printList(ans);
   }
   return 0;

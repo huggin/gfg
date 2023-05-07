@@ -21,7 +21,7 @@ void printList(Node *node) {
 }
 
 struct Node *inputList() {
-  int n;  // length of link list
+  int n; // length of link list
   scanf("%d ", &n);
 
   char data;
@@ -52,7 +52,7 @@ printList(Node* node);
 */
 
 class Solution {
- public:
+public:
   vector<Node *> findAnagrams(struct Node *head, string s) {
     // code here
     Node *q = head;
@@ -86,11 +86,13 @@ class Solution {
           cnt2[p->data - 'a']++;
           p = p->next;
         }
-        if (i < n) break;
+        if (i < n)
+          break;
       } else {
         cnt2[q->data - 'a']--;
         q = q->next;
-        if (!p) break;
+        if (!p)
+          break;
         cnt2[p->data - 'a']++;
         p = p->next;
       }
@@ -118,7 +120,8 @@ int main() {
       printList(res[i]);
     }
 
-    if (res.size() == 0) cout << "-1\n";
+    if (res.size() == 0)
+      cout << "-1\n";
   }
 }
 

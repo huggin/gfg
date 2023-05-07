@@ -38,7 +38,8 @@ int main() {
       tail->next = new Node(x);
       tail = tail->next;
     }
-    if (k == 1 && n >= 1) tail->next = head;
+    if (k == 1 && n >= 1)
+      tail->next = head;
 
     printf("%d\n", isCircular(head));
   }
@@ -68,7 +69,8 @@ bool isCircular(Node *head) {
   while (fast && fast->next) {
     slow = slow->next;
     fast = fast->next->next;
-    if (fast == slow) return true;
+    if (fast == slow)
+      return true;
   }
   return false;
 }

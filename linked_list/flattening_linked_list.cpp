@@ -36,7 +36,8 @@ int main(void) {
     struct Node *preB = NULL;
     cin >> n;
     int work[n];
-    for (int i = 0; i < n; i++) cin >> work[i];
+    for (int i = 0; i < n; i++)
+      cin >> work[i];
     for (int i = 0; i < n; i++) {
       m = work[i];
       --m;
@@ -103,7 +104,8 @@ struct Node{
     the flattened linked list. */
 Node *flatten(Node *root) {
   // Your code here
-  if (!root) return NULL;
+  if (!root)
+    return NULL;
   priority_queue<pair<int, Node *>, vector<pair<int, Node *>>,
                  greater<pair<int, Node *>>>
       Q;

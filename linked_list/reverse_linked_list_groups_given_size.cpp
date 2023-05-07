@@ -4,7 +4,7 @@ using namespace std;
 
 struct node {
   int data;
-  struct node* next;
+  struct node *next;
 
   node(int x) {
     data = x;
@@ -13,7 +13,7 @@ struct node {
 };
 
 /* Function to print linked list */
-void printList(struct node* node) {
+void printList(struct node *node) {
   while (node != NULL) {
     printf("%d ", node->data);
     node = node->next;
@@ -41,14 +41,15 @@ void printList(struct node* node) {
 */
 
 class Solution {
- public:
-  struct node* reverse(struct node* head, int k) {
+public:
+  struct node *reverse(struct node *head, int k) {
     // Complete this metho
-    if (head == NULL) return NULL;
-    node* last = head;
-    node* prev = NULL;
+    if (head == NULL)
+      return NULL;
+    node *last = head;
+    node *prev = NULL;
     for (int i = 0; head != NULL && i < k; ++i) {
-      node* next = head->next;
+      node *next = head->next;
       head->next = prev;
       prev = head;
       head = next;
@@ -66,8 +67,8 @@ int main(void) {
   cin >> t;
 
   while (t--) {
-    struct node* head = NULL;
-    struct node* temp = NULL;
+    struct node *head = NULL;
+    struct node *temp = NULL;
     int n;
     cin >> n;
 

@@ -28,7 +28,7 @@ struct Node {
 */
 
 class Solution {
- public:
+public:
   // Function to check whether the list is palindrome.
   bool isPalindrome(Node *head) {
     // Your code here
@@ -39,7 +39,8 @@ class Solution {
       p = p->next;
     }
     while (!s.empty()) {
-      if (head->data != s.top()) return false;
+      if (head->data != s.top())
+        return false;
       head = head->next;
       s.pop();
     }

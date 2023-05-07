@@ -31,7 +31,7 @@ struct Node
 }*head;
 */
 class Solution {
- public:
+public:
   Node *pairWiseSwap(struct Node *head) {
     // The task is to complete this method
     Node *p = head;

@@ -40,7 +40,7 @@ struct Node
 */
 
 class Solution {
- public:
+public:
   // Function to merge K sorted linked list.
   Node *mergeKLists(Node *arr[], int K) {
     priority_queue<pair<int, Node *>, vector<pair<int, Node *>>,
@@ -67,7 +67,8 @@ class Solution {
         Q.emplace(c.second->next->data, c.second->next);
       }
     }
-    if (prev) prev->next = NULL;
+    if (prev)
+      prev->next = NULL;
     return ans;
   }
 };

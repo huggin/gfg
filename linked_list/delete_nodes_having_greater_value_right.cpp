@@ -49,10 +49,11 @@ class Solution {
     return prev;
   }
 
- public:
+public:
   Node *compute(Node *head) {
     // your code goes here
-    if (!head) return NULL;
+    if (!head)
+      return NULL;
     head = reverse(head);
     int ma = head->data;
     Node *ans = head;

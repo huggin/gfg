@@ -6,7 +6,7 @@ using namespace std;
 
 struct Node {
   int data;
-  Node* next;
+  Node *next;
 
   Node(int val) {
     data = val;
@@ -14,11 +14,13 @@ struct Node {
   }
 };
 
-void loopHere(Node* head, Node* tail, int position) {
-  if (position == 0) return;
+void loopHere(Node *head, Node *tail, int position) {
+  if (position == 0)
+    return;
 
-  Node* walk = head;
-  for (int i = 1; i < position; i++) walk = walk->next;
+  Node *walk = head;
+  for (int i = 1; i < position; i++)
+    walk = walk->next;
   tail->next = walk;
 }
 
@@ -38,21 +40,25 @@ struct Node
 
 */
 class Solution {
- public:
+public:
   // Function to check if the linked list has a loop.
-  bool detectLoop(Node* head) {
+  bool detectLoop(Node *head) {
     // your code here
-    if (!head || !head->next) return false;
-    Node* fast = head->next;
-    Node* slow = head;
+    if (!head || !head->next)
+      return false;
+    Node *fast = head->next;
+    Node *slow = head;
     while (fast) {
       slow = slow->next;
       fast = fast->next;
-      if (!fast) break;
+      if (!fast)
+        break;
       fast = fast->next;
-      if (!fast) break;
+      if (!fast)
+        break;
 
-      if (fast == slow) return true;
+      if (fast == slow)
+        return true;
     }
     return false;
   }

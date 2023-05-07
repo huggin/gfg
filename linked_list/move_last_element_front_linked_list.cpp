@@ -5,7 +5,7 @@
 using namespace std;
 
 class ListNode {
- public:
+public:
   int val;
   ListNode *next;
   ListNode(int x) {
@@ -18,7 +18,7 @@ class ListNode {
 // User function Template for C++
 
 class Solution {
- public:
+public:
   ListNode *moveToFront(ListNode *head) {
     if (!head || !head->next) {
       return head;

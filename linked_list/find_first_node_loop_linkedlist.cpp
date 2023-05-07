@@ -6,7 +6,7 @@ using namespace std;
 
 struct Node {
   int data;
-  Node* next;
+  Node *next;
 
   Node(int val) {
     data = val;
@@ -14,11 +14,13 @@ struct Node {
   }
 };
 
-void loopHere(Node* head, Node* tail, int position) {
-  if (position == 0) return;
+void loopHere(Node *head, Node *tail, int position) {
+  if (position == 0)
+    return;
 
-  Node* walk = head;
-  for (int i = 1; i < position; i++) walk = walk->next;
+  Node *walk = head;
+  for (int i = 1; i < position; i++)
+    walk = walk->next;
   tail->next = walk;
 }
 
@@ -36,14 +38,16 @@ void loopHere(Node* head, Node* tail, int position) {
 
 */
 class Solution {
- public:
+public:
   // Function to find first node if the linked list has a loop.
-  int findFirstNode(Node* head) {
+  int findFirstNode(Node *head) {
     // your code here
-    if (!head) return -1;
-    unordered_set<Node*> s;
+    if (!head)
+      return -1;
+    unordered_set<Node *> s;
     while (head) {
-      if (s.find(head) != s.end()) return head->data;
+      if (s.find(head) != s.end())
+        return head->data;
       s.insert(head);
       head = head->next;
     }

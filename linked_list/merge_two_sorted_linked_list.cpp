@@ -76,8 +76,10 @@ Node *sortedMerge(Node *head1, Node *head2) {
   Node P(0);
   Node *ans = &P;
   Node *p = ans;
-  if (!head1) ans = head2;
-  if (!head2) ans = head1;
+  if (!head1)
+    ans = head2;
+  if (!head2)
+    ans = head1;
   while (head1 || head2) {
     if (!head1) {
       p->next = head2;

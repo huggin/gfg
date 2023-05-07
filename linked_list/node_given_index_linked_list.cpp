@@ -9,7 +9,7 @@ using namespace std;
 /* Link list node */
 struct node {
   int data;
-  struct node* next;
+  struct node *next;
 
   node(int x) {
     data = x;
@@ -17,22 +17,24 @@ struct node {
   }
 };
 
-struct node* push(struct node* head, int d) {
-  struct node* new_node = (struct node*)malloc(sizeof(struct node));
+struct node *push(struct node *head, int d) {
+  struct node *new_node = (struct node *)malloc(sizeof(struct node));
 
   new_node->data = d;
   new_node->next = NULL;
 
-  if (head == NULL) return new_node;
+  if (head == NULL)
+    return new_node;
 
-  struct node* h = head;
-  while (head->next != NULL) head = head->next;
+  struct node *h = head;
+  while (head->next != NULL)
+    head = head->next;
   head->next = new_node;
 
   return h;
 }
 
-int GetNth(struct node* head, int index);
+int GetNth(struct node *head, int index);
 
 /* Driver program to test above function*/
 int main() {
@@ -41,7 +43,7 @@ int main() {
   cin >> T;
 
   while (T--) {
-    struct node* head = NULL;
+    struct node *head = NULL;
 
     cin >> n >> k;
     for (i = 1; i <= n; i++) {
@@ -73,7 +75,7 @@ struct node
 
 // Should return data of node at given index. The function may
 //  assume that there are at least index+1 nodes in linked list
-int GetNth(struct node* head, int index) {
+int GetNth(struct node *head, int index) {
   // Code here
   while (index-- > 1) {
     head = head->next;

@@ -28,7 +28,7 @@ struct Node
 */
 
 class Solution {
- public:
+public:
   // Function to reverse a linked list.
   struct Node *reverseList(struct Node *head) {
     // code here

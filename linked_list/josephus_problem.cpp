@@ -13,10 +13,11 @@ struct Node {
 };
 
 class Solution {
- public:
+public:
   int josephus(int n, int k) {
     // Your code here
-    if (k == 1) return n;
+    if (k == 1)
+      return n;
     Node *head = NULL, *prev = NULL;
     for (int i = 1; i <= n; ++i) {
       Node *p = new Node(i);
@@ -47,10 +48,10 @@ class Solution {
 
 int main() {
   int t;
-  cin >> t;  // testcases
+  cin >> t; // testcases
   while (t--) {
     int n, k;
-    cin >> n >> k;  // taking input n and k
+    cin >> n >> k; // taking input n and k
 
     // calling josephus() function
     Solution ob;
