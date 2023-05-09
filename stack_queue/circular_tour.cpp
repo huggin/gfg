@@ -18,7 +18,7 @@ struct petrolPump
 
 /*You are required to complete this method*/
 class Solution {
- public:
+public:
   // Function to find starting point where the truck can start to get through
   // the complete circle without exhausting its petrol in between.
   int tour(petrolPump p[], int n) {
@@ -27,7 +27,8 @@ class Solution {
     for (int i = 0; i < n; ++i) {
       t += p[i].petrol - p[i].distance;
     }
-    if (t < 0) return -1;
+    if (t < 0)
+      return -1;
     deque<int> Q;
     int c = 0;
     int i = 0;
@@ -57,7 +58,8 @@ int main() {
     int n;
     cin >> n;
     petrolPump p[n];
-    for (int i = 0; i < n; i++) cin >> p[i].petrol >> p[i].distance;
+    for (int i = 0; i < n; i++)
+      cin >> p[i].petrol >> p[i].distance;
     Solution obj;
     cout << obj.tour(p, n) << endl;
   }

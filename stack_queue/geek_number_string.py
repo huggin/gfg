@@ -1,5 +1,6 @@
 # User function Template for python3
 
+
 class Solution:
     def minLength(self, s, n):
         # code here
@@ -7,37 +8,38 @@ class Solution:
         for c in s:
             if len(stack) == 0:
                 stack.append(c)
-            elif c == '1' and stack[-1] == '2':
+            elif c == "1" and stack[-1] == "2":
                 stack.pop()
-            elif c == '2' and stack[-1] == '1':
+            elif c == "2" and stack[-1] == "1":
                 stack.pop()
-            elif c == '3' and stack[-1] == '4':
+            elif c == "3" and stack[-1] == "4":
                 stack.pop()
-            elif c == '4' and stack[-1] == '3':
+            elif c == "4" and stack[-1] == "3":
                 stack.pop()
-            elif c == '5' and stack[-1] == '6':
+            elif c == "5" and stack[-1] == "6":
                 stack.pop()
-            elif c == '6' and stack[-1] == '5':
+            elif c == "6" and stack[-1] == "5":
                 stack.pop()
-            elif c == '7' and stack[-1] == '8':
+            elif c == "7" and stack[-1] == "8":
                 stack.pop()
-            elif c == '8' and stack[-1] == '7':
+            elif c == "8" and stack[-1] == "7":
                 stack.pop()
-            elif c == '9' and stack[-1] == '0':
+            elif c == "9" and stack[-1] == "0":
                 stack.pop()
-            elif c == '0' and stack[-1] == '9':
+            elif c == "0" and stack[-1] == "9":
                 stack.pop()
             else:
                 stack.append(c)
 
         return len(stack)
 
+
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     t = int(input())
     for _ in range(t):
         n = int(input())

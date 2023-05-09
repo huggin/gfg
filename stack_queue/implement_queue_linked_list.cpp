@@ -80,7 +80,8 @@ void MyQueue::push(int x) {
 // Function to pop front element from the queue.
 int MyQueue ::pop() {
   // Your Code
-  if (front == NULL) return -1;
+  if (front == NULL)
+    return -1;
   int ans = front->data;
   QueueNode *n = front->next;
   delete front;

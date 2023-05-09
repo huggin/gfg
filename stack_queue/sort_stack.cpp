@@ -3,7 +3,7 @@
 using namespace std;
 
 class SortedStack {
- public:
+public:
   stack<int> s;
   void sort();
 };
@@ -20,7 +20,7 @@ int main() {
   int t;
   cin >> t;
   while (t--) {
-    SortedStack* ss = new SortedStack();
+    SortedStack *ss = new SortedStack();
     int n;
     cin >> n;
     for (int i = 0; i < n; i++) {
@@ -42,8 +42,9 @@ public:
 };
 */
 
-void gsort(stack<int>& s) {
-  if (s.empty()) return;
+void gsort(stack<int> &s) {
+  if (s.empty())
+    return;
   int temp = s.top();
   s.pop();
   gsort(s);
@@ -53,7 +54,8 @@ void gsort(stack<int>& s) {
     s.pop();
   }
   s.push(temp);
-  for (int i = vi.size() - 1; i >= 0; --i) s.push(vi[i]);
+  for (int i = vi.size() - 1; i >= 0; --i)
+    s.push(vi[i]);
 }
 
 /* The below method sorts the stack s

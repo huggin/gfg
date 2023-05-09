@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int checkRedundancy(string s) {
     // code here
     stack<pair<char, int>> S;
@@ -16,7 +16,8 @@ class Solution {
         S.emplace('(', i);
         flag = false;
       } else if (s[i] == ')') {
-        if (flag == false) return 1;
+        if (flag == false)
+          return 1;
         auto c = S.top();
         S.pop();
         if (c.second == left - 1 && i == right + 1) {

@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int isStackPermutation(int N, vector<int> &A, vector<int> &B) {
     stack<int> S;
     int j = 0;

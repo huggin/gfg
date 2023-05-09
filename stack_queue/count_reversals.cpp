@@ -18,7 +18,8 @@ int main() {
 
 int countRev(string s) {
   // your code here
-  if (s.size() % 2 == 1) return -1;
+  if (s.size() % 2 == 1)
+    return -1;
   stack<char> S;
   int ans = 0;
   for (auto c : s) {

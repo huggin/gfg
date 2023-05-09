@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   // Function to find maximum of minimums of every window size.
   vector<int> maxOfMin(int arr[], int n) {
     // Your code here
@@ -16,14 +16,18 @@ class Solution {
     }
     stack<int> s1, s2;
     for (int i = 0; i < n; ++i) {
-      while (!s1.empty() && arr[s1.top()] >= arr[i]) s1.pop();
-      if (!s1.empty()) left[i] = s1.top();
+      while (!s1.empty() && arr[s1.top()] >= arr[i])
+        s1.pop();
+      if (!s1.empty())
+        left[i] = s1.top();
       s1.push(i);
     }
 
     for (int i = n - 1; i >= 0; --i) {
-      while (!s2.empty() && arr[s2.top()] >= arr[i]) s2.pop();
-      if (!s2.empty()) right[i] = s2.top();
+      while (!s2.empty() && arr[s2.top()] >= arr[i])
+        s2.pop();
+      if (!s2.empty())
+        right[i] = s2.top();
       s2.push(i);
     }
 
@@ -34,7 +38,8 @@ class Solution {
     }
 
     for (int i = n - 2; i >= 0; --i) {
-      if (ans[i] < ans[i + 1]) ans[i] = ans[i + 1];
+      if (ans[i] < ans[i + 1])
+        ans[i] = ans[i + 1];
     }
 
     return ans;
@@ -50,10 +55,12 @@ int main() {
     int n;
     cin >> n;
     int a[n];
-    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
     Solution ob;
     vector<int> res = ob.maxOfMin(a, n);
-    for (int i : res) cout << i << " ";
+    for (int i : res)
+      cout << i << " ";
     cout << endl;
   }
   return 0;

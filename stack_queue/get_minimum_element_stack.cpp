@@ -20,17 +20,19 @@ class Solution {
   stack<int> s;
   stack<int> s2;
 
- public:
+public:
   /*returns min element from stack*/
   int getMin() {
-    if (s2.size() == 0) return -1;
+    if (s2.size() == 0)
+      return -1;
     return s2.top();
     // Write your code here
   }
 
   /*returns poped element from stack*/
   int pop() {
-    if (s.size() == 0) return -1;
+    if (s.size() == 0)
+      return -1;
     int t = s.top();
     if (!s2.empty() && t == s2.top()) {
       s2.pop();

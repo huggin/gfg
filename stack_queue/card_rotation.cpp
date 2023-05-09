@@ -6,11 +6,12 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   vector<int> rotation(int n) {
     // Code Heree
     queue<int> q;
-    for (int i = 0; i < n; ++i) q.push(i);
+    for (int i = 0; i < n; ++i)
+      q.push(i);
 
     vector<int> ans(n);
     int c = 1;
@@ -40,7 +41,8 @@ int main() {
     cin >> n;
     vector<int> ans;
     ans = obj.rotation(n);
-    for (int i : ans) cout << i << " ";
+    for (int i : ans)
+      cout << i << " ";
     cout << endl;
   }
   return 0;

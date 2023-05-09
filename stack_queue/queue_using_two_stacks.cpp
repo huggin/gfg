@@ -4,11 +4,11 @@
 using namespace std;
 
 class StackQueue {
- private:
+private:
   stack<int> s1;
   stack<int> s2;
 
- public:
+public:
   void push(int B);
   int pop();
 };
@@ -63,7 +63,8 @@ int StackQueue ::pop() {
       s1.pop();
     }
   }
-  if (s2.empty()) return -1;
+  if (s2.empty())
+    return -1;
   int ans = s2.top();
   s2.pop();
   return ans;

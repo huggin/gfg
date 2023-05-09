@@ -22,13 +22,13 @@ class Solution:
         while len(s) > n - k:
             s.pop()
 
-        return ''.join(s)
+        return "".join(s)
 
 
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
-if __name__ == '__main__':
+if __name__ == "__main__":
     t = int(input())
     for _ in range(t):
         S, k = input().split()

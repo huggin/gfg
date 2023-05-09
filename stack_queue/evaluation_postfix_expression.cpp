@@ -7,7 +7,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   // Function to evaluate a postfix expression.
   int evaluatePostfix(string S) {
     // Your code heret

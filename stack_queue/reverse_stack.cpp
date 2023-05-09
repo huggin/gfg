@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   void Reverse(stack<int> &St) {
     vector<int> v;
     while (!St.empty()) {

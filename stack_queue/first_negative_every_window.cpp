@@ -20,7 +20,8 @@ int main() {
     cin >> k;
 
     vector<long long> ans = printFirstNegativeInteger(arr, n, k);
-    for (auto it : ans) cout << it << " ";
+    for (auto it : ans)
+      cout << it << " ";
     cout << endl;
   }
   return 0;
@@ -46,7 +47,8 @@ vector<long long> printFirstNegativeInteger(long long int A[], long long int N,
     } else {
       ans.push_back(Q2.front());
     }
-    if (i == N + 1) break;
+    if (i == N + 1)
+      break;
     if (Q2.size() != 0 && Q.front() == Q2.front()) {
       Q.pop();
       Q2.pop();

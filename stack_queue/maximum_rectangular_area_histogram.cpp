@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   // Function to find largest rectangular area possible in a given histogram.
   long long getMaxArea(long long arr[], int n) {
     // Your code here
@@ -48,7 +48,8 @@ int main() {
     cin >> n;
 
     long long arr[n];
-    for (int i = 0; i < n; i++) cin >> arr[i];
+    for (int i = 0; i < n; i++)
+      cin >> arr[i];
     Solution ob;
     cout << ob.getMaxArea(arr, n) << endl;
   }

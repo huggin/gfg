@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   vector<int> help_classmate(vector<int> arr, int n) {
     // Your code goes here
     vector<int> ans(n, -1);

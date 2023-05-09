@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   string removePair(string s) {
     // code here
     deque<char> Q;
@@ -15,7 +15,8 @@ class Solution {
         Q.pop_back();
       }
     }
-    if (Q.size() == 0) return "-1";
+    if (Q.size() == 0)
+      return "-1";
     string ans(Q.begin(), Q.end());
     return ans;
   }
