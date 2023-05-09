@@ -35,8 +35,7 @@ public:
 
     return min({solve(N - 2, INT_MIN, arr[N - 1]),
                 solve(N - 2, arr[N - 1], INT_MAX),
-                1 + solve(N - 2
-       INT_MIN, INT_MAX)});
+                1 + solve(N - 2 INT_MIN, INT_MAX)});
   }
 };
 

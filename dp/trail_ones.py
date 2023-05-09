@@ -1,6 +1,6 @@
 # User function Template for python3
 class Solution:
-    def numberOfConsecutiveOnes(ob, N):
+    def numberOfConsecutiveOnes(self, N):
         # code here
         dp1 = [0] * N
         dp2 = [0] * N
