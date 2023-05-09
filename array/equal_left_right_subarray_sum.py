@@ -1,5 +1,6 @@
 # User function Template for python3
 
+
 class Solution:
     # Complete this function
 
@@ -10,23 +11,21 @@ class Solution:
         pre = 0
         for i in range(N):
             if pre == s - A[i] - pre:
-                return i+1
+                return i + 1
             pre += A[i]
 
         return -1
 
 
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
 
 
 def main():
-
     T = int(input())
 
-    while (T > 0):
-
+    while T > 0:
         N = int(input())
 
         A = [int(x) for x in input().strip().split()]

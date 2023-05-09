@@ -4,18 +4,17 @@ class Solution:
         ans = [0] * (n + 1)
         for i in range(m):
             ans[a[i]] += c[i]
-            ans[b[i]+1] -= c[i]
+            ans[b[i] + 1] -= c[i]
 
-        for i in range(1, n+1):
-            ans[i] += ans[i-1]
+        for i in range(1, n + 1):
+            ans[i] += ans[i - 1]
 
         return max(ans)
 
 
 # {
- # Driver Code Starts
-if __name__ == '__main__':
-
+# Driver Code Starts
+if __name__ == "__main__":
     t = int(input())
     for _ in range(0, t):
         l = list(map(int, input().split()))

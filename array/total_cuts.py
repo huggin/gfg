@@ -2,13 +2,24 @@ from typing import List
 
 
 class Solution:
-    def minimumInteger(self, N: int, A: List[int]) -> int:
+    def totalCuts(self, N: int, K: int, A: List[int]) -> int:
         # code here
-        s = sum(A)
-        ans = max(A)
-        for a in A:
-            if N * a >= s and a < ans:
-                ans = a
+        largest = [0] * N
+        smallest = [0] * N
+
+        largest[0] = A[0]
+        for i in range(1, N):
+            largest[i] = max(largest[i - 1], A[i])
+
+        smallest[N - 1] = A[N - 1]
+        for i in range(N - 2, -1, -1):
+            smallest[i] = min(smallest[i + 1], A[i])
+
+        ans = 0
+        for i in range(0, N - 1):
+            if largest[i] + smallest[i + 1] >= K:
+                ans += 1
+
         return ans
 
 
@@ -33,10 +44,12 @@ if __name__ == "__main__":
     for _ in range(t):
         N = int(input())
 
+        K = int(input())
+
         A = IntArray().Input(N)
 
         obj = Solution()
-        res = obj.minimumInteger(N, A)
+        res = obj.totalCuts(N, K, A)
 
         print(res)
 

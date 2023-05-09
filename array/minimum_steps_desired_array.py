@@ -1,5 +1,6 @@
 # User function Template for python3
 
+
 class Solution:
     def countMinOperations(self, arr, n):
         # code here
@@ -18,12 +19,14 @@ class Solution:
             ans = max(ans, double)
 
         return ans + add
+
+
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     tc = int(input())
     while tc > 0:
         n = int(input())
