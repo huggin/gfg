@@ -1,5 +1,6 @@
 # User function Template for python3
 
+
 class Solution:
     def closest3Sum(self, A, N, X):
         # code here
@@ -8,7 +9,7 @@ class Solution:
 
         A.sort()
         for i in range(N):
-            j, k = i+1, N-1
+            j, k = i + 1, N - 1
             while j < k:
                 s = A[i] + A[j] + A[k]
                 if s > X:
@@ -26,10 +27,10 @@ class Solution:
 
 
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     t = int(input())
     for _ in range(t):
         N = int(input())

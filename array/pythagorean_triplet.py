@@ -17,12 +17,14 @@ class Solution:
                     j += 1
 
         return False
+
+
 # {
 # Driver Code Starts
 # Initial Template for Python 3
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     tc = int(input())
     while tc > 0:
         n = int(input())
