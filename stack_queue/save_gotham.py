@@ -1,10 +1,11 @@
 # User function Template for python3
 
+
 def save_gotham(arr, n):
     # Complete the function
     s = []
     ans = []
-    for j in range(n-1, -1, -1):
+    for j in range(n - 1, -1, -1):
         while len(s) > 0 and s[-1] <= arr[j]:
             s.pop()
         if len(s) == 0:
@@ -17,7 +18,7 @@ def save_gotham(arr, n):
 
 
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
 for _ in range(0, int(input())):
     n = int(input())

@@ -8,7 +8,7 @@ using namespace std;
 class Queue {
   stack<int> input, output;
 
- public:
+public:
   void enqueue(int x) { input.push(x); }
 
   int dequeue() {

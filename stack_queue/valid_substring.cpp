@@ -6,14 +6,15 @@ using namespace std;
 // } Driver Code Ends
 // User function template for c++
 class Solution {
- public:
+public:
   int findMaxLen(string s) {
     // code here
     stack<pair<int, char>> S;
     vector<int> dp(s.size());
     for (int i = 0; i < s.size(); ++i) {
       if (S.empty()) {
-        if (s[i] == ')') continue;
+        if (s[i] == ')')
+          continue;
         S.emplace(i, s[i]);
       } else {
         if (s[i] == '(') {

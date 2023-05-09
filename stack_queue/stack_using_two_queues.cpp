@@ -3,11 +3,11 @@
 using namespace std;
 
 class QueueStack {
- private:
+private:
   queue<int> q1;
   queue<int> q2;
 
- public:
+public:
   void push(int);
   int pop();
 };
@@ -57,7 +57,8 @@ void QueueStack ::push(int x) {
 // Function to pop an element from stack using two queues.
 int QueueStack ::pop() {
   // Your Code
-  if (q1.empty()) return -1;
+  if (q1.empty())
+    return -1;
   int t = -1;
   while (true) {
     t = q1.front();

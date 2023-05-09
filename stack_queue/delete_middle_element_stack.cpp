@@ -8,9 +8,9 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   // Function to delete middle element of a stack.
-  void deleteMid(stack<int>& s, int sizeOfStack) {
+  void deleteMid(stack<int> &s, int sizeOfStack) {
     // code here..
     stack<int> t;
     int n = s.size();

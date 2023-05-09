@@ -1,5 +1,6 @@
 # User function Template for python3
 
+
 class Solution:
     def nearestSmallestTower(self, arr):
         # code here
@@ -18,7 +19,7 @@ class Solution:
             s.append(i)
 
         s = []
-        for i in range(n-1, -1, -1):
+        for i in range(n - 1, -1, -1):
             while len(s) > 0 and arr[s[-1]] >= arr[i]:
                 s.pop()
 
@@ -34,14 +35,19 @@ class Solution:
                 ans[i] = right[i]
             elif right[i] == -1:
                 ans[i] = left[i]
-            elif i - left[i] < right[i] - i or i - left[i] == right[i] - i and arr[left[i]] <= arr[right[i]]:
+            elif (
+                i - left[i] < right[i] - i
+                or i - left[i] == right[i] - i
+                and arr[left[i]] <= arr[right[i]]
+            ):
                 ans[i] = left[i]
             else:
                 ans[i] = right[i]
         return ans
 
+
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
 
 

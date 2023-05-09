@@ -12,10 +12,10 @@ struct StackNode {
 };
 
 class MyStack {
- private:
+private:
   StackNode *top;
 
- public:
+public:
   void push(int);
   int pop();
   MyStack() { top = NULL; }
@@ -61,7 +61,8 @@ void MyStack ::push(int x) {
 // Function to remove an item from top of the stack.
 int MyStack ::pop() {
   // Your Code
-  if (top == NULL) return -1;
+  if (top == NULL)
+    return -1;
   int res = top->data;
   top = top->next;
   return res;

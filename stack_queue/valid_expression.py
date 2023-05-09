@@ -4,20 +4,20 @@ class Solution:
         # code here
         stack = []
         for c in s:
-            if c in '([{':
+            if c in "([{":
                 stack.append(c)
-            elif c == ')':
-                if len(stack) == 0 or stack[-1] != '(':
+            elif c == ")":
+                if len(stack) == 0 or stack[-1] != "(":
                     return 0
                 else:
                     stack.pop()
-            elif c == ']':
-                if len(stack) == 0 or stack[-1] != '[':
+            elif c == "]":
+                if len(stack) == 0 or stack[-1] != "[":
                     return 0
                 else:
                     stack.pop()
-            elif c == '}':
-                if len(stack) == 0 or stack[-1] != '{':
+            elif c == "}":
+                if len(stack) == 0 or stack[-1] != "{":
                     return 0
                 else:
                     stack.pop()
@@ -26,10 +26,10 @@ class Solution:
 
 
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     t = int(input())
     for _ in range(t):
         s = input().strip()

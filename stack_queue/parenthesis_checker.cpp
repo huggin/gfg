@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   // Function to check if brackets are balanced or not.
   bool ispar(string x) {
     // Your code here
