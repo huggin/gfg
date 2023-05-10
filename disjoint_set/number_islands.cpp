@@ -30,12 +30,13 @@ class Solution {
     }
   }
 
- public:
-  vector<int> numOfIslands(int n, int m, vector<vector<int>>& operators) {
+public:
+  vector<int> numOfIslands(int n, int m, vector<vector<int>> &operators) {
     // code here
     count.assign(n * m, 1);
     parent.assign(n * m, -1);
-    for (int i = 0; i < n * m; ++i) parent[i] = i;
+    for (int i = 0; i < n * m; ++i)
+      parent[i] = i;
 
     int dx[] = {-1, 0, 0, 1};
     int dy[] = {0, -1, 1, 0};
@@ -44,7 +45,7 @@ class Solution {
 
     int t = 0;
     vector<int> ans;
-    for (auto& e : operators) {
+    for (auto &e : operators) {
       int x = e[0];
       int y = e[1];
       if (b[x][y] == 1) {
@@ -57,7 +58,8 @@ class Solution {
       for (int k = 0; k < 4; ++k) {
         int nx = x + dx[k];
         int ny = y + dy[k];
-        if (nx < 0 || nx >= n || ny < 0 || ny >= m || !b[nx][ny]) continue;
+        if (nx < 0 || nx >= n || ny < 0 || ny >= m || !b[nx][ny])
+          continue;
         int p2 = nx * m + ny;
         r.push_back(p2);
       }
@@ -107,7 +109,8 @@ int main() {
     Solution obj;
     vector<int> res = obj.numOfIslands(n, m, a);
 
-    for (auto x : res) cout << x << " ";
+    for (auto x : res)
+      cout << x << " ";
     cout << "\n";
   }
 }

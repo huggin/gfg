@@ -16,13 +16,14 @@ class Solution {
     return x;
   }
 
- public:
+public:
   // Function to merge two nodes a and b.
   void union_(int a, int b, int par[], int rank1[]) {
     // code here
     int h1 = head(par, a);
     int h2 = head(par, b);
-    if (h1 == h2) return;
+    if (h1 == h2)
+      return;
     if (rank1[h1] > rank1[h2]) {
       par[h2] = h1;
       rank1[h1] = rank1[h1] + rank1[h2];
@@ -73,7 +74,7 @@ int main() {
       // then calling union_ method
       if (c == 'U') {
         obj.union_(a, b, par, rank1);
-      } else  // else calling isConnected() method
+      } else // else calling isConnected() method
         cout << obj.isConnected(a, b, par, rank1) << endl;
     }
   }

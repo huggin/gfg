@@ -33,7 +33,7 @@ class Solution {
     }
   }
 
- public:
+public:
   long long int numberOfPairs(vector<vector<int>> &pairs, int p, int n) {
     // code here
     for (int i = 0; i < n; ++i) {
@@ -77,7 +77,8 @@ int main() {
     cin >> n >> p;
     vector<vector<int>> pairs(p, vector<int>(2));
     for (auto &i : pairs)
-      for (auto &j : i) cin >> j;
+      for (auto &j : i)
+        cin >> j;
     Solution a;
     cout << a.numberOfPairs(pairs, p, n) << endl;
   }

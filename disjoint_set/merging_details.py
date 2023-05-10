@@ -27,7 +27,7 @@ class Solution:
             parent[i] = i
 
         for i in range(len(details)):
-            for j in range(i+1, len(details)):
+            for j in range(i + 1, len(details)):
                 for k in details[i][1:]:
                     if k in details[j][1:]:
                         self.merge(parent, i, j)
@@ -57,13 +57,12 @@ class Solution:
 
 
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
 
 if __name__ == "__main__":
     T = int(input())
     for t in range(T):
-
         n = int(input())
         details = []
         for i in range(n):
@@ -78,19 +77,19 @@ if __name__ == "__main__":
         obj = Solution()
         ans = obj.mergeDetails(details)
         ans.sort()
-        print('[', end='')
+        print("[", end="")
         for i in range(len(ans)):
-            print('[', end='')
+            print("[", end="")
             for j in range(len(ans[i])):
                 if j != len(ans[i]) - 1:
-                    print(ans[i][j], end=', ')
+                    print(ans[i][j], end=", ")
                 else:
-                    print(ans[i][j], end='')
+                    print(ans[i][j], end="")
             if i != len(ans) - 1:
-                print(end='], ')
+                print(end="], ")
             else:
-                print(end=']')
-        print(']')
+                print(end="]")
+        print("]")
 
 
 # } Driver Code Ends
