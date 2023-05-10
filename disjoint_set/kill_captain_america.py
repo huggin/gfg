@@ -42,8 +42,8 @@ class Solution:
 
         uf = UF(N)
         for edge in V:
-            v[edge[0]-1].append(edge[1]-1)
-            uf.union(edge[0]-1, edge[1]-1)
+            v[edge[0] - 1].append(edge[1] - 1)
+            uf.union(edge[0] - 1, edge[1] - 1)
 
         start = uf.getStart()
         if start == -1:
@@ -64,12 +64,13 @@ class Solution:
 
         return ans
 
+
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     ob = Solution()
     t = int(input())
     for _ in range(t):

@@ -31,7 +31,7 @@ class Solution {
     }
   }
 
- public:
+public:
   vector<string> avoidExplosion(vector<vector<int>> mix, int n,
                                 vector<vector<int>> danger, int m) {
     vector<string> ans;
@@ -42,12 +42,12 @@ class Solution {
     }
     count.assign(n, 1);
 
-    for (auto& m : mix) {
+    for (auto &m : mix) {
       vector<int> dp(parent);
       vector<int> dc(count);
       join(m[0] - 1, m[1] - 1);
       bool f = true;
-      for (auto& d : danger) {
+      for (auto &d : danger) {
         if (find(d[0] - 1) == find(d[1] - 1)) {
           ans.emplace_back("No");
           f = false;
@@ -85,7 +85,8 @@ int main() {
     }
 
     auto ans = sol.avoidExplosion(mix, n, danger, m);
-    for (auto& val : ans) cout << val << " ";
+    for (auto &val : ans)
+      cout << val << " ";
     cout << "\n";
   }
 

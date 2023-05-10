@@ -5,25 +5,25 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
-  int root(int i, vector<int>& p) {
+  int root(int i, vector<int> &p) {
     while (i != p[i]) {
       p[i] = p[p[i]];
       i = p[i];
     }
     return i;
   }
-  bool connected(int i, int j, vector<int>& p) {
+  bool connected(int i, int j, vector<int> &p) {
     int r1 = root(i, p);
     int r2 = root(j, p);
     return r1 == r2;
   }
-  void connect(int i, int j, vector<int>& p) {
+  void connect(int i, int j, vector<int> &p) {
     int r1 = root(i, p);
     int r2 = root(j, p);
     p[r1] = r2;
   }
 
- public:
+public:
   // Function to detect cycle using DSU in an undirected graph.
   int detectCycle(int V, vector<int> adj[]) {
     // Code here
@@ -34,7 +34,8 @@ class Solution {
     for (int i = 0; i < V; ++i) {
       for (int j = 0; j < adj[i].size(); ++j) {
         // cout << i << ' ' << adj[i][j] << endl;
-        if (adj[i][j] < i) continue;
+        if (adj[i][j] < i)
+          continue;
         if (connected(i, adj[i][j], p)) {
           return 1;
         } else {
