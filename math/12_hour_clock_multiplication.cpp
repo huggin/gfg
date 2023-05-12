@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int mulClock(int num1, int num2) {
     // code here
     return num1 * num2 % 12;

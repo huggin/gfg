@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   long long rectanglesInChessBoard(long long N) {
     // code here
     return (N * (N + 1) / 2) * (N * (N + 1) / 2) -

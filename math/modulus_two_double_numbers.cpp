@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   double floatMod(double a, double b) {
     // code here
     int r = a / b;

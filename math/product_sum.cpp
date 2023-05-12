@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 // User function Template for C++
 class Solution {
- public:
+public:
   long long int countDigits(long long int a, long long int b) {
     // code here
     long long n = abs(a * b);

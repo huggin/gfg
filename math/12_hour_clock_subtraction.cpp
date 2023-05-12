@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int subClock(int num1, int num2) {
     // code here
     return (num1 % 12 + 12 - num2 % 12) % 12;

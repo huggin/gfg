@@ -7,12 +7,13 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   string compareFrac(string s) {
     // Code here
     int a, b, c, d;
     sscanf(s.c_str(), "%d/%d, %d/%d", &a, &b, &c, &d);
-    if (a * d == c * b) return "equal";
+    if (a * d == c * b)
+      return "equal";
     char buf[32];
 
     if (a * d > c * b) {

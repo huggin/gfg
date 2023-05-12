@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   long long modTask(long long N) {
     // code here
     return N / 2 + 1;

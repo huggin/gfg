@@ -8,14 +8,16 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   vector<int> nearestPerfectSquare(int N) {
     // code here
     int i = sqrt(N);
-    if (i * i == N) return vector<int>{N, 0};
+    if (i * i == N)
+      return vector<int>{N, 0};
     int a = N - i * i;
     int b = (i + 1) * (i + 1) - N;
-    if (a > b) return vector<int>{b + N, b};
+    if (a > b)
+      return vector<int>{b + N, b};
     return vector<int>{N - a, a};
   }
 };

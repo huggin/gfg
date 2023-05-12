@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int noOfWays(int z, int n, int m) {
     // Code here
     const int M = 1e9 + 7;

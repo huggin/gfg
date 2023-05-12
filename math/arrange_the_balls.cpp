@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   long long numberOfWays(long long N) {
     // code here
     return 3 * N + (N - 1) * (N - 2) / 2;

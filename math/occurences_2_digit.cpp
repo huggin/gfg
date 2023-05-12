@@ -37,7 +37,8 @@ long long int numberOf2sinRange(long long int number) {
   for (int i = 2; i <= number; ++i) {
     int n = i;
     while (n > 0) {
-      if (n % 10 == 2) ++ans;
+      if (n % 10 == 2)
+        ++ans;
       n /= 10;
     }
   }

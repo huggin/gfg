@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int Count(int a, int b) {
     // Code here
     vector<int> dp(3001);
@@ -27,7 +27,8 @@ class Solution {
     }
     int ans = 0;
     for (int i = a; i <= b; ++i) {
-      if (dp[i] == 0) ++ans;
+      if (dp[i] == 0)
+        ++ans;
     }
     return ans;
   }

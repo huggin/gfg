@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   string captain(int N) {
     // code here
     return N % 3 ? "JELLY" : "JACK";

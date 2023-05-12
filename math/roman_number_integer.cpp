@@ -8,7 +8,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   int romanToDecimal(string &str) {
     // code here
     int ans = 0;

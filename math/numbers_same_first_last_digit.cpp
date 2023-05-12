@@ -11,13 +11,14 @@ class Solution {
     return n;
   }
 
- public:
+public:
   int numbersInRange(int L, int R) {
     // code here
     int ans = 0;
 
     for (int i = L; i <= R; ++i) {
-      if (first(i) == i % 10) ++ans;
+      if (first(i) == i % 10)
+        ++ans;
     }
     return ans;
   }

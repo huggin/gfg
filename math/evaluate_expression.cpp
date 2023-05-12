@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int evaluate_exp(int n) {
     // Code here
     vector<int> f(n + 2);
