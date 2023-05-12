@@ -1,6 +1,6 @@
 # User function Template for python3
 class Solution:
-    def getCount(ob, X):
+    def getCount(self, X):
         # code here
         cnt = 0
         for i in range(31):
