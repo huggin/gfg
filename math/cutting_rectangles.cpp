@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   vector<long long int> minimumSquares(long long int L, long long int B) {
     // code here
     long long g = __gcd(L, B);

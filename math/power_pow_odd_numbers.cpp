@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   long long int sum_of_square_oddNumbers(long long int n) {
     // Code here.
     long long ans = 0;

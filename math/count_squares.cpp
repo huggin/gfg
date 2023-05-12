@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   int countSquares(int N) {
     // code here
     int k = sqrt(N);

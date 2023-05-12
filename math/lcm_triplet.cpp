@@ -11,13 +11,17 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   long long lcmTriplets(long long N) {
     // code here
-    if (N == 2) return 2;
-    if (N == 3) return 6;
-    if (N % 2 == 1) return N * (N - 1) * (N - 2);
-    if (N % 3) return N * (N - 1) * (N - 3);
+    if (N == 2)
+      return 2;
+    if (N == 3)
+      return 6;
+    if (N % 2 == 1)
+      return N * (N - 1) * (N - 2);
+    if (N % 3)
+      return N * (N - 1) * (N - 3);
     return (N - 1) * (N - 2) * (N - 3);
   }
 };

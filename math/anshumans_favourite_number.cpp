@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 // User function Template for C++
 class Solution {
- public:
+public:
   string isValid(long long N) {
     // code here
     return N % 5 ? "NO" : "YES";

@@ -9,10 +9,11 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   long double NthTerm(int N) {
     // code here
-    if (N == 1 || N == 2) return 2;
+    if (N == 1 || N == 2)
+      return 2;
     long double ans = 2;
     int a = N / 2;
     if (N % 2 == 0) {

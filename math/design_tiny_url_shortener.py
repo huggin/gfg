@@ -1,8 +1,8 @@
 #User function Template for python3
 
 class Solution:
-	def idToShortURL(self,n):
-		# code here
+    def idToShortURL(self,n):
+        # code here
         s = []
         while n:
             s.append(n % 62)

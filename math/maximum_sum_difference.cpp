@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int maxSum(int N) { return N * (N - 1) / 2 + (N / 2 - 1); }
 };
 

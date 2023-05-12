@@ -6,12 +6,13 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int printPairs(int arr[], int n, int k) {
     // code here.
     int ans = 0;
     unordered_set<int> s;
-    for (int i = 0; i < n; ++i) s.insert(arr[i]);
+    for (int i = 0; i < n; ++i)
+      s.insert(arr[i]);
 
     for (int i = 0; i < n; ++i) {
       if (arr[i] == k) {
@@ -20,8 +21,10 @@ class Solution {
         int d = arr[i] - k;
         for (int j = 1; j * j <= d; ++j) {
           if (d % j == 0) {
-            if (j > k) ans += s.count(j);
-            if (j * j != d && d / j > k) ans += s.count(d / j);
+            if (j > k)
+              ans += s.count(j);
+            if (j * j != d && d / j > k)
+              ans += s.count(d / j);
           }
         }
       }
@@ -40,7 +43,8 @@ int main() {
     int n, k;
     cin >> n >> k;
     int a[n];
-    for (int i = 0; i < n; ++i) cin >> a[i];
+    for (int i = 0; i < n; ++i)
+      cin >> a[i];
     Solution ob;
     cout << ob.printPairs(a, n, k) << endl;
   }

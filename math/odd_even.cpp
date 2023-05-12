@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   string oddEven(int N) {
     // code here
     return N % 2 ? "odd" : "even";

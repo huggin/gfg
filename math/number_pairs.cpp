@@ -5,7 +5,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
- public:
+public:
   // X[], Y[]: input arrau
   // M, N: size of arrays X[] and Y[] respectively
   // Function to count number of pairs such that x^y is greater than y^x.
@@ -21,7 +21,8 @@ class Solution {
     ans += tx * ty;
     // cout << ans << endl;
     for (int i = 0; i < M; ++i) {
-      if (X[i] == 1) continue;
+      if (X[i] == 1)
+        continue;
 
       auto c = upper_bound(Y, Y + N, X[i]);
       if (X[i] == 2) {
