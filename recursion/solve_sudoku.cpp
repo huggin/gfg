@@ -23,8 +23,10 @@ class Solution {
     // cout << i << ' ' << j << endl;
     int used[N + 1] = {0};
     for (int in = 0; in < N; ++in) {
-      if (g[i][in] != 0) used[g[i][in]]++;
-      if (g[in][j] != 0) used[g[in][j]]++;
+      if (g[i][in] != 0)
+        used[g[i][in]]++;
+      if (g[in][j] != 0)
+        used[g[in][j]]++;
     }
     for (int in = i / 3 * 3; in < (i / 3 + 1) * 3; ++in) {
       for (int jn = j / 3 * 3; jn < (j / 3 + 1) * 3; ++jn) {
@@ -36,14 +38,15 @@ class Solution {
     for (int l = 1; l <= 9; ++l) {
       if (used[l] == 0) {
         g[i][j] = l;
-        if (solve(k + 1)) return true;
+        if (solve(k + 1))
+          return true;
         g[i][j] = 0;
       }
     }
     return false;
   }
 
- public:
+public:
   // Function to find a solved Sudoku.
   bool SolveSudoku(int grid[N][N]) {
     // Your code here
@@ -91,7 +94,8 @@ int main() {
     int grid[N][N];
 
     for (int i = 0; i < 9; i++)
-      for (int j = 0; j < 9; j++) cin >> grid[i][j];
+      for (int j = 0; j < 9; j++)
+        cin >> grid[i][j];
 
     Solution ob;
 

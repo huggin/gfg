@@ -7,7 +7,7 @@ using namespace std;
 class Solution {
   vector<vector<int>> ans;
 
-  void go(int k, int m, vector<int>& c) {
+  void go(int k, int m, vector<int> &c) {
     if (k == 0) {
       ans.push_back(c);
       return;
@@ -19,7 +19,7 @@ class Solution {
     }
   }
 
- public:
+public:
   vector<vector<int>> UniquePartitions(int n) {
     // Code here
     ans.clear();
@@ -39,7 +39,8 @@ int main() {
     Solution ob;
     vector<vector<int>> ans = ob.UniquePartitions(n);
     for (auto i : ans)
-      for (auto j : i) cout << j << " ";
+      for (auto j : i)
+        cout << j << " ";
     cout << "\n";
   }
   return 0;

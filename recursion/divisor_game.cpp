@@ -7,7 +7,8 @@ using namespace std;
 class Solution {
   vector<int> dp;
   int solve(int k) {
-    if (dp[k] != -1) return dp[k];
+    if (dp[k] != -1)
+      return dp[k];
     dp[k] = 0;
     for (int i = 1; i < k; ++i) {
       if (k % i == 0) {
@@ -19,7 +20,7 @@ class Solution {
     return dp[k];
   }
 
- public:
+public:
   bool divisorGame(int N) {
     // code here
     dp.assign(N + 1, -1);

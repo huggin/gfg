@@ -10,7 +10,7 @@ using namespace std;
 class Solution {
   vector<vector<int>> ans;
   vector<int> v;
-  void solve(vector<int>& A, int B, int k) {
+  void solve(vector<int> &A, int B, int k) {
     if (B == 0) {
       ans.push_back(v);
       return;
@@ -26,10 +26,10 @@ class Solution {
     }
   }
 
- public:
+public:
   // Function to return a list of indexes denoting the required
   // combinations whose sum is equal to given number.
-  vector<vector<int>> combinationSum(vector<int>& A, int B) {
+  vector<vector<int>> combinationSum(vector<int> &A, int B) {
     // Your code here
     ans.clear();
     v.clear();
@@ -65,7 +65,8 @@ int main() {
       cout << '(';
       for (int j = 0; j < result[i].size(); j++) {
         cout << result[i][j];
-        if (j < result[i].size() - 1) cout << " ";
+        if (j < result[i].size() - 1)
+          cout << " ";
       }
       cout << ")";
     }

@@ -3,9 +3,9 @@ def solve(arr, k, curr, ans):
     if k == len(arr):
         ans.append(sum(curr))
         return
-    solve(arr, k+1, curr, ans)
+    solve(arr, k + 1, curr, ans)
     curr.append(arr[k])
-    solve(arr, k+1, curr, ans)
+    solve(arr, k + 1, curr, ans)
     curr.pop()
 
 
@@ -17,12 +17,13 @@ class Solution:
         solve(arr, 0, curr, ans)
         return ans
 
+
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     T = int(input())
     for i in range(T):
         N = int(input())

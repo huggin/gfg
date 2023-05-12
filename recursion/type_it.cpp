@@ -8,8 +8,9 @@ using namespace std;
 // User function template for C++
 
 class Solution {
-  int solve(const string& s, int k, int used) {
-    if (k == 0) return 1;
+  int solve(const string &s, int k, int used) {
+    if (k == 0)
+      return 1;
     if (!used && k % 2 == 1 &&
         s.substr(0, (k + 1) / 2) == s.substr((k + 1) / 2, (k + 1) / 2)) {
       return 1 + solve(s, k / 2, 1);
@@ -17,7 +18,7 @@ class Solution {
     return 1 + solve(s, k - 1, used);
   }
 
- public:
+public:
   int minOperation(string s) {
     // code here
     return solve(s, s.size() - 1, 0);

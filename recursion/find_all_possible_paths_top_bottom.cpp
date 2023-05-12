@@ -10,7 +10,7 @@ using namespace std;
 class Solution {
   vector<vector<int>> ans;
   vector<vector<int>> g;
-  void go(int i, int j, int n, int m, vector<int>& v) {
+  void go(int i, int j, int n, int m, vector<int> &v) {
     if (i == n - 1 && j == m - 1) {
       v.push_back(g[i][j]);
       ans.push_back(v);
@@ -29,9 +29,9 @@ class Solution {
     }
   }
 
- public:
+public:
   vector<vector<int>> findAllPossiblePaths(int n, int m,
-                                           vector<vector<int>>& grid) {
+                                           vector<vector<int>> &grid) {
     // code here
     ans.clear();
     g = grid;

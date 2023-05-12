@@ -12,7 +12,7 @@ class Solution {
   set<string> ans;
   int n;
   string S;
-  void solve(int k, string& s) {
+  void solve(int k, string &s) {
     if (k == n) {
       if (s.size() != 0 && !isv(s[s.size() - 1])) {
         ans.insert(s);
@@ -34,7 +34,7 @@ class Solution {
     }
   }
 
- public:
+public:
   set<string> allPossibleSubsequences(string S2) {
     // code here
     ans.clear();
@@ -59,7 +59,8 @@ int main() {
     if (ans.size() == 0)
       cout << -1 << endl;
     else {
-      for (auto i : ans) cout << i << " ";
+      for (auto i : ans)
+        cout << i << " ";
       cout << endl;
     }
   }

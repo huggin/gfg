@@ -8,17 +8,18 @@ using namespace std;
 class Solution {
   vector<int> v;
 
-  void dfs(int k, vector<vector<int>>& adj) {
+  void dfs(int k, vector<vector<int>> &adj) {
     v[k] = 1;
     for (int i = 0; i < adj[k].size(); ++i) {
-      if (i == k) continue;
+      if (i == k)
+        continue;
       if (!v[i] && adj[k][i] == 1) {
         dfs(i, adj);
       }
     }
   }
 
- public:
+public:
   int numProvinces(vector<vector<int>> adj, int V) {
     // code here
     v.assign(V, 0);

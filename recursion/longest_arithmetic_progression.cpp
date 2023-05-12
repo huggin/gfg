@@ -19,10 +19,11 @@ class Solution {
     return ans2;
   }
 
- public:
+public:
   int lengthOfLongestAP(int A[], int n) {
     // code here
-    if (n <= 2) return n;
+    if (n <= 2)
+      return n;
     int ans = 0;
     for (int i = 0; i < n; ++i) {
       for (int j = i + 1; j < n; ++j) {

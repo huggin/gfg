@@ -10,7 +10,7 @@ using namespace std;
 class Solution {
   vector<vector<int>> ans;
 
-  void solve(int k, const vector<int>& A, vector<int>& t) {
+  void solve(int k, const vector<int> &A, vector<int> &t) {
     if (k == A.size()) {
       ans.push_back(t);
       return;
@@ -22,8 +22,8 @@ class Solution {
     solve(k + 1, A, t);
   }
 
- public:
-  vector<vector<int>> subsets(vector<int>& A) {
+public:
+  vector<vector<int>> subsets(vector<int> &A) {
     // code here
     ans.clear();
     vector<int> t;
@@ -54,7 +54,8 @@ int main() {
 
     // Print result
     for (int i = 0; i < res.size(); i++) {
-      for (int j = 0; j < res[i].size(); j++) cout << res[i][j] << " ";
+      for (int j = 0; j < res[i].size(); j++)
+        cout << res[i][j] << " ";
       cout << endl;
     }
   }

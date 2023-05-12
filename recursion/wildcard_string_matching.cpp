@@ -10,20 +10,26 @@ class Solution {
   string P;
 
   int solve(int i, int j) {
-    if (i == W.size() && j == P.size()) return 1;
+    if (i == W.size() && j == P.size())
+      return 1;
     if (i == W.size()) {
-      if (j != P.size()) return 0;
+      if (j != P.size())
+        return 0;
     } else {
       if (j == P.size()) {
         while (i < W.size()) {
-          if (W[i++] != '*') return 0;
+          if (W[i++] != '*')
+            return 0;
         }
         return 1;
       }
     }
-    if (dp[i][j] != -1) return dp[i][j];
-    if (W[i] == P[j]) return dp[i][j] = solve(i + 1, j + 1);
-    if (W[i] == '?') return dp[i][j] = solve(i + 1, j + 1);
+    if (dp[i][j] != -1)
+      return dp[i][j];
+    if (W[i] == P[j])
+      return dp[i][j] = solve(i + 1, j + 1);
+    if (W[i] == '?')
+      return dp[i][j] = solve(i + 1, j + 1);
     if (W[i] == '*') {
       return dp[i][j] =
                  solve(i, j + 1) || solve(i + 1, j + 1) || solve(i + 1, j);
@@ -31,7 +37,7 @@ class Solution {
     return dp[i][j] = 0;
   }
 
- public:
+public:
   bool match(string wild, string pattern) {
     // code here
     memset(dp, -1, sizeof(dp));

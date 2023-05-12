@@ -14,7 +14,8 @@ class Solution {
       return 0;
     } else if (i != p.size() && j == s.size()) {
       while (i < p.size()) {
-        if (p[i++] != '*') return 0;
+        if (p[i++] != '*')
+          return 0;
       }
       return 1;
     }
@@ -30,7 +31,7 @@ class Solution {
     }
   }
 
- public:
+public:
   /*You are required to complete this method*/
   int wildCard(string pattern, string str) {
     p = pattern;

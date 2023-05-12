@@ -7,7 +7,7 @@ class Solution {
   vector<string> ans;
   string s;
 
-  void solve(int k, string& t) {
+  void solve(int k, string &t) {
     if (k == s.size()) {
       ans.push_back(t);
       return;
@@ -22,7 +22,7 @@ class Solution {
     t.pop_back();
   }
 
- public:
+public:
   vector<string> permutation(string S) {
     // Code Here
     s = S;

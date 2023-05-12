@@ -3,16 +3,14 @@
 using namespace std;
 
 class Array {
- public:
-  template <class T>
-  static void input(vector<T>& A, int n) {
+public:
+  template <class T> static void input(vector<T> &A, int n) {
     for (int i = 0; i < n; i++) {
       cin >> A[i];
     }
   }
 
-  template <class T>
-  static void print(vector<T>& A) {
+  template <class T> static void print(vector<T> &A) {
     for (int i = 0; i < A.size(); i++) {
       if (i != A.size() - 1)
         cout << A[i] << " ";
@@ -31,20 +29,21 @@ class Solution {
   string S;
   int ma;
 
-  bool valid(const string& s) {
+  bool valid(const string &s) {
     stack<char> sc;
     for (int i = 0; i < s.size(); ++i) {
       if (s[i] == '(') {
         sc.push('(');
       } else if (s[i] == ')') {
-        if (sc.empty()) return false;
+        if (sc.empty())
+          return false;
         sc.pop();
       }
     }
     return sc.empty();
   }
 
-  void solve(int k, string& t) {
+  void solve(int k, string &t) {
     if (k == n) {
       if (t.size() >= ma && valid(t)) {
         ans.push_back(t);
@@ -59,7 +58,7 @@ class Solution {
     solve(k + 1, t);
   }
 
- public:
+public:
   vector<string> removeInvalidParentheses(string s) {
     // code here
     n = s.size();

@@ -26,7 +26,7 @@ class Solution {
     }
   }
 
- public:
+public:
   vector<vector<string>> allPalindromicPerms(string S) {
     // code here
     n = S.size();
