@@ -9,7 +9,7 @@ using namespace std;
 class Solution {
   vector<vector<string>> ans;
   int n;
-  void go(vector<vector<string>>& list, int k, vector<string>& t) {
+  void go(vector<vector<string>> &list, int k, vector<string> &t) {
     if (k == n) {
       ans.push_back(t);
       return;
@@ -21,8 +21,8 @@ class Solution {
     }
   }
 
- public:
-  vector<vector<string>> sentences(vector<vector<string>>& list) {
+public:
+  vector<vector<string>> sentences(vector<vector<string>> &list) {
     // Write your code here
     ans.clear();
     n = list.size();

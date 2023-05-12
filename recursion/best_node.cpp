@@ -3,16 +3,14 @@
 using namespace std;
 
 class Array {
- public:
-  template <class T>
-  static void input(vector<T> &A, int n) {
+public:
+  template <class T> static void input(vector<T> &A, int n) {
     for (int i = 0; i < n; i++) {
       scanf("%d ", &A[i]);
     }
   }
 
-  template <class T>
-  static void print(vector<T> &A) {
+  template <class T> static void print(vector<T> &A) {
     for (int i = 0; i < A.size(); i++) {
       cout << A[i] << " ";
     }
@@ -39,7 +37,7 @@ class Solution {
     return make_pair(A[k] - mi, A[k] - ma);
   }
 
- public:
+public:
   long long bestNode(int N, vector<int> &A, vector<int> &P) {
     // code here
     vector<int> children[N];

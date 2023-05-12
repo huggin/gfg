@@ -10,9 +10,10 @@ class Solution {
   int dx[4] = {-1, 0, 0, 1};
   int dy[4] = {0, -1, 1, 0};
 
-  int solve(int i, int j, vector<vector<int>>& mat) {
-    if (dp[i][j] != -1) return dp[i][j];
-    int& ans = dp[i][j];
+  int solve(int i, int j, vector<vector<int>> &mat) {
+    if (dp[i][j] != -1)
+      return dp[i][j];
+    int &ans = dp[i][j];
     ans = 1;
     for (int k = 0; k < 4; ++k) {
       int ni = i + dx[k];
@@ -24,8 +25,8 @@ class Solution {
     return ans;
   }
 
- public:
-  int longestIncreasingPath(vector<vector<int>>& matrix) {
+public:
+  int longestIncreasingPath(vector<vector<int>> &matrix) {
     // Code here
     n = matrix.size();
     m = matrix[0].size();
@@ -51,7 +52,8 @@ int main() {
     cin >> n >> m;
     vector<vector<int>> matrix(n, vector<int>(m, 0));
     for (int i = 0; i < n; i++)
-      for (int j = 0; j < m; j++) cin >> matrix[i][j];
+      for (int j = 0; j < m; j++)
+        cin >> matrix[i][j];
     Solution obj;
     int ans = obj.longestIncreasingPath(matrix);
     cout << ans << "\n";

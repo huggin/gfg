@@ -6,14 +6,15 @@ using namespace std;
 /*You are required to complete this method */
 
 class Solution {
-  int* A;
+  int *A;
   int N;
   int av;
   vector<int> ans;
   bool found;
 
   void solve(int i) {
-    if (found) return;
+    if (found)
+      return;
     if (i == N) {
       found = true;
       return;
@@ -27,13 +28,15 @@ class Solution {
     }
   }
 
- public:
+public:
   bool isKPartitionPossible(int a[], int n, int k) {
     // Your code here
     int t = accumulate(a, a + n, 0);
-    if (t % k != 0) return false;
+    if (t % k != 0)
+      return false;
     av = t / k;
-    if (*max_element(a, a + n) > av) return false;
+    if (*max_element(a, a + n) > av)
+      return false;
     sort(a, a + n, greater<int>());
     A = a;
     N = n;
@@ -53,7 +56,8 @@ int main() {
 
     cin >> n;
     int a[n];
-    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
     int k;
     cin >> k;
     Solution obj;

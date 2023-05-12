@@ -13,7 +13,7 @@ class Solution {
   vector<vector<char>> v;
   int dx[4] = {-1, 0, 0, 1};
   int dy[4] = {0, -1, 1, 0};
-  void solve(vector<vector<int>>& m, int xc, int yc, int k) {
+  void solve(vector<vector<int>> &m, int xc, int yc, int k) {
     // cout << xc << ' ' << yc << ' ' << k << endl;
     if (xc == x && yc == y) {
       ans = max(ans, k);
@@ -31,10 +31,11 @@ class Solution {
     }
   }
 
- public:
+public:
   int longestPath(vector<vector<int>> matrix, int xs, int ys, int xd, int yd) {
     // code here
-    if (matrix[xs][ys] == 0 || matrix[xd][yd] == 0) return -1;
+    if (matrix[xs][ys] == 0 || matrix[xd][yd] == 0)
+      return -1;
     v.assign(matrix.size(), vector<char>(matrix[0].size()));
     x = xd;
     y = yd;

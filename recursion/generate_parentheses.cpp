@@ -13,7 +13,7 @@ vector<string> AllParenthesis(int n);
 class Solution {
   vector<string> ans;
   int N;
-  void solve(int k, int left, int right, string& t) {
+  void solve(int k, int left, int right, string &t) {
     if (k == N) {
       ans.push_back(t);
       return;
@@ -30,7 +30,7 @@ class Solution {
     }
   }
 
- public:
+public:
   vector<string> AllParenthesis(int n) {
     // Your code goes here
     ans.clear();
@@ -52,7 +52,8 @@ int main() {
     Solution ob;
     vector<string> result = ob.AllParenthesis(n);
     sort(result.begin(), result.end());
-    for (int i = 0; i < result.size(); ++i) cout << result[i] << "\n";
+    for (int i = 0; i < result.size(); ++i)
+      cout << result[i] << "\n";
   }
   return 0;
 }

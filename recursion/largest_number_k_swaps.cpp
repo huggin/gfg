@@ -9,7 +9,7 @@ class Solution {
   int n;
   bool found;
 
-  void solve(string& s, int k, int i) {
+  void solve(string &s, int k, int i) {
     ans = max(ans, s);
     if (k == 0 || i == n) {
       return;
@@ -28,7 +28,7 @@ class Solution {
     }
   }
 
- public:
+public:
   // Function to find the largest number after k swaps.
   string findMaximumNum(string s, int k) {
     // code here.

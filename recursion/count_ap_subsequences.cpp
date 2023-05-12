@@ -19,7 +19,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   long long int count(int N, int A[]) {
     // code here
     n = N;
@@ -42,7 +42,8 @@ int main() {
     int N;
     cin >> N;
     int a[N];
-    for (int i = 0; i < N; i++) cin >> a[i];
+    for (int i = 0; i < N; i++)
+      cin >> a[i];
     Solution ob;
     cout << ob.count(N, a) << endl;
   }

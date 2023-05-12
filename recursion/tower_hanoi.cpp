@@ -5,7 +5,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   // You need to complete this function
 
   int ans;
@@ -38,10 +38,10 @@ class Solution {
 
 int main() {
   int T;
-  cin >> T;  // testcases
+  cin >> T; // testcases
   while (T--) {
     int N;
-    cin >> N;  // taking input N
+    cin >> N; // taking input N
 
     // calling toh() function
     Solution ob;

@@ -16,16 +16,18 @@ class Solution {
       return;
     }
     for (int i = 1; i <= min(3, (int)s.size()); ++i) {
-      if (s[0] == '0' && i > 1) continue;
+      if (s[0] == '0' && i > 1)
+        continue;
       int ii = atoi(s.substr(0, i).c_str());
-      if (ii > 255) continue;
+      if (ii > 255)
+        continue;
       t.push_back(ii);
       go(k + 1, s.substr(i), t);
       t.pop_back();
     }
   }
 
- public:
+public:
   vector<string> genIp(string &s) {
     // Your code here
     ans.clear();

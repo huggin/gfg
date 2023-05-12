@@ -41,7 +41,7 @@ class Solution {
     }
   }
 
- public:
+public:
   vector<vector<int>> nQueen(int n) {
     // code here
     b.assign(n + 1, vector<int>(n + 1));
@@ -67,7 +67,8 @@ int main() {
     else {
       for (int i = 0; i < ans.size(); i++) {
         cout << "[";
-        for (int u : ans[i]) cout << u << " ";
+        for (int u : ans[i])
+          cout << u << " ";
         cout << "] ";
       }
       cout << endl;
