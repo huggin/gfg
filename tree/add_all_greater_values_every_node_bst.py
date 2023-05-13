@@ -109,7 +109,7 @@ def buildTree(s):
 
 
 def inorder(root):
-    if root != None:
+    if root is not None:
         inorder(root.left)
         print(root.data, end=" ")
         inorder(root.right)

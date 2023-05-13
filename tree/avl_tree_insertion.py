@@ -14,7 +14,7 @@ class Node:
 
 class Solution:
     def height(self, h):
-        if h == None:
+        if h is None:
             return 0
         return h.height
 
@@ -94,13 +94,13 @@ def isBalanced(n):
     if not n:
         return (0, True)
 
-    lHeight, l = isBalanced(n.left)
-    rHeight, r = isBalanced(n.right)
+    lHeight, left = isBalanced(n.left)
+    rHeight, right = isBalanced(n.right)
 
     if abs(lHeight - rHeight) > 1:
         return (0, False)
 
-    return (1 + max(lHeight, rHeight), l and r)
+    return (1 + max(lHeight, rHeight), left and right)
 
 
 def isBalancedBST(root):
