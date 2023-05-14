@@ -6,12 +6,13 @@ using namespace std;
 class Solution {
   bool ok(int c1[], int c2[]) {
     for (int i = 0; i < 256; ++i) {
-      if (c1[i] != 0 && c2[i] == 0) return false;
+      if (c1[i] != 0 && c2[i] == 0)
+        return false;
     }
     return true;
   }
 
- public:
+public:
   int findSubString(string str) {
     // Your code goes here
     int count[256] = {0};

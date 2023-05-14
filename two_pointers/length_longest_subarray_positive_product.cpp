@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   // Function to return the length of the
   // longest subarray with ppositive product
   int maxLength(vector<int> &arr, int n) {

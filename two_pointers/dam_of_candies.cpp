@@ -6,7 +6,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int maxCandy(int height[], int n) {
     // Your code goes here
     int ans = 0;

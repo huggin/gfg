@@ -6,7 +6,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int smallestSubstring(string S) {
     // Code here
     int c[3] = {0};

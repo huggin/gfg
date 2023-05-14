@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   // Function to find the smallest window in the string s consisting
   // of all the characters of string p.
   string smallestWindow(string s, string p) {
@@ -54,7 +54,8 @@ class Solution {
         }
       }
     }
-    if (len == -1) return "-1";
+    if (len == -1)
+      return "-1";
     return s.substr(left, right - left + 1);
   }
 };

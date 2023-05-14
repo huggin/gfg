@@ -8,7 +8,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   int longestKSubstr(string s, int k) {
     // your code here
     int ans = -1;

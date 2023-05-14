@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int appleSequences(int N, int M, string arr) {
     // code here
     int i = 0, j = 0;
@@ -20,7 +20,8 @@ class Solution {
         if (--M >= 0) {
           ans = max(ans, i - j + 1);
         } else {
-          while (j < N && arr[j] == 'A') ++j;
+          while (j < N && arr[j] == 'A')
+            ++j;
           ++j;
           ++M;
           ans = max(ans, i - j + 1);

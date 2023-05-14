@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
-  int solve(const vector<int>& a, int k) {
+  int solve(const vector<int> &a, int k) {
     vector<int> c(a.size() + 1);
     int ans = 0;
     for (int i = 0, j = 0; i < a.size(); ++i) {
@@ -25,10 +25,11 @@ class Solution {
     return ans;
   }
 
- public:
-  int subarrayCount(vector<int>& arr, int N, int k) {
+public:
+  int subarrayCount(vector<int> &arr, int N, int k) {
     // code here
-    if (k == 0) return solve(arr, 1);
+    if (k == 0)
+      return solve(arr, 1);
     return solve(arr, k) - solve(arr, k - 1);
   }
 };
@@ -43,7 +44,8 @@ int main() {
     cin >> N >> k;
 
     vector<int> arr(N);
-    for (int i = 0; i < N; i++) cin >> arr[i];
+    for (int i = 0; i < N; i++)
+      cin >> arr[i];
 
     Solution obj;
     cout << obj.subarrayCount(arr, N, k) << endl;
