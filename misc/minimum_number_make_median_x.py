@@ -1,5 +1,4 @@
 # User function Template for python3
-# bug in test cases
 
 
 class Solution:
@@ -7,29 +6,28 @@ class Solution:
         # Complete the function
         small, big = 0, 0
         same = 0
-        biggest_less, smallest_larger = 0, int(1e8)
+        bl, sg = 0, int(1e8)
         for a in arr:
             if a < x:
                 small += 1
-                biggest_less = max(biggest_less, a)
+                bl = max(bl, a)
             elif a > x:
                 big += 1
-                smallest_larger = min(smallest_larger, a)
+                sg = min(sg, a)
             else:
                 same = 1
 
+        __import__('pdb').set_trace()
         ans = abs(small - big)
-        if same or biggest_less + smallest_larger == 2 * x:
+        if same or bl + sg == 2 * x:
             return ans
 
-        if small == n or big == n:
-            return n
-
-        ans += 1
-        if small > big and biggest_less + smallest_larger > 2 * x:
-            ans -= 1
-        elif small < big and biggest_less + smallest_larger < 2 * x:
-            ans -= 1
+        if bl + sg > 2 * x:
+            if small > big:
+                return small - big - 1
+        else:
+            if small < big:
+                return big - small - 1
 
         return ans
 
