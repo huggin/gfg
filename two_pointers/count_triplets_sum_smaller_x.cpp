@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   long long countTriplets(long long arr[], int n, long long sum) {
     // Your code goes here
     sort(arr, arr + n);

@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int characterReplacement(string S, int K) {
     // code here
     int n = S.size();

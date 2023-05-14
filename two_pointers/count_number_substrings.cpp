@@ -8,7 +8,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
-  long long solve(const string& s, int k) {
+  long long solve(const string &s, int k) {
     int n = s.size();
     int j = 0;
     int c[26] = {0};
@@ -30,10 +30,11 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   long long int substrCount(string s, int k) {
     // code here.
-    if (k == 1) return solve(s, 1);
+    if (k == 1)
+      return solve(s, 1);
     return solve(s, k) - solve(s, k - 1);
   }
 };

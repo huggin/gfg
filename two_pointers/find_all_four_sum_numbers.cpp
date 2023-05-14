@@ -6,7 +6,7 @@ using namespace std;
 // User function template for C++
 
 class Solution {
- public:
+public:
   // arr[] : int input array of integers
   // k : the quadruple sum required
   vector<vector<int>> fourSum(vector<int> &arr, int k) {

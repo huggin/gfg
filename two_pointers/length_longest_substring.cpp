@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int longestUniqueSubsttr(string S) {
     // code
     int c[26] = {0};

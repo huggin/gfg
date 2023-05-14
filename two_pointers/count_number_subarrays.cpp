@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 // User function Template for C++
 class Solution {
-  long long solve(const vector<int>& a, int n, long long x) {
+  long long solve(const vector<int> &a, int n, long long x) {
     int i = 0, j = 0;
     long long total = 0;
     long long ans = 0;
@@ -20,7 +20,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   long long countSubarray(int N, vector<int> A, long long L, long long R) {
     // code here
     return solve(A, N, R) - solve(A, N, L - 1);
