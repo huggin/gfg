@@ -11,7 +11,7 @@ class Solution:
                 while k < n:
                     z = x + y
                     sz = str(z)
-                    if sz != s[k:k+len[sz]]:
+                    if sz != s[k : k + len[sz]]:
                         break
                     x = y
                     y = z
@@ -24,12 +24,11 @@ class Solution:
 
 
 # {
- # Driver Code Starts
+# Driver Code Starts
 # Initial Template for Python 3
-if __name__ == '__main__':
+if __name__ == "__main__":
     t = int(input())
     for _ in range(t):
-
         S = str(input())
 
         ob = Solution()
