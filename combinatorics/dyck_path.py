@@ -2,15 +2,14 @@
 
 
 class Solution:
-    def count(self, N):
+    def dyckPaths(self, N):
         # code here
-        dp = [0] * (N // 2 + 1)
-        dp[0] = 1
-        for i in range(1, len(dp)):
-            for j in range(i):
-                dp[i] += dp[j] * dp[i - 1 - j]
+        ans = 1
+        for i in range(1, N + 1):
+            ans *= N + i
+            ans //= i
 
-        return dp[N // 2]
+        return ans // (N + 1)
 
 
 # {
@@ -21,6 +20,7 @@ if __name__ == "__main__":
     t = int(input())
     for _ in range(t):
         N = int(input())
+
         ob = Solution()
-        print(ob.count(N))
+        print(ob.dyckPaths(N))
 # } Driver Code Ends

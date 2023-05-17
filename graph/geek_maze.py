@@ -24,6 +24,8 @@ class Solution:
         while len(q):
             x = q.popleft()
             y = q.popleft()
+            if x == 1 and y == 2:
+                __import__('pdb').set_trace()
             cu = q.popleft()
             cd = q.popleft()
             ans += 1
@@ -50,7 +52,7 @@ class Solution:
                     q.append(cd - 1)
                 else:
                     q.append(cd)
-
+        print(marked)
         return ans
 
 

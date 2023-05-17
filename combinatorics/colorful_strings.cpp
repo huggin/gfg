@@ -9,11 +9,12 @@ class Solution {
   long long ans;
   vector<long long> fact;
 
- public:
+public:
   long long possibleStrings(int n, int r, int b, int g) {
     // code here
     fact.assign(n + 1, 1);
-    for (int i = 1; i <= n; ++i) fact[i] = fact[i - 1] * i;
+    for (int i = 1; i <= n; ++i)
+      fact[i] = fact[i - 1] * i;
 
     ans = 0;
     for (int i = r; i + b + g <= n; ++i) {

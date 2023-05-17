@@ -4,7 +4,7 @@ using namespace std;
 
 // } Driver Code Ends
 class Solution {
- public:
+public:
   int countOfDistinctNo(string str) {
     // Code here
     vector<int> cnt(16);
@@ -29,10 +29,12 @@ class Solution {
     dp[0] = 1;
     for (int i = 1; i < 16; ++i) {
       int f = cnt[i];
-      if (f == 0) continue;
+      if (f == 0)
+        continue;
       for (int j = n; j >= 0; --j) {
         for (int k = 1; k <= f; ++k) {
-          if (j - k >= 0) dp[j] = (dp[j] + dp[j - k] * c[j][k]) % M;
+          if (j - k >= 0)
+            dp[j] = (dp[j] + dp[j - k] * c[j][k]) % M;
         }
       }
     }
@@ -50,7 +52,8 @@ class Solution {
     for (int i = 1; i <= n; ++i) {
       ans = (ans + dp[i]) % M;
     }
-    if (f > 1) ans -= (f - 1);
+    if (f > 1)
+      ans -= (f - 1);
     return ans;
   }
 };

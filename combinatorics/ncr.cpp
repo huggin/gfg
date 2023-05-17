@@ -10,10 +10,11 @@ using namespace std;
 class Solution {
   int dp[1001][1001];
 
- public:
+public:
   int nCr(int n, int r) {
     // code here
-    if (r > n) return 0;
+    if (r > n)
+      return 0;
     memset(dp, 0, sizeof(dp));
     dp[0][0] = 1;
     for (int i = 1; i <= n; ++i) {
