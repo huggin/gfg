@@ -3,7 +3,7 @@
 using namespace std;
 
 long long getSum(int[], int n);
-main() {
+int main() {
   // your code goes here
   int t;
   cin >> t;
@@ -11,7 +11,8 @@ main() {
     int n;
     cin >> n;
     int a[n];
-    for (int i = 0; i < n; i++) cin >> a[i];
+    for (int i = 0; i < n; i++)
+      cin >> a[i];
 
     cout << getSum(a, n) << endl;
   }
@@ -24,7 +25,8 @@ long long getSum(int A[], int n) {
   // Your code here
   const int M = 1e9 + 7;
   long long d = 1;
-  for (int i = 1; i < n; ++i) d = (d * i) % M;
+  for (int i = 1; i < n; ++i)
+    d = (d * i) % M;
   d = (accumulate(A, A + n, 0LL) * d) % M;
 
   long long ans = 0;

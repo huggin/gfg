@@ -7,7 +7,7 @@ using namespace std;
 // } Driver Code Ends
 // User function Template for C++
 class Solution {
- public:
+public:
   int largestPowerOfK(int N, int K) {
     // code here
     int k = K;
@@ -18,7 +18,8 @@ class Solution {
         k /= i;
       }
     }
-    if (k != 1) f[k]++;
+    if (k != 1)
+      f[k]++;
 
     int ans = INT_MAX;
     for (int i = 2; i <= K; ++i) {

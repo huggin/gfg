@@ -8,12 +8,13 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int countWays(int m, int n, int p, int arr[]) {
     // code here
     int ball = m - p;
     int need = accumulate(arr, arr + n, 0);
-    if (ball < need) return -1;
+    if (ball < need)
+      return -1;
     int more = ball - need;
     vector<vector<int>> dp(n + more + 1, vector<int>(n + more + 1, 1));
     for (int i = 2; i < n + more; ++i) {
@@ -34,7 +35,8 @@ int main() {
     int m, n, p;
     cin >> m >> n >> p;
     int arr[n];
-    for (int i = 0; i < n; i++) cin >> arr[i];
+    for (int i = 0; i < n; i++)
+      cin >> arr[i];
 
     Solution ob;
     cout << ob.countWays(m, n, p, arr) << endl;

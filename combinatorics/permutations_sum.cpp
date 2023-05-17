@@ -6,7 +6,7 @@ using namespace std;
 // } Driver Code Ends
 
 class Solution {
-  int count(const vector<int>& p) {
+  int count(const vector<int> &p) {
     int ans = 0;
     for (int i = 0; i < p.size(); ++i) {
       ans = ans * 10 + p[i];
@@ -14,7 +14,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   vector<int> permutaion(int N) {
     // Code here
     vector<int> p;
@@ -43,7 +43,8 @@ int main() {
     cin >> N;
     Solution ob;
     vector<int> ans = ob.permutaion(N);
-    for (auto i : ans) cout << i << " ";
+    for (auto i : ans)
+      cout << i << " ";
     cout << "\n";
   }
   return 0;

@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   int permutationCoeff(int n, int k) {
     // Code here
     long long ans = 1;

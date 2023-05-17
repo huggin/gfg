@@ -8,10 +8,11 @@ using namespace std;
 // User function Template for C++
 
 class Solution {
- public:
+public:
   vector<int> nextPermutation(int N, vector<int> arr) {
     // code here
-    if (N == 1) return arr;
+    if (N == 1)
+      return arr;
     int pos = -1;
     for (int i = N - 2; i >= 0; --i) {
       if (arr[i + 1] > arr[i]) {
@@ -44,11 +45,13 @@ int main() {
     int N;
     cin >> N;
     vector<int> arr(N);
-    for (int i = 0; i < N; i++) cin >> arr[i];
+    for (int i = 0; i < N; i++)
+      cin >> arr[i];
 
     Solution ob;
     vector<int> ans = ob.nextPermutation(N, arr);
-    for (int u : ans) cout << u << " ";
+    for (int u : ans)
+      cout << u << " ";
     cout << "\n";
   }
   return 0;
