@@ -8,7 +8,6 @@ class Solution:
         num = 0
         stack = []
         ops = []
-        __import__("pdb").set_trace()
         for c in s:
             if c in ["*", "/", "+", "-"]:
                 stack.append(num)
