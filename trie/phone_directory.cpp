@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 struct Node {
-  Node* next[256];
+  Node *next[256];
   int val;
   Node(int v = 0) : val(v) { memset(next, 0, sizeof(next)); }
 };
@@ -16,8 +16,9 @@ struct Node {
 vector<vector<string>> ans;
 vector<string> vs;
 
-Node* put(Node* p, const string& s, int d) {
-  if (!p) p = new Node();
+Node *put(Node *p, const string &s, int d) {
+  if (!p)
+    p = new Node();
   if (d == s.size()) {
     p->val = 1;
     return p;
@@ -27,7 +28,7 @@ Node* put(Node* p, const string& s, int d) {
   return p;
 }
 
-void solve(Node* p, string& prefix) {
+void solve(Node *p, string &prefix) {
   if (p->val == 1) {
     vs.push_back(prefix);
   }
@@ -40,7 +41,7 @@ void solve(Node* p, string& prefix) {
   }
 }
 
-void get(Node* p, const string& s) {
+void get(Node *p, const string &s) {
   bool end = false;
   for (int i = 0; i < s.size(); ++i) {
     if (end || !p->next[s[i]]) {
@@ -57,10 +58,10 @@ void get(Node* p, const string& s) {
 }
 
 class Solution {
- public:
+public:
   vector<vector<string>> displayContacts(int n, string contact[], string s) {
     // code here
-    Node* root = new Node(1);
+    Node *root = new Node(1);
     for (int i = 0; i < n; ++i) {
       root = put(root, contact[i], 0);
     }
@@ -80,13 +81,15 @@ int main() {
     int n;
     cin >> n;
     string contact[n], s;
-    for (int i = 0; i < n; i++) cin >> contact[i];
+    for (int i = 0; i < n; i++)
+      cin >> contact[i];
     cin >> s;
 
     Solution ob;
     vector<vector<string>> ans = ob.displayContacts(n, contact, s);
     for (int i = 0; i < s.size(); i++) {
-      for (auto u : ans[i]) cout << u << " ";
+      for (auto u : ans[i])
+        cout << u << " ";
       cout << "\n";
     }
   }

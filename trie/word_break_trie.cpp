@@ -8,24 +8,26 @@ using namespace std;
 // User function template for C++
 
 struct TrieNode {
-  TrieNode* children[26];
+  TrieNode *children[26];
   bool leaf;
   TrieNode() : leaf(false) { memset(children, 0, sizeof(children)); }
 };
 
 class Solution {
-  bool search(TrieNode* root, const string& A, int d) {
-    TrieNode* p = root;
+  bool search(TrieNode *root, const string &A, int d) {
+    TrieNode *p = root;
     bool f = false;
     for (int i = d; i < A.size(); ++i) {
       int c = A[i] - 'a';
       if (!p->children[c]) {
-        if (!p->leaf) return false;
+        if (!p->leaf)
+          return false;
         return search(root, A, i);
       } else {
         if (p->leaf) {
           f = search(root, A, i);
-          if (f) return true;
+          if (f)
+            return true;
         }
         p = p->children[c];
       }
@@ -33,15 +35,15 @@ class Solution {
     return p->leaf;
   }
 
- public:
+public:
   // A : given string to search
   // B : vector of available strings
 
-  int wordBreak(string A, vector<string>& B) {
+  int wordBreak(string A, vector<string> &B) {
     // code here
-    TrieNode* root = new TrieNode();
-    for (const string& s : B) {
-      TrieNode* p = root;
+    TrieNode *root = new TrieNode();
+    for (const string &s : B) {
+      TrieNode *p = root;
       for (int i = 0; i < s.size(); ++i) {
         int c = s[i] - 'a';
         if (!p->children[c]) {

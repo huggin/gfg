@@ -8,7 +8,7 @@ using namespace std;
 // User function Template for C++
 
 struct TrieNode {
-  TrieNode* children[2];
+  TrieNode *children[2];
   int value;
   TrieNode() : value(0) { memset(children, 0, sizeof(children)); }
 };
@@ -25,7 +25,7 @@ class Solution {
     root->value = d;
   }
 
-  int get(TrieNode* root, int d) {
+  int get(TrieNode *root, int d) {
     for (int i = 31; i >= 0; --i) {
       bool b = d & (1 << i);
       if (root->children[1 - b]) {
@@ -37,10 +37,10 @@ class Solution {
     return d ^ root->value;
   }
 
- public:
+public:
   int maxSubarrayXOR(int N, int arr[]) {
     // code here
-    TrieNode* root = new TrieNode();
+    TrieNode *root = new TrieNode();
     put(root, 0);
     int prefix = 0;
     int ans = INT_MIN;

@@ -8,17 +8,18 @@ using namespace std;
 // User function Template for C++
 
 struct Node {
-  Node* next[256];
+  Node *next[256];
   bool isLeaf;
   Node(bool t = false) : isLeaf(t) { memset(next, 0, sizeof(next)); }
 };
 
 class Solution {
-  Node* root = NULL;
-  Node* put(const string& w) { return put(root, w, 0); }
+  Node *root = NULL;
+  Node *put(const string &w) { return put(root, w, 0); }
 
-  Node* put(Node* p, const string& w, int d) {
-    if (!p) p = new Node();
+  Node *put(Node *p, const string &w, int d) {
+    if (!p)
+      p = new Node();
     if (d == w.size()) {
       p->isLeaf = true;
       return p;
@@ -28,23 +29,27 @@ class Solution {
     return p;
   }
 
-  bool get(const string& w) { return get(root, w, 0); }
+  bool get(const string &w) { return get(root, w, 0); }
 
-  bool get(Node* p, const string& w, int d) {
-    if (!p) return false;
-    if (w.size() == d) return p->isLeaf;
-    if (!p->isLeaf) return false;
+  bool get(Node *p, const string &w, int d) {
+    if (!p)
+      return false;
+    if (w.size() == d)
+      return p->isLeaf;
+    if (!p->isLeaf)
+      return false;
     char c = w[d];
     return get(p->next[c], w, d + 1);
   }
 
- public:
-  string longestString(vector<string>& words) {
+public:
+  string longestString(vector<string> &words) {
     // code here
     root = new Node(true);
     string ans;
-    for (auto& w : words) put(w);
-    for (auto& w : words) {
+    for (auto &w : words)
+      put(w);
+    for (auto &w : words) {
       bool ok = get(w);
       // cout << w << ' ' << ok << endl;
       if (ok) {

@@ -11,8 +11,8 @@
 #define ALPHABET_SIZE (26)
 #define INDEX(c) ((int)c - (int)'a')
 
-#define FREE(p) \
-  free(p);      \
+#define FREE(p)                                                                \
+  free(p);                                                                     \
   p = NULL;
 using namespace std;
 
@@ -21,7 +21,7 @@ typedef struct trie_node trie_node_t;
 
 // trie node
 struct trie_node {
-  int value;  // non zero if leaf
+  int value; // non zero if leaf
   trie_node_t *children[ALPHABET_SIZE];
 };
 
@@ -108,9 +108,11 @@ int ifExsist(trie_t *pTrie, char key[]) {
     return 0;
 }
 int compare_strings(char a[], char b[]) {
-  if (strlen(a) != strlen(b)) return 1;
+  if (strlen(a) != strlen(b))
+    return 1;
   for (int i = 0; i < strlen(a); i++) {
-    if (a[i] != b[i]) return 1;
+    if (a[i] != b[i])
+      return 1;
   }
   return 0;
 }
@@ -124,14 +126,16 @@ struct trie_node
     trie_node_t *children[ALPHABET_SIZE];
 };*/
 class Solution {
- public:
+public:
   void deleteKey(trie_node_t *root, char key[]) {
     // Code here
-    if (!root) return;
+    if (!root)
+      return;
     int n = strlen(key);
     trie_node_t *p = root;
     for (int i = 0; i < n; ++i) {
-      if (!p->children[key[i] - 'a']) return;
+      if (!p->children[key[i] - 'a'])
+        return;
       p = p->children[key[i] - 'a'];
     }
     p->value = 0;

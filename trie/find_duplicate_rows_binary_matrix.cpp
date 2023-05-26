@@ -7,12 +7,12 @@ using namespace std;
 
 struct TrieNode {
   bool leaf;
-  TrieNode* children[2];
+  TrieNode *children[2];
   TrieNode() : leaf(false) { children[0] = children[1] = 0; }
 };
 
 class Solution {
-  void put(TrieNode* p, const vector<int>& line) {
+  void put(TrieNode *p, const vector<int> &line) {
     for (int e : line) {
       if (!p->children[e]) {
         p->children[e] = new TrieNode();
@@ -22,18 +22,19 @@ class Solution {
     p->leaf = true;
   }
 
-  bool get(TrieNode* p, const vector<int>& line) {
+  bool get(TrieNode *p, const vector<int> &line) {
     for (int e : line) {
-      if (!p->children[e]) return false;
+      if (!p->children[e])
+        return false;
       p = p->children[e];
     }
     return p->leaf;
   }
 
- public:
+public:
   vector<int> repeatedRows(vector<vector<int>> matrix, int M, int N) {
     // Your code here
-    TrieNode* root = new TrieNode();
+    TrieNode *root = new TrieNode();
     vector<int> ans;
     for (int i = 0; i < M; ++i) {
       if (get(root, matrix[i])) {

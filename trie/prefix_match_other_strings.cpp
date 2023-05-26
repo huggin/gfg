@@ -9,13 +9,13 @@ using namespace std;
 
 struct TrieNode {
   int size;
-  TrieNode* children[26];
+  TrieNode *children[26];
   TrieNode(int sz = 0) : size(sz) { memset(children, 0, sizeof(children)); }
 };
 
 class Solution {
-  void put(TrieNode* root, const string& s) {
-    TrieNode* p = root;
+  void put(TrieNode *root, const string &s) {
+    TrieNode *p = root;
     for (char c : s) {
       int d = c - 'a';
       if (!p->children[d]) {
@@ -27,16 +27,17 @@ class Solution {
     }
   }
 
- public:
+public:
   int klengthpref(string arr[], int n, int k, string str) {
-    TrieNode* root = new TrieNode();
+    TrieNode *root = new TrieNode();
     for (int i = 0; i < n; ++i) {
       put(root, arr[i]);
     }
-    TrieNode* p = root;
+    TrieNode *p = root;
     for (int i = 0; i < k; ++i) {
       int d = str[i] - 'a';
-      if (!p->children[d]) return 0;
+      if (!p->children[d])
+        return 0;
       p = p->children[d];
     }
     return p->size;
