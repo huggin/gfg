@@ -7,30 +7,33 @@ using namespace std;
 struct TrieNode {
   int freq;
   string s;
-  TrieNode* children[27];
+  TrieNode *children[27];
   TrieNode() : freq(0) { memset(children, 0, sizeof(children)); }
 };
 
 struct cmp {
-  bool operator()(const pair<int, string>& l, const pair<int, string>& r) {
-    if (l.first > r.first) return true;
-    if (l.first == r.first && l.second < r.second) return true;
+  bool operator()(const pair<int, string> &l, const pair<int, string> &r) {
+    if (l.first > r.first)
+      return true;
+    if (l.first == r.first && l.second < r.second)
+      return true;
     return false;
   }
 };
 
 class AutoCompleteSystem {
-  TrieNode* root;
-  TrieNode* curr;
+  TrieNode *root;
+  TrieNode *curr;
   string prev;
 
   int index(char c) {
     int d = c - 'a';
-    if (c == ' ') d = 26;
+    if (c == ' ')
+      d = 26;
     return d;
   }
 
-  void put(TrieNode* p, const string& s, int freq) {
+  void put(TrieNode *p, const string &s, int freq) {
     for (char c : s) {
       int d = index(c);
       if (!p->children[d]) {
@@ -42,8 +45,9 @@ class AutoCompleteSystem {
     p->s = s;
   }
 
-  void get(TrieNode* p, string& prev, set<pair<int, string>, cmp>& sp) {
-    if (!p) return;
+  void get(TrieNode *p, string &prev, set<pair<int, string>, cmp> &sp) {
+    if (!p)
+      return;
     if (p->freq != 0) {
       sp.emplace(p->freq, prev);
     }
@@ -57,8 +61,8 @@ class AutoCompleteSystem {
     }
   }
 
- public:
-  AutoCompleteSystem(vector<string>& sentences, vector<int>& times) {
+public:
+  AutoCompleteSystem(vector<string> &sentences, vector<int> &times) {
     // write code for constructor
     root = new TrieNode();
     for (int i = 0; i < sentences.size(); ++i) {
@@ -79,7 +83,8 @@ class AutoCompleteSystem {
       prev.clear();
       return ans;
     }
-    if (!curr) return ans;
+    if (!curr)
+      return ans;
     if (!curr->children[d]) {
       curr->children[d] = new TrieNode();
       curr = curr->children[d];
@@ -121,7 +126,7 @@ int main() {
       cin >> times[i];
       cin.ignore();
     }
-    AutoCompleteSystem* obj = new AutoCompleteSystem(sentences, times);
+    AutoCompleteSystem *obj = new AutoCompleteSystem(sentences, times);
     int q;
     cin >> q;
     cin.ignore();
@@ -130,12 +135,13 @@ int main() {
       string query;
       getline(cin, query);
       string qq = "";
-      for (auto& x : query) {
+      for (auto &x : query) {
         qq += x;
         vector<string> suggestions = obj->input(x);
-        if (x == '#') continue;
+        if (x == '#')
+          continue;
         cout << "Typed : \"" << qq << "\" , Suggestions: \n";
-        for (auto& y : suggestions) {
+        for (auto &y : suggestions) {
           cout << y << "\n";
         }
       }

@@ -56,7 +56,7 @@ public:
     std::sort(qi.begin(), qi.end());
 
     std::vector<long long> ans(Q, -1);
-    for(int i=0, j = 0; j < Q; ++j) {
+    for (int i = 0, j = 0; j < Q; ++j) {
       while (i < N && arr[i] <= qi[j].first.first) {
         put(arr[i]);
         ++i;

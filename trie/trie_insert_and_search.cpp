@@ -32,7 +32,8 @@ struct TrieNode *getNode(void) {
 
     pNode->isLeaf = false;
 
-    for (i = 0; i < ALPHABET_SIZE; i++) pNode->children[i] = NULL;
+    for (i = 0; i < ALPHABET_SIZE; i++)
+      pNode->children[i] = NULL;
   }
 
   return pNode;
@@ -60,7 +61,8 @@ int main() {
 
     struct TrieNode *root = getNode();
     // Construct trie
-    for (int i = 0; i < n; i++) insert(root, keys[i]);
+    for (int i = 0; i < n; i++)
+      insert(root, keys[i]);
 
     string abc;
 

@@ -9,15 +9,16 @@ using namespace std;
 
 struct Node {
   int size;
-  Node* next[26];
+  Node *next[26];
   Node(int sz = 0) : size(sz) { memset(next, 0, sizeof(next)); }
 };
 
 class Solution {
   vector<string> ans;
 
-  Node* put(Node* p, const string& s, int d) {
-    if (!p) p = new Node();
+  Node *put(Node *p, const string &s, int d) {
+    if (!p)
+      p = new Node();
     ++p->size;
     if (s.size() == d) {
       return p;
@@ -27,16 +28,16 @@ class Solution {
     return p;
   }
 
- public:
+public:
   vector<string> findPrefixes(string arr[], int n) {
     // code here
-    Node* root = new Node(0);
+    Node *root = new Node(0);
     for (int i = 0; i < n; ++i) {
       put(root, arr[i], 0);
     }
     for (int i = 0; i < n; ++i) {
       int len = 1;
-      Node* p = root->next[arr[i][0] - 'a'];
+      Node *p = root->next[arr[i][0] - 'a'];
       while (p->size > 1) {
         p = p->next[arr[i][len] - 'a'];
         ++len;
@@ -57,12 +58,14 @@ int main() {
     cin >> n;
 
     string arr[n];
-    for (int i = 0; i < n; i++) cin >> arr[i];
+    for (int i = 0; i < n; i++)
+      cin >> arr[i];
 
     Solution ob;
     vector<string> ans = ob.findPrefixes(arr, n);
 
-    for (int i = 0; i < ans.size(); i++) cout << ans[i] << " ";
+    for (int i = 0; i < ans.size(); i++)
+      cout << ans[i] << " ";
 
     cout << "\n";
   }
