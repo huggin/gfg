@@ -14,7 +14,7 @@ struct TrieNode {
 };
 
 class Solution {
-  TrieNode* put(TrieNode* root, int d) {
+  void put(TrieNode* root, int d) {
     for (int i = 31; i >= 0; --i) {
       bool b = d & (1 << i);
       if (!root->children[b]) {
