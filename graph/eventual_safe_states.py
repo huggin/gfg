@@ -1,6 +1,9 @@
 # User function Template for python3
 
 from typing import List
+import sys
+
+sys.setrecursionlimit(20000)
 
 
 class Solution:
@@ -8,30 +11,22 @@ class Solution:
         self.marked[v] = 1
         for w in adj[v]:
             if self.marked[w] == 0:
-                self.path[w] = v
-                self.dfs(w, adj)
+                if self.dfs(w, adj) == 3:
+                    self.marked[v] = 3
+                    return 3
             elif self.marked[w] == 1:
-                k = v
-                while k != w:
-                    self.marked[k] = 3
-                    k = self.path[k]
-                self.marked[w] = 3
+                self.marked[v] = 3
+                return 3
             elif self.marked[w] == 3:
-                k = v
-                while k != -1 and self.marked[k] != 3:
-                    self.marked[k] = 3
-                    k = self.path[k]
+                self.marked[v] = 3
+                return 3
 
         self.marked[v] = 2
-        for w in adj[v]:
-            if self.marked[w] == 3:
-                self.marked[v] = 3
-                break
+        return 2
 
     def eventualSafeNodes(self, V: int, adj: List[List[int]]) -> List[int]:
         # code here
         self.marked = [0] * V
-        self.path = [-1] * V
         for i in range(V):
             if self.marked[i] == 0:
                 self.dfs(i, adj)
