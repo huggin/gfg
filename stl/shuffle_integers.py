@@ -1,7 +1,17 @@
 class Solution:
     def shuffleArray(self, arr, n):
         # Your code goes here
-        arr[:] = [item for pair in zip(arr[: n // 2], arr[n // 2 :]) for item in pair]
+        j = 0
+        mod = 100001
+        for i in range(n):
+            if i % 2 == 0:
+                arr[i] += arr[j] * mod
+            else:
+                arr[i] += arr[n // 2 + j] * mod
+                j += 1
+
+        for i in range(n):
+            arr[i] = (arr[i] // mod) % mod
 
 
 # {
