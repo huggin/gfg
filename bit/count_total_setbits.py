@@ -5,7 +5,7 @@ class Solution:
     def countBits(self, N):
         # code here
         ans = 0
-        for i in range(31, 0, -1):
+        for i in range(62, 0, -1):
             if N & (1 << i):
                 ans += N % (1 << i) + 1 + (1 << i - 1) * i
                 N &= (1 << i) - 1
