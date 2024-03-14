@@ -1,12 +1,5 @@
 # User function Template for python3
 
-"""
-class Node:
-    def __init__(self,data):
-        self.data=data
-        self.next=None
-"""
-
 
 class Node:
     def __init__(self, data):
@@ -14,53 +7,30 @@ class Node:
         self.next = None
 
 
-def merge(p, q):
-    ans = Node(0)
-    prev = ans
-    while p or q:
-        if not p:
-            prev.next = q
-            q = q.next
-        elif not q:
-            prev.next = p
-            p = p.next
-        elif p.data < q.data:
-            prev.next = p
-            p = p.next
-        else:
-            prev.next = q
-            q = q.next
-        prev = prev.next
+class Solution:
+    def sort(self, h1):
+        # return head
+        if h1 is None or h1.next is None:
+            return h1
+        p = h1
+        q = h1.next
+        prev = None
 
-    prev.next = None
+        while q is not None:
+            t = q.next
+            q.next = prev
+            prev = q
+            p.next = t
+            if t is None:
+                p.next = prev
+                break
+            elif t.next is None:
+                t.next = prev
+                break
+            p = t
+            q = t.next
 
-    return ans.next
-
-
-def sort(head):
-    # return head
-    if not head or not head.next:
-        return head
-
-    a = []
-    p = head
-    while p:
-        a.append(p)
-        p = p.next
-        a[-1].next = None
-
-    while len(a) > 1:
-        b = []
-        n = len(a)
-        for i in range(0, n, 2):
-            if i + 1 < n:
-                p = merge(a[i], a[i + 1])
-                b.append(p)
-            else:
-                b.append(a[i])
-        a = b.copy()
-
-    return a[0]
+        return h1
 
 
 # {
@@ -93,6 +63,7 @@ if __name__ == "__main__":
     t = int(input())
 
     for tcs in range(t):
+
         n1 = int(input())
         arr1 = [int(x) for x in input().split()]
         ll1 = Llist()
@@ -100,7 +71,8 @@ if __name__ == "__main__":
         for nodeData in arr1:
             tail = ll1.insert(nodeData, tail)
 
-        resHead = sort(ll1.head)
+        ob = Solution()
+        resHead = ob.sort(ll1.head)
         printList(resHead)
         print()
 
