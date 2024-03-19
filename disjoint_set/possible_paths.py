@@ -45,11 +45,18 @@ class Solution:
         groups = {}
         while j < q:
             while i < n - 1 and edges[i][2] <= qi[j][0]:
-                nr = self.union(edges[i][0], edges[i][1])
-                if edges[i][0] in groups:
-                    del edges[i][0]
-                if edges[i][1] in groups:
-                    del edges[i][1]
+                ni = self.find(edges[i][0])
+                nj = self.find(edges[i][1])
+                if ni == nj:
+                    i += 1
+                    continue
+
+                if ni in groups:
+                    groups.pop(ni)
+
+                if nj in groups:
+                    groups.pop(nj)
+                nr = self.union(ni, nj)
 
                 groups[nr] = self.count[nr]
                 i += 1
